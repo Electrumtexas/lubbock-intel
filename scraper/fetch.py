@@ -116,24 +116,33 @@ def build_session() -> requests.Session:
 
 def post_search(session, start, end):
     payload = {
-        "RecordingDateIDStart": start,
-        "RecordingDateIDEnd":   end,
-        "AllDocTypes":          "on",
-        "DocTypeID":            "",
-        "GrantorIDFirst":       "",
-        "GrantorIDLast":        "",
-        "GranteeIDFirst":       "",
-        "GranteeIDLast":        "",
-        "BookID":               "",
-        "VolumeID":             "",
-        "PageID":               "",
-        "NumberID":             "",
-        "btnSearch":            "Search",
+        "DocNumID":                   "",
+        "BookVolPageIDBook":           "",
+        "BookVolPageIDVolume":         "",
+        "BookVolPageIDPage":           "",
+        "RecDateIDStart":              start,
+        "RecDateIDEnd":                end,
+        "BothNamesIDSearchString":     "",
+        "BothNamesIDSearchType":       "Basic Searching",
+        "GrantorIDSearchString":       "",
+        "GrantorIDSearchType":         "Basic Searching",
+        "GranteeIDSearchString":       "",
+        "GranteeIDSearchType":         "Basic Searching",
+        "PlattedLegalIDSubdivision":   "",
+        "PlattedLegalIDLot":           "",
+        "PlattedLegalIDBlock":         "",
+        "PlattedLegalIDTract":         "",
+        "PlattedLegalIDUnit":          "",
+        "LegalRemarksIDSearchString":  "",
+        "LegalRemarksIDSearchType":    "Starts With",
+        "AllDocuments":                "ALL",
+        "docTypeTotal":                "129",
     }
+    search_post_url = "https://erecord.lubbockcounty.gov/recorder/eagleweb/docSearchPOST.jsp"
     for attempt in range(3):
         try:
             log.info(f"POSTing search {start} to {end} (attempt {attempt+1})")
-            r = session.post(SEARCH_URL, data=payload, timeout=30, allow_redirects=True)
+            r = session.post(search_post_url, data=payload, timeout=30, allow_redirects=True)
             log.info(f"Response: {r.status_code} — {r.url}")
             if "docSearchResults" in r.url or "items found" in r.text.lower() or "Party One" in r.text:
                 log.info("Search results reached")
