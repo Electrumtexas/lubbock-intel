@@ -12,18 +12,18 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:       #0a0b0d;
-    --surface:  #111318;
-    --card:     #161820;
-    --border:   #22262f;
-    --border2:  #2d3240;
+    --bg:       #1e2428;
+    --surface:  #252c30;
+    --card:     #2a3238;
+    --border:   #344048;
+    --border2:  #3d4e58;
 
     --text:     #e8eaf0;
     --muted:    #6b7280;
     --dim:      #3d4454;
 
-    --gold:     #f0b429;
-    --gold-dim: #7a5a10;
+    --gold:     #5b9ab5;
+    --gold-dim: #2a4a5a;
     --red:      #e53e3e;
     --red-dim:  #5c1919;
     --green:    #38a169;
@@ -36,7 +36,7 @@
     --body: 'Barlow', sans-serif;
   }
 
-  html { font-size: 14px; }
+  html { font-size: 16px; }
   body {
     background: var(--bg);
     color: var(--text);
@@ -61,7 +61,7 @@
   header {
     position: relative; z-index: 10;
     border-bottom: 1px solid var(--border);
-    background: linear-gradient(135deg, #0d0f14 0%, #111522 100%);
+    background: linear-gradient(135deg, #1a2226 0%, #252c32 100%); border-bottom: 2px solid #5b9ab5;
     padding: 0 2rem;
     display: flex; align-items: center; gap: 2rem;
     height: 64px;
@@ -82,7 +82,7 @@
   }
   .header-meta .badge {
     font-family: var(--mono);
-    font-size: .65rem;
+    font-size: .78rem;
     padding: .25rem .6rem;
     border-radius: 2px;
     background: var(--surface);
@@ -124,7 +124,7 @@
 
   .kpi-label {
     font-family: var(--mono);
-    font-size: .6rem;
+    font-size: .88rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--muted);
@@ -138,7 +138,7 @@
     color: var(--text);
   }
   .kpi-sub {
-    font-size: .7rem;
+    font-size: .82rem;
     color: var(--dim);
     margin-top: .3rem;
     font-family: var(--mono);
@@ -156,7 +156,7 @@
     padding: .5rem .75rem;
     border-radius: 3px;
     font-family: var(--body);
-    font-size: .85rem;
+    font-size: .97rem;
     outline: none;
     transition: border-color .15s;
   }
@@ -168,7 +168,7 @@
     display: inline-flex; align-items: center; gap: .4rem;
     padding: .5rem 1rem;
     font-family: var(--mono);
-    font-size: .7rem;
+    font-size: .82rem;
     letter-spacing: .08em;
     text-transform: uppercase;
     border-radius: 3px;
@@ -179,14 +179,14 @@
     text-decoration: none;
   }
   .btn-gold  { background: transparent; border-color: var(--gold); color: var(--gold); }
-  .btn-gold:hover { background: var(--gold); color: #000; }
+  .btn-gold:hover { background: var(--gold); color: #fff; }
   .btn-muted { background: transparent; border-color: var(--border); color: var(--muted); }
   .btn-muted:hover { border-color: var(--text); color: var(--text); }
 
   .results-count {
     margin-left: auto;
     font-family: var(--mono);
-    font-size: .7rem;
+    font-size: .82rem;
     color: var(--muted);
   }
   .results-count span { color: var(--gold); font-weight: 700; }
@@ -201,7 +201,7 @@
   table { width: 100%; border-collapse: collapse; }
   thead th {
     font-family: var(--mono);
-    font-size: .6rem;
+    font-size: .88rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--muted);
@@ -227,7 +227,7 @@
   tbody tr:hover { background: rgba(255,255,255,.025); }
   td {
     padding: .65rem 1rem;
-    font-size: .82rem;
+    font-size: .95rem;
     vertical-align: middle;
   }
 
@@ -236,21 +236,21 @@
     display: inline-block;
     font-family: var(--mono);
     font-weight: 700;
-    font-size: .75rem;
+    font-size: .88rem;
     padding: .2rem .5rem;
     border-radius: 2px;
     min-width: 38px;
     text-align: center;
   }
   .score-hi  { background: rgba(229,62,62,.18); color: var(--red); border: 1px solid var(--red-dim); }
-  .score-med { background: rgba(240,180,41,.12); color: var(--gold); border: 1px solid var(--gold-dim); }
+  .score-med { background: rgba(91,154,181,.15); color: var(--gold); border: 1px solid var(--gold-dim); }
   .score-lo  { background: rgba(107,114,128,.12); color: var(--muted); border: 1px solid var(--dim); }
 
   /* Type badge */
   .type-badge {
     display: inline-block;
     font-family: var(--mono);
-    font-size: .58rem;
+    font-size: .74rem;
     letter-spacing: .05em;
     padding: .18rem .45rem;
     border-radius: 2px;
@@ -267,7 +267,7 @@
   /* Flag pills */
   .flags { display: flex; flex-wrap: wrap; gap: .3rem; }
   .flag-pill {
-    font-size: .55rem;
+    font-size: .84rem;
     font-family: var(--mono);
     padding: .15rem .4rem;
     border-radius: 2px;
@@ -282,10 +282,10 @@
 
   /* Owner / address */
   .owner-name { font-weight: 500; color: var(--text); }
-  .addr-line  { font-size: .72rem; color: var(--muted); margin-top: .15rem; }
-  .no-addr    { color: var(--dim); font-style: italic; font-size: .75rem; }
+  .addr-line  { font-size: .97rem; color: var(--muted); margin-top: .15rem; }
+  .no-addr    { color: var(--dim); font-style: italic; font-size: .88rem; }
 
-  .amount-cell { font-family: var(--mono); font-size: .8rem; }
+  .amount-cell { font-family: var(--mono); font-size: .92rem; }
   .amount-hi   { color: var(--red); }
   .amount-med  { color: var(--orange); }
 
@@ -293,13 +293,13 @@
     color: var(--gold);
     text-decoration: none;
     font-family: var(--mono);
-    font-size: .65rem;
+    font-size: .78rem;
     letter-spacing: .05em;
     transition: opacity .15s;
   }
   .doc-link:hover { opacity: .7; text-decoration: underline; }
 
-  .mono-sm { font-family: var(--mono); font-size: .7rem; color: var(--muted); }
+  .mono-sm { font-family: var(--mono); font-size: .82rem; color: var(--muted); }
 
   /* ── EMPTY STATE ──────────────────────────────────────────────────────── */
   .empty-state {
@@ -349,8 +349,8 @@
   }
   .modal-field { }
   .modal-field.full { grid-column: 1 / -1; }
-  .mf-label { font-family: var(--mono); font-size: .55rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
-  .mf-val { font-size: .85rem; color: var(--text); word-break: break-word; }
+  .mf-label { font-family: var(--mono); font-size: .84rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
+  .mf-val { font-size: .97rem; color: var(--text); word-break: break-word; }
   .mf-val.mono { font-family: var(--mono); }
   hr.modal-hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; grid-column: 1/-1; }
 
@@ -372,7 +372,7 @@
     border: 1px solid var(--gold);
     color: var(--gold);
     font-family: var(--mono);
-    font-size: .7rem;
+    font-size: .82rem;
     letter-spacing: .05em;
     padding: .6rem 1.2rem;
     border-radius: 3px;
@@ -395,8 +395,8 @@
 <body>
 
 <header>
-  <div class="logo">Electrum <span>/</span> Leads</div>
-  <div style="font-family:var(--cond);font-size:.85rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;">
+  <img src="Logo_Test_1dark.png" alt="Electrum Properties" style="height:48px;width:auto;">
+  <div style="font-family:var(--cond);font-size:1rem;color:#8ab8cc;letter-spacing:.08em;text-transform:uppercase;font-weight:500;">
     Lubbock County · Motivated Seller Intelligence
   </div>
   <div class="header-meta">
@@ -678,7 +678,7 @@ function openModal(idx) {
   const r = FILTERED[idx];
   if (!r) return;
   const score = r.score || 0;
-  const sc    = score >= 70 ? '#fc8181' : score >= 45 ? '#f0b429' : '#6b7280';
+  const sc    = score >= 70 ? '#fc8181' : score >= 45 ? '#5b9ab5' : '#6b7280';
   const barW  = score + '%';
 
   const flags = (r.flags||[]).map(f => `<span class="flag-pill">${esc(f)}</span>`).join(' ');
