@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lubbock Motivated Seller Leads · Electrum Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@300;500;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── RESET & TOKENS ─────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0a0b0d;
+    --surface:  #111318;
+    --card:     #161820;
+    --border:   #22262f;
+    --border2:  #2d3240;
+
+    --text:     #e8eaf0;
+    --muted:    #6b7280;
+    --dim:      #3d4454;
+
+    --gold:     #f0b429;
+    --gold-dim: #7a5a10;
+    --red:      #e53e3e;
+    --red-dim:  #5c1919;
+    --green:    #38a169;
+    --blue:     #4299e1;
+    --orange:   #ed8936;
+    --purple:   #9f7aea;
+
+    --mono: 'Space Mono', monospace;
+    --cond: 'Barlow Condensed', sans-serif;
+    --body: 'Barlow', sans-serif;
+  }
+
+  html { font-size: 14px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID NOISE TEXTURE ──────────────────────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ──────────────────────────────────────────────────────────── */
+  header {
+    position: relative; z-index: 10;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, #0d0f14 0%, #111522 100%);
+    padding: 0 2rem;
+    display: flex; align-items: center; gap: 2rem;
+    height: 64px;
+  }
+  .logo {
+    font-family: var(--cond);
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .logo span { color: var(--muted); font-weight: 300; }
+  .header-meta {
+    margin-left: auto;
+    display: flex; gap: 2rem; align-items: center;
+  }
+  .header-meta .badge {
+    font-family: var(--mono);
+    font-size: .65rem;
+    padding: .25rem .6rem;
+    border-radius: 2px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    letter-spacing: .05em;
+  }
+  #last-updated { color: var(--gold); }
+
+  /* ── LAYOUT ──────────────────────────────────────────────────────────── */
+  .page { position: relative; z-index: 1; max-width: 1600px; margin: 0 auto; padding: 1.5rem 2rem; }
+
+  /* ── KPI ROW ──────────────────────────────────────────────────────────  */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: .75rem;
+    margin-bottom: 1.5rem;
+  }
+  .kpi {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .kpi::after {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .kpi.kpi-gold::after  { background: var(--gold); }
+  .kpi.kpi-red::after   { background: var(--red); }
+  .kpi.kpi-green::after { background: var(--green); }
+  .kpi.kpi-blue::after  { background: var(--blue); }
+  .kpi.kpi-orange::after{ background: var(--orange); }
+  .kpi.kpi-purple::after{ background: var(--purple); }
+
+  .kpi-label {
+    font-family: var(--mono);
+    font-size: .6rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .4rem;
+  }
+  .kpi-val {
+    font-family: var(--cond);
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--text);
+  }
+  .kpi-sub {
+    font-size: .7rem;
+    color: var(--dim);
+    margin-top: .3rem;
+    font-family: var(--mono);
+  }
+
+  /* ── CONTROL BAR ─────────────────────────────────────────────────────── */
+  .controls {
+    display: flex; gap: .75rem; flex-wrap: wrap; align-items: center;
+    margin-bottom: 1rem;
+  }
+  .controls input, .controls select {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: .5rem .75rem;
+    border-radius: 3px;
+    font-family: var(--body);
+    font-size: .85rem;
+    outline: none;
+    transition: border-color .15s;
+  }
+  .controls input:focus, .controls select:focus { border-color: var(--gold); }
+  .controls input[type=search] { width: 260px; }
+  .controls select { min-width: 160px; cursor: pointer; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: .4rem;
+    padding: .5rem 1rem;
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all .15s;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .btn-gold  { background: transparent; border-color: var(--gold); color: var(--gold); }
+  .btn-gold:hover { background: var(--gold); color: #000; }
+  .btn-muted { background: transparent; border-color: var(--border); color: var(--muted); }
+  .btn-muted:hover { border-color: var(--text); color: var(--text); }
+
+  .results-count {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--muted);
+  }
+  .results-count span { color: var(--gold); font-weight: 700; }
+
+  /* ── TABLE ───────────────────────────────────────────────────────────── */
+  .table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: auto;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    font-family: var(--mono);
+    font-size: .6rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    background: var(--surface);
+    position: sticky; top: 0; z-index: 2;
+    transition: color .15s;
+  }
+  thead th:hover { color: var(--gold); }
+  thead th.sort-asc::after  { content: ' ▲'; color: var(--gold); }
+  thead th.sort-desc::after { content: ' ▼'; color: var(--gold); }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background .1s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,.025); }
+  td {
+    padding: .65rem 1rem;
+    font-size: .82rem;
+    vertical-align: middle;
+  }
+
+  /* Score chip */
+  .score-chip {
+    display: inline-block;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: .75rem;
+    padding: .2rem .5rem;
+    border-radius: 2px;
+    min-width: 38px;
+    text-align: center;
+  }
+  .score-hi  { background: rgba(229,62,62,.18); color: var(--red); border: 1px solid var(--red-dim); }
+  .score-med { background: rgba(240,180,41,.12); color: var(--gold); border: 1px solid var(--gold-dim); }
+  .score-lo  { background: rgba(107,114,128,.12); color: var(--muted); border: 1px solid var(--dim); }
+
+  /* Type badge */
+  .type-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: .58rem;
+    letter-spacing: .05em;
+    padding: .18rem .45rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .cat-foreclosure { background: rgba(229,62,62,.15); color: #fc8181; border: 1px solid rgba(229,62,62,.3); }
+  .cat-judgment    { background: rgba(159,122,234,.15); color: #b794f4; border: 1px solid rgba(159,122,234,.3); }
+  .cat-lien        { background: rgba(237,137,54,.15); color: #fbd38d; border: 1px solid rgba(237,137,54,.3); }
+  .cat-tax         { background: rgba(245,101,101,.18); color: #fc8181; border: 1px solid rgba(245,101,101,.3); }
+  .cat-probate     { background: rgba(66,153,225,.15); color: #90cdf4; border: 1px solid rgba(66,153,225,.3); }
+  .cat-other       { background: rgba(107,114,128,.12); color: var(--muted); border: 1px solid var(--dim); }
+  .cat-release     { background: rgba(56,161,105,.1); color: #68d391; border: 1px solid rgba(56,161,105,.3); }
+
+  /* Flag pills */
+  .flags { display: flex; flex-wrap: wrap; gap: .3rem; }
+  .flag-pill {
+    font-size: .55rem;
+    font-family: var(--mono);
+    padding: .15rem .4rem;
+    border-radius: 2px;
+    background: rgba(240,180,41,.08);
+    border: 1px solid rgba(240,180,41,.2);
+    color: #d4a017;
+    white-space: nowrap;
+  }
+  .flag-pill.flag-lp       { background: rgba(229,62,62,.1); border-color: rgba(229,62,62,.3); color: #fc8181; }
+  .flag-pill.flag-probate  { background: rgba(66,153,225,.1); border-color: rgba(66,153,225,.3); color: #90cdf4; }
+  .flag-pill.flag-new      { background: rgba(56,161,105,.1); border-color: rgba(56,161,105,.3); color: #68d391; }
+
+  /* Owner / address */
+  .owner-name { font-weight: 500; color: var(--text); }
+  .addr-line  { font-size: .72rem; color: var(--muted); margin-top: .15rem; }
+  .no-addr    { color: var(--dim); font-style: italic; font-size: .75rem; }
+
+  .amount-cell { font-family: var(--mono); font-size: .8rem; }
+  .amount-hi   { color: var(--red); }
+  .amount-med  { color: var(--orange); }
+
+  .doc-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: .65rem;
+    letter-spacing: .05em;
+    transition: opacity .15s;
+  }
+  .doc-link:hover { opacity: .7; text-decoration: underline; }
+
+  .mono-sm { font-family: var(--mono); font-size: .7rem; color: var(--muted); }
+
+  /* ── EMPTY STATE ──────────────────────────────────────────────────────── */
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; opacity: .3; }
+  .empty-state p { color: var(--muted); font-size: .9rem; }
+
+  /* ── MODAL ────────────────────────────────────────────────────────────── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.75);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    width: 100%; max-width: 640px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: none; border: none; color: var(--muted);
+    font-size: 1.2rem; cursor: pointer; line-height: 1;
+  }
+  .modal-close:hover { color: var(--text); }
+  .modal-title {
+    font-family: var(--cond);
+    font-weight: 700; font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--gold);
+    padding-right: 2rem;
+  }
+  .modal-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+  }
+  .modal-field { }
+  .modal-field.full { grid-column: 1 / -1; }
+  .mf-label { font-family: var(--mono); font-size: .55rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
+  .mf-val { font-size: .85rem; color: var(--text); word-break: break-word; }
+  .mf-val.mono { font-family: var(--mono); }
+  hr.modal-hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; grid-column: 1/-1; }
+
+  /* ── SCORE BAR ──────────────────────────────────────────────────────── */
+  .score-bar-wrap { margin-top: .5rem; }
+  .score-bar-track {
+    height: 6px; background: var(--border);
+    border-radius: 3px; overflow: hidden;
+  }
+  .score-bar-fill {
+    height: 100%; border-radius: 3px;
+    transition: width .4s ease;
+  }
+
+  /* ── TOAST ───────────────────────────────────────────────────────────── */
+  .toast {
+    position: fixed; bottom: 1.5rem; right: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .05em;
+    padding: .6rem 1.2rem;
+    border-radius: 3px;
+    z-index: 200;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all .3s;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .page { padding: 1rem; }
+    .controls input[type=search] { width: 100%; }
+    thead th:nth-child(n+6) { display: none; }
+    td:nth-child(n+6) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Electrum <span>/</span> Leads</div>
+  <div style="font-family:var(--cond);font-size:.85rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;">
+    Lubbock County · Motivated Seller Intelligence
+  </div>
+  <div class="header-meta">
+    <div class="badge" id="date-range">Loading…</div>
+    <div class="badge" id="last-updated">—</div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- KPI row -->
+  <div class="kpi-row" id="kpi-row">
+    <div class="kpi kpi-gold">
+      <div class="kpi-label">Total Leads</div>
+      <div class="kpi-val" id="kpi-total">—</div>
+      <div class="kpi-sub">this period</div>
+    </div>
+    <div class="kpi kpi-red">
+      <div class="kpi-label">Pre-Foreclosure</div>
+      <div class="kpi-val" id="kpi-fc">—</div>
+      <div class="kpi-sub">LP + NOFC</div>
+    </div>
+    <div class="kpi kpi-purple">
+      <div class="kpi-label">Judgments</div>
+      <div class="kpi-val" id="kpi-jud">—</div>
+      <div class="kpi-sub">JUD / CCJ / DRJUD</div>
+    </div>
+    <div class="kpi kpi-orange">
+      <div class="kpi-label">Liens</div>
+      <div class="kpi-val" id="kpi-lien">—</div>
+      <div class="kpi-sub">IRS / HOA / Mech</div>
+    </div>
+    <div class="kpi kpi-blue">
+      <div class="kpi-label">Probate</div>
+      <div class="kpi-val" id="kpi-pro">—</div>
+      <div class="kpi-sub">PRO docs</div>
+    </div>
+    <div class="kpi kpi-green">
+      <div class="kpi-label">With Address</div>
+      <div class="kpi-val" id="kpi-addr">—</div>
+      <div class="kpi-sub">parcel matched</div>
+    </div>
+    <div class="kpi kpi-gold">
+      <div class="kpi-label">Hot Leads ≥70</div>
+      <div class="kpi-val" id="kpi-hot">—</div>
+      <div class="kpi-sub">score threshold</div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <input type="search" id="search-box" placeholder="Search owner, address, doc #…" oninput="applyFilters()">
+    <select id="filter-cat" onchange="applyFilters()">
+      <option value="">All Types</option>
+      <option value="foreclosure">Pre-Foreclosure</option>
+      <option value="judgment">Judgment</option>
+      <option value="lien">Lien</option>
+      <option value="tax">Tax</option>
+      <option value="probate">Probate</option>
+      <option value="other">Other</option>
+      <option value="release">Release</option>
+    </select>
+    <select id="filter-score" onchange="applyFilters()">
+      <option value="0">All Scores</option>
+      <option value="70">Hot (≥70)</option>
+      <option value="50">Warm (≥50)</option>
+      <option value="30">Any (≥30)</option>
+    </select>
+    <select id="filter-addr" onchange="applyFilters()">
+      <option value="">Address: All</option>
+      <option value="yes">Has Address</option>
+      <option value="no">No Address</option>
+    </select>
+    <button class="btn btn-gold" onclick="exportCSV()">⬇ GHL CSV</button>
+    <button class="btn btn-muted" onclick="clearFilters()">✕ Clear</button>
+    <div class="results-count"><span id="result-count">0</span> records</div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table id="leads-table">
+      <thead>
+        <tr>
+          <th onclick="sortTable('score')" id="th-score">Score</th>
+          <th onclick="sortTable('cat_label')" id="th-cat">Type</th>
+          <th onclick="sortTable('owner')" id="th-owner">Owner / Property</th>
+          <th onclick="sortTable('filed')" id="th-filed">Filed</th>
+          <th onclick="sortTable('amount')" id="th-amount">Amount</th>
+          <th>Flags</th>
+          <th onclick="sortTable('doc_num')" id="th-doc">Doc #</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr>
+          <td colspan="8">
+            <div class="empty-state">
+              <div class="icon">⚙</div>
+              <p>Loading records…</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title" id="modal-title">Record Detail</div>
+    <div class="modal-grid" id="modal-content"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────────
+let ALL_RECORDS = [];
+let FILTERED    = [];
+let SORT_KEY    = 'score';
+let SORT_DIR    = -1;   // -1 desc, 1 asc
+
+// ── Load data ─────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const r = await fetch('records.json?_=' + Date.now());
+    const data = await r.json();
+    ALL_RECORDS = data.records || [];
+
+    // Header meta
+    document.getElementById('last-updated').textContent =
+      data.fetched_at ? 'Updated ' + fmtTs(data.fetched_at) : 'Never run';
+    document.getElementById('date-range').textContent =
+      data.date_range?.start
+        ? data.date_range.start + ' → ' + data.date_range.end
+        : 'No date range';
+
+    updateKPIs(data);
+    applyFilters();
+  } catch(e) {
+    document.getElementById('table-body').innerHTML =
+      `<tr><td colspan="8"><div class="empty-state"><div class="icon">⚠</div>
+       <p>Could not load records.json — run the scraper first.</p></div></td></tr>`;
+  }
+}
+
+function fmtTs(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  } catch { return iso; }
+}
+
+// ── KPIs ──────────────────────────────────────────────────────────────────
+function updateKPIs(data) {
+  const recs = ALL_RECORDS;
+  document.getElementById('kpi-total').textContent = recs.length;
+  document.getElementById('kpi-fc').textContent   = recs.filter(r => r.cat === 'foreclosure').length;
+  document.getElementById('kpi-jud').textContent  = recs.filter(r => r.cat === 'judgment').length;
+  document.getElementById('kpi-lien').textContent = recs.filter(r => r.cat === 'lien').length;
+  document.getElementById('kpi-pro').textContent  = recs.filter(r => r.cat === 'probate').length;
+  document.getElementById('kpi-addr').textContent = recs.filter(r => r.prop_address).length;
+  document.getElementById('kpi-hot').textContent  = recs.filter(r => (r.score||0) >= 70).length;
+}
+
+// ── Filters ───────────────────────────────────────────────────────────────
+function applyFilters() {
+  const q     = document.getElementById('search-box').value.trim().toLowerCase();
+  const cat   = document.getElementById('filter-cat').value;
+  const minS  = parseInt(document.getElementById('filter-score').value) || 0;
+  const addr  = document.getElementById('filter-addr').value;
+
+  FILTERED = ALL_RECORDS.filter(r => {
+    if (cat  && r.cat !== cat) return false;
+    if (minS && (r.score||0) < minS) return false;
+    if (addr === 'yes' && !r.prop_address) return false;
+    if (addr === 'no'  && r.prop_address)  return false;
+    if (q) {
+      const hay = [r.owner,r.grantee,r.prop_address,r.mail_address,r.doc_num,r.legal]
+        .join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  sortData();
+}
+
+function clearFilters() {
+  document.getElementById('search-box').value = '';
+  document.getElementById('filter-cat').value = '';
+  document.getElementById('filter-score').value = '0';
+  document.getElementById('filter-addr').value = '';
+  applyFilters();
+}
+
+// ── Sort ──────────────────────────────────────────────────────────────────
+function sortTable(key) {
+  if (SORT_KEY === key) SORT_DIR *= -1;
+  else { SORT_KEY = key; SORT_DIR = (key === 'score' || key === 'amount') ? -1 : 1; }
+  // Update header classes
+  document.querySelectorAll('thead th').forEach(th => th.classList.remove('sort-asc','sort-desc'));
+  const thId = 'th-' + key.replace('cat_label','cat');
+  const th = document.getElementById(thId);
+  if (th) th.classList.add(SORT_DIR === 1 ? 'sort-asc' : 'sort-desc');
+  sortData();
+}
+
+function sortData() {
+  FILTERED.sort((a,b) => {
+    let av = a[SORT_KEY] ?? '';
+    let bv = b[SORT_KEY] ?? '';
+    if (typeof av === 'number' && typeof bv === 'number') return (av - bv) * SORT_DIR;
+    return String(av).localeCompare(String(bv)) * SORT_DIR;
+  });
+  renderTable();
+}
+
+// ── Render ────────────────────────────────────────────────────────────────
+function renderTable() {
+  document.getElementById('result-count').textContent = FILTERED.length.toLocaleString();
+  const body = document.getElementById('table-body');
+
+  if (!FILTERED.length) {
+    body.innerHTML = `<tr><td colspan="8">
+      <div class="empty-state"><div class="icon">🔍</div>
+      <p>No records match the current filters.</p></div></td></tr>`;
+    return;
+  }
+
+  body.innerHTML = FILTERED.map((r, i) => {
+    const score  = r.score || 0;
+    const sc     = score >= 70 ? 'score-hi' : score >= 45 ? 'score-med' : 'score-lo';
+    const flags  = (r.flags || []).map(f => {
+      let cls = 'flag-pill';
+      if (f.includes('pendens') || f.includes('Foreclosure')) cls += ' flag-lp';
+      if (f.includes('Probate')) cls += ' flag-probate';
+      if (f.includes('week'))    cls += ' flag-new';
+      return `<span class="${cls}">${f}</span>`;
+    }).join('');
+    const amt = r.amount ? fmtAmt(r.amount) : '<span class="mono-sm">—</span>';
+    const amtCls = r.amount > 100000 ? 'amount-hi' : r.amount > 50000 ? 'amount-med' : '';
+    const addrBlock = r.prop_address
+      ? `<div class="owner-name">${esc(r.owner||'Unknown')}</div>
+         <div class="addr-line">${esc(r.prop_address)}${r.prop_city ? ', '+esc(r.prop_city) : ''} ${esc(r.prop_zip||'')}</div>`
+      : `<div class="owner-name">${esc(r.owner||'Unknown')}</div>
+         <div class="no-addr">no parcel match</div>`;
+    const link = r.clerk_url
+      ? `<a class="doc-link" href="${esc(r.clerk_url)}" target="_blank" rel="noopener">VIEW →</a>`
+      : '<span class="mono-sm">—</span>';
+
+    return `<tr onclick="openModal(${i})" style="cursor:pointer">
+      <td><span class="score-chip ${sc}">${score}</span></td>
+      <td><span class="type-badge cat-${r.cat||'other'}">${esc(r.cat_label||r.doc_type||'')}</span></td>
+      <td>${addrBlock}</td>
+      <td class="mono-sm">${r.filed||'—'}</td>
+      <td class="amount-cell ${amtCls}">${amt}</td>
+      <td><div class="flags">${flags||'<span class="mono-sm">—</span>'}</div></td>
+      <td class="mono-sm">${esc(r.doc_num||'—')}</td>
+      <td onclick="event.stopPropagation()">${link}</td>
+    </tr>`;
+  }).join('');
+}
+
+function fmtAmt(n) {
+  return '$' + Number(n).toLocaleString('en-US', {maximumFractionDigits:0});
+}
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Modal ─────────────────────────────────────────────────────────────────
+function openModal(idx) {
+  const r = FILTERED[idx];
+  if (!r) return;
+  const score = r.score || 0;
+  const sc    = score >= 70 ? '#fc8181' : score >= 45 ? '#f0b429' : '#6b7280';
+  const barW  = score + '%';
+
+  const flags = (r.flags||[]).map(f => `<span class="flag-pill">${esc(f)}</span>`).join(' ');
+
+  document.getElementById('modal-title').textContent =
+    (r.owner || 'Unknown Owner') + ' · ' + (r.cat_label || r.doc_type || '');
+
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-field">
+      <div class="mf-label">Seller Score</div>
+      <div class="mf-val" style="font-family:var(--mono);font-size:1.4rem;color:${sc}">${score}/100</div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-track">
+          <div class="score-bar-fill" style="width:${barW};background:${sc}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-field">
+      <div class="mf-label">Flags</div>
+      <div class="mf-val"><div class="flags" style="flex-wrap:wrap">${flags||'None'}</div></div>
+    </div>
+    <hr class="modal-hr">
+    <div class="modal-field">
+      <div class="mf-label">Document Type</div>
+      <div class="mf-val mono">${esc(r.doc_type||'—')}</div>
+    </div>
+    <div class="modal-field">
+      <div class="mf-label">Date Filed</div>
+      <div class="mf-val mono">${esc(r.filed||'—')}</div>
+    </div>
+    <div class="modal-field">
+      <div class="mf-label">Document Number</div>
+      <div class="mf-val mono">${esc(r.doc_num||'—')}</div>
+    </div>
+    <div class="modal-field">
+      <div class="mf-label">Amount</div>
+      <div class="mf-val mono">${r.amount ? fmtAmt(r.amount) : '—'}</div>
+    </div>
+    <hr class="modal-hr">
+    <div class="modal-field full">
+      <div class="mf-label">Owner / Grantor</div>
+      <div class="mf-val">${esc(r.owner||'—')}</div>
+    </div>
+    <div class="modal-field full">
+      <div class="mf-label">Grantee</div>
+      <div class="mf-val">${esc(r.grantee||'—')}</div>
+    </div>
+    <hr class="modal-hr">
+    <div class="modal-field">
+      <div class="mf-label">Property Address</div>
+      <div class="mf-val">${esc(r.prop_address||'—')}</div>
+      <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.prop_city,r.prop_state,r.prop_zip].filter(Boolean).join(', '))}</div>
+    </div>
+    <div class="modal-field">
+      <div class="mf-label">Mailing Address</div>
+      <div class="mf-val">${esc(r.mail_address||'—')}</div>
+      <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.mail_city,r.mail_state,r.mail_zip].filter(Boolean).join(', '))}</div>
+    </div>
+    <div class="modal-field full">
+      <div class="mf-label">Legal Description</div>
+      <div class="mf-val" style="font-size:.75rem">${esc(r.legal||'—')}</div>
+    </div>
+    <hr class="modal-hr">
+    <div class="modal-field full">
+      <div class="mf-label">Clerk Record URL</div>
+      <div class="mf-val">${r.clerk_url
+        ? `<a class="doc-link" href="${esc(r.clerk_url)}" target="_blank" rel="noopener">${esc(r.clerk_url)}</a>`
+        : '—'}</div>
+    </div>
+  `;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (!e || e.target.id === 'modal-overlay' || e.currentTarget.classList?.contains('modal-close')) {
+    document.getElementById('modal-overlay').classList.remove('open');
+  }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal({target:{id:'modal-overlay'}}); });
+
+// ── CSV Export ─────────────────────────────────────────────────────────────
+function exportCSV() {
+  if (!FILTERED.length) { showToast('No records to export'); return; }
+  const cols = ['First Name','Last Name','Mailing Address','Mailing City','Mailing State','Mailing Zip',
+    'Property Address','Property City','Property State','Property Zip',
+    'Lead Type','Document Type','Date Filed','Document Number','Amount/Debt Owed',
+    'Seller Score','Motivated Seller Flags','Source','Public Records URL'];
+  const rows = FILTERED.map(r => {
+    const parts = (r.owner||'').trim().split(' ');
+    const first = parts[0]||'';
+    const last  = parts.slice(1).join(' ');
+    return [
+      first, last,
+      r.mail_address||'', r.mail_city||'', r.mail_state||'', r.mail_zip||'',
+      r.prop_address||'', r.prop_city||'', r.prop_state||'', r.prop_zip||'',
+      r.cat_label||'', r.doc_type||'', r.filed||'', r.doc_num||'',
+      r.amount||'', r.score||0,
+      (r.flags||[]).join(' | '),
+      'Lubbock County Clerk',
+      r.clerk_url||'',
+    ].map(v => '"' + String(v).replace(/"/g,'""') + '"');
+  });
+  const csv = [cols.map(c => '"'+c+'"').join(','), ...rows.map(r=>r.join(','))].join('\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'lubbock_leads_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+  showToast(`Exported ${FILTERED.length} records`);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>
