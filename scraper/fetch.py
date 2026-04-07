@@ -237,8 +237,18 @@ class ClerkScraper:
             browser = await p.chromium.launch(headless=True)
             page = await browser.new_page()
             try:
-                await page.goto(self.BASE + self.SEARCH, timeout=30000)
-                await page.wait_for_load_state("networkidle", timeout=15000)
+await page.goto(self.BASE + self.SEARCH, timeout=30000)
+await page.wait_for_load_state("networkidle", timeout=15000)
+
+# Click acknowledgment button if present
+try:
+    ack = await page.query_selector("input[value='I Acknowledge'], button:has-text('I Acknowledge'), a:has-text('I Acknowledge')")
+    if ack:
+        await ack.click()
+        await page.wait_for_load_state("networkidle", timeout=15000)
+        log.info("Clicked I Acknowledge button")
+except Exception as e:
+    log.warning(f"Acknowledge button not found or already past it: {e}")
 
                 # Fill date range
                 for sel, val in [
