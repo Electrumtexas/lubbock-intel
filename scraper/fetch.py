@@ -76,38 +76,42 @@ HEADERS = {
     "Connection": "keep-alive",
 }
 
+LOGIN_URL = BASE_URL + "/recorder/web/login.jsp"
+
 def build_session() -> requests.Session:
     session = requests.Session()
     session.headers.update(HEADERS)
     for attempt in range(3):
         try:
-            log.info("Loading clerk portal...")
-            r = session.get(SEARCH_URL, timeout=30)
-            soup = BeautifulSoup(r.text, "lxml")
-            ack_btn = (
-                soup.find("input", {"value": re.compile(r"acknowledge", re.I)}) or
-                soup.find("input", {"value": re.compile(r"accept", re.I)}) or
-                soup.find("button", string=re.compile(r"acknowledge|accept|agree", re.I))
-            )
-            ack_form = soup.find("form")
-            if ack_btn and ack_form:
-                log.info("Submitting acknowledgment...")
-                action = ack_form.get("action", SEARCH_URL)
-                if not action.startswith("http"):
-                    action = BASE_URL + "/" + action.lstrip("/")
-                payload = {}
-                for inp in ack_form.find_all("input"):
-                    n = inp.get("name")
-                    if n:
-                        payload[n] = inp.get("value", "")
-                session.post(action, data=payload, timeout=30)
-                log.info("Acknowledgment submitted")
-            else:
-                log.info("No acknowledgment gate found")
-            return session
+            # Step 1 — load the login page to get any session cookies
+            log.info("Loading login page...")
+            r = session.get(LOGIN_URL, timeout=30)
+            log.info(f"Login page status: {r.status_code}")
+
+            # Step 2 — submit Public Login
+            log.info("Submitting Public Login...")
+            payload = {"submit": "Public Login"}
+            r2 = session.post(LOGIN_URL, data=payload, timeout=30, allow_redirects=True)
+            log.info(f"After public login: {r2.status_code} — {r2.url}")
+
+            if "docSearch" in r2.url or "eagleweb" in r2.url:
+                log.info("Successfully logged in as public user")
+                return session
+
+            # Step 3 — if not redirected, try GET to docSearch directly
+            r3 = session.get(SEARCH_URL, timeout=30)
+            log.info(f"DocSearch direct: {r3.status_code} — {r3.url}")
+            if "docSearch" in r3.url:
+                log.info("Session active — on search page")
+                return session
+
+            log.warning(f"Unexpected URL after login: {r2.url}")
+
         except Exception as e:
             log.warning(f"Session attempt {attempt+1} failed: {e}")
             time.sleep(2 ** attempt)
+
+    log.error("Could not establish session after 3 attempts")
     return session
 
 def post_search(session, start, end):
