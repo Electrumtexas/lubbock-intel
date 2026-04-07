@@ -1,7 +1,10 @@
 {
-  "fetched_at": null,
-  "source": "Lubbock County Clerk / Lubbock CAD",
-  "date_range": { "start": null, "end": null },
+  "fetched_at": "2026-04-07T23:10:07.683748Z",
+  "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
+  "date_range": {
+    "start": "2026-03-31",
+    "end": "2026-04-07"
+  },
   "total": 0,
   "with_address": 0,
   "records": []
