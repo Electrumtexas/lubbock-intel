@@ -90,8 +90,8 @@ def build_session() -> requests.Session:
 
             # Step 2 — submit Public Login
             log.info("Submitting Public Login...")
-            payload = {"submit": "Public Login"}
-            r2 = session.post(LOGIN_URL, data=payload, timeout=30, allow_redirects=True)
+            payload = {"submit": "Public Login", "guest": "true"}
+            r2 = session.post(BASE_URL + "/recorder/web/loginPOST.jsp", data=payload, timeout=30, allow_redirects=True)
             log.info(f"After public login: {r2.status_code} — {r2.url}")
 
             if "docSearch" in r2.url or "eagleweb" in r2.url:
