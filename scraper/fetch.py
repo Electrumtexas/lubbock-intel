@@ -333,76 +333,106 @@ def normalize_date(raw):
     return raw[:10]
 
 def enrich_from_cad(session, owner: str) -> dict:
-    """Search Lubbock CAD by owner name, return address data."""
+    """
+    Search Lubbock CAD using the JSON quick-search API, then fetch
+    the detail page to extract property and mailing addresses.
+    """
     if not owner or len(owner.strip()) < 3:
         return {}
-    name_clean = re.sub(r"[^A-Z0-9 &]", "", owner.upper()).strip()
-    search_url = "https://lubbockcad.org/Property-Search-Result/searchtext/" + requests.utils.quote(name_clean)
+
+    # Clean name — strip suffixes that confuse the search
+    name_clean = re.sub(r"\b(DBA|AKA|DEC'D|ESTATE OF|LLC|INC|CORP|LTD|LP)\b.*", "", owner.upper())
+    name_clean = re.sub(r"[^A-Z0-9 &]", " ", name_clean).strip()
+    name_clean = re.sub(r"\s+", " ", name_clean)
+    if len(name_clean) < 3:
+        return {}
+
+    cad_headers = {
+        "User-Agent": "Mozilla/5.0",
+        "Referer":    "https://lubbockcad.org/",
+        "Accept":     "application/json, text/javascript, */*; q=0.01",
+        "X-Requested-With": "XMLHttpRequest",
+    }
+
     try:
-        r = session.get(search_url, timeout=20)
+        # Use the AJAX quick-search endpoint
+        api_url = (
+            "https://lubbockcad.org/ProxyT/Search/Properties/quick/"
+            f"?f={requests.utils.quote(name_clean)}&pn=1&st=4&so=desc&pt=RP;PP;MH;NR&ty=2026"
+        )
+        r = session.get(api_url, headers=cad_headers, timeout=20)
         if r.status_code != 200:
             return {}
-        soup = BeautifulSoup(r.text, "lxml")
-        detail_link = None
-        for a in soup.find_all("a", href=True):
-            if "/Property-Detail/PropertyQuickRefID/" in a["href"]:
-                detail_link = a["href"]
+
+        data = r.json()
+        results = data.get("ResultList", [])
+        if not results:
+            return {}
+
+        # Take the first residential property result
+        hit = None
+        for res in results:
+            if res.get("PropertyQuickRefID", "").startswith("R"):
+                hit = res
                 break
-        if not detail_link:
-            return {}
-        if not detail_link.startswith("http"):
-            detail_link = "https://lubbockcad.org" + detail_link
-        r2 = session.get(detail_link, timeout=20)
-        if r2.status_code != 200:
-            return {}
-        soup2 = BeautifulSoup(r2.text, "lxml")
+        if not hit:
+            hit = results[0]
 
-        def get_id(eid):
-            el = soup2.find(id=eid)
-            return el.get_text(strip=True) if el else ""
+        prop_qid   = hit.get("PropertyQuickRefID", "")
+        party_qid  = hit.get("PartyQuickRefID", "")
+        situs_addr = hit.get("SitusAddress", "") or ""
 
-        prop_raw = get_id("dnn_ctr416_View_tdPropertyAddress")
-        mail_raw = get_id("dnn_ctr416_View_tdOIMailingAddress")
-
-        # Parse "3006 56TH ST, LUBBOCK, TX  79413"
-        prop_address, prop_city, prop_state, prop_zip = "", "", "TX", ""
-        if prop_raw:
-            parts = [p.strip() for p in prop_raw.split(",")]
+        # Parse situs address: "3006 56TH ST, LUBBOCK, TX  79413"
+        prop_address, prop_city, prop_state, prop_zip = "", "LUBBOCK", "TX", ""
+        if situs_addr:
+            parts = [p.strip() for p in situs_addr.split(",")]
+            prop_address = parts[0] if parts else ""
             if len(parts) >= 3:
-                prop_address = parts[0]
-                prop_city    = parts[1]
+                prop_city = parts[1].strip()
                 last = parts[-1].split()
                 if len(last) >= 2:
                     prop_state = last[-2]
                     prop_zip   = last[-1]
             elif len(parts) == 2:
-                prop_address = parts[0]
                 last = parts[-1].split()
-                if len(last) >= 2:
-                    prop_state = last[-2]
-                    prop_zip   = last[-1]
-
-        # Parse mailing: "4401 18TH ST \nLUBBOCK, TX 79416-5709"
-        mail_address, mail_city, mail_state, mail_zip = "", "", "TX", ""
-        if mail_raw:
-            lines = [l.strip() for l in re.split(r"[,\n]", mail_raw) if l.strip()]
-            if lines:
-                mail_address = lines[0]
-            if len(lines) >= 3:
-                mail_city  = lines[1]
-                last = lines[2].split()
-                if len(last) >= 2:
-                    mail_state = last[0]
-                    mail_zip   = last[-1]
-            elif len(lines) == 2:
-                last = lines[1].split()
                 if len(last) >= 3:
-                    mail_city  = last[0]
-                    mail_state = last[1]
-                    mail_zip   = last[2]
-                elif len(last) >= 2:
-                    mail_state = last[0]
-                    mail_zip   = last[1]
+                    prop_city  = last[0]
+                    prop_state = last[1]
+                    prop_zip   = last[2]
+
+        # If we have property+party IDs, fetch detail for mailing address
+        mail_address, mail_city, mail_state, mail_zip = "", "LUBBOCK", "TX", ""
+        if prop_qid and party_qid:
+            detail_url = (
+                f"https://lubbockcad.org/Property-Detail/"
+                f"PropertyQuickRefID/{prop_qid}/PartyQuickRefID/{party_qid}/"
+            )
+            r2 = session.get(detail_url, timeout=20)
+            if r2.status_code == 200:
+                soup = BeautifulSoup(r2.text, "lxml")
+                mail_el = soup.find(id="dnn_ctr416_View_tdOIMailingAddress")
+                if mail_el:
+                    mail_raw = mail_el.get_text(" ", strip=True)
+                    # Format: "4401 18TH ST LUBBOCK, TX 79416-5709"
+                    # or multiline
+                    lines = [l.strip() for l in re.split(r"[,\n]", mail_raw) if l.strip()]
+                    if lines:
+                        mail_address = lines[0]
+                    if len(lines) >= 3:
+                        mail_city  = lines[1]
+                        last = lines[2].split()
+                        if len(last) >= 2:
+                            mail_state = last[0]
+                            mail_zip   = last[-1]
+                    elif len(lines) == 2:
+                        last = lines[1].split()
+                        if len(last) >= 3:
+                            mail_city  = last[0]
+                            mail_state = last[1]
+                            mail_zip   = last[2]
+                        elif len(last) >= 2:
+                            mail_state = last[0]
+                            mail_zip   = last[1]
 
         return {
             "prop_address": prop_address,
@@ -414,8 +444,9 @@ def enrich_from_cad(session, owner: str) -> dict:
             "mail_state":   mail_state or "TX",
             "mail_zip":     mail_zip,
         }
+
     except Exception as e:
-        log.warning(f"CAD lookup failed for \'{owner}\': {e}")
+        log.warning(f"CAD lookup failed for '{owner}': {e}")
         return {}
 
 
