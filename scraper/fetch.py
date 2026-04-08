@@ -18,6 +18,24 @@ SEARCH_URL  = BASE_URL + "/recorder/eagleweb/docSearch.jsp"
 RESULTS_URL = BASE_URL + "/recorder/eagleweb/docSearchResults.jsp"
 DETAIL_URL  = BASE_URL + "/recorder/eagleweb/viewDoc.jsp"
 OUTPUT_PATHS = [Path("dashboard/records.json"), Path("data/records.json")]
+CAD_CACHE_PATH = Path("data/cad_cache.json")
+
+def load_cad_cache() -> dict:
+    """Load cached CAD lookups. Keys are owner names, values are address dicts or None."""
+    try:
+        if CAD_CACHE_PATH.exists():
+            return json.loads(CAD_CACHE_PATH.read_text())
+    except Exception:
+        pass
+    return {}
+
+def save_cad_cache(cache: dict):
+    """Save CAD cache to disk."""
+    try:
+        CAD_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        CAD_CACHE_PATH.write_text(json.dumps(cache, indent=2))
+    except Exception as e:
+        log.warning(f"Could not save CAD cache: {e}")
 
 LEAD_KEYWORDS = {
     "LIS PENDENS":               "LP",
@@ -551,6 +569,10 @@ def main():
 
     session = build_session()
 
+    # Load CAD address cache
+    cad_cache = load_cad_cache()
+    log.info(f"CAD cache loaded: {len(cad_cache)} entries")
+
     # Break date range into 14-day chunks to avoid portal limits
     matched_rows = []
     total_seen   = 0
@@ -625,43 +647,70 @@ def main():
                 rec.setdefault(k, "")
             if not rec.get("owner"):   rec["owner"]   = rec.get("party_one","")
             if not rec.get("grantee"): rec["grantee"] = rec.get("party_two","")
-            # CAD address enrichment — search by grantee first, then grantor,
-            # then fall back to subdivision from legal description
+            # CAD address enrichment — check cache first, then live lookup
+            # Skip known unmatchable entities
+            SKIP_NAMES = {"U S OF AMERICA", "TEXAS STATE OF", "UNITED STATES",
+                          "IRS", "USA", "UNITED STATES OF AMERICA"}
+
             if not rec.get("prop_address"):
                 cad_name = rec.get("grantee") or rec.get("owner") or ""
                 cad = {}
-                if cad_name:
-                    log.info(f"  CAD lookup: {cad_name}")
-                    cad = enrich_from_cad(session, cad_name)
-                    if not cad and rec.get("owner") and rec.get("owner") != cad_name:
-                        log.info(f"  CAD fallback: {rec['owner']}")
-                        cad = enrich_from_cad(session, rec["owner"])
-                # If name lookups failed, try subdivision from legal description
+
+                # Build list of names to try
+                names_to_try = []
+                if cad_name and cad_name.upper() not in SKIP_NAMES:
+                    names_to_try.append(cad_name)
+                owner = rec.get("owner","")
+                if owner and owner != cad_name and owner.upper() not in SKIP_NAMES:
+                    names_to_try.append(owner)
+
+                for try_name in names_to_try:
+                    # Check cache first
+                    if try_name in cad_cache:
+                        cached = cad_cache[try_name]
+                        if cached:
+                            cad = cached
+                            log.info(f"  CAD cache hit: {try_name}")
+                        else:
+                            log.info(f"  CAD cache miss (known): {try_name}")
+                        break
+
+                    # Live lookup
+                    log.info(f"  CAD lookup: {try_name}")
+                    result = enrich_from_cad(session, try_name)
+                    cad_cache[try_name] = result or None
+                    time.sleep(2)
+                    if result:
+                        cad = result
+                        break
+
+                # Legal description fallback
                 if not cad and rec.get("legal"):
                     legal = rec["legal"].upper().strip()
-                    # Lubbock legal descriptions: "SUBDIVISION NAME L 15 BLK 10"
-                    # or "SUBDIVISION NAME LOT 15 BLOCK 10"
-                    # or "PIEDMONT Lot: 15 Block: 10"
-                    # Strip lot/block/section suffixes to isolate subdivision name
                     subdiv = re.split(
                         r"\s+(?:LOT|L\s+\d|L\d|BLK|BLOCK|BLCK|SEC|SECTION|UNIT|PHASE|LT\s+\d|LT\d)",
                         legal, maxsplit=1
                     )[0].strip()
-                    # Also strip trailing numbers and colons
                     subdiv = re.sub(r"[:\d]+$", "", subdiv).strip()
                     subdiv = re.sub(r"\s+", " ", subdiv).strip()
-                    if len(subdiv) >= 4:
+                    if len(subdiv) >= 4 and subdiv not in cad_cache:
                         log.info(f"  CAD legal fallback: {subdiv}")
                         cad = enrich_from_cad(session, subdiv)
+                        cad_cache[subdiv] = cad or None
+                        time.sleep(2)
+
                 if cad:
                     rec.update(cad)
                     log.info(f"  CAD match: {cad.get('prop_address','')}")
-                time.sleep(2)  # respect CAD rate limits
             rec["score"], rec["flags"] = compute_score(rec, cutoff_iso)
             enriched.append(rec)
             time.sleep(0.3)
         except Exception as e:
             log.error(f"Error on {row.get('node')}: {e}\n{traceback.format_exc()}")
+
+    # Save updated CAD cache
+    save_cad_cache(cad_cache)
+    log.info(f"CAD cache saved: {len(cad_cache)} entries")
 
     enriched.sort(key=lambda x: x.get("score",0), reverse=True)
     with_address = sum(1 for r in enriched if r.get("prop_address"))
