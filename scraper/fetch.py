@@ -288,7 +288,9 @@ def parse_detail(html, node, url):
             data.setdefault("legal", value[:200])
         elif "AMOUNT" in label or "CONSIDERATION" in label:
             try:
-                data["amount"] = float(re.sub(r"[^\d.]", "", value))
+                amt = float(re.sub(r"[^\d.]", "", value))
+                if amt >= 100:  # ignore recording fees
+                    data["amount"] = amt
             except Exception:
                 pass
 
@@ -310,7 +312,9 @@ def parse_detail(html, node, url):
         m = re.search(r"\$\s*([\d,]+\.?\d*)", full)
         if m:
             try:
-                data["amount"] = float(m.group(1).replace(",", ""))
+                amt = float(m.group(1).replace(",", ""))
+                if amt >= 100:  # ignore recording fees ($25 etc)
+                    data["amount"] = amt
             except Exception:
                 pass
 
@@ -341,9 +345,23 @@ def enrich_from_cad(session, owner: str) -> dict:
         return {}
 
     # Clean name — strip suffixes that confuse the search
-    name_clean = re.sub(r"\b(DBA|AKA|DEC'D|ESTATE OF|LLC|INC|CORP|LTD|LP)\b.*", "", owner.upper())
+    name_clean = owner.upper()
+    # Remove probate/estate suffixes
+    name_clean = re.sub(r"\bDEC'?D\b.*", "", name_clean)
+    name_clean = re.sub(r"\bESTATE OF\b.*", "", name_clean)
+    name_clean = re.sub(r"\bAKA\b.*", "", name_clean)
+    name_clean = re.sub(r"\bDBA\b.*", "", name_clean)
+    name_clean = re.sub(r"\bLLC\b.*", "", name_clean)
+    name_clean = re.sub(r"\bINC\b.*", "", name_clean)
+    name_clean = re.sub(r"\bCORP\b.*", "", name_clean)
+    name_clean = re.sub(r"\bLTD\b.*", "", name_clean)
+    name_clean = re.sub(r"\bPLLC\b.*", "", name_clean)
     name_clean = re.sub(r"[^A-Z0-9 &]", " ", name_clean).strip()
-    name_clean = re.sub(r"\s+", " ", name_clean)
+    name_clean = re.sub(r"\s+", " ", name_clean).strip()
+    # Keep only first 3 words max for cleaner matching
+    words = name_clean.split()
+    if len(words) > 3:
+        name_clean = " ".join(words[:3])
     if len(name_clean) < 3:
         return {}
 
@@ -360,8 +378,16 @@ def enrich_from_cad(session, owner: str) -> dict:
             "https://lubbockcad.org/ProxyT/Search/Properties/quick/"
             f"?f={requests.utils.quote(name_clean)}&pn=1&st=4&so=desc&pt=RP;PP;MH;NR&ty=2026"
         )
-        r = session.get(api_url, headers=cad_headers, timeout=20)
-        if r.status_code != 200:
+        # Retry up to 3 times with backoff if rate limited
+        r = None
+        for attempt in range(3):
+            r = session.get(api_url, headers=cad_headers, timeout=20)
+            if r.status_code == 200 and r.text.strip():
+                break
+            wait = 3 * (attempt + 1)
+            log.warning(f"CAD rate limit hit, waiting {wait}s...")
+            time.sleep(wait)
+        if not r or not r.text.strip():
             return {}
 
         data = r.json()
@@ -599,21 +625,38 @@ def main():
                 rec.setdefault(k, "")
             if not rec.get("owner"):   rec["owner"]   = rec.get("party_one","")
             if not rec.get("grantee"): rec["grantee"] = rec.get("party_two","")
-            # CAD address enrichment — search by grantee first (the property owner
-            # being sued/liened against), then fall back to grantor
+            # CAD address enrichment — search by grantee first, then grantor,
+            # then fall back to subdivision from legal description
             if not rec.get("prop_address"):
                 cad_name = rec.get("grantee") or rec.get("owner") or ""
+                cad = {}
                 if cad_name:
                     log.info(f"  CAD lookup: {cad_name}")
                     cad = enrich_from_cad(session, cad_name)
-                    # If grantee lookup failed, try grantor
                     if not cad and rec.get("owner") and rec.get("owner") != cad_name:
                         log.info(f"  CAD fallback: {rec['owner']}")
                         cad = enrich_from_cad(session, rec["owner"])
-                    if cad:
-                        rec.update(cad)
-                        log.info(f"  CAD match: {cad.get('prop_address','')}")
-                    time.sleep(0.5)
+                # If name lookups failed, try subdivision from legal description
+                if not cad and rec.get("legal"):
+                    legal = rec["legal"].upper().strip()
+                    # Lubbock legal descriptions: "SUBDIVISION NAME L 15 BLK 10"
+                    # or "SUBDIVISION NAME LOT 15 BLOCK 10"
+                    # or "PIEDMONT Lot: 15 Block: 10"
+                    # Strip lot/block/section suffixes to isolate subdivision name
+                    subdiv = re.split(
+                        r"\s+(?:LOT|L\s+\d|L\d|BLK|BLOCK|BLCK|SEC|SECTION|UNIT|PHASE|LT\s+\d|LT\d)",
+                        legal, maxsplit=1
+                    )[0].strip()
+                    # Also strip trailing numbers and colons
+                    subdiv = re.sub(r"[:\d]+$", "", subdiv).strip()
+                    subdiv = re.sub(r"\s+", " ", subdiv).strip()
+                    if len(subdiv) >= 4:
+                        log.info(f"  CAD legal fallback: {subdiv}")
+                        cad = enrich_from_cad(session, subdiv)
+                if cad:
+                    rec.update(cad)
+                    log.info(f"  CAD match: {cad.get('prop_address','')}")
+                time.sleep(2)  # respect CAD rate limits
             rec["score"], rec["flags"] = compute_score(rec, cutoff_iso)
             enriched.append(rec)
             time.sleep(0.3)
