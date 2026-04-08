@@ -544,14 +544,21 @@ def main():
                 rec.setdefault(k, "")
             if not rec.get("owner"):   rec["owner"]   = rec.get("party_one","")
             if not rec.get("grantee"): rec["grantee"] = rec.get("party_two","")
-            # CAD address enrichment if no address yet
-            if not rec.get("prop_address") and rec.get("owner"):
-                log.info(f"  CAD lookup: {rec['owner']}")
-                cad = enrich_from_cad(session, rec["owner"])
-                if cad:
-                    rec.update(cad)
-                    log.info(f"  CAD match: {cad.get('prop_address','')}")
-                time.sleep(0.5)
+            # CAD address enrichment — search by grantee first (the property owner
+            # being sued/liened against), then fall back to grantor
+            if not rec.get("prop_address"):
+                cad_name = rec.get("grantee") or rec.get("owner") or ""
+                if cad_name:
+                    log.info(f"  CAD lookup: {cad_name}")
+                    cad = enrich_from_cad(session, cad_name)
+                    # If grantee lookup failed, try grantor
+                    if not cad and rec.get("owner") and rec.get("owner") != cad_name:
+                        log.info(f"  CAD fallback: {rec['owner']}")
+                        cad = enrich_from_cad(session, rec["owner"])
+                    if cad:
+                        rec.update(cad)
+                        log.info(f"  CAD match: {cad.get('prop_address','')}")
+                    time.sleep(0.5)
             rec["score"], rec["flags"] = compute_score(rec, cutoff_iso)
             enriched.append(rec)
             time.sleep(0.3)
