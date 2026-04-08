@@ -524,45 +524,69 @@ def main():
     log.info(f"Date range: {start_str} to {end_str}")
 
     session = build_session()
-    ok = post_search(session, start_str, end_str)
-    if not ok:
-        log.error("Could not reach search results — saving empty output")
-    
+
+    # Break date range into 14-day chunks to avoid portal limits
     matched_rows = []
-    page = 1
-    total_seen = 0
+    total_seen   = 0
+    chunk_days   = 14
+    chunk_start  = start_dt
 
-    while ok:
-        log.info(f"Fetching page {page}...")
-        html = fetch_results_page(session, page)
-        if not html:
-            log.warning(f"No response for page {page} — stopping")
-            break
+    while chunk_start < end_dt:
+        chunk_end = min(chunk_start + timedelta(days=chunk_days), end_dt)
+        cs = chunk_start.strftime("%m/%d/%Y")
+        ce = chunk_end.strftime("%m/%d/%Y")
+        log.info(f"Searching chunk: {cs} → {ce}")
 
-        rows, has_more = parse_results_page(html)
-        log.info(f"  Page {page}: {len(rows)} rows, has_more={has_more}")
+        ok = post_search(session, cs, ce)
+        if not ok:
+            log.warning(f"Chunk {cs}-{ce} failed — skipping")
+            chunk_start = chunk_end
+            continue
 
-        if not rows:
-            break
+        page = 1
+        while True:
+            log.info(f"  Fetching page {page}...")
+            html = fetch_results_page(session, page)
+            if not html:
+                break
 
-        total_seen += len(rows)
-        for row in rows:
-            dt = match_lead_type(row["description"])
-            if dt:
-                row["doc_type"]  = dt
-                row["cat"]       = LEAD_TYPES[dt]["cat"]
-                row["cat_label"] = LEAD_TYPES[dt]["label"]
-                matched_rows.append(row)
-                log.info(f"  MATCH: {row['description']} [{dt}] node={row['node']}")
+            rows, has_more = parse_results_page(html)
+            log.info(f"    Page {page}: {len(rows)} rows, has_more={has_more}")
 
-        if not has_more:
-            break
-        page += 1
-        if page > 50:
-            break
-        time.sleep(0.5)
+            if not rows:
+                break
 
-    log.info(f"Scanned {total_seen} rows total, {len(matched_rows)} matches")
+            total_seen += len(rows)
+            for row in rows:
+                dt = match_lead_type(row["description"])
+                if dt:
+                    row["doc_type"]  = dt
+                    row["cat"]       = LEAD_TYPES[dt]["cat"]
+                    row["cat_label"] = LEAD_TYPES[dt]["label"]
+                    matched_rows.append(row)
+                    log.info(f"    MATCH: {row['description']} [{dt}] node={row['node']}")
+
+            if not has_more:
+                break
+            page += 1
+            if page > 50:
+                break
+            time.sleep(0.5)
+
+        chunk_start = chunk_end
+        time.sleep(1)  # pause between chunks
+
+    # Deduplicate by node
+    seen_nodes = set()
+    deduped = []
+    for row in matched_rows:
+        key = row.get("node") or row.get("doc_num") or str(row)
+        if key not in seen_nodes:
+            seen_nodes.add(key)
+            deduped.append(row)
+    matched_rows = deduped
+
+    log.info(f"Scanned {total_seen} rows total, {len(matched_rows)} matches (deduplicated)")
 
     enriched = []
     for i, row in enumerate(matched_rows):
