@@ -469,6 +469,68 @@
     thead th:nth-child(n+6) { display: none; }
     td:nth-child(n+6) { display: none; }
   }
+
+  /* ── EDIT MODE ─────────────────────────────────────────────────────────── */
+  .edit-field {
+    display: grid; grid-template-columns: 140px 1fr; gap: 6px;
+    align-items: center; margin-bottom: 8px;
+  }
+  .edit-field label {
+    font-family: var(--mono); font-size: .78rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .edit-field input, .edit-field textarea, .edit-field select {
+    background: var(--bg); border: 1px solid var(--border2);
+    color: var(--text); border-radius: 3px;
+    padding: .35rem .6rem; font-size: .92rem;
+    font-family: var(--body); outline: none; width: 100%;
+    transition: border-color .15s;
+  }
+  .edit-field input:focus, .edit-field textarea:focus { border-color: var(--gold); }
+  .edit-field textarea { resize: vertical; min-height: 64px; }
+
+  .edit-section-title {
+    font-family: var(--mono); font-size: .78rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--gold);
+    margin: 16px 0 10px; padding-bottom: 5px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .edit-toolbar {
+    display: flex; gap: 8px; align-items: center;
+    padding: 14px 0 0; border-top: 1px solid var(--border); margin-top: 16px;
+  }
+  .edit-status {
+    font-family: var(--mono); font-size: .78rem;
+    color: var(--muted); margin-left: auto;
+  }
+  .edit-status.ok   { color: var(--green); }
+  .edit-status.err  { color: var(--red); }
+
+  /* GitHub settings panel */
+  .gh-settings {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,.75); z-index: 200;
+    align-items: center; justify-content: center;
+  }
+  .gh-settings.open { display: flex; }
+  .gh-panel {
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 8px; width: 520px; max-width: 95vw; padding: 28px;
+  }
+  .gh-panel h2 {
+    font-family: var(--cond); font-size: 1.3rem; font-weight: 700;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .gh-panel p { font-size: .9rem; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+  .gh-panel input {
+    width: 100%; background: var(--bg); border: 1px solid var(--border2);
+    color: var(--text); border-radius: 3px; padding: .5rem .75rem;
+    font-family: var(--mono); font-size: .88rem; margin-bottom: 12px; outline: none;
+  }
+  .gh-panel input:focus { border-color: var(--gold); }
+  .gh-panel label { font-family: var(--mono); font-size: .78rem; color: var(--muted); display: block; margin-bottom: 4px; }
+
 </style>
 </head>
 <body>
@@ -478,6 +540,7 @@
   <div style="font-family:var(--cond);font-size:1rem;color:#8ab8cc;letter-spacing:.08em;text-transform:uppercase;font-weight:500;">
     Lubbock County · Motivated Seller Intelligence
   </div>
+  <button class="btn-muted btn" onclick="openGHSettings()" style="margin-left:auto;font-size:.82rem;" title="GitHub sync settings">⚙ Sync</button>
   <div class="header-meta">
     <div class="badge" id="date-range">Loading…</div>
     <div class="badge" id="last-updated">—</div>
@@ -819,7 +882,7 @@
       <option value="0">All Scores</option>
       <option value="60">Priority ≥60</option>
     </select>
-    <button class="btn btn-gold" onclick="incExportCSV()">⬇ Export for Manual Lookup</button>
+    <button class="btn btn-gold" onclick="incExportCSV()">⬇ Export CSV for CRM</button>
     <button class="btn btn-muted" onclick="incClearFilters()">✕ Clear</button>
     <div class="results-count"><span id="inc-result-count">0</span> records</div>
   </div>
@@ -1382,6 +1445,15 @@ function openUnifiedModal(idx) {
     </div>
     ${taxSection}${fireSection}${clerkSection}`;
 
+
+  // Edit button
+  const _editRow = document.getElementById('modal-edit-btn-row');
+  if (_editRow) _editRow.remove();
+  const _er = document.createElement('div');
+  _er.id = 'modal-edit-btn-row';
+  _er.style.cssText = 'padding:14px 0 0;border-top:1px solid var(--border);margin-top:14px;display:flex;gap:10px;align-items:center';
+  _er.innerHTML = '<button class="btn btn-gold" onclick="openEditModal(\'all\', '+idx+')">✏ Edit Record</button><span style="font-family:var(--mono);font-size:.76rem;color:var(--muted);margin-left:6px">Saves &amp; pushes to GitHub</span>';
+  document.getElementById('modal-content').appendChild(_er);
   document.getElementById('modal-overlay').classList.add('open');
 }
 
@@ -1518,6 +1590,15 @@ function openTaxModal(idx) {
     <div class="modal-field full"><div class="mf-label">Legal Description</div><div class="mf-val" style="font-size:.75rem">${esc(r.legal_description||'—')}</div></div>
     <hr class="modal-hr">
     <div class="modal-field full"><div class="mf-label">Data Source · As Of</div><div class="mf-val mono" style="font-size:.8rem">${esc(r.address_source||'—')}  ·  ${esc(r.data_date||'—')}</div></div>`;
+
+  // Edit button
+  const _editRow = document.getElementById('modal-edit-btn-row');
+  if (_editRow) _editRow.remove();
+  const _er = document.createElement('div');
+  _er.id = 'modal-edit-btn-row';
+  _er.style.cssText = 'padding:14px 0 0;border-top:1px solid var(--border);margin-top:14px;display:flex;gap:10px;align-items:center';
+  _er.innerHTML = '<button class="btn btn-gold" onclick="openEditModal(\'tax\', '+idx+')">✏ Edit Record</button><span style="font-family:var(--mono);font-size:.76rem;color:var(--muted);margin-left:6px">Saves &amp; pushes to GitHub</span>';
+  document.getElementById('modal-content').appendChild(_er);
   document.getElementById('modal-overlay').classList.add('open');
 }
 function taxExportCSV() {
@@ -1629,6 +1710,15 @@ function openFireModal(idx) {
     <div class="modal-field"><div class="mf-label">Owner Name</div><div class="mf-val">${esc(r.owner_name||'—')}</div></div>
     <div class="modal-field"><div class="mf-label">Mailing Address</div><div class="mf-val">${esc(r.mail_address||'—')}</div>
     <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.mail_city,r.mail_state,r.mail_zip].filter(Boolean).join(', '))}</div></div>`;
+
+  // Edit button
+  const _editRow = document.getElementById('modal-edit-btn-row');
+  if (_editRow) _editRow.remove();
+  const _er = document.createElement('div');
+  _er.id = 'modal-edit-btn-row';
+  _er.style.cssText = 'padding:14px 0 0;border-top:1px solid var(--border);margin-top:14px;display:flex;gap:10px;align-items:center';
+  _er.innerHTML = '<button class="btn btn-gold" onclick="openEditModal(\'fire\', '+idx+')">✏ Edit Record</button><span style="font-family:var(--mono);font-size:.76rem;color:var(--muted);margin-left:6px">Saves &amp; pushes to GitHub</span>';
+  document.getElementById('modal-content').appendChild(_er);
   document.getElementById('modal-overlay').classList.add('open');
 }
 function fireExportCSV() {
@@ -1790,6 +1880,15 @@ function openIncModal(idx) {
       <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.mail_city,r.mail_state,r.mail_zip].filter(Boolean).join(', '))}</div></div>
     ${r.tax_balance?`<hr class="modal-hr"><div class="modal-field"><div class="mf-label">Tax Balance</div><div class="bal-display" style="color:var(--orange)">$${Number(r.tax_balance).toLocaleString('en-US',{minimumFractionDigits:2})}</div></div>`:''}
     ${r.fire_latest?`<hr class="modal-hr"><div class="modal-field"><div class="mf-label">Last Fire Incident</div><div class="mf-val mono">${esc(r.fire_latest)}</div></div>`:''}`;
+
+  // Edit button
+  const _editRow = document.getElementById('modal-edit-btn-row');
+  if (_editRow) _editRow.remove();
+  const _er = document.createElement('div');
+  _er.id = 'modal-edit-btn-row';
+  _er.style.cssText = 'padding:14px 0 0;border-top:1px solid var(--border);margin-top:14px;display:flex;gap:10px;align-items:center';
+  _er.innerHTML = '<button class="btn btn-gold" onclick="openEditModal(\'incomplete\', '+idx+')">✏ Edit Record</button><span style="font-family:var(--mono);font-size:.76rem;color:var(--muted);margin-left:6px">Saves &amp; pushes to GitHub</span>';
+  document.getElementById('modal-content').appendChild(_er);
   document.getElementById('modal-overlay').classList.add('open');
 }
 
@@ -1813,7 +1912,230 @@ function incExportCSV() {
   showToast(`Exported ${INC_FILTERED.length} records`);
 }
 
+
+// ══════════════════════════════════════════════════════════════════════════
+// GITHUB SYNC SETTINGS
+// ══════════════════════════════════════════════════════════════════════════
+function loadGHSettings() {
+  document.getElementById('gh-user').value = localStorage.getItem('gh_user') || '';
+  document.getElementById('gh-repo').value = localStorage.getItem('gh_repo') || 'lubbock-intel';
+  document.getElementById('gh-pat').value  = localStorage.getItem('gh_pat')  || '';
+}
+function saveGHSettings() {
+  localStorage.setItem('gh_user', document.getElementById('gh-user').value.trim());
+  localStorage.setItem('gh_repo', document.getElementById('gh-repo').value.trim());
+  localStorage.setItem('gh_pat',  document.getElementById('gh-pat').value.trim());
+  showToast('GitHub settings saved');
+  closeGHSettings();
+}
+function openGHSettings()  { loadGHSettings(); document.getElementById('gh-settings').classList.add('open'); }
+function closeGHSettings() { document.getElementById('gh-settings').classList.remove('open'); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeGHSettings(); });
+
+// ══════════════════════════════════════════════════════════════════════════
+// RECORD EDITING
+// ══════════════════════════════════════════════════════════════════════════
+
+// Tracks pending edits: { r_number: {field: value, ...} }
+const EDITS = JSON.parse(localStorage.getItem('pending_edits') || '{}');
+
+function saveEditsLocally() {
+  localStorage.setItem('pending_edits', JSON.stringify(EDITS));
+}
+
+function openEditModal(tab, idx) {
+  const r = (tab === 'clerk'? ALL_RECORDS :
+             tab === 'tax'  ? TAX_FILTERED :
+             tab === 'fire' ? FIRE_FILTERED :
+             tab === 'all'  ? ALL_FILTERED  :
+             INC_FILTERED)[idx];
+  if (!r) return;
+
+  const key = r.r_number || r.incident_number || `${tab}-${idx}`;
+  const pending = EDITS[key] || {};
+  const cur = (f) => pending[f] !== undefined ? pending[f] : (r[f] || '');
+
+  document.getElementById('modal-title').textContent =
+    (r.owner_name || r.situs_address || 'Edit Record') + ' · Edit Mode';
+
+  document.getElementById('modal-content').innerHTML = `
+    <div class="edit-section-title">Property Address</div>
+    <div class="edit-field"><label>Street</label><input id="ef-situs_address" value="${esc(cur('situs_address'))}"></div>
+    <div class="edit-field"><label>City</label><input id="ef-situs_city" value="${esc(cur('situs_city'))}"></div>
+    <div class="edit-field"><label>State</label><input id="ef-situs_state" value="${esc(cur('situs_state') || 'TX')}"></div>
+    <div class="edit-field"><label>ZIP</label><input id="ef-situs_zip" value="${esc(cur('situs_zip'))}"></div>
+
+    <div class="edit-section-title">Owner</div>
+    <div class="edit-field"><label>Owner Name</label><input id="ef-owner_name" value="${esc(cur('owner_name') || cur('owner') || '')}"></div>
+    <div class="edit-field"><label>R-Number</label><input id="ef-r_number" value="${esc(cur('r_number'))}"></div>
+    <div class="edit-field"><label>Assessed Value</label><input id="ef-assessed_value" type="number" value="${cur('assessed_value') || ''}"></div>
+
+    <div class="edit-section-title">Mailing Address</div>
+    <div class="edit-field"><label>Mail Street</label><input id="ef-mail_address" value="${esc(cur('mail_address'))}"></div>
+    <div class="edit-field"><label>Mail City</label><input id="ef-mail_city" value="${esc(cur('mail_city'))}"></div>
+    <div class="edit-field"><label>Mail State</label><input id="ef-mail_state" value="${esc(cur('mail_state') || 'TX')}"></div>
+    <div class="edit-field"><label>Mail ZIP</label><input id="ef-mail_zip" value="${esc(cur('mail_zip'))}"></div>
+
+    <div class="edit-section-title">Notes</div>
+    <div class="edit-field" style="grid-template-columns:1fr"><textarea id="ef-notes" placeholder="Internal notes…">${esc(cur('notes'))}</textarea></div>
+
+    <div class="edit-toolbar">
+      <button class="btn btn-gold" onclick="saveEdit('${key}', '${tab}')">💾 Save Locally</button>
+      <button class="btn btn-gold" id="gh-push-btn" onclick="saveAndPush('${key}', '${tab}')">⬆ Save + Push to GitHub</button>
+      <button class="btn btn-muted" onclick="closeModal({target:{id:'modal-overlay'}})">Cancel</button>
+      <span class="edit-status" id="edit-status"></span>
+    </div>
+  `;
+
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+const EDIT_FIELDS = ['situs_address','situs_city','situs_state','situs_zip',
+                     'owner_name','r_number','assessed_value',
+                     'mail_address','mail_city','mail_state','mail_zip','notes'];
+
+function collectEdits() {
+  const vals = {};
+  EDIT_FIELDS.forEach(f => {
+    const el = document.getElementById('ef-' + f);
+    if (el) vals[f] = el.value.trim();
+  });
+  return vals;
+}
+
+function applyEditToRecord(r, edits) {
+  Object.assign(r, edits);
+  // Also sync owner_name → owner for clerk records
+  if (edits.owner_name) r.owner = edits.owner_name;
+  // Recompute completeness
+  const REQUIRED = ['owner_name','situs_address','situs_city','situs_state','situs_zip',
+                    'mail_address','mail_city','mail_state','mail_zip'];
+  r.missing_fields = REQUIRED.filter(f => !String(r[f]||'').trim());
+  r.is_complete = r.missing_fields.length === 0;
+}
+
+function saveEdit(key, tab) {
+  const vals = collectEdits();
+  EDITS[key] = vals;
+  saveEditsLocally();
+
+  // Apply to live data
+  const datasets = [ALL_RECORDS, TAX_ALL, FIRE_ALL, ALL_UNIFIED, INC_ALL];
+  datasets.forEach(ds => {
+    ds.forEach(r => {
+      if ((r.r_number || r.incident_number || `${tab}-0`) === key) {
+        applyEditToRecord(r, vals);
+      }
+    });
+  });
+
+  document.getElementById('edit-status').className = 'edit-status ok';
+  document.getElementById('edit-status').textContent = '✓ Saved locally';
+  showToast('Saved — click "Push to GitHub" to commit');
+
+  // Refresh current tab
+  if (tab==='clerk') filterClerk();
+  else if (tab==='tax') filterTax();
+  else if (tab==='fire') fireApplyFilters();
+  else if (tab==='all') allApplyFilters();
+  else if (tab==='incomplete') incApplyFilters();
+}
+
+async function saveAndPush(key, tab) {
+  saveEdit(key, tab);
+
+  const user = localStorage.getItem('gh_user');
+  const repo = localStorage.getItem('gh_repo');
+  const pat  = localStorage.getItem('gh_pat');
+
+  if (!user || !repo || !pat) {
+    showToast('Set GitHub credentials first (⚙ Sync button)');
+    openGHSettings();
+    return;
+  }
+
+  const statusEl = document.getElementById('edit-status');
+  statusEl.className = 'edit-status';
+  statusEl.textContent = '⏳ Pushing to GitHub…';
+  document.getElementById('gh-push-btn').disabled = true;
+
+  try {
+    // Determine which JSON file to update based on the tab
+    const fileTargets = [];
+    if (tab === 'tax' || tab === 'all' || tab === 'incomplete') {
+      fileTargets.push({ path: 'dashboard/tax_delinquent.json', data: TAX_ALL });
+    }
+    if (tab === 'fire' || tab === 'all' || tab === 'incomplete') {
+      fileTargets.push({ path: 'dashboard/fire_damage.json', data: FIRE_ALL });
+    }
+    if (tab === 'all' || tab === 'incomplete') {
+      fileTargets.push({ path: 'dashboard/unified_leads.json', data: ALL_UNIFIED });
+    }
+    if (tab === 'clerk') {
+      fileTargets.push({ path: 'dashboard/records.json',
+        data: { records: ALL_RECORDS, fetched_at: new Date().toISOString() } });
+    }
+
+    for (const target of fileTargets) {
+      await pushFileToGitHub(user, repo, pat, target.path, target.data);
+    }
+
+    statusEl.className = 'edit-status ok';
+    statusEl.textContent = '✓ Pushed to GitHub!';
+    showToast('Committed to GitHub — Pages will redeploy in ~30 seconds');
+  } catch(err) {
+    statusEl.className = 'edit-status err';
+    statusEl.textContent = '✗ ' + (err.message || 'Push failed');
+    showToast('GitHub push failed — check settings');
+    console.error('GitHub push error:', err);
+  }
+
+  document.getElementById('gh-push-btn').disabled = false;
+}
+
+async function pushFileToGitHub(user, repo, pat, filePath, data) {
+  const apiBase = `https://api.github.com/repos/${user}/${repo}/contents/${filePath}`;
+  const headers = {
+    'Authorization': `token ${pat}`,
+    'Accept': 'application/vnd.github+json',
+    'Content-Type': 'application/json',
+  };
+
+  // Get current SHA (required for update)
+  const getRes = await fetch(apiBase, { headers });
+  if (!getRes.ok && getRes.status !== 404) {
+    throw new Error(`GitHub GET failed: ${getRes.status}`);
+  }
+  const getSHA = getRes.ok ? (await getRes.json()).sha : null;
+
+  // Encode content
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+  const body = {
+    message: `Dashboard edit: ${new Date().toISOString().slice(0,16).replace('T',' ')} UTC`,
+    content,
+    ...(getSHA ? { sha: getSHA } : {}),
+  };
+
+  const putRes = await fetch(apiBase, {
+    method: 'PUT', headers,
+    body: JSON.stringify(body),
+  });
+
+  if (!putRes.ok) {
+    const err = await putRes.json().catch(() => ({}));
+    throw new Error(err.message || `GitHub PUT failed: ${putRes.status}`);
+  }
+}
+
 // ── Boot ──────────────────────────────────────────────────────────────────
+// Apply any locally-saved edits on startup
+function applyPendingEdits(dataset) {
+  dataset.forEach(r => {
+    const key = r.r_number || r.incident_number;
+    if (key && EDITS[key]) applyEditToRecord(r, EDITS[key]);
+  });
+}
+
 loadData().then(() => {
   document.getElementById('tab-count-clerk').textContent = ALL_RECORDS.length.toLocaleString();
 });
@@ -1826,5 +2148,27 @@ loadUnifiedData().then(() => {
   ]).then(() => setTimeout(buildIncompleteData, 500));
 });
 </script>
+
+<!-- GitHub Settings Panel -->
+<div class="gh-settings" id="gh-settings">
+  <div class="gh-panel">
+    <h2>GitHub Sync Settings</h2>
+    <p>To save record edits directly to your repo, enter your GitHub details below.
+    Create a Personal Access Token at <strong>GitHub → Settings → Developer Settings → PAT (classic)</strong>
+    with <strong>repo</strong> scope. It stays in your browser only — never sent anywhere except GitHub.</p>
+    <label>GitHub Username</label>
+    <input type="text" id="gh-user" placeholder="your-github-username">
+    <label>Repository Name</label>
+    <input type="text" id="gh-repo" placeholder="lubbock-intel">
+    <label>Personal Access Token</label>
+    <input type="password" id="gh-pat" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="btn btn-gold" onclick="saveGHSettings()">Save Settings</button>
+      <button class="btn btn-muted" onclick="closeGHSettings()">Cancel</button>
+      <span id="gh-test-status" style="font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-left:auto;align-self:center"></span>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
