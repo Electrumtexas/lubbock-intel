@@ -1,69 +1,90 @@
-name: Lubbock Motivated Seller Scraper
+name: Lubbock Intel Scraper
 
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: '0 7 * * *'   # 2 AM CT daily
   workflow_dispatch:
     inputs:
       lookback_days:
-        description: 'How many days back to search (default 7, use 90 for historical pull)'
+        description: 'Lookback days for clerk scraper (default 7, max 90)'
         required: false
         default: '7'
-        type: string
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
 
 jobs:
   scrape:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
-      - name: Set up Python 3.11
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install requests beautifulsoup4 lxml
+          pip install requests beautifulsoup4 lxml pandas openpyxl
 
-      - name: Run scraper
+      # ── CLERK RECORDS (daily scrape) ────────────────────────
+      - name: Run clerk scraper
         env:
           LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '7' }}
-        run: python scraper/fetch.py
+        run: |
+          python scraper/fetch.py --days $LOOKBACK_DAYS
 
-      - name: Commit results
+      # ── TAX DELINQUENT (process if file present) ────────────
+      - name: Process tax delinquent data
+        run: |
+          # Check if monthly file was dropped in data/
+          if [ -f "data/DelinquentResidential_current.xlsx" ]; then
+            echo "Tax delinquent file found — processing..."
+            python scraper/tax_delinquent.py
+          else
+            echo "No DelinquentResidential_current.xlsx found in data/ — skipping."
+            echo "To update: rename your monthly file to DelinquentResidential_current.xlsx and commit to data/"
+          fi
+
+      # ── FIRE DAMAGE (process if file present) ────────────────
+      - name: Process fire damage data
+        run: |
+          if [ -f "data/StructureFires_current.xlsx" ]; then
+            echo "Fire damage file found — processing..."
+            python scraper/fire_damage.py
+          else
+            echo "No StructureFires_current.xlsx found in data/ — skipping."
+          fi
+
+      # ── COMMIT ALL OUTPUTS ──────────────────────────────────
+      - name: Commit updated data files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dashboard/records.json data/records.json data/ghl_export.csv || true
-          git diff --cached --quiet || git commit -m "chore: update records $(date -u '+%Y-%m-%d %H:%M UTC') [${LOOKBACK_DAYS}d]"
+          git add dashboard/records.json dashboard/tax_delinquent.json dashboard/fire_damage.json data/ || true
+          git diff --staged --quiet || git commit -m "Auto-update: $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
-        env:
-          LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '7' }}
 
-  deploy-pages:
+  deploy:
     needs: scrape
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: main
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload dashboard
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dashboard/

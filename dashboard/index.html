@@ -3,802 +3,814 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lubbock Motivated Seller Leads · Electrum Properties</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@300;500;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Electrum Properties — Lubbock Intel</title>
 <style>
-  /* ── RESET & TOKENS ─────────────────────────────────────────────────── */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg:       #1e2428;
-    --surface:  #252c30;
-    --card:     #2a3238;
-    --border:   #344048;
-    --border2:  #3d4e58;
+    --bg: #1a1c1e;
+    --surface: #23262b;
+    --surface2: #2c2f35;
+    --border: #333740;
+    --accent: #5b9ab5;
+    --accent2: #e07b3a;
+    --fire: #d94f3a;
+    --tax: #4caf7d;
+    --text: #e8eaed;
+    --text2: #9aa0ab;
+    --hot: #e8a63a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; }
 
-    --text:     #e8eaf0;
-    --muted:    #6b7280;
-    --dim:      #3d4454;
+  /* HEADER */
+  .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header img { height: 36px; }
+  .header h1 { font-size: 18px; font-weight: 600; letter-spacing: .3px; }
+  .header span { color: var(--text2); font-size: 12px; margin-left: auto; }
 
-    --gold:     #5b9ab5;
-    --gold-dim: #2a4a5a;
-    --red:      #e53e3e;
-    --red-dim:  #5c1919;
-    --green:    #38a169;
-    --blue:     #4299e1;
-    --orange:   #ed8936;
-    --purple:   #9f7aea;
+  /* TABS */
+  .tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--surface); padding: 0 24px; gap: 4px; }
+  .tab { padding: 12px 20px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text2); border-bottom: 2px solid transparent; transition: all .15s; white-space: nowrap; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab.fire-tab.active { color: var(--fire); border-bottom-color: var(--fire); }
+  .tab.tax-tab.active { color: var(--tax); border-bottom-color: var(--tax); }
+  .tab-badge { background: var(--surface2); color: var(--text2); border-radius: 10px; padding: 1px 7px; font-size: 11px; margin-left: 6px; }
+  .tab.active .tab-badge { background: var(--accent); color: #fff; }
+  .tab.fire-tab.active .tab-badge { background: var(--fire); }
+  .tab.tax-tab.active .tab-badge { background: var(--tax); }
 
-    --mono: 'Space Mono', monospace;
-    --cond: 'Barlow Condensed', sans-serif;
-    --body: 'Barlow', sans-serif;
-  }
+  /* PANELS */
+  .panel { display: none; padding: 24px; }
+  .panel.active { display: block; }
 
-  html { font-size: 16px; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--body);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+  /* KPI TILES */
+  .kpis { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; min-width: 120px; flex: 1; }
+  .kpi-val { font-size: 26px; font-weight: 700; line-height: 1; }
+  .kpi-lbl { color: var(--text2); font-size: 11px; margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+  .kpi.hot .kpi-val { color: var(--hot); }
+  .kpi.fire .kpi-val { color: var(--fire); }
+  .kpi.tax .kpi-val { color: var(--tax); }
+  .kpi.accent .kpi-val { color: var(--accent); }
 
-  /* ── GRID NOISE TEXTURE ──────────────────────────────────────────────── */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-  }
+  /* CONTROLS */
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; align-items: center; }
+  .controls input, .controls select { background: var(--surface); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 8px 12px; font-size: 13px; outline: none; }
+  .controls input:focus, .controls select:focus { border-color: var(--accent); }
+  .controls input { width: 220px; }
+  .btn { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 8px 16px; font-size: 13px; cursor: pointer; font-weight: 500; }
+  .btn:hover { opacity: .85; }
+  .btn.fire { background: var(--fire); }
+  .btn.tax { background: var(--tax); }
+  .count-label { color: var(--text2); font-size: 12px; margin-left: auto; }
 
-  /* ── HEADER ──────────────────────────────────────────────────────────── */
-  header {
-    position: relative; z-index: 10;
-    border-bottom: 1px solid var(--border);
-    background: linear-gradient(135deg, #1a2226 0%, #252c32 100%); border-bottom: 2px solid #5b9ab5;
-    padding: 0 2rem;
-    display: flex; align-items: center; gap: 2rem;
-    height: 64px;
-  }
-  .logo {
-    font-family: var(--cond);
-    font-weight: 900;
-    font-size: 1.6rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--gold);
-    white-space: nowrap;
-  }
-  .logo span { color: var(--muted); font-weight: 300; }
-  .header-meta {
-    margin-left: auto;
-    display: flex; gap: 2rem; align-items: center;
-  }
-  .header-meta .badge {
-    font-family: var(--mono);
-    font-size: .78rem;
-    padding: .25rem .6rem;
-    border-radius: 2px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    letter-spacing: .05em;
-  }
-  #last-updated { color: var(--gold); }
-
-  /* ── LAYOUT ──────────────────────────────────────────────────────────── */
-  .page { position: relative; z-index: 1; max-width: 1600px; margin: 0 auto; padding: 1.5rem 2rem; }
-
-  /* ── KPI ROW ──────────────────────────────────────────────────────────  */
-  .kpi-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: .75rem;
-    margin-bottom: 1.5rem;
-  }
-  .kpi {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 1rem 1.25rem;
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-  }
-  .kpi::after {
-    content: '';
-    position: absolute; left: 0; top: 0; bottom: 0;
-    width: 3px;
-  }
-  .kpi.kpi-gold::after  { background: var(--gold); }
-  .kpi.kpi-red::after   { background: var(--red); }
-  .kpi.kpi-green::after { background: var(--green); }
-  .kpi.kpi-blue::after  { background: var(--blue); }
-  .kpi.kpi-orange::after{ background: var(--orange); }
-  .kpi.kpi-purple::after{ background: var(--purple); }
-
-  .kpi-label {
-    font-family: var(--mono);
-    font-size: .88rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: .4rem;
-  }
-  .kpi-val {
-    font-family: var(--cond);
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 1;
-    color: var(--text);
-  }
-  .kpi-sub {
-    font-size: .82rem;
-    color: var(--dim);
-    margin-top: .3rem;
-    font-family: var(--mono);
-  }
-
-  /* ── CONTROL BAR ─────────────────────────────────────────────────────── */
-  .controls {
-    display: flex; gap: .75rem; flex-wrap: wrap; align-items: center;
-    margin-bottom: 1rem;
-  }
-  .controls input, .controls select {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: .5rem .75rem;
-    border-radius: 3px;
-    font-family: var(--body);
-    font-size: .97rem;
-    outline: none;
-    transition: border-color .15s;
-  }
-  .controls input:focus, .controls select:focus { border-color: var(--gold); }
-  .controls input[type=search] { width: 260px; }
-  .controls select { min-width: 160px; cursor: pointer; }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: .4rem;
-    padding: .5rem 1rem;
-    font-family: var(--mono);
-    font-size: .82rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    border-radius: 3px;
-    border: 1px solid;
-    cursor: pointer;
-    transition: all .15s;
-    white-space: nowrap;
-    text-decoration: none;
-  }
-  .btn-gold  { background: transparent; border-color: var(--gold); color: var(--gold); }
-  .btn-gold:hover { background: var(--gold); color: #fff; }
-  .btn-muted { background: transparent; border-color: var(--border); color: var(--muted); }
-  .btn-muted:hover { border-color: var(--text); color: var(--text); }
-
-  .results-count {
-    margin-left: auto;
-    font-family: var(--mono);
-    font-size: .82rem;
-    color: var(--muted);
-  }
-  .results-count span { color: var(--gold); font-weight: 700; }
-
-  /* ── TABLE ───────────────────────────────────────────────────────────── */
-  .table-wrap {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: auto;
-  }
+  /* TABLE */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
   table { width: 100%; border-collapse: collapse; }
-  thead th {
-    font-family: var(--mono);
-    font-size: .88rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: left;
-    padding: .75rem 1rem;
-    border-bottom: 1px solid var(--border);
-    white-space: nowrap;
-    user-select: none;
-    cursor: pointer;
-    background: var(--surface);
-    position: sticky; top: 0; z-index: 2;
-    transition: color .15s;
-  }
-  thead th:hover { color: var(--gold); }
-  thead th.sort-asc::after  { content: ' ▲'; color: var(--gold); }
-  thead th.sort-desc::after { content: ' ▼'; color: var(--gold); }
+  thead th { background: var(--surface2); padding: 10px 14px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--text2); cursor: pointer; white-space: nowrap; user-select: none; position: sticky; top: 0; }
+  thead th:hover { color: var(--text); }
+  tbody tr { border-top: 1px solid var(--border); cursor: pointer; transition: background .1s; }
+  tbody tr:hover { background: var(--surface2); }
+  td { padding: 10px 14px; font-size: 13px; white-space: nowrap; }
 
-  tbody tr {
-    border-bottom: 1px solid var(--border);
-    transition: background .1s;
-  }
-  tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: rgba(255,255,255,.025); }
-  td {
-    padding: .65rem 1rem;
-    font-size: .95rem;
-    vertical-align: middle;
-  }
+  /* SCORE BAR */
+  .score-cell { display: flex; align-items: center; gap: 8px; }
+  .score-bar-bg { width: 50px; height: 5px; background: var(--surface2); border-radius: 3px; flex-shrink: 0; }
+  .score-bar-fill { height: 5px; border-radius: 3px; }
+  .score-num { font-weight: 600; font-size: 13px; min-width: 28px; }
 
-  /* Score chip */
-  .score-chip {
-    display: inline-block;
-    font-family: var(--mono);
-    font-weight: 700;
-    font-size: .88rem;
-    padding: .2rem .5rem;
-    border-radius: 2px;
-    min-width: 38px;
-    text-align: center;
-  }
-  .score-hi  { background: rgba(229,62,62,.18); color: var(--red); border: 1px solid var(--red-dim); }
-  .score-med { background: rgba(91,154,181,.15); color: var(--gold); border: 1px solid var(--gold-dim); }
-  .score-lo  { background: rgba(107,114,128,.12); color: var(--muted); border: 1px solid var(--dim); }
+  /* FLAGS */
+  .flags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .flag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; letter-spacing: .3px; white-space: nowrap; }
+  .flag-lp       { background: #2d3a4a; color: #5b9ab5; }
+  .flag-prefc    { background: #3a2828; color: #e05252; }
+  .flag-jud      { background: #3a3020; color: #e0a030; }
+  .flag-tax      { background: #1e3328; color: #4caf7d; }
+  .flag-mech     { background: #2a2040; color: #9b7de0; }
+  .flag-probate  { background: #3a2040; color: #d06ec0; }
+  .flag-llc      { background: #253040; color: #60aacc; }
+  .flag-new      { background: #1e3010; color: #70c040; }
+  .flag-fire     { background: #3a1e1e; color: #d94f3a; }
+  .flag-nonres   { background: #302820; color: #cc8844; }
+  .flag-absentee { background: #302830; color: #bb77cc; }
+  .flag-highbal  { background: #3a2010; color: #e07b3a; }
+  .flag-naddr    { background: #2a2a2a; color: #888; }
+  .flag-default  { background: var(--surface2); color: var(--text2); }
 
-  /* Type badge */
-  .type-badge {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: .74rem;
-    letter-spacing: .05em;
-    padding: .18rem .45rem;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-  .cat-foreclosure { background: rgba(229,62,62,.15); color: #fc8181; border: 1px solid rgba(229,62,62,.3); }
-  .cat-judgment    { background: rgba(159,122,234,.15); color: #b794f4; border: 1px solid rgba(159,122,234,.3); }
-  .cat-lien        { background: rgba(237,137,54,.15); color: #fbd38d; border: 1px solid rgba(237,137,54,.3); }
-  .cat-tax         { background: rgba(245,101,101,.18); color: #fc8181; border: 1px solid rgba(245,101,101,.3); }
-  .cat-probate     { background: rgba(66,153,225,.15); color: #90cdf4; border: 1px solid rgba(66,153,225,.3); }
-  .cat-other       { background: rgba(107,114,128,.12); color: var(--muted); border: 1px solid var(--dim); }
-  .cat-release     { background: rgba(56,161,105,.1); color: #68d391; border: 1px solid rgba(56,161,105,.3); }
-
-  /* Flag pills */
-  .flags { display: flex; flex-wrap: wrap; gap: .3rem; }
-  .flag-pill {
-    font-size: .84rem;
-    font-family: var(--mono);
-    padding: .15rem .4rem;
-    border-radius: 2px;
-    background: rgba(240,180,41,.08);
-    border: 1px solid rgba(240,180,41,.2);
-    color: #d4a017;
-    white-space: nowrap;
-  }
-  .flag-pill.flag-lp       { background: rgba(229,62,62,.1); border-color: rgba(229,62,62,.3); color: #fc8181; }
-  .flag-pill.flag-probate  { background: rgba(66,153,225,.1); border-color: rgba(66,153,225,.3); color: #90cdf4; }
-  .flag-pill.flag-new      { background: rgba(56,161,105,.1); border-color: rgba(56,161,105,.3); color: #68d391; }
-
-  /* Owner / address */
-  .owner-name { font-weight: 500; color: var(--text); }
-  .addr-line  { font-size: .97rem; color: var(--muted); margin-top: .15rem; }
-  .no-addr    { color: var(--dim); font-style: italic; font-size: .88rem; }
-
-  .amount-cell { font-family: var(--mono); font-size: .92rem; }
-  .amount-hi   { color: var(--red); }
-  .amount-med  { color: var(--orange); }
-
-  .doc-link {
-    color: var(--gold);
-    text-decoration: none;
-    font-family: var(--mono);
-    font-size: .78rem;
-    letter-spacing: .05em;
-    transition: opacity .15s;
-  }
-  .doc-link:hover { opacity: .7; text-decoration: underline; }
-
-  .mono-sm { font-family: var(--mono); font-size: .82rem; color: var(--muted); }
-
-  /* ── EMPTY STATE ──────────────────────────────────────────────────────── */
-  .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-  }
-  .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; opacity: .3; }
-  .empty-state p { color: var(--muted); font-size: .9rem; }
-
-  /* ── MODAL ────────────────────────────────────────────────────────────── */
-  .modal-overlay {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,.75);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 1000; align-items: center; justify-content: center; }
   .modal-overlay.open { display: flex; }
-  .modal {
-    background: var(--card);
-    border: 1px solid var(--border2);
-    border-radius: 6px;
-    width: 100%; max-width: 640px;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 1.5rem;
-    position: relative;
-  }
-  .modal-close {
-    position: absolute; top: 1rem; right: 1rem;
-    background: none; border: none; color: var(--muted);
-    font-size: 1.2rem; cursor: pointer; line-height: 1;
-  }
-  .modal-close:hover { color: var(--text); }
-  .modal-title {
-    font-family: var(--cond);
-    font-weight: 700; font-size: 1.4rem;
-    margin-bottom: 1.25rem;
-    color: var(--gold);
-    padding-right: 2rem;
-  }
-  .modal-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: .75rem;
-  }
-  .modal-field { }
-  .modal-field.full { grid-column: 1 / -1; }
-  .mf-label { font-family: var(--mono); font-size: .84rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
-  .mf-val { font-size: .97rem; color: var(--text); word-break: break-word; }
-  .mf-val.mono { font-family: var(--mono); }
-  hr.modal-hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; grid-column: 1/-1; }
+  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; width: 620px; max-width: 95vw; max-height: 90vh; overflow-y: auto; }
+  .modal-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; }
+  .modal-header h2 { font-size: 16px; }
+  .modal-close { background: none; border: none; color: var(--text2); font-size: 20px; cursor: pointer; padding: 0 4px; }
+  .modal-body { padding: 20px 24px; }
+  .modal-section { margin-bottom: 20px; }
+  .modal-section h3 { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--text2); margin-bottom: 10px; }
+  .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .modal-field label { font-size: 11px; color: var(--text2); display: block; margin-bottom: 2px; }
+  .modal-field span { font-size: 13px; }
+  .score-bar-modal { height: 8px; border-radius: 4px; margin: 8px 0 4px; }
+  .modal-flags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 
-  /* ── SCORE BAR ──────────────────────────────────────────────────────── */
-  .score-bar-wrap { margin-top: .5rem; }
-  .score-bar-track {
-    height: 6px; background: var(--border);
-    border-radius: 3px; overflow: hidden;
-  }
-  .score-bar-fill {
-    height: 100%; border-radius: 3px;
-    transition: width .4s ease;
-  }
+  /* LOADING */
+  .loading { text-align: center; padding: 60px; color: var(--text2); }
+  .spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto 16px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── TOAST ───────────────────────────────────────────────────────────── */
-  .toast {
-    position: fixed; bottom: 1.5rem; right: 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-family: var(--mono);
-    font-size: .82rem;
-    letter-spacing: .05em;
-    padding: .6rem 1.2rem;
-    border-radius: 3px;
-    z-index: 200;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all .3s;
-  }
-  .toast.show { transform: translateY(0); opacity: 1; }
+  /* EMPTY */
+  .empty { text-align: center; padding: 60px; color: var(--text2); }
 
-  /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
-  @media (max-width: 900px) {
-    .page { padding: 1rem; }
-    .controls input[type=search] { width: 100%; }
-    thead th:nth-child(n+6) { display: none; }
-    td:nth-child(n+6) { display: none; }
-  }
+  /* PAGINATION */
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; }
+  .page-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text2); border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; }
+  .page-btn:hover, .page-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .page-info { color: var(--text2); font-size: 12px; }
 </style>
 </head>
 <body>
 
-<header>
-  <img src="Logo_Test_1dark.png" alt="Electrum Properties" style="height:52px;width:52px;object-fit:contain;border-radius:50%;">
-  <div style="font-family:var(--cond);font-size:1rem;color:#8ab8cc;letter-spacing:.08em;text-transform:uppercase;font-weight:500;">
-    Lubbock County · Motivated Seller Intelligence
-  </div>
-  <div class="header-meta">
-    <div class="badge" id="date-range">Loading…</div>
-    <div class="badge" id="last-updated">—</div>
-  </div>
-</header>
-
-<div class="page">
-
-  <!-- KPI row -->
-  <div class="kpi-row" id="kpi-row">
-    <div class="kpi kpi-gold">
-      <div class="kpi-label">Total Leads</div>
-      <div class="kpi-val" id="kpi-total">—</div>
-      <div class="kpi-sub">this period</div>
-    </div>
-    <div class="kpi kpi-red">
-      <div class="kpi-label">Pre-Foreclosure</div>
-      <div class="kpi-val" id="kpi-fc">—</div>
-      <div class="kpi-sub">LP + NOFC</div>
-    </div>
-    <div class="kpi kpi-purple">
-      <div class="kpi-label">Judgments</div>
-      <div class="kpi-val" id="kpi-jud">—</div>
-      <div class="kpi-sub">JUD / CCJ / DRJUD</div>
-    </div>
-    <div class="kpi kpi-orange">
-      <div class="kpi-label">Liens</div>
-      <div class="kpi-val" id="kpi-lien">—</div>
-      <div class="kpi-sub">IRS / HOA / Mech</div>
-    </div>
-    <div class="kpi kpi-blue">
-      <div class="kpi-label">Probate</div>
-      <div class="kpi-val" id="kpi-pro">—</div>
-      <div class="kpi-sub">PRO docs</div>
-    </div>
-    <div class="kpi kpi-green">
-      <div class="kpi-label">With Address</div>
-      <div class="kpi-val" id="kpi-addr">—</div>
-      <div class="kpi-sub">parcel matched</div>
-    </div>
-    <div class="kpi kpi-gold">
-      <div class="kpi-label">Hot Leads ≥70</div>
-      <div class="kpi-val" id="kpi-hot">—</div>
-      <div class="kpi-sub">score threshold</div>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <div class="controls">
-    <input type="search" id="search-box" placeholder="Search owner, address, doc #…" oninput="applyFilters()">
-    <select id="filter-cat" onchange="applyFilters()">
-      <option value="">All Types</option>
-      <option value="foreclosure">Pre-Foreclosure</option>
-      <option value="judgment">Judgment</option>
-      <option value="lien">Lien</option>
-      <option value="tax">Tax</option>
-      <option value="probate">Probate</option>
-      <option value="other">Other</option>
-      <option value="release">Release</option>
-    </select>
-    <select id="filter-score" onchange="applyFilters()">
-      <option value="0">All Scores</option>
-      <option value="70">Hot (≥70)</option>
-      <option value="50">Warm (≥50)</option>
-      <option value="30">Any (≥30)</option>
-    </select>
-    <select id="filter-addr" onchange="applyFilters()">
-      <option value="">Address: All</option>
-      <option value="yes">Has Address</option>
-      <option value="no">No Address</option>
-    </select>
-    <button class="btn btn-gold" onclick="exportCSV()">⬇ GHL CSV</button>
-    <button class="btn btn-muted" onclick="clearFilters()">✕ Clear</button>
-    <div class="results-count"><span id="result-count">0</span> records</div>
-  </div>
-
-  <!-- Table -->
-  <div class="table-wrap">
-    <table id="leads-table">
-      <thead>
-        <tr>
-          <th onclick="sortTable('score')" id="th-score">Score</th>
-          <th onclick="sortTable('cat_label')" id="th-cat">Type</th>
-          <th onclick="sortTable('owner')" id="th-owner">Owner / Property</th>
-          <th onclick="sortTable('filed')" id="th-filed">Filed</th>
-          <th onclick="sortTable('amount')" id="th-amount">Amount</th>
-          <th>Flags</th>
-          <th onclick="sortTable('doc_num')" id="th-doc">Doc #</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody id="table-body">
-        <tr>
-          <td colspan="8">
-            <div class="empty-state">
-              <div class="icon">⚙</div>
-              <p>Loading records…</p>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
+<div class="header">
+  <img src="Logo_Test_1dark.png" alt="Electrum Properties" onerror="this.style.display='none'">
+  <h1>Lubbock Intel</h1>
+  <span id="last-updated"></span>
 </div>
 
-<!-- Detail Modal -->
+<div class="tabs">
+  <div class="tab active" data-tab="clerk" onclick="switchTab('clerk')">
+    Clerk Records <span class="tab-badge" id="badge-clerk">—</span>
+  </div>
+  <div class="tab tax-tab" data-tab="tax" onclick="switchTab('tax')">
+    Tax Delinquent <span class="tab-badge" id="badge-tax">—</span>
+  </div>
+  <div class="tab fire-tab" data-tab="fire" onclick="switchTab('fire')">
+    Fire Damage <span class="tab-badge" id="badge-fire">—</span>
+  </div>
+</div>
+
+<!-- ===== CLERK RECORDS TAB ===== -->
+<div id="panel-clerk" class="panel active">
+  <div id="clerk-loading" class="loading"><div class="spinner"></div>Loading records…</div>
+  <div id="clerk-content" style="display:none">
+    <div class="kpis" id="clerk-kpis"></div>
+    <div class="controls">
+      <input id="clerk-search" type="text" placeholder="Search name, address, doc type…" oninput="filterClerk()">
+      <select id="clerk-type" onchange="filterClerk()"><option value="">All Types</option></select>
+      <select id="clerk-score" onchange="filterClerk()">
+        <option value="">All Scores</option>
+        <option value="70">Hot ≥ 70</option>
+        <option value="50">Medium ≥ 50</option>
+      </select>
+      <select id="clerk-addr" onchange="filterClerk()">
+        <option value="">All Records</option>
+        <option value="1">With Address Only</option>
+      </select>
+      <button class="btn" onclick="exportCSV('clerk')">Export GHL CSV</button>
+      <span class="count-label" id="clerk-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortTable('clerk','score')">Score ↕</th>
+            <th onclick="sortTable('clerk','doc_type')">Type ↕</th>
+            <th onclick="sortTable('clerk','grantor')">Grantor ↕</th>
+            <th onclick="sortTable('clerk','address')">Address</th>
+            <th onclick="sortTable('clerk','amount')">Amount ↕</th>
+            <th onclick="sortTable('clerk','doc_date')">Date ↕</th>
+            <th>Flags</th>
+          </tr>
+        </thead>
+        <tbody id="clerk-tbody"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="clerk-pagination"></div>
+  </div>
+</div>
+
+<!-- ===== TAX DELINQUENT TAB ===== -->
+<div id="panel-tax" class="panel">
+  <div id="tax-loading" class="loading"><div class="spinner"></div>Loading tax delinquent data…</div>
+  <div id="tax-content" style="display:none">
+    <div class="kpis" id="tax-kpis"></div>
+    <div class="controls">
+      <input id="tax-search" type="text" placeholder="Search name, address, R-number…" oninput="filterTax()">
+      <select id="tax-score" onchange="filterTax()">
+        <option value="">All Scores</option>
+        <option value="90">Critical ≥ 90</option>
+        <option value="75">High ≥ 75</option>
+        <option value="60">Medium ≥ 60</option>
+      </select>
+      <select id="tax-flag" onchange="filterTax()">
+        <option value="">All Flags</option>
+        <option value="High Balance">High Balance</option>
+        <option value="Absentee Owner">Absentee Owner</option>
+        <option value="Above Median">Above Median</option>
+      </select>
+      <select id="tax-addr" onchange="filterTax()">
+        <option value="">All Records</option>
+        <option value="1">With Address Only</option>
+      </select>
+      <button class="btn tax" onclick="exportCSV('tax')">Export GHL CSV</button>
+      <span class="count-label" id="tax-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortTable('tax','score')">Score ↕</th>
+            <th onclick="sortTable('tax','owner_name')">Owner ↕</th>
+            <th onclick="sortTable('tax','situs_address')">Property Address</th>
+            <th onclick="sortTable('tax','balance_owed')">Balance Owed ↕</th>
+            <th onclick="sortTable('tax','property_type_desc')">Type ↕</th>
+            <th onclick="sortTable('tax','r_number')">R-Number ↕</th>
+            <th>Flags</th>
+          </tr>
+        </thead>
+        <tbody id="tax-tbody"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="tax-pagination"></div>
+    <div style="padding:12px 0 0; color:var(--text2); font-size:11px;" id="tax-data-date"></div>
+  </div>
+</div>
+
+<!-- ===== FIRE DAMAGE TAB ===== -->
+<div id="panel-fire" class="panel">
+  <div id="fire-loading" class="loading"><div class="spinner"></div>Loading fire damage data…</div>
+  <div id="fire-content" style="display:none">
+    <div class="kpis" id="fire-kpis"></div>
+    <div class="controls">
+      <input id="fire-search" type="text" placeholder="Search address, incident #, property use…" oninput="filterFire()">
+      <select id="fire-res" onchange="filterFire()">
+        <option value="">All Property Types</option>
+        <option value="1">Residential Only</option>
+        <option value="0">Non-Residential Only</option>
+      </select>
+      <select id="fire-score" onchange="filterFire()">
+        <option value="">All Scores</option>
+        <option value="70">Residential (≥70)</option>
+      </select>
+      <button class="btn fire" onclick="exportCSV('fire')">Export GHL CSV</button>
+      <span class="count-label" id="fire-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortTable('fire','score')">Score ↕</th>
+            <th onclick="sortTable('fire','incident_date')">Date ↕</th>
+            <th onclick="sortTable('fire','situs_address')">Address</th>
+            <th onclick="sortTable('fire','owner_name')">Owner</th>
+            <th onclick="sortTable('fire','property_use')">Property Use ↕</th>
+            <th onclick="sortTable('fire','incident_type')">Incident Type ↕</th>
+            <th onclick="sortTable('fire','assessed_value')">Assessed ↕</th>
+            <th>Flags</th>
+          </tr>
+        </thead>
+        <tbody id="fire-tbody"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="fire-pagination"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal" id="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-title" id="modal-title">Record Detail</div>
-    <div class="modal-grid" id="modal-content"></div>
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">Lead Detail</h2>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
   </div>
 </div>
-
-<!-- Toast -->
-<div class="toast" id="toast"></div>
 
 <script>
-// ── State ─────────────────────────────────────────────────────────────────
-let ALL_RECORDS = [];
-let FILTERED    = [];
-let SORT_KEY    = 'score';
-let SORT_DIR    = -1;   // -1 desc, 1 asc
+// ============================================================
+// STATE
+// ============================================================
+const state = {
+  clerk: { data: [], filtered: [], sort: {col:'score', dir:-1}, page: 1, pageSize: 50 },
+  tax:   { data: [], filtered: [], sort: {col:'score', dir:-1}, page: 1, pageSize: 50 },
+  fire:  { data: [], filtered: [], sort: {col:'score', dir:-1}, page: 1, pageSize: 50 }
+};
 
-// ── Load data ─────────────────────────────────────────────────────────────
-async function loadData() {
+// ============================================================
+// LOAD DATA
+// ============================================================
+async function loadAll() {
+  await Promise.all([loadClerk(), loadTax(), loadFire()]);
+}
+
+async function loadClerk() {
   try {
-    const r = await fetch('records.json?_=' + Date.now());
+    const r = await fetch('records.json');
     const data = await r.json();
-    ALL_RECORDS = data.records || [];
-
-    // Header meta
-    document.getElementById('last-updated').textContent =
-      data.fetched_at ? 'Updated ' + fmtTs(data.fetched_at) : 'Never run';
-    document.getElementById('date-range').textContent =
-      data.date_range?.start
-        ? data.date_range.start + ' → ' + data.date_range.end
-        : 'No date range';
-
-    updateKPIs(data);
-    applyFilters();
+    state.clerk.data = Array.isArray(data) ? data : (data.records || []);
+    document.getElementById('badge-clerk').textContent = state.clerk.data.length;
+    document.getElementById('clerk-loading').style.display = 'none';
+    document.getElementById('clerk-content').style.display = 'block';
+    populateClerkTypeFilter();
+    filterClerk();
+    renderClerkKPIs();
   } catch(e) {
-    document.getElementById('table-body').innerHTML =
-      `<tr><td colspan="8"><div class="empty-state"><div class="icon">⚠</div>
-       <p>Could not load records.json — run the scraper first.</p></div></td></tr>`;
+    document.getElementById('clerk-loading').innerHTML = '<div class="empty">No clerk records found. Run the scraper to generate records.json.</div>';
   }
 }
 
-function fmtTs(iso) {
+async function loadTax() {
   try {
-    const d = new Date(iso);
-    return d.toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
-  } catch { return iso; }
+    const r = await fetch('tax_delinquent.json');
+    const data = await r.json();
+    state.tax.data = Array.isArray(data) ? data : (data.leads || []);
+    document.getElementById('badge-tax').textContent = state.tax.data.length.toLocaleString();
+    document.getElementById('tax-loading').style.display = 'none';
+    document.getElementById('tax-content').style.display = 'block';
+    const dd = state.tax.data[0]?.data_date || '';
+    if (dd) document.getElementById('tax-data-date').textContent = `Data as of: ${dd} — Updated monthly`;
+    filterTax();
+    renderTaxKPIs();
+  } catch(e) {
+    document.getElementById('tax-loading').innerHTML = '<div class="empty">No tax delinquent data found. Add tax_delinquent.json to dashboard/.</div>';
+  }
 }
 
-// ── KPIs ──────────────────────────────────────────────────────────────────
-function updateKPIs(data) {
-  const recs = ALL_RECORDS;
-  document.getElementById('kpi-total').textContent = recs.length;
-  document.getElementById('kpi-fc').textContent   = recs.filter(r => r.cat === 'foreclosure').length;
-  document.getElementById('kpi-jud').textContent  = recs.filter(r => r.cat === 'judgment').length;
-  document.getElementById('kpi-lien').textContent = recs.filter(r => r.cat === 'lien').length;
-  document.getElementById('kpi-pro').textContent  = recs.filter(r => r.cat === 'probate').length;
-  document.getElementById('kpi-addr').textContent = recs.filter(r => r.prop_address).length;
-  document.getElementById('kpi-hot').textContent  = recs.filter(r => (r.score||0) >= 70).length;
+async function loadFire() {
+  try {
+    const r = await fetch('fire_damage.json');
+    const data = await r.json();
+    state.fire.data = Array.isArray(data) ? data : (data.leads || []);
+    document.getElementById('badge-fire').textContent = state.fire.data.length;
+    document.getElementById('fire-loading').style.display = 'none';
+    document.getElementById('fire-content').style.display = 'block';
+    filterFire();
+    renderFireKPIs();
+  } catch(e) {
+    document.getElementById('fire-loading').innerHTML = '<div class="empty">No fire damage data found. Add fire_damage.json to dashboard/.</div>';
+  }
 }
 
-// ── Filters ───────────────────────────────────────────────────────────────
-function applyFilters() {
-  const q     = document.getElementById('search-box').value.trim().toLowerCase();
-  const cat   = document.getElementById('filter-cat').value;
-  const minS  = parseInt(document.getElementById('filter-score').value) || 0;
-  const addr  = document.getElementById('filter-addr').value;
+// ============================================================
+// TABS
+// ============================================================
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`[data-tab="${name}"]`).classList.add('active');
+  document.getElementById(`panel-${name}`).classList.add('active');
+}
 
-  FILTERED = ALL_RECORDS.filter(r => {
-    if (cat  && r.cat !== cat) return false;
-    if (minS && (r.score||0) < minS) return false;
-    if (addr === 'yes' && !r.prop_address) return false;
-    if (addr === 'no'  && r.prop_address)  return false;
+// ============================================================
+// SCORE HELPERS
+// ============================================================
+function scoreColor(s) {
+  if (s >= 80) return '#e05252';
+  if (s >= 60) return '#e0a030';
+  if (s >= 40) return '#5b9ab5';
+  return '#666';
+}
+function scoreCell(s) {
+  return `<div class="score-cell">
+    <div class="score-bar-bg"><div class="score-bar-fill" style="width:${s}%;background:${scoreColor(s)}"></div></div>
+    <span class="score-num" style="color:${scoreColor(s)}">${s}</span>
+  </div>`;
+}
+
+// ============================================================
+// FLAG RENDERING
+// ============================================================
+const FLAG_CLASS = {
+  'Lis Pendens': 'flag-lp', 'Pre-Foreclosure': 'flag-prefc', 'Judgment Lien': 'flag-jud',
+  'Tax Lien': 'flag-tax', 'Mechanic Lien': 'flag-mech', 'Probate/Estate': 'flag-probate',
+  'LLC/Corp Owner': 'flag-llc', 'New This Week': 'flag-new',
+  'Fire Damage': 'flag-fire', 'Non-Residential': 'flag-nonres',
+  'Tax Delinquent': 'flag-tax', 'Absentee Owner': 'flag-absentee',
+  'High Balance': 'flag-highbal', 'Above Median': 'flag-jud',
+  'No Address': 'flag-naddr'
+};
+function renderFlags(flags) {
+  if (!flags || !flags.length) return '—';
+  return `<div class="flags">${flags.map(f =>
+    `<span class="flag ${FLAG_CLASS[f]||'flag-default'}">${f}</span>`).join('')}</div>`;
+}
+
+// ============================================================
+// CLERK RECORDS
+// ============================================================
+function populateClerkTypeFilter() {
+  const types = [...new Set(state.clerk.data.map(r => r.doc_type).filter(Boolean))].sort();
+  const sel = document.getElementById('clerk-type');
+  types.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; sel.appendChild(o); });
+}
+
+function filterClerk() {
+  const q = document.getElementById('clerk-search').value.toLowerCase();
+  const type = document.getElementById('clerk-type').value;
+  const minScore = parseInt(document.getElementById('clerk-score').value) || 0;
+  const addrOnly = document.getElementById('clerk-addr').value === '1';
+  state.clerk.filtered = state.clerk.data.filter(r => {
+    if (type && r.doc_type !== type) return false;
+    if (minScore && (r.score || 0) < minScore) return false;
+    if (addrOnly && !r.address) return false;
     if (q) {
-      const hay = [r.owner,r.grantee,r.prop_address,r.mail_address,r.doc_num,r.legal]
-        .join(' ').toLowerCase();
-      if (!hay.includes(q)) return false;
+      const blob = [r.grantor, r.grantee, r.address, r.doc_type, r.doc_number].join(' ').toLowerCase();
+      if (!blob.includes(q)) return false;
     }
     return true;
   });
-
-  sortData();
+  sortAndRenderClerk();
 }
 
-function clearFilters() {
-  document.getElementById('search-box').value = '';
-  document.getElementById('filter-cat').value = '';
-  document.getElementById('filter-score').value = '0';
-  document.getElementById('filter-addr').value = '';
-  applyFilters();
-}
-
-// ── Sort ──────────────────────────────────────────────────────────────────
-function sortTable(key) {
-  if (SORT_KEY === key) SORT_DIR *= -1;
-  else { SORT_KEY = key; SORT_DIR = (key === 'score' || key === 'amount') ? -1 : 1; }
-  // Update header classes
-  document.querySelectorAll('thead th').forEach(th => th.classList.remove('sort-asc','sort-desc'));
-  const thId = 'th-' + key.replace('cat_label','cat');
-  const th = document.getElementById(thId);
-  if (th) th.classList.add(SORT_DIR === 1 ? 'sort-asc' : 'sort-desc');
-  sortData();
-}
-
-function sortData() {
-  FILTERED.sort((a,b) => {
-    let av = a[SORT_KEY] ?? '';
-    let bv = b[SORT_KEY] ?? '';
-    if (typeof av === 'number' && typeof bv === 'number') return (av - bv) * SORT_DIR;
-    return String(av).localeCompare(String(bv)) * SORT_DIR;
+function sortAndRenderClerk() {
+  const {col, dir} = state.clerk.sort;
+  state.clerk.filtered.sort((a,b) => {
+    const av = a[col] ?? ''; const bv = b[col] ?? '';
+    return typeof av === 'number' ? (av - bv) * dir : String(av).localeCompare(String(bv)) * dir;
   });
-  renderTable();
+  state.clerk.page = 1;
+  renderClerkTable();
 }
 
-// ── Render ────────────────────────────────────────────────────────────────
-function renderTable() {
-  document.getElementById('result-count').textContent = FILTERED.length.toLocaleString();
-  const body = document.getElementById('table-body');
-
-  if (!FILTERED.length) {
-    body.innerHTML = `<tr><td colspan="8">
-      <div class="empty-state"><div class="icon">🔍</div>
-      <p>No records match the current filters.</p></div></td></tr>`;
-    return;
-  }
-
-  body.innerHTML = FILTERED.map((r, i) => {
-    const score  = r.score || 0;
-    const sc     = score >= 70 ? 'score-hi' : score >= 45 ? 'score-med' : 'score-lo';
-    const flags  = (r.flags || []).map(f => {
-      let cls = 'flag-pill';
-      if (f.includes('pendens') || f.includes('Foreclosure')) cls += ' flag-lp';
-      if (f.includes('Probate')) cls += ' flag-probate';
-      if (f.includes('week'))    cls += ' flag-new';
-      return `<span class="${cls}">${f}</span>`;
-    }).join('');
-    const amt = r.amount ? fmtAmt(r.amount) : '<span class="mono-sm">—</span>';
-    const amtCls = r.amount > 100000 ? 'amount-hi' : r.amount > 50000 ? 'amount-med' : '';
-    const addrBlock = r.prop_address
-      ? `<div class="owner-name">${esc(r.owner||'Unknown')}</div>
-         <div class="addr-line">${esc(r.prop_address)}${r.prop_city ? ', '+esc(r.prop_city) : ''} ${esc(r.prop_zip||'')}</div>`
-      : `<div class="owner-name">${esc(r.owner||'Unknown')}</div>
-         <div class="no-addr">no parcel match</div>`;
-    const link = r.clerk_url
-      ? `<a class="doc-link" href="${esc(r.clerk_url)}" target="_blank" rel="noopener">VIEW →</a>`
-      : '<span class="mono-sm">—</span>';
-
-    return `<tr onclick="openModal(${i})" style="cursor:pointer">
-      <td><span class="score-chip ${sc}">${score}</span></td>
-      <td><span class="type-badge cat-${r.cat||'other'}">${esc(r.cat_label||r.doc_type||'')}</span></td>
-      <td>${addrBlock}</td>
-      <td class="mono-sm">${r.filed||'—'}</td>
-      <td class="amount-cell ${amtCls}">${amt}</td>
-      <td><div class="flags">${flags||'<span class="mono-sm">—</span>'}</div></td>
-      <td class="mono-sm">${esc(r.doc_num||'—')}</td>
-      <td onclick="event.stopPropagation()">${link}</td>
-    </tr>`;
-  }).join('');
+function renderClerkTable() {
+  const {filtered, page, pageSize} = state.clerk;
+  document.getElementById('clerk-count').textContent = `${filtered.length.toLocaleString()} records`;
+  const start = (page-1)*pageSize, rows = filtered.slice(start, start+pageSize);
+  const tbody = document.getElementById('clerk-tbody');
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="7" class="empty">No records match filters.</td></tr>'; renderPagination('clerk'); return; }
+  tbody.innerHTML = rows.map((r,i) => `
+    <tr onclick="openClerkModal(${start+i})">
+      <td>${scoreCell(r.score||0)}</td>
+      <td>${r.doc_type||'—'}</td>
+      <td>${r.grantor||'—'}</td>
+      <td>${r.address||'<span style="color:var(--text2)">No address</span>'}</td>
+      <td>${r.amount > 0 ? '$'+r.amount.toLocaleString() : '—'}</td>
+      <td>${r.doc_date||'—'}</td>
+      <td>${renderFlags(r.flags)}</td>
+    </tr>`).join('');
+  renderPagination('clerk');
 }
 
-function fmtAmt(n) {
-  return '$' + Number(n).toLocaleString('en-US', {maximumFractionDigits:0});
+function renderClerkKPIs() {
+  const d = state.clerk.data;
+  const kpis = [
+    { val: d.length, lbl: 'Total Leads' },
+    { val: d.filter(r => r.flags?.includes('Pre-Foreclosure')).length, lbl: 'Pre-Foreclosure', cls: 'accent' },
+    { val: d.filter(r => r.flags?.includes('Judgment Lien')).length, lbl: 'Judgments' },
+    { val: d.filter(r => r.flags?.includes('Tax Lien') || r.flags?.includes('Mechanic Lien')).length, lbl: 'Liens' },
+    { val: d.filter(r => r.flags?.includes('Probate/Estate')).length, lbl: 'Probate' },
+    { val: d.filter(r => r.address).length, lbl: 'With Address', cls: 'accent' },
+    { val: d.filter(r => (r.score||0) >= 70).length, lbl: 'Hot Leads ≥70', cls: 'hot' }
+  ];
+  document.getElementById('clerk-kpis').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.cls||''}"><div class="kpi-val">${k.val.toLocaleString()}</div><div class="kpi-lbl">${k.lbl}</div></div>`).join('');
 }
-function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
 
-// ── Modal ─────────────────────────────────────────────────────────────────
-function openModal(idx) {
-  const r = FILTERED[idx];
-  if (!r) return;
-  const score = r.score || 0;
-  const sc    = score >= 70 ? '#fc8181' : score >= 45 ? '#5b9ab5' : '#6b7280';
-  const barW  = score + '%';
-
-  const flags = (r.flags||[]).map(f => `<span class="flag-pill">${esc(f)}</span>`).join(' ');
-
-  document.getElementById('modal-title').textContent =
-    (r.owner || 'Unknown Owner') + ' · ' + (r.cat_label || r.doc_type || '');
-
-  document.getElementById('modal-content').innerHTML = `
-    <div class="modal-field">
-      <div class="mf-label">Seller Score</div>
-      <div class="mf-val" style="font-family:var(--mono);font-size:1.4rem;color:${sc}">${score}/100</div>
-      <div class="score-bar-wrap">
-        <div class="score-bar-track">
-          <div class="score-bar-fill" style="width:${barW};background:${sc}"></div>
-        </div>
+function openClerkModal(idx) {
+  const r = state.clerk.filtered[idx];
+  document.getElementById('modal-title').textContent = r.grantor || 'Lead Detail';
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-section">
+      <h3>Score</h3>
+      <div class="score-bar-bg" style="width:100%"><div class="score-bar-modal score-bar-fill" style="width:${r.score||0}%;background:${scoreColor(r.score||0)}"></div></div>
+      <span style="color:${scoreColor(r.score||0)};font-size:20px;font-weight:700">${r.score||0}</span>
+      <div class="modal-flags">${renderFlags(r.flags)}</div>
+    </div>
+    <div class="modal-section">
+      <h3>Document</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Type</label><span>${r.doc_type||'—'}</span></div>
+        <div class="modal-field"><label>Date</label><span>${r.doc_date||'—'}</span></div>
+        <div class="modal-field"><label>Doc Number</label><span>${r.doc_number||'—'}</span></div>
+        <div class="modal-field"><label>Amount</label><span>${r.amount > 0 ? '$'+r.amount.toLocaleString() : '—'}</span></div>
       </div>
     </div>
-    <div class="modal-field">
-      <div class="mf-label">Flags</div>
-      <div class="mf-val"><div class="flags" style="flex-wrap:wrap">${flags||'None'}</div></div>
+    <div class="modal-section">
+      <h3>Parties</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Grantor</label><span>${r.grantor||'—'}</span></div>
+        <div class="modal-field"><label>Grantee</label><span>${r.grantee||'—'}</span></div>
+      </div>
     </div>
-    <hr class="modal-hr">
-    <div class="modal-field">
-      <div class="mf-label">Document Type</div>
-      <div class="mf-val mono">${esc(r.doc_type||'—')}</div>
-    </div>
-    <div class="modal-field">
-      <div class="mf-label">Date Filed</div>
-      <div class="mf-val mono">${esc(r.filed||'—')}</div>
-    </div>
-    <div class="modal-field">
-      <div class="mf-label">Document Number</div>
-      <div class="mf-val mono">${esc(r.doc_num||'—')}</div>
-    </div>
-    <div class="modal-field">
-      <div class="mf-label">Amount</div>
-      <div class="mf-val mono">${r.amount ? fmtAmt(r.amount) : '—'}</div>
-    </div>
-    <hr class="modal-hr">
-    <div class="modal-field full">
-      <div class="mf-label">Owner / Grantor</div>
-      <div class="mf-val">${esc(r.owner||'—')}</div>
-    </div>
-    <div class="modal-field full">
-      <div class="mf-label">Grantee</div>
-      <div class="mf-val">${esc(r.grantee||'—')}</div>
-    </div>
-    <hr class="modal-hr">
-    <div class="modal-field">
-      <div class="mf-label">Property Address</div>
-      <div class="mf-val">${esc(r.prop_address||'—')}</div>
-      <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.prop_city,r.prop_state,r.prop_zip].filter(Boolean).join(', '))}</div>
-    </div>
-    <div class="modal-field">
-      <div class="mf-label">Mailing Address</div>
-      <div class="mf-val">${esc(r.mail_address||'—')}</div>
-      <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.mail_city,r.mail_state,r.mail_zip].filter(Boolean).join(', '))}</div>
-    </div>
-    <div class="modal-field full">
-      <div class="mf-label">Legal Description</div>
-      <div class="mf-val" style="font-size:.75rem">${esc(r.legal||'—')}</div>
-    </div>
-    <hr class="modal-hr">
-    <div class="modal-field full">
-      <div class="mf-label">Clerk Record URL</div>
-      <div class="mf-val">${r.clerk_url
-        ? `<a class="doc-link" href="${esc(r.clerk_url)}" target="_blank" rel="noopener">${esc(r.clerk_url)}</a>`
-        : '—'}</div>
-    </div>
-  `;
+    <div class="modal-section">
+      <h3>Property</h3>
+      <div class="modal-field"><label>Address</label><span>${r.address||'No address found'}</span></div>
+      ${r.legal ? `<div class="modal-field"><label>Legal Desc</label><span style="font-size:12px">${r.legal}</span></div>` : ''}
+    </div>`;
   document.getElementById('modal-overlay').classList.add('open');
 }
 
-function closeModal(e) {
-  if (!e || e.target.id === 'modal-overlay' || e.currentTarget.classList?.contains('modal-close')) {
-    document.getElementById('modal-overlay').classList.remove('open');
-  }
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal({target:{id:'modal-overlay'}}); });
-
-// ── CSV Export ─────────────────────────────────────────────────────────────
-function exportCSV() {
-  if (!FILTERED.length) { showToast('No records to export'); return; }
-  const cols = ['First Name','Last Name','Mailing Address','Mailing City','Mailing State','Mailing Zip',
-    'Property Address','Property City','Property State','Property Zip',
-    'Lead Type','Document Type','Date Filed','Document Number','Amount/Debt Owed',
-    'Seller Score','Motivated Seller Flags','Source','Public Records URL'];
-  const rows = FILTERED.map(r => {
-    const parts = (r.owner||'').trim().split(' ');
-    const first = parts[0]||'';
-    const last  = parts.slice(1).join(' ');
-    return [
-      first, last,
-      r.mail_address||'', r.mail_city||'', r.mail_state||'', r.mail_zip||'',
-      r.prop_address||'', r.prop_city||'', r.prop_state||'', r.prop_zip||'',
-      r.cat_label||'', r.doc_type||'', r.filed||'', r.doc_num||'',
-      r.amount||'', r.score||0,
-      (r.flags||[]).join(' | '),
-      'Lubbock County Clerk',
-      r.clerk_url||'',
-    ].map(v => '"' + String(v).replace(/"/g,'""') + '"');
+// ============================================================
+// TAX DELINQUENT
+// ============================================================
+function filterTax() {
+  const q = document.getElementById('tax-search').value.toLowerCase();
+  const minScore = parseInt(document.getElementById('tax-score').value) || 0;
+  const flag = document.getElementById('tax-flag').value;
+  const addrOnly = document.getElementById('tax-addr').value === '1';
+  state.tax.filtered = state.tax.data.filter(r => {
+    if (minScore && (r.score||0) < minScore) return false;
+    if (flag && !(r.flags||[]).includes(flag)) return false;
+    if (addrOnly && !r.situs_address) return false;
+    if (q) {
+      const blob = [r.owner_name, r.situs_address, r.r_number, r.mail_address, r.property_type_desc].join(' ').toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
   });
-  const csv = [cols.map(c => '"'+c+'"').join(','), ...rows.map(r=>r.join(','))].join('\n');
+  sortAndRenderTax();
+}
+
+function sortAndRenderTax() {
+  const {col, dir} = state.tax.sort;
+  state.tax.filtered.sort((a,b) => {
+    const av = a[col] ?? ''; const bv = b[col] ?? '';
+    return typeof av === 'number' ? (av - bv) * dir : String(av).localeCompare(String(bv)) * dir;
+  });
+  state.tax.page = 1;
+  renderTaxTable();
+}
+
+function renderTaxTable() {
+  const {filtered, page, pageSize} = state.tax;
+  document.getElementById('tax-count').textContent = `${filtered.length.toLocaleString()} records`;
+  const start = (page-1)*pageSize, rows = filtered.slice(start, start+pageSize);
+  const tbody = document.getElementById('tax-tbody');
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="7" class="empty">No records match filters.</td></tr>'; renderPagination('tax'); return; }
+  tbody.innerHTML = rows.map((r,i) => `
+    <tr onclick="openTaxModal(${start+i})">
+      <td>${scoreCell(r.score||0)}</td>
+      <td>${r.owner_name||'<span style="color:var(--text2)">Unknown</span>'}</td>
+      <td>${r.situs_address ? r.situs_address+', '+r.situs_city : '<span style="color:var(--text2)">No address</span>'}</td>
+      <td style="color:${r.balance_owed>=10000?'var(--fire)':r.balance_owed>=3883?'var(--hot)':'inherit'};font-weight:600">
+        $${r.balance_owed.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>
+      <td>${r.property_type_desc||'—'}</td>
+      <td style="color:var(--text2);font-size:12px">${r.r_number||'—'}</td>
+      <td>${renderFlags(r.flags)}</td>
+    </tr>`).join('');
+  renderPagination('tax');
+}
+
+function renderTaxKPIs() {
+  const d = state.tax.data;
+  const totalBal = d.reduce((s,r)=>s+r.balance_owed,0);
+  const kpis = [
+    { val: d.length.toLocaleString(), lbl: 'Total Delinquent', cls: 'tax' },
+    { val: d.filter(r=>r.balance_owed>=10000).length.toLocaleString(), lbl: 'High Balance ≥$10k', cls: 'hot' },
+    { val: d.filter(r=>(r.score||0)>=75).length.toLocaleString(), lbl: 'High Score ≥75', cls: 'accent' },
+    { val: d.filter(r=>(r.flags||[]).includes('Absentee Owner')).length.toLocaleString(), lbl: 'Absentee Owners' },
+    { val: '$'+Math.round(totalBal/1000000*10)/10+'M', lbl: 'Total Owed', cls: 'hot' },
+    { val: d.filter(r=>r.situs_address).length.toLocaleString(), lbl: 'With Address', cls: 'accent' }
+  ];
+  document.getElementById('tax-kpis').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.cls||''}"><div class="kpi-val">${k.val}</div><div class="kpi-lbl">${k.lbl}</div></div>`).join('');
+}
+
+function openTaxModal(idx) {
+  const r = state.tax.filtered[idx];
+  document.getElementById('modal-title').textContent = r.owner_name || r.situs_address || 'Tax Delinquent Lead';
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-section">
+      <h3>Score</h3>
+      <div class="score-bar-bg" style="width:100%"><div class="score-bar-modal score-bar-fill" style="width:${r.score||0}%;background:${scoreColor(r.score||0)}"></div></div>
+      <span style="color:${scoreColor(r.score||0)};font-size:20px;font-weight:700">${r.score||0}</span>
+      <div class="modal-flags">${renderFlags(r.flags)}</div>
+    </div>
+    <div class="modal-section">
+      <h3>Tax Delinquency</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Balance Owed</label><span style="color:${r.balance_owed>=10000?'var(--fire)':'var(--hot)'};font-size:18px;font-weight:700">$${r.balance_owed.toLocaleString('en-US',{minimumFractionDigits:2})}</span></div>
+        <div class="modal-field"><label>Tax Year</label><span>${r.tax_year||'—'}</span></div>
+        <div class="modal-field"><label>Property Type</label><span>${r.property_type_desc||'—'}</span></div>
+        <div class="modal-field"><label>R-Number</label><span>${r.r_number||'—'}</span></div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <h3>Property Address</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Street</label><span>${r.situs_address||'Not found'}</span></div>
+        <div class="modal-field"><label>City</label><span>${r.situs_city||'—'}</span></div>
+        <div class="modal-field"><label>State</label><span>${r.situs_state||'TX'}</span></div>
+        <div class="modal-field"><label>ZIP</label><span>${r.situs_zip||'—'}</span></div>
+      </div>
+      ${r.legal_description ? `<div class="modal-field" style="margin-top:8px"><label>Legal Desc</label><span style="font-size:12px">${r.legal_description}</span></div>` : ''}
+      ${r.assessed_value ? `<div class="modal-field" style="margin-top:8px"><label>Assessed Value</label><span>$${r.assessed_value.toLocaleString()}</span></div>` : ''}
+    </div>
+    <div class="modal-section">
+      <h3>Owner & Mailing Address</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Owner Name</label><span>${r.owner_name||'—'}</span></div>
+        <div class="modal-field"><label>Mailing Address</label><span>${r.mail_address||'—'}</span></div>
+        <div class="modal-field"><label>Mailing City</label><span>${r.mail_city||'—'}</span></div>
+        <div class="modal-field"><label>Mailing State/ZIP</label><span>${[r.mail_state,r.mail_zip].filter(Boolean).join(' ')||'—'}</span></div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div style="font-size:11px;color:var(--text2)">Data as of ${r.data_date||'—'} · Source: ${r.address_source||'—'}</div>
+    </div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+// ============================================================
+// FIRE DAMAGE
+// ============================================================
+function filterFire() {
+  const q = document.getElementById('fire-search').value.toLowerCase();
+  const resFilter = document.getElementById('fire-res').value;
+  const minScore = parseInt(document.getElementById('fire-score').value) || 0;
+  state.fire.filtered = state.fire.data.filter(r => {
+    if (resFilter === '1' && !r.is_residential) return false;
+    if (resFilter === '0' && r.is_residential) return false;
+    if (minScore && (r.score||0) < minScore) return false;
+    if (q) {
+      const blob = [r.situs_address, r.owner_name, r.incident_number, r.property_use, r.r_number].join(' ').toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
+  });
+  sortAndRenderFire();
+}
+
+function sortAndRenderFire() {
+  const {col, dir} = state.fire.sort;
+  state.fire.filtered.sort((a,b) => {
+    const av = a[col] ?? ''; const bv = b[col] ?? '';
+    return typeof av === 'number' ? (av - bv) * dir : String(av).localeCompare(String(bv)) * dir;
+  });
+  state.fire.page = 1;
+  renderFireTable();
+}
+
+function renderFireTable() {
+  const {filtered, page, pageSize} = state.fire;
+  document.getElementById('fire-count').textContent = `${filtered.length.toLocaleString()} records`;
+  const start = (page-1)*pageSize, rows = filtered.slice(start, start+pageSize);
+  const tbody = document.getElementById('fire-tbody');
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty">No records match filters.</td></tr>'; renderPagination('fire'); return; }
+  tbody.innerHTML = rows.map((r,i) => `
+    <tr onclick="openFireModal(${start+i})">
+      <td>${scoreCell(r.score||0)}</td>
+      <td>${r.incident_date||'—'}</td>
+      <td>${r.situs_address ? r.situs_address+(r.situs_zip?', '+r.situs_zip:'') : '<span style="color:var(--text2)">—</span>'}</td>
+      <td>${r.owner_name||'<span style="color:var(--text2)">Unknown</span>'}</td>
+      <td><span style="font-size:12px">${r.property_use||'—'}</span></td>
+      <td>${r.incident_type||'—'}</td>
+      <td>${r.assessed_value ? '$'+r.assessed_value.toLocaleString() : '—'}</td>
+      <td>${renderFlags(r.flags)}</td>
+    </tr>`).join('');
+  renderPagination('fire');
+}
+
+function renderFireKPIs() {
+  const d = state.fire.data;
+  const res = d.filter(r=>r.is_residential);
+  const withOwner = d.filter(r=>r.owner_name);
+  const kpis = [
+    { val: d.length, lbl: 'Total Incidents', cls: 'fire' },
+    { val: res.length, lbl: 'Residential', cls: 'hot' },
+    { val: d.filter(r=>!r.is_residential).length, lbl: 'Non-Residential' },
+    { val: withOwner.length, lbl: 'Owner Identified', cls: 'accent' },
+    { val: d.filter(r=>r.r_number).length, lbl: 'R-Number Matched', cls: 'accent' },
+    { val: d.filter(r=>(r.score||0)>=70).length, lbl: 'Hot Leads ≥70', cls: 'hot' }
+  ];
+  document.getElementById('fire-kpis').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.cls||''}"><div class="kpi-val">${k.val.toLocaleString()}</div><div class="kpi-lbl">${k.lbl}</div></div>`).join('');
+}
+
+function openFireModal(idx) {
+  const r = state.fire.filtered[idx];
+  document.getElementById('modal-title').textContent = r.situs_address || r.incident_number || 'Fire Damage Lead';
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-section">
+      <h3>Score</h3>
+      <div class="score-bar-bg" style="width:100%"><div class="score-bar-modal score-bar-fill" style="width:${r.score||0}%;background:${scoreColor(r.score||0)}"></div></div>
+      <span style="color:${scoreColor(r.score||0)};font-size:20px;font-weight:700">${r.score||0}</span>
+      <div class="modal-flags">${renderFlags(r.flags)}</div>
+    </div>
+    <div class="modal-section">
+      <h3>Incident</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Incident #</label><span>${r.incident_number||'—'}</span></div>
+        <div class="modal-field"><label>Date</label><span>${r.incident_date||'—'}</span></div>
+        <div class="modal-field"><label>Type</label><span>${r.incident_type||'—'}</span></div>
+        <div class="modal-field"><label>Property Use</label><span>${r.property_use||'—'}</span></div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <h3>Property</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Address</label><span>${r.situs_address||'—'}</span></div>
+        <div class="modal-field"><label>City / ZIP</label><span>${[r.situs_city, r.situs_zip].filter(Boolean).join(', ')||'—'}</span></div>
+        <div class="modal-field"><label>R-Number</label><span>${r.r_number||'—'}</span></div>
+        <div class="modal-field"><label>Assessed Value</label><span>${r.assessed_value ? '$'+r.assessed_value.toLocaleString() : '—'}</span></div>
+      </div>
+      ${r.legal_description ? `<div class="modal-field" style="margin-top:8px"><label>Legal Desc</label><span style="font-size:12px">${r.legal_description}</span></div>` : ''}
+    </div>
+    <div class="modal-section">
+      <h3>Owner & Mailing Address</h3>
+      <div class="modal-grid">
+        <div class="modal-field"><label>Owner Name</label><span>${r.owner_name||'—'}</span></div>
+        <div class="modal-field"><label>Mailing Address</label><span>${r.mail_address||'—'}</span></div>
+        <div class="modal-field"><label>Mailing City</label><span>${r.mail_city||'—'}</span></div>
+        <div class="modal-field"><label>Mailing State/ZIP</label><span>${[r.mail_state,r.mail_zip].filter(Boolean).join(' ')||'—'}</span></div>
+      </div>
+    </div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+// ============================================================
+// SORTING
+// ============================================================
+function sortTable(tab, col) {
+  const s = state[tab].sort;
+  s.dir = (s.col === col) ? s.dir * -1 : -1;
+  s.col = col;
+  if (tab === 'clerk') sortAndRenderClerk();
+  else if (tab === 'tax') sortAndRenderTax();
+  else if (tab === 'fire') sortAndRenderFire();
+}
+
+// ============================================================
+// PAGINATION
+// ============================================================
+function renderPagination(tab) {
+  const s = state[tab];
+  const total = s.filtered.length;
+  const pages = Math.ceil(total / s.pageSize);
+  const el = document.getElementById(`${tab}-pagination`);
+  if (pages <= 1) { el.innerHTML = ''; return; }
+  let html = '';
+  if (s.page > 1) html += `<button class="page-btn" onclick="goPage('${tab}',${s.page-1})">‹</button>`;
+  const start = Math.max(1, s.page-2), end = Math.min(pages, s.page+2);
+  if (start > 1) html += `<button class="page-btn" onclick="goPage('${tab}',1)">1</button>${start>2?'<span class="page-info">…</span>':''}`;
+  for (let p = start; p <= end; p++)
+    html += `<button class="page-btn ${p===s.page?'active':''}" onclick="goPage('${tab}',${p})">${p}</button>`;
+  if (end < pages) html += `${end<pages-1?'<span class="page-info">…</span>':''}<button class="page-btn" onclick="goPage('${tab}',${pages})">${pages}</button>`;
+  if (s.page < pages) html += `<button class="page-btn" onclick="goPage('${tab}',${s.page+1})">›</button>`;
+  html += `<span class="page-info">Page ${s.page} of ${pages} · ${total.toLocaleString()} records</span>`;
+  el.innerHTML = html;
+}
+
+function goPage(tab, p) {
+  state[tab].page = p;
+  if (tab === 'clerk') renderClerkTable();
+  else if (tab === 'tax') renderTaxTable();
+  else if (tab === 'fire') renderFireTable();
+  window.scrollTo(0, 0);
+}
+
+// ============================================================
+// MODAL
+// ============================================================
+function closeModal(e) { if (e.target === document.getElementById('modal-overlay')) closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+// ============================================================
+// CSV EXPORT
+// ============================================================
+function exportCSV(tab) {
+  const data = state[tab].filtered;
+  if (!data.length) return;
+
+  let headers, rows;
+  if (tab === 'clerk') {
+    headers = ['Score','Type','Grantor','Grantee','Address','Amount','Date','Flags','Doc Number'];
+    rows = data.map(r => [r.score,r.doc_type,r.grantor,r.grantee,r.address,r.amount,r.doc_date,(r.flags||[]).join('; '),r.doc_number]);
+  } else if (tab === 'tax') {
+    headers = ['Score','R-Number','Owner Name','Property Address','City','State','ZIP',
+               'Mailing Address','Mailing City','Mailing State','Mailing ZIP',
+               'Balance Owed','Property Type','Tax Year','Assessed Value','Flags'];
+    rows = data.map(r => [r.score,r.r_number,r.owner_name,r.situs_address,r.situs_city,
+                           r.situs_state,r.situs_zip,r.mail_address,r.mail_city,
+                           r.mail_state,r.mail_zip,r.balance_owed,r.property_type_desc,
+                           r.tax_year,r.assessed_value,(r.flags||[]).join('; ')]);
+  } else {
+    headers = ['Score','Incident Date','Incident #','Address','City','ZIP','Owner Name',
+               'Mailing Address','Mailing City','Mailing ZIP','Property Use','Incident Type',
+               'Assessed Value','R-Number','Residential','Flags'];
+    rows = data.map(r => [r.score,r.incident_date,r.incident_number,r.situs_address,
+                           r.situs_city,r.situs_zip,r.owner_name,r.mail_address,
+                           r.mail_city,r.mail_zip,r.property_use,r.incident_type,
+                           r.assessed_value,r.r_number,r.is_residential?'Yes':'No',
+                           (r.flags||[]).join('; ')]);
+  }
+
+  const csv = [headers, ...rows].map(row =>
+    row.map(v => `"${String(v??'').replace(/"/g,'""')}"`).join(',')
+  ).join('\n');
   const blob = new Blob([csv], {type:'text/csv'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'lubbock_leads_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.download = `electrum_${tab}_${new Date().toISOString().slice(0,10)}.csv`;
   a.click();
-  showToast(`Exported ${FILTERED.length} records`);
 }
 
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
-}
-
-// ── Boot ──────────────────────────────────────────────────────────────────
-loadData();
+// ============================================================
+// INIT
+// ============================================================
+document.getElementById('last-updated').textContent = 'Last run: ' + new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+loadAll();
 </script>
 </body>
 </html>
