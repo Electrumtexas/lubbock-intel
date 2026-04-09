@@ -9,6 +9,10 @@ on:
         description: 'Lookback days for clerk scraper (default 7, max 90)'
         required: false
         default: '7'
+      enrich_limit:
+        description: 'Max incomplete records to enrich from LCAD per run (default 200)'
+        required: false
+        default: '200'
 
 jobs:
   scrape:
@@ -28,41 +32,61 @@ jobs:
         run: |
           pip install requests beautifulsoup4 lxml pandas openpyxl
 
-      # ── CLERK RECORDS (daily scrape) ────────────────────────
+      # ── CLERK RECORDS (daily scrape) ────────────────────────────────
       - name: Run clerk scraper
         env:
           LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '7' }}
         run: |
           python scraper/fetch.py --days $LOOKBACK_DAYS
 
-      # ── TAX DELINQUENT (process if file present) ────────────
+      # ── TAX DELINQUENT (process if file present) ─────────────────────
       - name: Process tax delinquent data
         run: |
-          # Check if monthly file was dropped in data/
           if [ -f "data/DelinquentResidential_current.xlsx" ]; then
-            echo "Tax delinquent file found — processing..."
+            echo "Processing tax delinquent..."
             python scraper/tax_delinquent.py
           else
-            echo "No DelinquentResidential_current.xlsx found in data/ — skipping."
-            echo "To update: rename your monthly file to DelinquentResidential_current.xlsx and commit to data/"
+            echo "No DelinquentResidential_current.xlsx — skipping"
+            echo "Rename your monthly file to DelinquentResidential_current.xlsx and commit to data/"
           fi
 
-      # ── FIRE DAMAGE (process if file present) ────────────────
+      # ── FIRE DAMAGE (process if file present) ────────────────────────
       - name: Process fire damage data
         run: |
           if [ -f "data/StructureFires_current.xlsx" ]; then
-            echo "Fire damage file found — processing..."
+            echo "Processing fire damage..."
             python scraper/fire_damage.py
           else
-            echo "No StructureFires_current.xlsx found in data/ — skipping."
+            echo "No StructureFires_current.xlsx — skipping"
           fi
 
-      # ── COMMIT ALL OUTPUTS ──────────────────────────────────
+      # ── LCAD ENRICHMENT PASS (fills incomplete records) ──────────────
+      # Fetches lubbockcad.org property detail pages for records missing
+      # address or owner data. Runs up to --limit records per day.
+      # Results cached in data/lcad_detail_cache.json — never re-fetches.
+      - name: Enrich incomplete records from LCAD
+        run: |
+          LIMIT="${{ github.event.inputs.enrich_limit || '200' }}"
+          echo "Enriching up to $LIMIT incomplete records from LCAD..."
+          python scraper/lcad_enrich_incomplete.py --limit $LIMIT
+
+      # ── BUILD UNIFIED LEADS (merges all sources + scoring) ───────────
+      - name: Build unified leads
+        run: |
+          python scraper/build_unified.py
+
+      # ── COMMIT ALL OUTPUTS ───────────────────────────────────────────
       - name: Commit updated data files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dashboard/records.json dashboard/tax_delinquent.json dashboard/fire_damage.json data/ || true
+          git add \
+            dashboard/records.json \
+            dashboard/tax_delinquent.json \
+            dashboard/fire_damage.json \
+            dashboard/unified_leads.json \
+            data/lcad_detail_cache.json \
+            data/ || true
           git diff --staged --quiet || git commit -m "Auto-update: $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
 
