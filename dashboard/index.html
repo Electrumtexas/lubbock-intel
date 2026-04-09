@@ -410,7 +410,9 @@
   .tab-btn:hover { color: var(--text); }
   .tab-btn.active           { color: var(--gold);   border-bottom-color: var(--gold); }
   .tab-btn.tab-tax.active   { color: #68d391;        border-bottom-color: #68d391; }
-  .tab-btn.tab-fire.active  { color: #fc8181;        border-bottom-color: #fc8181; }
+  .tab-btn.tab-fire.active       { color: #fc8181; border-bottom-color: #fc8181; }
+  .tab-btn.tab-incomplete.active { color: #fbd38d; border-bottom-color: #fbd38d; }
+  .tab-btn.tab-incomplete.active .tab-count { background: rgba(237,137,54,.15); color: #fbd38d; border-color: rgba(237,137,54,.3); }
   .tab-btn.tab-all.active   { color: #f6e05e;        border-bottom-color: #f6e05e; }
   .tab-count {
     display: inline-block;
@@ -495,6 +497,9 @@
   </button>
   <button class="tab-btn tab-fire" onclick="switchTab('fire',this)">
     Fire Damage <span class="tab-count" id="tab-count-fire">—</span>
+  </button>
+  <button class="tab-btn tab-incomplete" onclick="switchTab('incomplete',this)">
+    ⚠ Incomplete <span class="tab-count" id="tab-count-incomplete">—</span>
   </button>
 </nav>
 
@@ -775,6 +780,66 @@
   </div>
 </div>
 </div><!-- /#panel-fire -->
+
+<!-- ═══ INCOMPLETE DATA PANEL ═══ -->
+<div class="tab-panel" id="panel-incomplete">
+<div class="page">
+
+  <div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:4px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+    <div style="font-family:var(--mono);font-size:.82rem;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;">Incomplete Records</div>
+    <div style="font-size:.95rem;color:var(--muted)">These records are missing one or more required fields: owner name, property address, city, state, ZIP, mailing address, mailing city, mailing state, or mailing ZIP. Use the missing field filter to prioritize what to look up manually, or let the scraper fill gaps as new LCAD data is loaded.</div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi kpi-orange"><div class="kpi-label">Total Incomplete</div><div class="kpi-val" id="inc-kpi-total">—</div><div class="kpi-sub">need attention</div></div>
+    <div class="kpi kpi-red"><div class="kpi-label">No Address</div><div class="kpi-val" id="inc-kpi-noaddr">—</div><div class="kpi-sub">missing situs</div></div>
+    <div class="kpi kpi-purple"><div class="kpi-label">No Owner</div><div class="kpi-val" id="inc-kpi-noowner">—</div><div class="kpi-sub">missing name</div></div>
+    <div class="kpi kpi-blue"><div class="kpi-label">No Mailing</div><div class="kpi-val" id="inc-kpi-nomail">—</div><div class="kpi-sub">can't send mail</div></div>
+    <div class="kpi kpi-gold"><div class="kpi-label">High Score Incomplete</div><div class="kpi-val" id="inc-kpi-hot">—</div><div class="kpi-sub">score ≥60, worth fixing</div></div>
+  </div>
+
+  <div class="controls">
+    <input type="search" id="inc-search" placeholder="Search owner, address, R-number…" oninput="incApplyFilters()">
+    <select id="inc-filter-missing" onchange="incApplyFilters()">
+      <option value="">All Missing Fields</option>
+      <option value="situs_address">Missing Property Address</option>
+      <option value="owner_name">Missing Owner Name</option>
+      <option value="mail_address">Missing Mailing Address</option>
+      <option value="situs_zip">Missing Property ZIP</option>
+      <option value="mail_zip">Missing Mailing ZIP</option>
+    </select>
+    <select id="inc-filter-source" onchange="incApplyFilters()">
+      <option value="">All Sources</option>
+      <option value="tax">Tax Delinquent</option>
+      <option value="fire">Fire Damage</option>
+    </select>
+    <select id="inc-filter-score" onchange="incApplyFilters()">
+      <option value="0">All Scores</option>
+      <option value="60">Priority ≥60</option>
+    </select>
+    <button class="btn btn-gold" onclick="incExportCSV()">⬇ Export for Manual Lookup</button>
+    <button class="btn btn-muted" onclick="incClearFilters()">✕ Clear</button>
+    <div class="results-count"><span id="inc-result-count">0</span> records</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th onclick="incSort('score')" id="inc-th-score">Score</th>
+        <th onclick="incSort('r_number')" id="inc-th-rnum">R-Number</th>
+        <th onclick="incSort('owner_name')" id="inc-th-owner">Owner / Address</th>
+        <th>Missing Fields</th>
+        <th>Sources</th>
+        <th onclick="incSort('source_count')" id="inc-th-srcs">Source Count</th>
+      </tr></thead>
+      <tbody id="inc-table-body">
+        <tr><td colspan="6"><div class="empty-state"><div class="icon">⚙</div><p>Loading…</p></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</div><!-- /#panel-incomplete -->
 
 <!-- Detail Modal -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
@@ -1560,13 +1625,194 @@ function fireExportCSV() {
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='lubbock_fire_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
   showToast(`Exported ${FIRE_FILTERED.length} records`);
 }
+
+// ══════════════════════════════════════════════════════════════════════════
+// INCOMPLETE DATA TAB
+// ══════════════════════════════════════════════════════════════════════════
+let INC_ALL = [], INC_FILTERED = [], INC_SORT_KEY = 'score', INC_SORT_DIR = -1;
+
+function buildIncompleteData() {
+  // Pull incomplete records from unified + individual tabs
+  const from_unified = ALL_UNIFIED.filter(r => !r.is_complete);
+  // Also pick up fire/tax records not in unified
+  const unified_rnums = new Set(ALL_UNIFIED.map(r => r.r_number).filter(Boolean));
+  const from_tax  = TAX_ALL.filter(r => !r.is_complete && !unified_rnums.has(r.r_number));
+  const from_fire = FIRE_ALL.filter(r => !r.is_complete && !unified_rnums.has(r.r_number));
+
+  // Normalize tax records to unified shape
+  const tax_norm = from_tax.map(r => ({
+    ...r,
+    sources: ['tax'], source_count: 1, distress_factors: ['tax'],
+    tax_balance: r.balance_owed, tax_score: r.score,
+  }));
+  const fire_norm = from_fire.map(r => ({
+    ...r,
+    sources: ['fire'], source_count: 1, distress_factors: ['fire'],
+    fire_score: r.score,
+  }));
+
+  INC_ALL = [...from_unified, ...tax_norm, ...fire_norm]
+    .sort((a,b) => (b.score||0) - (a.score||0));
+
+  document.getElementById('tab-count-incomplete').textContent = INC_ALL.length.toLocaleString();
+  updateIncKPIs();
+  incApplyFilters();
+}
+
+function updateIncKPIs() {
+  const d = INC_ALL;
+  document.getElementById('inc-kpi-total').textContent   = d.length.toLocaleString();
+  document.getElementById('inc-kpi-noaddr').textContent  = d.filter(r=>(r.missing_fields||[]).includes('situs_address')).length.toLocaleString();
+  document.getElementById('inc-kpi-noowner').textContent = d.filter(r=>(r.missing_fields||[]).includes('owner_name')).length.toLocaleString();
+  document.getElementById('inc-kpi-nomail').textContent  = d.filter(r=>(r.missing_fields||[]).includes('mail_address')).length.toLocaleString();
+  document.getElementById('inc-kpi-hot').textContent     = d.filter(r=>(r.score||0)>=60).length.toLocaleString();
+}
+
+function incApplyFilters() {
+  const q   = document.getElementById('inc-search').value.trim().toLowerCase();
+  const mf  = document.getElementById('inc-filter-missing').value;
+  const src = document.getElementById('inc-filter-source').value;
+  const sc  = parseInt(document.getElementById('inc-filter-score').value)||0;
+  INC_FILTERED = INC_ALL.filter(r => {
+    if (mf  && !(r.missing_fields||[]).includes(mf)) return false;
+    if (src && !(r.sources||[]).includes(src))        return false;
+    if (sc  && (r.score||0) < sc)                     return false;
+    if (q) {
+      const h=[r.owner_name,r.situs_address,r.r_number,(r.missing_fields||[]).join(' ')].join(' ').toLowerCase();
+      if(!h.includes(q)) return false;
+    }
+    return true;
+  });
+  incSortData();
+}
+
+function incClearFilters() {
+  document.getElementById('inc-search').value='';
+  document.getElementById('inc-filter-missing').value='';
+  document.getElementById('inc-filter-source').value='';
+  document.getElementById('inc-filter-score').value='0';
+  incApplyFilters();
+}
+
+function incSort(key) {
+  if(INC_SORT_KEY===key) INC_SORT_DIR*=-1; else{INC_SORT_KEY=key;INC_SORT_DIR=-1;}
+  document.querySelectorAll('[id^="inc-th-"]').forEach(th=>th.classList.remove('sort-asc','sort-desc'));
+  const th=document.getElementById('inc-th-'+{score:'score',r_number:'rnum',owner_name:'owner',source_count:'srcs'}[key]||key);
+  if(th) th.classList.add(INC_SORT_DIR===1?'sort-asc':'sort-desc');
+  incSortData();
+}
+
+function incSortData() {
+  INC_FILTERED.sort((a,b)=>{
+    const av=a[INC_SORT_KEY]??'',bv=b[INC_SORT_KEY]??'';
+    return(typeof av==='number'?av-bv:String(av).localeCompare(String(bv)))*INC_SORT_DIR;
+  });
+  incRenderTable();
+}
+
+function incRenderTable() {
+  document.getElementById('inc-result-count').textContent = INC_FILTERED.length.toLocaleString();
+  const body = document.getElementById('inc-table-body');
+  if (!INC_FILTERED.length) {
+    body.innerHTML=`<tr><td colspan="6"><div class="empty-state"><div class="icon">🔍</div><p>No incomplete records match.</p></div></td></tr>`;
+    return;
+  }
+
+  const FIELD_LABELS = {
+    owner_name:'Owner Name', situs_address:'Property Address',
+    situs_city:'Prop City', situs_state:'Prop State', situs_zip:'Prop ZIP',
+    mail_address:'Mailing Address', mail_city:'Mail City',
+    mail_state:'Mail State', mail_zip:'Mail ZIP'
+  };
+
+  body.innerHTML = INC_FILTERED.map((r,i) => {
+    const score=r.score||0, sc=score>=70?'score-hi':score>=45?'score-med':'score-lo';
+    const missing = (r.missing_fields||[]).map(f =>
+      `<span class="flag-pill" style="background:rgba(237,137,54,.1);border-color:rgba(237,137,54,.3);color:#fbd38d">${FIELD_LABELS[f]||f}</span>`
+    ).join(' ');
+    const srcs = (r.sources||[]).map(s=>`<span class="source-badge src-${s}">${s.toUpperCase()}</span>`).join(' ');
+    const addrBlock = r.situs_address
+      ? `<div class="owner-name">${esc(r.owner_name||'Unknown')}</div><div class="addr-line">${esc(r.situs_address)}</div>`
+      : `<div class="owner-name">${esc(r.owner_name||'Unknown')}</div><div class="no-addr">no address</div>`;
+    // LCAD lookup link
+    const lcadUrl = r.r_number
+      ? `https://lubbockcad.org/Property/Details?r=${encodeURIComponent(r.r_number)}`
+      : `https://lubbockcad.org`;
+    return `<tr onclick="openIncModal(${i})" style="cursor:pointer">
+      <td><span class="score-chip ${sc}">${score}</span></td>
+      <td><a class="doc-link" href="${lcadUrl}" target="_blank" onclick="event.stopPropagation()">${esc(r.r_number||'—')}</a></td>
+      <td>${addrBlock}</td>
+      <td><div class="flags">${missing}</div></td>
+      <td>${srcs}</td>
+      <td class="mono-sm" style="text-align:center">${r.source_count||1}</td>
+    </tr>`;
+  }).join('');
+}
+
+function openIncModal(idx) {
+  const r = INC_FILTERED[idx];
+  if (!r) return;
+  const score=r.score||0, sc=score>=70?'#fc8181':score>=45?'#5b9ab5':'#6b7280';
+  const FIELD_LABELS = {
+    owner_name:'Owner Name', situs_address:'Property Address',
+    situs_city:'Prop City', situs_state:'Prop State', situs_zip:'Prop ZIP',
+    mail_address:'Mailing Address', mail_city:'Mail City',
+    mail_state:'Mail State', mail_zip:'Mail ZIP'
+  };
+  const missingList = (r.missing_fields||[]).map(f=>`<li style="color:#fbd38d;font-family:var(--mono);font-size:.85rem">${FIELD_LABELS[f]||f}</li>`).join('');
+  const lcadUrl = r.r_number ? `https://lubbockcad.org/Property/Details?r=${encodeURIComponent(r.r_number)}` : null;
+  document.getElementById('modal-title').textContent = (r.owner_name||r.r_number||'Incomplete Record') + ' · Needs Attention';
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-field"><div class="mf-label">Score</div>
+      <div class="mf-val" style="font-family:var(--mono);font-size:1.4rem;color:${sc}">${score}/100</div>
+      <div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:${score}%;background:${sc}"></div></div></div></div>
+    <div class="modal-field full"><div class="mf-label">Missing Fields</div>
+      <ul style="margin:.5rem 0 0 1rem;line-height:1.8">${missingList}</ul></div>
+    <hr class="modal-hr">
+    <div class="modal-field"><div class="mf-label">R-Number</div>
+      <div class="mf-val">${lcadUrl?`<a class="doc-link" href="${lcadUrl}" target="_blank">${esc(r.r_number)} — Look up on LCAD →</a>`:esc(r.r_number||'—')}</div></div>
+    <div class="modal-field"><div class="mf-label">Owner Name</div><div class="mf-val">${esc(r.owner_name||'—')}</div></div>
+    <div class="modal-field"><div class="mf-label">Property Address</div><div class="mf-val">${esc(r.situs_address||'—')}</div>
+      <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.situs_city,r.situs_state,r.situs_zip].filter(Boolean).join(', '))}</div></div>
+    <div class="modal-field"><div class="mf-label">Mailing Address</div><div class="mf-val">${esc(r.mail_address||'—')}</div>
+      <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.mail_city,r.mail_state,r.mail_zip].filter(Boolean).join(', '))}</div></div>
+    ${r.tax_balance?`<hr class="modal-hr"><div class="modal-field"><div class="mf-label">Tax Balance</div><div class="bal-display" style="color:var(--orange)">$${Number(r.tax_balance).toLocaleString('en-US',{minimumFractionDigits:2})}</div></div>`:''}
+    ${r.fire_latest?`<hr class="modal-hr"><div class="modal-field"><div class="mf-label">Last Fire Incident</div><div class="mf-val mono">${esc(r.fire_latest)}</div></div>`:''}`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function incExportCSV() {
+  if(!INC_FILTERED.length){showToast('No records to export');return;}
+  const cols=['Score','R-Number','Owner Name','Property Address','City','State','ZIP','Mailing Address','Mailing City','Mailing State','Mailing ZIP','Missing Fields','Sources','Tax Balance','Fire Date','LCAD URL'];
+  const rows=INC_FILTERED.map(r=>[
+    r.score, r.r_number, r.owner_name,
+    r.situs_address, r.situs_city, r.situs_state, r.situs_zip,
+    r.mail_address, r.mail_city, r.mail_state, r.mail_zip,
+    (r.missing_fields||[]).join(' | '),
+    (r.sources||[]).join(' | '),
+    r.tax_balance||'', r.fire_latest||'',
+    r.r_number ? `https://lubbockcad.org/Property/Details?r=${r.r_number}` : ''
+  ].map(v=>'"'+String(v??'').replace(/"/g,'""')+'"'));
+  const csv=[cols.map(c=>'"'+c+'"').join(','),...rows.map(r=>r.join(','))].join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download='lubbock_incomplete_'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click();
+  showToast(`Exported ${INC_FILTERED.length} records`);
+}
+
 // ── Boot ──────────────────────────────────────────────────────────────────
 loadData().then(() => {
   document.getElementById('tab-count-clerk').textContent = ALL_RECORDS.length.toLocaleString();
 });
 loadTaxData();
 loadFireData();
-loadUnifiedData();
+loadUnifiedData().then(() => {
+  // Build incomplete tab once all three sources are loaded
+  Promise.allSettled([
+    new Promise(r => { const check = setInterval(() => { if(TAX_ALL.length || FIRE_ALL.length) { clearInterval(check); r(); }}, 200); })
+  ]).then(() => setTimeout(buildIncompleteData, 500));
+});
 </script>
 </body>
 </html>
