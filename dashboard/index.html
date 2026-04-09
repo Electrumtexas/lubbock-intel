@@ -692,11 +692,11 @@
 <div class="page">
   <div class="kpi-row">
     <div class="kpi kpi-green"><div class="kpi-label">Total Delinquent</div><div class="kpi-val" id="tax-kpi-total">—</div><div class="kpi-sub">residential</div></div>
+    <div class="kpi kpi-red"><div class="kpi-label">Multi-Year</div><div class="kpi-val" id="tax-kpi-multiyear">—</div><div class="kpi-sub">genuine distress</div></div>
     <div class="kpi kpi-orange"><div class="kpi-label">High Balance ≥$10k</div><div class="kpi-val" id="tax-kpi-highbal">—</div><div class="kpi-sub">most distressed</div></div>
     <div class="kpi kpi-gold"><div class="kpi-label">Score ≥75</div><div class="kpi-val" id="tax-kpi-hot">—</div><div class="kpi-sub">high priority</div></div>
     <div class="kpi kpi-purple"><div class="kpi-label">Absentee Owners</div><div class="kpi-val" id="tax-kpi-absent">—</div><div class="kpi-sub">mail ≠ property</div></div>
     <div class="kpi kpi-red"><div class="kpi-label">Total Owed</div><div class="kpi-val" id="tax-kpi-totalbal">—</div><div class="kpi-sub">combined balance</div></div>
-    <div class="kpi kpi-blue"><div class="kpi-label">With Address</div><div class="kpi-val" id="tax-kpi-addr">—</div><div class="kpi-sub">parcel matched</div></div>
   </div>
   <div class="controls">
     <input type="search" id="tax-search" placeholder="Search owner, address, R-number…" oninput="taxApplyFilters()">
@@ -708,6 +708,7 @@
     </select>
     <select id="tax-filter-flag" onchange="taxApplyFilters()">
       <option value="">All Flags</option>
+      <option value="Multi-Year Delinquent">Multi-Year Only</option>
       <option value="High Balance">High Balance</option>
       <option value="Absentee Owner">Absentee Owner</option>
       <option value="Above Median">Above Median</option>
@@ -726,7 +727,8 @@
         <th onclick="taxSort('score')" id="tax-th-score">Score</th>
         <th onclick="taxSort('owner_name')" id="tax-th-owner">Owner / Property</th>
         <th onclick="taxSort('balance_owed')" id="tax-th-bal">Balance Owed</th>
-        <th onclick="taxSort('property_type_desc')" id="tax-th-type">Type</th>
+        <th onclick="taxSort('years_count')" id="tax-th-years">Yrs ↕</th>
+        <th onclick="taxSort('delinquency_ratio')" id="tax-th-ratio">Ratio ↕</th>
         <th onclick="taxSort('r_number')" id="tax-th-rnum">R-Number</th>
         <th>Flags</th>
       </tr></thead>
@@ -1004,6 +1006,11 @@ function renderTable() {
 
 function fmtAmt(n) {
   return '$' + Number(n).toLocaleString('en-US', {maximumFractionDigits:0});
+}
+
+function lcadUrl(r_number) {
+  if (!r_number) return null;
+  return `https://lubbockcad.org/Property-Detail/PropertyQuickRefID/${encodeURIComponent(r_number)}/`;
 }
 function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -1423,12 +1430,12 @@ async function loadTaxData() {
 function updateTaxKPIs() {
   const d = TAX_ALL;
   const tot = d.reduce((s,r)=>s+(r.balance_owed||0),0);
-  document.getElementById('tax-kpi-total').textContent   = d.length.toLocaleString();
-  document.getElementById('tax-kpi-highbal').textContent = d.filter(r=>r.balance_owed>=10000).length.toLocaleString();
-  document.getElementById('tax-kpi-hot').textContent     = d.filter(r=>(r.score||0)>=75).length.toLocaleString();
-  document.getElementById('tax-kpi-absent').textContent  = d.filter(r=>(r.flags||[]).includes('Absentee Owner')).length.toLocaleString();
-  document.getElementById('tax-kpi-totalbal').textContent= '$'+Math.round(tot/1e6*10)/10+'M';
-  document.getElementById('tax-kpi-addr').textContent    = d.filter(r=>r.situs_address).length.toLocaleString();
+  document.getElementById('tax-kpi-total').textContent    = d.length.toLocaleString();
+  document.getElementById('tax-kpi-multiyear').textContent= d.filter(r=>(r.years_count||1)>1).length.toLocaleString();
+  document.getElementById('tax-kpi-highbal').textContent  = d.filter(r=>r.balance_owed>=10000).length.toLocaleString();
+  document.getElementById('tax-kpi-hot').textContent      = d.filter(r=>(r.score||0)>=75).length.toLocaleString();
+  document.getElementById('tax-kpi-absent').textContent   = d.filter(r=>(r.flags||[]).includes('Absentee Owner')).length.toLocaleString();
+  document.getElementById('tax-kpi-totalbal').textContent = '$'+Math.round(tot/1e6*10)/10+'M';
 }
 
 function taxApplyFilters() {
@@ -1472,11 +1479,15 @@ function taxRenderTable() {
     const addrBlock=r.situs_address
       ?`<div class="owner-name">${esc(r.owner_name||'Unknown')}</div><div class="addr-line">${esc(r.situs_address)}${r.situs_city?', '+esc(r.situs_city):''}</div>`
       :`<div class="owner-name">${esc(r.owner_name||'Unknown')}</div><div class="no-addr">no address</div>`;
+    const yrs = r.years_count||1;
+    const ratio = r.delinquency_ratio ? r.delinquency_ratio.toFixed(1)+'x' : '—';
+    const yrsColor = yrs>=5?'var(--red)':yrs>=3?'var(--orange)':'var(--muted)';
     return `<tr onclick="openTaxModal(${i})" style="cursor:pointer">
       <td><span class="score-chip ${sc}">${score}</span></td>
       <td>${addrBlock}</td>
       <td><span class="${bc}">$${bal.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</span></td>
-      <td class="mono-sm">${esc(r.property_type_desc||'—')}</td>
+      <td class="mono-sm" style="color:${yrsColor};font-weight:${yrs>1?'700':'normal'}">${yrs}yr${yrs>1?'s':''}</td>
+      <td class="mono-sm" style="color:${yrs>1?yrsColor:'var(--muted)'}">${ratio}</td>
       <td class="r-num">${esc(r.r_number||'—')}</td>
       <td><div class="flags">${flags||'<span class="mono-sm">—</span>'}</div></td>
     </tr>`;
@@ -1493,8 +1504,11 @@ function openTaxModal(idx) {
     <div class="modal-field"><div class="mf-label">Flags</div><div class="mf-val"><div class="flags">${(r.flags||[]).map(f=>`<span class="flag-pill">${esc(f)}</span>`).join(' ')||'None'}</div></div></div>
     <hr class="modal-hr">
     <div class="modal-field"><div class="mf-label">Balance Owed</div><div class="bal-display" style="color:${bc}">$${bal.toLocaleString('en-US',{minimumFractionDigits:2})}</div></div>
+    <div class="modal-field"><div class="mf-label">Annual Tax Bill</div><div class="mf-val mono">${r.annual_bill?'$'+Number(r.annual_bill).toLocaleString('en-US',{minimumFractionDigits:2}):'—'}</div></div>
+    <div class="modal-field"><div class="mf-label">Years Delinquent</div><div class="mf-val" style="font-size:1.1rem;font-weight:700;color:${(r.years_count||1)>=5?'var(--red)':(r.years_count||1)>=3?'var(--orange)':'inherit'}">${r.years_count||1} year${(r.years_count||1)>1?'s':''} ${r.delinquent_years?'('+r.delinquent_years.join(', ')+')':''}</div></div>
+    <div class="modal-field"><div class="mf-label">Balance ÷ Annual Bill</div><div class="mf-val mono" style="color:${(r.delinquency_ratio||0)>=3?'var(--red)':(r.delinquency_ratio||0)>=1.5?'var(--orange)':'var(--muted)'}">${r.delinquency_ratio?r.delinquency_ratio.toFixed(2)+'x':'—'} ${r.delinquency_ratio&&r.delinquency_ratio<1.5?'← current year only':r.delinquency_ratio&&r.delinquency_ratio>=3?'← multi-year distress':''}</div></div>
     <div class="modal-field"><div class="mf-label">Tax Year / Type</div><div class="mf-val mono">${esc(String(r.tax_year||'—'))} · ${esc(r.property_type_desc||'—')}</div></div>
-    <div class="modal-field"><div class="mf-label">R-Number</div><div class="mf-val mono">${esc(r.r_number||'—')}</div></div>
+    <div class="modal-field"><div class="mf-label">R-Number</div><div class="mf-val mono">${r.r_number?(lcadUrl(r.r_number)?`<a class="doc-link" href="${lcadUrl(r.r_number)}" target="_blank">${esc(r.r_number)} ↗</a>`:esc(r.r_number)):'—'}</div></div>
     <div class="modal-field"><div class="mf-label">Assessed Value</div><div class="mf-val mono">${r.assessed_value?'$'+Number(r.assessed_value).toLocaleString():'—'}</div></div>
     <hr class="modal-hr">
     <div class="modal-field"><div class="mf-label">Property Address</div><div class="mf-val">${esc(r.situs_address||'—')}</div>
@@ -1608,7 +1622,7 @@ function openFireModal(idx) {
     <hr class="modal-hr">
     <div class="modal-field"><div class="mf-label">Property Address</div><div class="mf-val">${esc(r.situs_address||'—')}</div>
     <div class="mf-val" style="font-size:.75rem;color:var(--muted)">${esc([r.situs_city,r.situs_state,r.situs_zip].filter(Boolean).join(', '))}</div></div>
-    <div class="modal-field"><div class="mf-label">R-Number</div><div class="mf-val mono">${esc(r.r_number||'—')}</div></div>
+    <div class="modal-field"><div class="mf-label">R-Number</div><div class="mf-val mono">${r.r_number?(lcadUrl(r.r_number)?`<a class="doc-link" href="${lcadUrl(r.r_number)}" target="_blank">${esc(r.r_number)} ↗</a>`:esc(r.r_number)):'—'}</div></div>
     <div class="modal-field"><div class="mf-label">Assessed Value</div><div class="mf-val mono">${r.assessed_value?'$'+Number(r.assessed_value).toLocaleString():'—'}</div></div>
     <div class="modal-field full"><div class="mf-label">Legal Description</div><div class="mf-val" style="font-size:.75rem">${esc(r.legal_description||'—')}</div></div>
     <hr class="modal-hr">
@@ -1735,12 +1749,10 @@ function incRenderTable() {
       ? `<div class="owner-name">${esc(r.owner_name||'Unknown')}</div><div class="addr-line">${esc(r.situs_address)}</div>`
       : `<div class="owner-name">${esc(r.owner_name||'Unknown')}</div><div class="no-addr">no address</div>`;
     // LCAD lookup link
-    const lcadUrl = r.r_number
-      ? `https://lubbockcad.org/Property/Details?r=${encodeURIComponent(r.r_number)}`
-      : `https://lubbockcad.org`;
+    const incLcadUrl = r.r_number ? `https://lubbockcad.org/Property-Detail/PropertyQuickRefID/${encodeURIComponent(r.r_number)}/` : 'https://lubbockcad.org';
     return `<tr onclick="openIncModal(${i})" style="cursor:pointer">
       <td><span class="score-chip ${sc}">${score}</span></td>
-      <td><a class="doc-link" href="${lcadUrl}" target="_blank" onclick="event.stopPropagation()">${esc(r.r_number||'—')}</a></td>
+      <td><a class="doc-link" href="${incLcadUrl}" target="_blank" onclick="event.stopPropagation()">${esc(r.r_number||'—')}</a></td>
       <td>${addrBlock}</td>
       <td><div class="flags">${missing}</div></td>
       <td>${srcs}</td>
@@ -1760,7 +1772,7 @@ function openIncModal(idx) {
     mail_state:'Mail State', mail_zip:'Mail ZIP'
   };
   const missingList = (r.missing_fields||[]).map(f=>`<li style="color:#fbd38d;font-family:var(--mono);font-size:.85rem">${FIELD_LABELS[f]||f}</li>`).join('');
-  const lcadUrl = r.r_number ? `https://lubbockcad.org/Property/Details?r=${encodeURIComponent(r.r_number)}` : null;
+  const lcadUrl = r.r_number ? `https://lubbockcad.org/Property-Detail/PropertyQuickRefID/${encodeURIComponent(r.r_number)}/` : null;
   document.getElementById('modal-title').textContent = (r.owner_name||r.r_number||'Incomplete Record') + ' · Needs Attention';
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-field"><div class="mf-label">Score</div>
