@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-09T15:56:46.798906Z",
+  "fetched_at": "2026-04-09T18:49:02.085434Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-02",
     "end": "2026-04-09"
   },
-  "total": 54,
-  "with_address": 25,
+  "total": 55,
+  "with_address": 26,
   "records": [
     {
       "description": "PROBATE",
@@ -1513,6 +1513,34 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79407",
+      "address_source": "cad_api",
+      "score": 23,
+      "flags": [
+        "Mechanic Lien",
+        "New This Week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date04/09/2026 01:37:00 PM",
+      "filed": "2026-04-09",
+      "party_one": "Grantor:",
+      "party_two": "Grantee:",
+      "node": "DOC284S618",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S618",
+      "prop_address": "1907 45TH ST",
+      "prop_city": "LUBBOCK",
+      "prop_state": "TX",
+      "prop_zip": "79412",
+      "mail_address": "% RANDY & RONNY ARMSTRONG CO-TRUSTEES",
+      "mail_city": "83 S LAKESHORE DRIVE",
+      "mail_state": "RANSOM",
+      "mail_zip": "CANYON",
+      "owner": "Grantor:",
+      "grantee": "Grantee:",
       "address_source": "cad_api",
       "score": 23,
       "flags": [
