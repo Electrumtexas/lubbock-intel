@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-04-10T18:44:17.902888Z",
+  "fetched_at": "2026-04-10T19:12:12.679170Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-03",
     "end": "2026-04-10"
   },
-  "total": 49,
+  "total": 50,
   "with_address": 24,
   "records": [
     {
@@ -1372,6 +1372,34 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "address_source": "none",
+      "score": 23,
+      "flags": [
+        "Mechanic Lien",
+        "New This Week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date04/10/2026 01:52:19 PM",
+      "filed": "2026-04-10",
+      "party_one": "Grantor:",
+      "party_two": "Grantee:",
+      "node": "DOC285S823",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S823",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner": "Grantor:",
+      "grantee": "Grantee:",
       "address_source": "none",
       "score": 23,
       "flags": [
