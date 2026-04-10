@@ -12,15 +12,6 @@ from typing import Optional
 import requests
 from bs4 import BeautifulSoup
 
-# ── Local enrichment engine (AllRes → DataExport → CAD API fallback) ─────
-try:
-    from lcad_lookup import LCADLookup
-    from scoring import score_clerk
-    _LOOKUP = LCADLookup(verbose=False)
-    _USE_LOCAL_LOOKUP = True
-except ImportError:
-    _USE_LOCAL_LOOKUP = False
-
 LOOKBACK_DAYS = int(os.getenv("LOOKBACK_DAYS", "7"))
 BASE_URL    = "https://erecord.lubbockcounty.gov"
 SEARCH_URL  = BASE_URL + "/recorder/eagleweb/docSearch.jsp"
@@ -78,7 +69,12 @@ LEAD_KEYWORDS = {
     "MARITAL SETTLEMENT":        "DIV",
     "FAMILY LAW ORDER":          "DIV",
     "QUALIFIED DOMESTIC":        "DIV",
-    "DC-FM-":                    "DIV",
+    # Trustee / substitute trustee sale notices — Texas non-judicial foreclosure
+    "SUBSTITUTE TRUSTEE":        "NOFC",
+    "TRUSTEE'S SALE":            "NOFC",
+    "TRUSTEE SALE":              "NOFC",
+    "NOTICE OF SALE":            "NOFC",
+    "APPOINTMENT OF SUBSTITUTE": "NOFC",
 }
 
 LEAD_TYPES = {
@@ -512,67 +508,35 @@ def enrich_from_cad(session, owner: str) -> dict:
 
 
 def compute_score(rec, cutoff_date):
-    """
-    Build flags list then delegate scoring to scoring.py.
-    Keeping this function so call sites don't need to change.
-    """
     flags = []
+    score = 30
     doc_type = rec.get("doc_type", "")
     amount   = rec.get("amount") or 0
     owner    = rec.get("owner", "")
     filed    = rec.get("filed", "")
 
-    # ── Build flags ───────────────────────────────────────────────────────
-    if doc_type == "LP":
-        flags.append("Lis Pendens")
-    if doc_type in ("NOFC", "LP"):
-        flags.append("Pre-Foreclosure")
-    if doc_type in ("JUD", "CCJ", "DRJUD"):
-        flags.append("Judgment Lien")
-    if doc_type in ("TAXDEED", "LNCORPTX", "LNIRS", "LNFED"):
-        flags.append("Tax Lien")
-    if doc_type == "LNMECH":
-        flags.append("Mechanic Lien")
-    if doc_type == "LNHOA":
-        flags.append("HOA Lien")
-    if doc_type == "PRO":
-        flags.append("Probate/Estate")
-    if doc_type == "DIV":
-        flags.append("Divorce/Family Order")
-    if re.search(r"\bLLC\b|\bINC\b|\bCORP\b|\bLTD\b", owner.upper()):
-        flags.append("LLC/Corp Owner")
+    if doc_type == "LP":             flags.append("Lis pendens")
+    if doc_type in ("NOFC", "LP"):   flags.append("Pre-foreclosure")
+    if doc_type in ("JUD","CCJ","DRJUD"): flags.append("Judgment lien")
+    if doc_type in ("TAXDEED","LNCORPTX","LNIRS","LNFED"): flags.append("Tax lien")
+    if doc_type == "LNMECH":         flags.append("Mechanic lien")
+    if doc_type == "PRO":            flags.append("Probate / estate")
+    if re.search(r"\bLLC\b|\bINC\b|\bCORP\b|\bLTD\b", owner.upper()): flags.append("LLC / corp owner")
+
+    score += len(flags) * 10
+    if "Lis pendens" in flags and "Pre-foreclosure" in flags: score += 20
+    if amount > 100_000:   score += 15
+    elif amount > 50_000:  score += 10
 
     try:
         if datetime.strptime(filed[:10], "%Y-%m-%d") >= datetime.strptime(cutoff_date, "%Y-%m-%d"):
-            flags.append("New This Week")
+            flags.append("New this week")
+            score += 5
     except Exception:
         pass
 
-    if rec.get("prop_address"):
-        flags.append("Has Address")
-
-    # ── Score via scoring.py ──────────────────────────────────────────────
-    if _USE_LOCAL_LOOKUP:
-        score = score_clerk(
-            cat      = rec.get("cat", "other"),
-            amount   = amount,
-            flags    = flags,
-            doc_type = doc_type,
-        )
-    else:
-        # Fallback to original scoring if scoring.py not available
-        score = 30
-        score += len([f for f in flags if f not in ("Has Address","New This Week")]) * 10
-        if "Lis Pendens" in flags and "Pre-Foreclosure" in flags: score += 20
-        if amount > 100_000:  score += 15
-        elif amount > 50_000: score += 10
-        if "New This Week" in flags: score += 5
-        if rec.get("prop_address"): score += 5
-        score = min(score, 100)
-
-    # Remove internal "Has Address" flag — it's a scoring input not a display flag
-    flags = [f for f in flags if f != "Has Address"]
-    return score, list(dict.fromkeys(flags))
+    if rec.get("prop_address"): score += 5
+    return min(score, 100), list(dict.fromkeys(flags))
 
 def export_ghl_csv(records):
     out = io.StringIO()
@@ -696,94 +660,70 @@ def main():
                 rec.setdefault(k, "")
             if not rec.get("owner"):   rec["owner"]   = rec.get("party_one","")
             if not rec.get("grantee"): rec["grantee"] = rec.get("party_two","")
+            # CAD address enrichment — check cache first, then live lookup
+            # Skip known unmatchable entities
+            SKIP_NAMES = {"U S OF AMERICA", "TEXAS STATE OF", "UNITED STATES",
+                          "IRS", "USA", "UNITED STATES OF AMERICA"}
 
-            # ── Address enrichment ────────────────────────────────────────
-            # Chain: AllRes local file → DataExport local file → CAD API fallback
             if not rec.get("prop_address"):
-                owner_name = rec.get("owner","") or rec.get("grantee","")
-                r_number   = rec.get("r_number","")
+                cad_name = rec.get("grantee") or rec.get("owner") or ""
+                cad = {}
 
-                if _USE_LOCAL_LOOKUP:
-                    # Layers 1+2: AllRes + DataExport (instant, no network)
-                    enriched_addr = _LOOKUP.enrich_with_name(r_number, owner_name)
-                    if enriched_addr.get("situs_address"):
-                        rec["prop_address"] = enriched_addr["situs_address"]
-                        rec["prop_city"]    = enriched_addr["situs_city"]
-                        rec["prop_state"]   = enriched_addr["situs_state"]
-                        rec["prop_zip"]     = enriched_addr["situs_zip"]
-                    if enriched_addr.get("owner_name") and not rec.get("owner"):
-                        rec["owner"] = enriched_addr["owner_name"]
-                    if enriched_addr.get("mail_address"):
-                        rec["mail_address"] = enriched_addr["mail_address"]
-                        rec["mail_city"]    = enriched_addr["mail_city"]
-                        rec["mail_state"]   = enriched_addr["mail_state"]
-                        rec["mail_zip"]     = enriched_addr["mail_zip"]
-                    if enriched_addr.get("assessed_value"):
-                        rec["assessed_value"] = enriched_addr["assessed_value"]
-                    if enriched_addr.get("legal_description") and not rec.get("legal"):
-                        rec["legal"] = enriched_addr["legal_description"]
-                    rec["address_source"] = enriched_addr["address_source"]
-                    log.info(f"  Local lookup ({enriched_addr['address_source']}): {rec.get('prop_address','no match')}")
+                # Build list of names to try
+                names_to_try = []
+                if cad_name and cad_name.upper() not in SKIP_NAMES:
+                    names_to_try.append(cad_name)
+                owner = rec.get("owner","")
+                if owner and owner != cad_name and owner.upper() not in SKIP_NAMES:
+                    names_to_try.append(owner)
 
-                # Layer 3: CAD API fallback — only if local lookup missed address
-                if not rec.get("prop_address"):
-                    SKIP_NAMES = {"U S OF AMERICA", "TEXAS STATE OF", "UNITED STATES",
-                                  "IRS", "USA", "UNITED STATES OF AMERICA"}
-                    names_to_try = []
-                    for n in [rec.get("grantee",""), rec.get("owner","")]:
-                        if n and n.upper().strip() not in SKIP_NAMES:
-                            names_to_try.append(n)
+                for try_name in names_to_try:
+                    # Check cache first
+                    if try_name in cad_cache:
+                        cached = cad_cache[try_name]
+                        if cached:
+                            cad = cached
+                            log.info(f"  CAD cache hit: {try_name}")
+                        else:
+                            log.info(f"  CAD cache miss (known): {try_name}")
+                        break
 
-                    cad = {}
-                    for try_name in names_to_try:
-                        if try_name in cad_cache:
-                            cached = cad_cache[try_name]
-                            if cached:
-                                cad = cached
-                                log.info(f"  CAD cache hit: {try_name}")
-                            else:
-                                log.info(f"  CAD cache miss (known): {try_name}")
-                            break
-                        log.info(f"  CAD API fallback: {try_name}")
-                        result = enrich_from_cad(session, try_name)
-                        cad_cache[try_name] = result or None
+                    # Live lookup
+                    log.info(f"  CAD lookup: {try_name}")
+                    result = enrich_from_cad(session, try_name)
+                    cad_cache[try_name] = result or None
+                    time.sleep(2)
+                    if result:
+                        cad = result
+                        break
+
+                # Legal description fallback
+                if not cad and rec.get("legal"):
+                    legal = rec["legal"].upper().strip()
+                    subdiv = re.split(
+                        r"\s+(?:LOT|L\s+\d|L\d|BLK|BLOCK|BLCK|SEC|SECTION|UNIT|PHASE|LT\s+\d|LT\d)",
+                        legal, maxsplit=1
+                    )[0].strip()
+                    subdiv = re.sub(r"[:\d]+$", "", subdiv).strip()
+                    subdiv = re.sub(r"\s+", " ", subdiv).strip()
+                    if len(subdiv) >= 4 and subdiv not in cad_cache:
+                        log.info(f"  CAD legal fallback: {subdiv}")
+                        cad = enrich_from_cad(session, subdiv)
+                        cad_cache[subdiv] = cad or None
                         time.sleep(2)
-                        if result:
-                            cad = result
-                            break
 
-                    # Legal description fallback
-                    if not cad and rec.get("legal"):
-                        legal = rec["legal"].upper().strip()
-                        subdiv = re.split(
-                            r"\s+(?:LOT|L\s+\d|L\d|BLK|BLOCK|BLCK|SEC|SECTION|UNIT|PHASE|LT\s+\d|LT\d)",
-                            legal, maxsplit=1
-                        )[0].strip()
-                        subdiv = re.sub(r"[:\d]+$", "", subdiv).strip()
-                        subdiv = re.sub(r"\s+", " ", subdiv).strip()
-                        if len(subdiv) >= 4 and subdiv not in cad_cache:
-                            log.info(f"  CAD legal fallback: {subdiv}")
-                            cad = enrich_from_cad(session, subdiv)
-                            cad_cache[subdiv] = cad or None
-                            time.sleep(2)
-
-                    if cad:
-                        rec.update(cad)
-                        rec["address_source"] = "cad_api"
-                        log.info(f"  CAD API match: {cad.get('prop_address','')}")
-
+                if cad:
+                    rec.update(cad)
+                    log.info(f"  CAD match: {cad.get('prop_address','')}")
             rec["score"], rec["flags"] = compute_score(rec, cutoff_iso)
             enriched.append(rec)
             time.sleep(0.3)
         except Exception as e:
             log.error(f"Error on {row.get('node')}: {e}\n{traceback.format_exc()}")
 
-    # Save CAD cache — both old-style dict and new LCADLookup cache
+    # Save updated CAD cache
     save_cad_cache(cad_cache)
     log.info(f"CAD cache saved: {len(cad_cache)} entries")
-    if _USE_LOCAL_LOOKUP:
-        _LOOKUP.save_cache()
-        log.info("LCADLookup cache saved")
 
     enriched.sort(key=lambda x: x.get("score",0), reverse=True)
     with_address = sum(1 for r in enriched if r.get("prop_address"))
