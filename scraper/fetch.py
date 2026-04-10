@@ -75,6 +75,8 @@ LEAD_KEYWORDS = {
     "TRUSTEE SALE":              "NOFC",
     "NOTICE OF SALE":            "NOFC",
     "APPOINTMENT OF SUBSTITUTE": "NOFC",
+    # EagleWeb stores trustee sale notices under the generic type "POSTING"
+    "POSTING":                   "NOFC",
 }
 
 LEAD_TYPES = {
@@ -273,10 +275,18 @@ def parse_results_page(html):
     )
     return rows, has_more
 
-def match_lead_type(description):
+def match_lead_type(description, grantor="", grantee=""):
     desc = description.upper()
     for keyword in sorted(LEAD_KEYWORDS.keys(), key=len, reverse=True):
         if keyword in desc:
+            # POSTING is a generic EagleWeb document type — filter to trustee sales only.
+            # In Texas, every Notice of Trustee Sale names "PUBLIC" as a grantee because
+            # the notice is addressed to the borrower AND the general public.
+            # This is true regardless of whether the lender is a bank or an individual.
+            if keyword == "POSTING":
+                grantee_upper = grantee.upper()
+                if "PUBLIC" not in grantee_upper:
+                    return None
             return LEAD_KEYWORDS[keyword]
     return None
 
@@ -619,13 +629,16 @@ def main():
 
             total_seen += len(rows)
             for row in rows:
-                dt = match_lead_type(row["description"])
+                dt = match_lead_type(row["description"], row.get("party_one",""), row.get("party_two",""))
                 if dt:
                     row["doc_type"]  = dt
                     row["cat"]       = LEAD_TYPES[dt]["cat"]
                     row["cat_label"] = LEAD_TYPES[dt]["label"]
                     matched_rows.append(row)
                     log.info(f"    MATCH: {row['description']} [{dt}] node={row['node']}")
+                else:
+                    # Log ALL unmatched descriptions so we can see what we're missing
+                    log.info(f"    SKIP:  {row['description']}")
 
             if not has_more:
                 break
