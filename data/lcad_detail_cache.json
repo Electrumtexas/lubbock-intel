@@ -195,5 +195,996 @@
     "situs_city": "LUBBOCK",
     "situs_state": "TX",
     "situs_zip": "79403"
+  },
+  "R129850": {
+    "r_number": "R129850",
+    "_source": "lcad_detail",
+    "owner_name": "PETREE BLAKE ET AL",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "9321 E COUNTY ROAD 6840\nSLATON, TX 79364",
+    "situs_city": "SLATON",
+    "situs_state": "TX",
+    "situs_zip": "79364"
+  },
+  "R118644": {
+    "r_number": "R118644",
+    "_source": "lcad_detail",
+    "owner_name": "LEYVA, DAVID R",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "1815 COUNTY ROAD 7500\nLUBBOCK, TX 79423-6905",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R138300": {
+    "r_number": "R138300",
+    "_source": "lcad_detail",
+    "owner_name": "ADAMS THOMAS & DONNA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "4001  101ST  ST\nLUBBOCK, TX 79423-5728",
+    "situs_city": "ST  ST\nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R138391": {
+    "r_number": "R138391",
+    "_source": "lcad_detail",
+    "owner_name": "ANDERS, LOYD",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "4105 E 17TH ST \n#APT B\nLUBBOCK, TX 79416-6061",
+    "situs_city": "APT B\nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79416"
+  },
+  "R129966": {
+    "r_number": "R129966",
+    "_source": "lcad_detail",
+    "owner_name": "MARTIN MELISSA M &",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "ESTATE OF RICKY D MARTIN\n13206 N CR 3220\nIDALOU, TX 79329",
+    "situs_city": "IDALOU",
+    "situs_state": "TX",
+    "situs_zip": "79329"
+  },
+  "R140266": {
+    "r_number": "R140266",
+    "_source": "lcad_detail",
+    "owner_name": "FERRELL, APRIL",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5901 COUNTY ROAD 6300 \n#UNIT B\nLUBBOCK, TX 79416",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79416"
+  },
+  "R144922": {
+    "r_number": "R144922",
+    "_source": "lcad_detail",
+    "owner_name": "SILVA, JOHN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "RR 1 BOX 179\nSLATON, TX 79364-9747",
+    "situs_city": "SLATON",
+    "situs_state": "TX",
+    "situs_zip": "79364"
+  },
+  "R135478": {
+    "r_number": "R135478",
+    "_source": "lcad_detail",
+    "owner_name": "LOWE, BILLYE R LIFE ESTATE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "Attn: POWELL ADON & DEEANN\n5001 THORNCLIFFE DR \nARLINGTON, TX 76016-6242",
+    "situs_city": "NCLIFFE DR \nARLINGTON",
+    "situs_state": "TX",
+    "situs_zip": "76016"
+  },
+  "R146677": {
+    "r_number": "R146677",
+    "_source": "lcad_detail",
+    "owner_name": "MUNOZ ORLANDO E & DAHENA E",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "15410 COUNTY ROAD 1300 \nROPESVILLE, TX 79358",
+    "situs_city": "ROPESVILLE",
+    "situs_state": "TX",
+    "situs_zip": "79358"
+  },
+  "R151397": {
+    "r_number": "R151397",
+    "_source": "lcad_detail",
+    "owner_name": "MARTINEZ, JESUS M",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6006 E COUNTY ROAD 6300 \nLUBBOCK, TX 79403",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R155319": {
+    "r_number": "R155319",
+    "_source": "lcad_detail",
+    "owner_name": "THOMASSON, WILLIAM T",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5503 WOODROW RD \nLUBBOCK, TX 79424",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R158390": {
+    "r_number": "R158390",
+    "_source": "lcad_detail",
+    "owner_name": "HOLGUIN MAYTE P & JOSE G",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "7805 N ROLLING MDWS \nHOBBS, NM 88242"
+  },
+  "R159905": {
+    "r_number": "R159905",
+    "_source": "lcad_detail",
+    "owner_name": "ZARAGOZA MARIA & EST OF JUAN ZARAGOZA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "10815 E FM 40 \nLUBBOCK, TX 79403",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R159961": {
+    "r_number": "R159961",
+    "_source": "lcad_detail",
+    "owner_name": "CARR DOUGLAS & BELYNDA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "8526 E COUNTY ROAD 6000 \nIDALOU, TX 79329-6011",
+    "situs_city": "IDALOU",
+    "situs_state": "TX",
+    "situs_zip": "79329"
+  },
+  "R160685": {
+    "r_number": "R160685",
+    "_source": "lcad_detail",
+    "owner_name": "BROWN, VAN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "215B CHUCK WAGON RD\nLUBBOCK, TX 79404-1903",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79404"
+  },
+  "R168990": {
+    "r_number": "R168990",
+    "_source": "lcad_detail",
+    "owner_name": "HARKEY, MARY JANE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "13801 N COUNTY ROAD 2200\nLUBBOCK, TX 79415",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R172281": {
+    "r_number": "R172281",
+    "_source": "lcad_detail",
+    "owner_name": "BIRRELL, GREGORY H",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "1509 CHURCHILL AVE \nWOLFFORTH, TX 79382",
+    "situs_city": "WOLFFORTH",
+    "situs_state": "TX",
+    "situs_zip": "79382"
+  },
+  "R26418": {
+    "r_number": "R26418",
+    "_source": "lcad_detail",
+    "owner_name": "LOYA GEORGE E & ADELINA Y",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "319 N AVENUE N\nLUBBOCK, TX 79401-1134",
+    "situs_city": "N AVENUE N\nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79401"
+  },
+  "R26461": {
+    "r_number": "R26461",
+    "_source": "lcad_detail",
+    "owner_name": "CLEMONS, RONNIE EST OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "935 S 11TH ST \nSLATON, TX 79364-5323",
+    "situs_city": "TH ST \nSLATON",
+    "situs_state": "TX",
+    "situs_zip": "79364"
+  },
+  "R305887": {
+    "r_number": "R305887",
+    "_source": "lcad_detail",
+    "owner_name": "WEISS, NANCY",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "2115 MAIN ST \n#UNIT 6\nLUBBOCK, TX 79401",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79401"
+  },
+  "R162156": {
+    "r_number": "R162156",
+    "_source": "lcad_detail",
+    "owner_name": "KITTEN TANYA R & ROBERT C ESTATES OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "123 RR1\nUNIT OX23-2\nSLATON, TX 79364",
+    "situs_city": "SLATON",
+    "situs_state": "TX",
+    "situs_zip": "79364"
+  },
+  "R173763": {
+    "r_number": "R173763",
+    "_source": "lcad_detail",
+    "owner_name": "COOPER KENNETH K & CAROL A",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "4402 108TH ST \n#UNIT 24\nLUBBOCK, TX 79424-7386",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R174511": {
+    "r_number": "R174511",
+    "_source": "lcad_detail",
+    "owner_name": "BODENSTEINER GARY A & RITA W",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "4423 110TH ST \n#UNIT 41\nLUBBOCK, TX 79424",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R312496": {
+    "r_number": "R312496",
+    "_source": "lcad_detail",
+    "owner_name": "MULLEN, JOSEPH E, J",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "2112 MAIN ST \n#APT 3\nLUBBOCK, TX 79401-5914",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79401"
+  },
+  "R31434": {
+    "r_number": "R31434",
+    "_source": "lcad_detail",
+    "owner_name": "GALLARDO JUAN C &",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "JUANITA\n2008 47TH ST\nLUBBOCK, TX 79412-2222",
+    "situs_city": "TH ST\nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79412"
+  },
+  "R316331": {
+    "r_number": "R316331",
+    "_source": "lcad_detail",
+    "owner_name": "T-RAW",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5504 113TH ST \nLUBBOCK, TX 79424",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R29355": {
+    "r_number": "R29355",
+    "_source": "lcad_detail",
+    "owner_name": "RUIZ, CELIA R ESTATE OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "4640 JARVIS ST \nLUBBOCK, TX 79416-2415",
+    "situs_city": "JARVIS ST \nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79416"
+  },
+  "R309128": {
+    "r_number": "R309128",
+    "_source": "lcad_detail",
+    "owner_name": "SANDY KNOLL FARM INC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "PO BOX 805\nSHALLOWATER, TX 79363",
+    "situs_city": "SHALLOWATER",
+    "situs_state": "TX",
+    "situs_zip": "79363"
+  },
+  "R138573": {
+    "r_number": "R138573",
+    "_source": "lcad_detail",
+    "owner_name": "BRYSON, JOHN R",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "30 PARKVIEW DR \nSPUR, TX 79370-5717",
+    "situs_city": "PARKVIEW DR \nSPUR",
+    "situs_state": "TX",
+    "situs_zip": "79370"
+  },
+  "R140722": {
+    "r_number": "R140722",
+    "_source": "lcad_detail",
+    "owner_name": "REEM KABOUK TRUST",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "BEEBLE JOHN & KABOUK REEM TRUSTEES\n7287 ORION ST\nARVADO, CO 80007"
+  },
+  "R145071": {
+    "r_number": "R145071",
+    "_source": "lcad_detail",
+    "owner_name": "TIJERINA, JESUS, JR",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "17712 COUNTY ROAD 2330\nLUBBOCK, TX 79423-4873",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R159841": {
+    "r_number": "R159841",
+    "_source": "lcad_detail",
+    "owner_name": "HOLLIDAY, HEATHER T",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "2406 FM 1294 \nLUBBOCK, TX 79403",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R160036": {
+    "r_number": "R160036",
+    "_source": "lcad_detail",
+    "owner_name": "SCOTT, WAYNE EST OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5707 E FM 835 REAR \nLUBBOCK, TX 79403",
+    "situs_city": "REAR \nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R327323": {
+    "r_number": "R327323",
+    "_source": "lcad_detail",
+    "owner_name": "RIVERA, VALERIE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6301 FM 2378 \n B\nLUBBOCK, TX 79407",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79407"
+  },
+  "R332837": {
+    "r_number": "R332837",
+    "_source": "lcad_detail",
+    "owner_name": "GONZALES, ROY",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "17601 COUNTY ROAD 2220 \n#UNIT 6\nLUBBOCK, TX 79423",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R339650": {
+    "r_number": "R339650",
+    "_source": "lcad_detail",
+    "owner_name": "LOZADA, ROSIE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6911 HWY 84 \nSHALLOWATER, TX 79363",
+    "situs_city": "SHALLOWATER",
+    "situs_state": "TX",
+    "situs_zip": "79363"
+  },
+  "R343175": {
+    "r_number": "R343175",
+    "_source": "lcad_detail",
+    "owner_name": "FARMER, RUSSELL",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "3008 CR 7505\nLUBBOCK, TX 79423",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R343808": {
+    "r_number": "R343808",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343808",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343809": {
+    "r_number": "R343809",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343809",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343810": {
+    "r_number": "R343810",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343810",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R344323": {
+    "r_number": "R344323",
+    "_source": "lcad_detail",
+    "owner_name": "MATTHEWS JASON A & WYTOSHA J",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "11110 N FM 2528 C \nLUBBOCK, TX 79415",
+    "situs_city": "C \nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R344573": {
+    "r_number": "R344573",
+    "_source": "lcad_detail",
+    "owner_name": "RUEDA, ROSALBA RENTERIA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "4120 E AUBURN ST \nLUBBOCK, TX 79403-4842",
+    "situs_city": "E AUBURN ST \nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R305861": {
+    "r_number": "R305861",
+    "_source": "lcad_detail",
+    "owner_name": "J&M LUBBOCK LLC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "1408 E 13TH ST \nAUSTIN, TX 78702",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79401"
+  },
+  "R31123": {
+    "r_number": "R31123",
+    "_source": "lcad_detail",
+    "owner_name": "HARKEY, MARY JANE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "13801 N COUNTY ROAD 2200\nLUBBOCK, TX 79415",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R314165": {
+    "r_number": "R314165",
+    "_source": "lcad_detail",
+    "owner_name": "JCI DIVERSIFIED HOLDINGS LLC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6410 SEQUOIA DR \nMIDLAND, TX 79707",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79404"
+  },
+  "R323385": {
+    "r_number": "R323385",
+    "_source": "lcad_detail",
+    "owner_name": "LINDA LOU TWO LLC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5900 BALCONES DR \n#STE 100\nAUSTIN, TX 78731",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79404"
+  },
+  "R37719": {
+    "r_number": "R37719",
+    "_source": "lcad_detail",
+    "owner_name": "MOLINA JUAN G & CAROL A",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "4612 27TH ST \nLUBBOCK, TX 79410",
+    "situs_city": "TH ST \nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79410"
+  },
+  "R39537": {
+    "r_number": "R39537",
+    "_source": "lcad_detail",
+    "owner_name": "FDL INVESTMENTS LLC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5900 BALCONES DR \n#STE 100\nAUSTIN, TX 78731",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79404"
+  },
+  "R40591": {
+    "r_number": "R40591",
+    "_source": "lcad_detail",
+    "owner_name": "MIERS, PHILLIP",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "807 N 18TH ST \nLAMESA, TX 79331-2405",
+    "situs_city": "TH ST \nLAMESA",
+    "situs_state": "TX",
+    "situs_zip": "79331"
+  },
+  "R45117": {
+    "r_number": "R45117",
+    "_source": "lcad_detail",
+    "owner_name": "TRAVIS, SUSAN LEE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "507 SNOWCAP DR \nRUIDOSO, NM 88345"
+  },
+  "R328071": {
+    "r_number": "R328071",
+    "_source": "lcad_detail",
+    "owner_name": "CORTEZ RUBEN A",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "9014 COUNTY ROAD 2500\nLUBBOCK, TX 79404-8182",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79404"
+  },
+  "R331090": {
+    "r_number": "R331090",
+    "_source": "lcad_detail",
+    "owner_name": "BORH ENTERPRISES LLC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "3713 158TH ST \nLUBBOCK, TX 79423",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79404"
+  },
+  "R33467": {
+    "r_number": "R33467",
+    "_source": "lcad_detail",
+    "owner_name": "FREEMAN, RIAN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "15618 N FM 179 \nSHALLOWATER, TX 79363",
+    "situs_city": "SHALLOWATER",
+    "situs_state": "TX",
+    "situs_zip": "79363"
+  },
+  "R343807": {
+    "r_number": "R343807",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343807",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343811": {
+    "r_number": "R343811",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343811",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343813": {
+    "r_number": "R343813",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343813",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343822": {
+    "r_number": "R343822",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343822",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343079": {
+    "r_number": "R343079",
+    "_source": "lcad_detail",
+    "owner_name": "PABLO, PIERRE PAUL",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "2861 SOMERSET DR \n#APT 200\nLAUDERDALE LAKES, FL 33311",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79416"
+  },
+  "R343095": {
+    "r_number": "R343095",
+    "_source": "lcad_detail",
+    "owner_name": "KLINGENSMITH, CASEY",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "3 STIRRUP LN \nRANSOM CANYON, TX 79366",
+    "situs_city": "RUP LN \nRANSOM CANYON",
+    "situs_state": "TX",
+    "situs_zip": "79366"
+  },
+  "R343814": {
+    "r_number": "R343814",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343814",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343819": {
+    "r_number": "R343819",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343819",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343820": {
+    "r_number": "R343820",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343820",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343821": {
+    "r_number": "R343821",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343821",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R308096": {
+    "r_number": "R308096",
+    "_source": "lcad_detail",
+    "owner_name": "NUNEZ JOSE R & JOSE JR",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5124 CR 6300 \nLUBBOCK, TX 79415",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R312007": {
+    "r_number": "R312007",
+    "_source": "lcad_detail",
+    "owner_name": "BONNER, GERALD A, J",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5624 FM 1585 \n#UNIT C\nLUBBOCK, TX 79424-6471",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R313628": {
+    "r_number": "R313628",
+    "_source": "lcad_detail",
+    "owner_name": "RODRIGUEZ CARLOS JR & JENNIFER",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "16304 PR 1500 \nWOLFFORTH, TX 79382",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R348161": {
+    "r_number": "R348161",
+    "_source": "lcad_detail",
+    "owner_name": "CANTU, JENNIFER",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6301 FM 2378 \n#UNIT E\nLUBBOCK, TX 79407-7319",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79407"
+  },
+  "R37057": {
+    "r_number": "R37057",
+    "_source": "lcad_detail",
+    "owner_name": "HAGGARD, MELVIN L & SHERYL E",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "609 E FM 1729 \nLUBBOCK, TX 79403",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R38945": {
+    "r_number": "R38945",
+    "_source": "lcad_detail",
+    "owner_name": "SAENZ, ABELARDO, J",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "226 QUETZEL AVE \n#UNIT B\nLUBBOCK, TX 79403",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R39174": {
+    "r_number": "R39174",
+    "_source": "lcad_detail",
+    "owner_name": "SANDERS RICHARD L &",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "TONYA R\n10810 N FM 1264\nLUBBOCK, TX 79415-7443",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R55732": {
+    "r_number": "R55732",
+    "_source": "lcad_detail",
+    "owner_name": "WALKER, BILLY TRUST",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "FOR MICHAEL L WALKER\n% JO BETH WALKER TRUSTEE\n11621 CR 6700\nLUBBOCK, TX 79407",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79407"
+  },
+  "R56720": {
+    "r_number": "R56720",
+    "_source": "lcad_detail",
+    "owner_name": "JONES, RUSSELL",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "10 SAN MIGUEL SQ \nODESSA, TX 79762",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79413"
+  },
+  "R62337": {
+    "r_number": "R62337",
+    "_source": "lcad_detail",
+    "owner_name": "WATERS, RAMONA JOAN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "3313 46TH ST \nLUBBOCK, TX 79413",
+    "situs_city": "TH ST \nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79413"
+  },
+  "R42818": {
+    "r_number": "R42818",
+    "_source": "lcad_detail",
+    "owner_name": "JACKSON, DEEN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5301 66TH ST APT 1106\nLUBBOCK, TX 79424-1399",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R43524": {
+    "r_number": "R43524",
+    "_source": "lcad_detail",
+    "owner_name": "THUNDER SUN INC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5109 82ND STREET\n#7 PMB 1102\nLUBBOCK, TX 79424",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R331066": {
+    "r_number": "R331066",
+    "_source": "lcad_detail",
+    "owner_name": "SHARP, TAMI J",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "9220 AVENUE Q  REAR\nLUBBOCK, TX 79423-3226",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R63975": {
+    "r_number": "R63975",
+    "_source": "lcad_detail",
+    "owner_name": "RAMIREZ JUAN J JR & DIANA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "8210 ALBANY AVE \n#APT B\nLUBBOCK, TX 79424",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79424"
+  },
+  "R74474": {
+    "r_number": "R74474",
+    "_source": "lcad_detail",
+    "owner_name": "MCCANN VIRGINIA ESTATE OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "1816 N WOOD AVE \nLUBBOCK, TX 79403",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R34216": {
+    "r_number": "R34216",
+    "_source": "lcad_detail",
+    "owner_name": "MONTANEZ, JESSICA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "940 S COLLINS ST \nSLATON, TX 79364",
+    "situs_city": "S COLLINS ST \nSLATON",
+    "situs_state": "TX",
+    "situs_zip": "79364"
+  },
+  "R343812": {
+    "r_number": "R343812",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343812",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343817": {
+    "r_number": "R343817",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343817",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R343818": {
+    "r_number": "R343818",
+    "_source": "lcad_detail",
+    "owner_name": "Lubbock Central Appraisal District",
+    "situs_address": "R343818",
+    "mail_address": "Unknown",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79415"
+  },
+  "R354248": {
+    "r_number": "R354248",
+    "_source": "lcad_detail",
+    "owner_name": "LUBBOCK",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "PO BOX 359\nDALLAS, TX 75204",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R48917": {
+    "r_number": "R48917",
+    "_source": "lcad_detail",
+    "owner_name": "PAEZ, VIRGINIA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "740 S 13TH ST \nSLATON, TX 79364",
+    "situs_city": "TH ST \nSLATON",
+    "situs_state": "TX",
+    "situs_zip": "79364"
+  },
+  "R80865": {
+    "r_number": "R80865",
+    "_source": "lcad_detail",
+    "owner_name": "YORK, CLAUDIA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "7101 REAR COUNTY ROAD 6100 \nSHALLOWATER, TX 79363",
+    "situs_city": "SHALLOWATER",
+    "situs_state": "TX",
+    "situs_zip": "79363"
+  },
+  "R82970": {
+    "r_number": "R82970",
+    "_source": "lcad_detail",
+    "owner_name": "LUNA, JUAN CARLOS",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "2317 COUNTY ROAD 7610 \nLUBBOCK, TX 79423",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R41254": {
+    "r_number": "R41254",
+    "_source": "lcad_detail",
+    "owner_name": "MADE SIX PROPERTIES LLC",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "7907 E COUNTY ROAD 5500 \nIDALOU, TX 79329",
+    "situs_city": "IDALOU",
+    "situs_state": "TX",
+    "situs_zip": "79329"
+  },
+  "R54862": {
+    "r_number": "R54862",
+    "_source": "lcad_detail",
+    "owner_name": "JAQUEZ JOSE & BRICIA GUZMAN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "3102 E PR 7640 \n#UNIT A\nLUBBOCK, TX 79423",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R57760": {
+    "r_number": "R57760",
+    "_source": "lcad_detail",
+    "owner_name": "SANCHEZ JOSE & RAVENE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6121 E COUNTY ROAD 7300 \nSLATON, TX 79364",
+    "situs_city": "SLATON",
+    "situs_state": "TX",
+    "situs_zip": "79364"
+  },
+  "R61040": {
+    "r_number": "R61040",
+    "_source": "lcad_detail",
+    "owner_name": "DANIEL, FLOYD R",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "15202 N COUNTY ROAD 2600 \nLUBBOCK, TX 79403",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
+  },
+  "R64807": {
+    "r_number": "R64807",
+    "_source": "lcad_detail",
+    "owner_name": "GRANBURY, JESSE WAYNE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "19302 PRIVATE ROAD 2370 \nLUBBOCK, TX 79423-7026",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R45243": {
+    "r_number": "R45243",
+    "_source": "lcad_detail",
+    "owner_name": "THOMPSON, EFFIE REBEKAH EST OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "PO BOX 1199\nWOLFFORTH, TX 79382-1199",
+    "situs_city": "WOLFFORTH",
+    "situs_state": "TX",
+    "situs_zip": "79382"
+  },
+  "R45295": {
+    "r_number": "R45295",
+    "_source": "lcad_detail",
+    "owner_name": "PATE, PRICE H EST OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "1522 136TH ST \n#UNIT B\nLUBBOCK, TX 79423-5970",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79423"
+  },
+  "R45952": {
+    "r_number": "R45952",
+    "_source": "lcad_detail",
+    "owner_name": "KLATT, ASHLEY BROOKE",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6603 PALACIO DR \nAMARILLO, TX 79109",
+    "situs_city": "PALACIO DR \nAMARILLO",
+    "situs_state": "TX",
+    "situs_zip": "79109"
+  },
+  "R46744": {
+    "r_number": "R46744",
+    "_source": "lcad_detail",
+    "owner_name": "STETLER KATHERINE EST OF",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "6204 9TH ST \nLUBBOCK, TX 79416",
+    "situs_city": "TH ST \nLUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79416"
+  },
+  "R47899": {
+    "r_number": "R47899",
+    "_source": "lcad_detail",
+    "owner_name": "MITCHELL, MARGARET ELLEN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "5104 58TH ST \n#UNIT 4\nLUBBOCK, TX 79414",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79414"
+  },
+  "R59614": {
+    "r_number": "R59614",
+    "_source": "lcad_detail",
+    "owner_name": "FIEL, SANDRA",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "PO BOX 94162\nLUBBOCK, TX 79493-4162",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79493"
+  },
+  "R61534": {
+    "r_number": "R61534",
+    "_source": "lcad_detail",
+    "owner_name": "EMERY DON TRUST",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "% NORWEST BANK OF TX\nPO BOX 1241\nLUBBOCK, TX 79408-1241",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79408"
+  },
+  "R62208": {
+    "r_number": "R62208",
+    "_source": "lcad_detail",
+    "owner_name": "WHITE, BRIAN DUNCAN",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "10416 E COUNTY ROAD 5300 \nLORENZO, TX 79343-5254",
+    "situs_city": "LORENZO",
+    "situs_state": "TX",
+    "situs_zip": "79343"
+  },
+  "R95122": {
+    "r_number": "R95122",
+    "_source": "lcad_detail",
+    "owner_name": "VLB,",
+    "situs_address": "Lubbock Central Appraisal District",
+    "mail_address": "Attn: JOSE M RODRIGUEZ\n3301 N CR 3500 \nLUBBOCK, TX 79403-9627",
+    "situs_city": "LUBBOCK",
+    "situs_state": "TX",
+    "situs_zip": "79403"
   }
 }

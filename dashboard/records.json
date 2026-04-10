@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-10T01:30:53.113529Z",
+  "fetched_at": "2026-04-10T01:39:57.662337Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-03",
     "end": "2026-04-10"
   },
   "total": 49,
-  "with_address": 25,
+  "with_address": 24,
   "records": [
     {
       "description": "PROBATE",
@@ -1364,15 +1364,15 @@
       "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S618",
       "owner": "GONZALES ASHLEY M",
       "grantee": "SOLINO INVESTMENTS LLC",
-      "prop_address": "8006 E CR 5900",
-      "prop_city": "IDALOU",
-      "prop_state": "TX",
-      "prop_zip": "79329",
-      "mail_address": "8006 E CR 5900",
-      "mail_city": "IDALOU",
-      "mail_state": "TX",
-      "mail_zip": "79329",
-      "address_source": "cad_api",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "address_source": "none",
       "score": 23,
       "flags": [
         "Mechanic Lien",
