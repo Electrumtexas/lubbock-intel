@@ -156,17 +156,42 @@ def parse_lcad_detail(html: str, r_number: str) -> dict:
             _parse_addr_into(result, raw, "mail")
 
     # ── Regex fallbacks on full text ──────────────────────────────────────
-    if "situs_address" not in result:
+    # Try to find full situs address with city+zip in one shot
+    if "situs_address" not in result or not result.get("situs_city") or not result.get("situs_zip"):
+        # Pattern: "1115 32ND ST, LUBBOCK, TX  79411" or with unit
         m = re.search(
-            r"(?:Property Address|Situs Address)\s*[:\n]\s*"
-            r"(\d+[^,\n]{3,50}),\s*([A-Z][A-Za-z\s]+),\s*(TX|tx)\s+(\d{5})",
+            r"(\d+\s+[\w\s,#\.]+?),\s*([A-Z][A-Za-z\s]{2,20}),\s*(TX|tx)\s+(\d{5})",
             full_text, re.I
         )
         if m:
-            result["situs_address"] = m.group(1).strip()
-            result["situs_city"]    = m.group(2).strip()
-            result["situs_state"]   = "TX"
-            result["situs_zip"]     = m.group(4).strip()
+            if "situs_address" not in result:
+                result["situs_address"] = m.group(1).strip()
+            if not result.get("situs_city"):
+                result["situs_city"]  = m.group(2).strip()
+            result["situs_state"] = "TX"
+            if not result.get("situs_zip"):
+                result["situs_zip"] = m.group(4).strip()
+
+    # Also try the page header area for "Property Address" value
+    if not result.get("situs_city") or not result.get("situs_zip"):
+        # LCAD header: look for address near "Property Address" label
+        m = re.search(
+            r"Property Address\s*\n\s*(\d+[^\n]{5,80},\s*[A-Z][^\n]{5,40}(?:TX|tx)\s+\d{5})",
+            full_text, re.I
+        )
+        if m:
+            _parse_addr_into(result, m.group(1).strip(), "situs")
+
+    # Try to find city+zip standalone if we have street but missing city/zip
+    if result.get("situs_address") and (not result.get("situs_city") or not result.get("situs_zip")):
+        # Look for TX ZIP pattern near the address
+        m = re.search(r"([A-Z][A-Za-z\s]{3,20}),?\s*(TX|tx)\s+(\d{5})", full_text)
+        if m:
+            if not result.get("situs_city"):
+                result["situs_city"]  = m.group(1).strip()
+            result["situs_state"] = "TX"
+            if not result.get("situs_zip"):
+                result["situs_zip"] = m.group(3).strip()
 
     # ── Page title fallback (shows "R###### - OWNER NAME - ADDRESS") ──────
     title = soup.find("title")
@@ -221,11 +246,50 @@ def missing_fields(rec: dict) -> list:
     return [f for f in REQUIRED_FIELDS if not str(rec.get(f, "") or "").strip()]
 
 
+def _split_full_address(addr_str, prefix, result):
+    """
+    If addr_str contains comma-separated city/state/zip, split it out.
+    Handles: "1115 32ND ST, LUBBOCK, TX  79411"
+             "9 TOMMY FISHER DR, UNIT #B, LUBBOCK, TX 79404"
+    """
+    if not addr_str or ',' not in addr_str:
+        return
+    parts = [p.strip() for p in addr_str.split(',')]
+    if len(parts) >= 3:
+        result[f"{prefix}_address"] = parts[0]
+        result[f"{prefix}_city"]    = parts[-2].strip()
+        sz = parts[-1].strip().split()
+        result[f"{prefix}_state"]   = sz[0] if sz else "TX"
+        result[f"{prefix}_zip"]     = sz[1] if len(sz) > 1 else ""
+    elif len(parts) == 2:
+        # Could be "STREET, CITY TX ZIP"
+        result[f"{prefix}_address"] = parts[0]
+        tail = parts[1].strip().split()
+        if len(tail) >= 3:
+            result[f"{prefix}_city"]  = tail[0]
+            result[f"{prefix}_state"] = tail[1]
+            result[f"{prefix}_zip"]   = tail[2]
+
+
 def apply_lcad_result(rec: dict, lcad: dict) -> int:
     """
     Apply LCAD detail results to a record, filling only missing fields.
+    If the LCAD result has a full address string (street + city + zip combined),
+    automatically splits it to fill city/state/zip separately.
     Returns number of fields filled.
     """
+    # First: try to split any full address strings in the lcad result
+    # so downstream field mapping can pick up the individual components
+    lcad_expanded = dict(lcad)
+    for prefix in ("situs", "mail"):
+        addr_key = f"{prefix}_address"
+        if lcad_expanded.get(addr_key) and ',' in str(lcad_expanded[addr_key]):
+            city_key = f"{prefix}_city"
+            zip_key  = f"{prefix}_zip"
+            # Only split if we don't already have city/zip
+            if not lcad_expanded.get(city_key) or not lcad_expanded.get(zip_key):
+                _split_full_address(lcad_expanded[addr_key], prefix, lcad_expanded)
+
     field_map = {
         "owner_name":    "owner_name",
         "situs_address": "situs_address",
@@ -240,7 +304,7 @@ def apply_lcad_result(rec: dict, lcad: dict) -> int:
     filled = 0
     for field, lcad_field in field_map.items():
         if not str(rec.get(field, "") or "").strip():
-            val = str(lcad.get(lcad_field, "") or "").strip()
+            val = str(lcad_expanded.get(lcad_field, "") or "").strip()
             if val:
                 rec[field] = val
                 filled += 1
@@ -261,6 +325,8 @@ def main():
                         help="Max records to process per run (default 500)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show what would be fetched without fetching")
+    parser.add_argument("--fast", action="store_true",
+                        help="Reduce delay to 0.5s for testing (use with --limit 20)")
     args = parser.parse_args()
 
     cache = load_cache()
@@ -309,6 +375,10 @@ def main():
         return
 
     # Process up to --limit records
+    delay = 0.5 if args.fast else DELAY
+    if args.fast:
+        log.info('FAST MODE: delay reduced to 0.5s')
+
     session = requests.Session()
     processed = 0
     filled_total = 0
@@ -335,7 +405,7 @@ def main():
             log.info(f"  → No data found")
 
         processed += 1
-        time.sleep(DELAY)
+        time.sleep(delay)
 
     log.info(f"\nDone: {processed} records processed, {filled_total} fields filled")
 

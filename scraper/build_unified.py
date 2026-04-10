@@ -3,16 +3,16 @@ build_unified.py v2 — uses new scoring.py weights
 """
 import json, pandas as pd, os, sys
 from pathlib import Path
-sys.path.insert(0, '/home/claude/build/scraper')
+sys.path.insert(0, str(Path(__file__).parent))
 from scoring import score_tax_delinquent, score_fire, apply_combo_bonus, completeness, REQUIRED_FIELDS
 
-ALLRES_PATH     = '/mnt/user-data/uploads/AllRes04042026.xlsx'
-DATAEXPORT_PATH = '/mnt/user-data/uploads/DataExport2633759.txt'
-TAX_PATH        = '/home/claude/output/tax_delinquent.json'
-FIRE_PATH       = '/home/claude/output/fire_damage.json'
-OUT_PATH        = '/home/claude/build/dashboard/unified_leads.json'
-TAX_OUT_PATH    = '/home/claude/build/dashboard/tax_delinquent.json'
-FIRE_OUT_PATH   = '/home/claude/build/dashboard/fire_damage.json'
+ALLRES_PATH     = 'data/AllRes_current.xlsx'
+DATAEXPORT_PATH = 'data/DataExport_current.txt'
+TAX_PATH        = 'dashboard/tax_delinquent.json'
+FIRE_PATH       = 'dashboard/fire_damage.json'
+OUT_PATH        = 'dashboard/unified_leads.json'
+TAX_OUT_PATH    = 'dashboard/tax_delinquent.json'
+FIRE_OUT_PATH   = 'dashboard/fire_damage.json'
 
 print("Loading reference files...")
 df_all = pd.read_excel(ALLRES_PATH, usecols=['QuickRefID','SitusAddress','LegalDescription','FinalTotal'])
@@ -79,7 +79,7 @@ for r in tax_list + fire_list:
     r['missing_fields'] = missing
 
 # Save updated individual files
-os.makedirs('/home/claude/build/dashboard', exist_ok=True)
+os.makedirs('dashboard', exist_ok=True)
 with open(TAX_OUT_PATH,'w') as f: json.dump(tax_list, f, separators=(',',':'), default=str)
 with open(FIRE_OUT_PATH,'w') as f: json.dump(fire_list, f, separators=(',',':'), default=str)
 print(f"  Saved updated tax ({len(tax_list):,}) and fire ({len(fire_list):,})")
