@@ -266,9 +266,20 @@ def main():
     cache = load_cache()
     log.info(f"Cache: {len(cache)} entries")
 
-    # Load data files
-    tax_list  = json.loads(TAX_PATH.read_text())  if TAX_PATH.exists()  else []
-    fire_list = json.loads(FIRE_PATH.read_text()) if FIRE_PATH.exists() else []
+    # Load data files — handle both plain list and dict-wrapped formats
+    def load_json_list(path):
+        if not path.exists():
+            return []
+        raw = json.loads(path.read_text())
+        if isinstance(raw, list):
+            return raw
+        for key in ('leads', 'records', 'data'):
+            if key in raw:
+                return raw[key]
+        return []
+
+    tax_list  = load_json_list(TAX_PATH)
+    fire_list = load_json_list(FIRE_PATH)
     all_records = tax_list + fire_list
 
     # Find incomplete records with R-numbers we haven't tried yet
