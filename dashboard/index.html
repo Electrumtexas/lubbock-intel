@@ -531,6 +531,17 @@
   .gh-panel input:focus { border-color: var(--gold); }
   .gh-panel label { font-family: var(--mono); font-size: .78rem; color: var(--muted); display: block; margin-bottom: 4px; }
 
+
+  /* ── KPI CLICKABLE FILTERS ─────────────────────────────────────────────── */
+  .kpi { cursor: pointer; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .kpi:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.35); }
+  .kpi.kpi-active {
+    border: 2px solid var(--gold) !important;
+    box-shadow: 0 0 0 3px rgba(212,175,55,.25), 0 4px 16px rgba(0,0,0,.35);
+    transform: translateY(-1px);
+  }
+  .kpi.kpi-active .kpi-label { color: var(--gold); }
+
 </style>
 </head>
 <body>
@@ -578,29 +589,30 @@
     </div>
     <div class="kpi kpi-red">
       <div class="kpi-label">Triple Threat</div>
-      <div class="kpi-val" id="all-kpi-triple">—</div>
+      <div class="kpi-val" id="all-kpi-triple" style="cursor:pointer" onclick="kpiToggle('all','all-kpi-triple',allKpiFilter)">—</div>
       <div class="kpi-sub">all 3 sources</div>
     </div>
     <div class="kpi kpi-orange">
       <div class="kpi-label">Multi-Factor</div>
-      <div class="kpi-val" id="all-kpi-multi">—</div>
+      <div class="kpi-val" id="all-kpi-multi" style="cursor:pointer" onclick="kpiToggle('all','all-kpi-multi',allKpiFilter)">—</div>
       <div class="kpi-sub">2+ sources stacked</div>
     </div>
     <div class="kpi kpi-purple">
       <div class="kpi-label">Fire + Tax</div>
-      <div class="kpi-val" id="all-kpi-firetax">—</div>
+      <div class="kpi-val" id="all-kpi-firetax" style="cursor:pointer" onclick="kpiToggle('all','all-kpi-firetax',allKpiFilter)">—</div>
       <div class="kpi-sub">catastrophic combo</div>
     </div>
     <div class="kpi kpi-gold">
       <div class="kpi-label">Hot Leads ≥70</div>
-      <div class="kpi-val" id="all-kpi-hot">—</div>
+      <div class="kpi-val" id="all-kpi-hot" style="cursor:pointer" onclick="kpiToggle('all','all-kpi-hot',allKpiFilter)">—</div>
       <div class="kpi-sub">score threshold</div>
     </div>
     <div class="kpi kpi-green">
       <div class="kpi-label">With Address</div>
-      <div class="kpi-val" id="all-kpi-addr">—</div>
+      <div class="kpi-val" id="all-kpi-addr" style="cursor:pointer" onclick="kpiToggle('all','all-kpi-addr',allKpiFilter)">—</div>
       <div class="kpi-sub">ready to mail</div>
     </div>
+    <div class="kpi kpi-green"><div class="kpi-label">New This Week</div><div class="kpi-val" id="all-kpi-new" style="cursor:pointer" onclick="kpiToggle('all','all-kpi-new',allKpiFilter)">—</div><div class="kpi-sub">last 7 days</div></div>
   </div>
 
   <div class="controls">
@@ -660,34 +672,35 @@
     </div>
     <div class="kpi kpi-red">
       <div class="kpi-label">Pre-Foreclosure</div>
-      <div class="kpi-val" id="kpi-fc">—</div>
+      <div class="kpi-val" id="kpi-fc" style="cursor:pointer" onclick="kpiToggle('clerk','kpi-fc',clerkKpiFilter)">—</div>
       <div class="kpi-sub">LP + NOFC</div>
     </div>
     <div class="kpi kpi-purple">
       <div class="kpi-label">Judgments</div>
-      <div class="kpi-val" id="kpi-jud">—</div>
+      <div class="kpi-val" id="kpi-jud" style="cursor:pointer" onclick="kpiToggle('clerk','kpi-jud',clerkKpiFilter)">—</div>
       <div class="kpi-sub">JUD / CCJ / DRJUD</div>
     </div>
     <div class="kpi kpi-orange">
       <div class="kpi-label">Liens</div>
-      <div class="kpi-val" id="kpi-lien">—</div>
+      <div class="kpi-val" id="kpi-lien" style="cursor:pointer" onclick="kpiToggle('clerk','kpi-lien',clerkKpiFilter)">—</div>
       <div class="kpi-sub">IRS / HOA / Mech</div>
     </div>
     <div class="kpi kpi-blue">
       <div class="kpi-label">Probate</div>
-      <div class="kpi-val" id="kpi-pro">—</div>
+      <div class="kpi-val" id="kpi-pro" style="cursor:pointer" onclick="kpiToggle('clerk','kpi-pro',clerkKpiFilter)">—</div>
       <div class="kpi-sub">PRO docs</div>
     </div>
     <div class="kpi kpi-green">
       <div class="kpi-label">With Address</div>
-      <div class="kpi-val" id="kpi-addr">—</div>
+      <div class="kpi-val" id="kpi-addr" style="cursor:pointer" onclick="kpiToggle('clerk','kpi-addr',clerkKpiFilter)">—</div>
       <div class="kpi-sub">parcel matched</div>
     </div>
     <div class="kpi kpi-gold">
       <div class="kpi-label">Hot Leads ≥70</div>
-      <div class="kpi-val" id="kpi-hot">—</div>
+      <div class="kpi-val" id="kpi-hot" style="cursor:pointer" onclick="kpiToggle('clerk','kpi-hot',clerkKpiFilter)">—</div>
       <div class="kpi-sub">score threshold</div>
     </div>
+    <div class="kpi kpi-green"><div class="kpi-label">New This Week</div><div class="kpi-val" id="kpi-new" style="cursor:pointer" onclick="kpiToggle('clerk','kpi-new',clerkKpiFilter)">—</div><div class="kpi-sub">last 7 days</div></div>
   </div>
 
   <!-- Controls -->
@@ -755,11 +768,12 @@
 <div class="page">
   <div class="kpi-row">
     <div class="kpi kpi-green"><div class="kpi-label">Total Delinquent</div><div class="kpi-val" id="tax-kpi-total">—</div><div class="kpi-sub">residential</div></div>
-    <div class="kpi kpi-red"><div class="kpi-label">Multi-Year</div><div class="kpi-val" id="tax-kpi-multiyear">—</div><div class="kpi-sub">genuine distress</div></div>
-    <div class="kpi kpi-orange"><div class="kpi-label">High Balance ≥$10k</div><div class="kpi-val" id="tax-kpi-highbal">—</div><div class="kpi-sub">most distressed</div></div>
-    <div class="kpi kpi-gold"><div class="kpi-label">Score ≥75</div><div class="kpi-val" id="tax-kpi-hot">—</div><div class="kpi-sub">high priority</div></div>
-    <div class="kpi kpi-purple"><div class="kpi-label">Absentee Owners</div><div class="kpi-val" id="tax-kpi-absent">—</div><div class="kpi-sub">mail ≠ property</div></div>
+    <div class="kpi kpi-red"><div class="kpi-label">Multi-Year</div><div class="kpi-val" id="tax-kpi-multiyear" style="cursor:pointer" onclick="kpiToggle('tax','tax-kpi-multiyear',taxKpiFilter)">—</div><div class="kpi-sub">genuine distress</div></div>
+    <div class="kpi kpi-orange"><div class="kpi-label">High Balance ≥$10k</div><div class="kpi-val" id="tax-kpi-highbal" style="cursor:pointer" onclick="kpiToggle('tax','tax-kpi-highbal',taxKpiFilter)">—</div><div class="kpi-sub">most distressed</div></div>
+    <div class="kpi kpi-gold"><div class="kpi-label">Score ≥75</div><div class="kpi-val" id="tax-kpi-hot" style="cursor:pointer" onclick="kpiToggle('tax','tax-kpi-hot',taxKpiFilter)">—</div><div class="kpi-sub">high priority</div></div>
+    <div class="kpi kpi-purple"><div class="kpi-label">Absentee Owners</div><div class="kpi-val" id="tax-kpi-absent" style="cursor:pointer" onclick="kpiToggle('tax','tax-kpi-absent',taxKpiFilter)">—</div><div class="kpi-sub">mail ≠ property</div></div>
     <div class="kpi kpi-red"><div class="kpi-label">Total Owed</div><div class="kpi-val" id="tax-kpi-totalbal">—</div><div class="kpi-sub">combined balance</div></div>
+    <div class="kpi kpi-green"><div class="kpi-label">New This Week</div><div class="kpi-val" id="tax-kpi-new" style="cursor:pointer" onclick="kpiToggle('tax','tax-kpi-new',taxKpiFilter)">—</div><div class="kpi-sub">last 7 days</div></div>
   </div>
   <div class="controls">
     <input type="search" id="tax-search" placeholder="Search owner, address, R-number…" oninput="taxApplyFilters()">
@@ -807,11 +821,12 @@
 <div class="page">
   <div class="kpi-row">
     <div class="kpi kpi-red"><div class="kpi-label">Total Incidents</div><div class="kpi-val" id="fire-kpi-total">—</div><div class="kpi-sub">all structure fires</div></div>
-    <div class="kpi kpi-orange"><div class="kpi-label">Residential</div><div class="kpi-val" id="fire-kpi-res">—</div><div class="kpi-sub">dwellings</div></div>
-    <div class="kpi kpi-purple"><div class="kpi-label">Non-Residential</div><div class="kpi-val" id="fire-kpi-nonres">—</div><div class="kpi-sub">commercial / other</div></div>
-    <div class="kpi kpi-gold"><div class="kpi-label">Owner Identified</div><div class="kpi-val" id="fire-kpi-owner">—</div><div class="kpi-sub">enriched records</div></div>
-    <div class="kpi kpi-blue"><div class="kpi-label">R-Number Matched</div><div class="kpi-val" id="fire-kpi-rnum">—</div><div class="kpi-sub">LCAD linked</div></div>
-    <div class="kpi kpi-gold"><div class="kpi-label">Hot Leads ≥70</div><div class="kpi-val" id="fire-kpi-hot">—</div><div class="kpi-sub">score threshold</div></div>
+    <div class="kpi kpi-orange"><div class="kpi-label">Residential</div><div class="kpi-val" id="fire-kpi-res" style="cursor:pointer" onclick="kpiToggle('fire','fire-kpi-res',fireKpiFilter)">—</div><div class="kpi-sub">dwellings</div></div>
+    <div class="kpi kpi-purple"><div class="kpi-label">Non-Residential</div><div class="kpi-val" id="fire-kpi-nonres" style="cursor:pointer" onclick="kpiToggle('fire','fire-kpi-nonres',fireKpiFilter)">—</div><div class="kpi-sub">commercial / other</div></div>
+    <div class="kpi kpi-gold"><div class="kpi-label">Owner Identified</div><div class="kpi-val" id="fire-kpi-owner" style="cursor:pointer" onclick="kpiToggle('fire','fire-kpi-owner',fireKpiFilter)">—</div><div class="kpi-sub">enriched records</div></div>
+    <div class="kpi kpi-blue"><div class="kpi-label">R-Number Matched</div><div class="kpi-val" id="fire-kpi-rnum" style="cursor:pointer" onclick="kpiToggle('fire','fire-kpi-rnum',fireKpiFilter)">—</div><div class="kpi-sub">LCAD linked</div></div>
+    <div class="kpi kpi-gold"><div class="kpi-label">Hot Leads ≥70</div><div class="kpi-val" id="fire-kpi-hot" style="cursor:pointer" onclick="kpiToggle('fire','fire-kpi-hot',fireKpiFilter)">—</div><div class="kpi-sub">score threshold</div></div>
+    <div class="kpi kpi-green"><div class="kpi-label">New This Week</div><div class="kpi-val" id="fire-kpi-new" style="cursor:pointer" onclick="kpiToggle('fire','fire-kpi-new',fireKpiFilter)">—</div><div class="kpi-sub">last 7 days</div></div>
   </div>
   <div class="controls">
     <input type="search" id="fire-search" placeholder="Search address, incident #, property use…" oninput="fireApplyFilters()">
@@ -857,10 +872,11 @@
 
   <div class="kpi-row">
     <div class="kpi kpi-orange"><div class="kpi-label">Total Incomplete</div><div class="kpi-val" id="inc-kpi-total">—</div><div class="kpi-sub">need attention</div></div>
-    <div class="kpi kpi-red"><div class="kpi-label">No Address</div><div class="kpi-val" id="inc-kpi-noaddr">—</div><div class="kpi-sub">missing situs</div></div>
-    <div class="kpi kpi-purple"><div class="kpi-label">No Owner</div><div class="kpi-val" id="inc-kpi-noowner">—</div><div class="kpi-sub">missing name</div></div>
-    <div class="kpi kpi-blue"><div class="kpi-label">No Mailing</div><div class="kpi-val" id="inc-kpi-nomail">—</div><div class="kpi-sub">can't send mail</div></div>
-    <div class="kpi kpi-gold"><div class="kpi-label">High Score Incomplete</div><div class="kpi-val" id="inc-kpi-hot">—</div><div class="kpi-sub">score ≥60, worth fixing</div></div>
+    <div class="kpi kpi-red"><div class="kpi-label">No Address</div><div class="kpi-val" id="inc-kpi-noaddr" style="cursor:pointer" onclick="kpiToggle('incomplete','inc-kpi-noaddr',incKpiFilter)">—</div><div class="kpi-sub">missing situs</div></div>
+    <div class="kpi kpi-purple"><div class="kpi-label">No Owner</div><div class="kpi-val" id="inc-kpi-noowner" style="cursor:pointer" onclick="kpiToggle('incomplete','inc-kpi-noowner',incKpiFilter)">—</div><div class="kpi-sub">missing name</div></div>
+    <div class="kpi kpi-blue"><div class="kpi-label">No Mailing</div><div class="kpi-val" id="inc-kpi-nomail" style="cursor:pointer" onclick="kpiToggle('incomplete','inc-kpi-nomail',incKpiFilter)">—</div><div class="kpi-sub">can't send mail</div></div>
+    <div class="kpi kpi-gold"><div class="kpi-label">High Score Incomplete</div><div class="kpi-val" id="inc-kpi-hot" style="cursor:pointer" onclick="kpiToggle('incomplete','inc-kpi-hot',incKpiFilter)">—</div><div class="kpi-sub">score ≥60, worth fixing</div></div>
+    <div class="kpi kpi-green"><div class="kpi-label">New This Week</div><div class="kpi-val" id="inc-kpi-new" style="cursor:pointer" onclick="kpiToggle('incomplete','inc-kpi-new',incKpiFilter)">—</div><div class="kpi-sub">last 7 days</div></div>
   </div>
 
   <div class="controls">
@@ -966,6 +982,7 @@ function updateKPIs(data) {
   document.getElementById('kpi-pro').textContent  = recs.filter(r => r.cat === 'probate').length;
   document.getElementById('kpi-addr').textContent = recs.filter(r => r.prop_address).length;
   document.getElementById('kpi-hot').textContent  = recs.filter(r => (r.score||0) >= 70).length;
+  document.getElementById('kpi-new').textContent  = recs.filter(r => {const _n=Date.now(),_7=7*24*60*60*1000,chk=(s)=>{if(!s)return false;const d=new Date(s);return !isNaN(d)&&(_n-d.getTime())<=_7;};return chk(r.filed);}).length.toLocaleString();
 }
 
 // ── Filters ───────────────────────────────────────────────────────────────
@@ -975,7 +992,9 @@ function applyFilters() {
   const minS  = parseInt(document.getElementById('filter-score').value) || 0;
   const addr  = document.getElementById('filter-addr').value;
 
-  FILTERED = ALL_RECORDS.filter(r => {
+  let _clerkBase = ALL_RECORDS;
+  if (_clerkKpiFilterActive) _clerkBase = applyKpiFilter(_clerkBase, _clerkKpiFilterActive);
+  FILTERED = _clerkBase.filter(r => {
     if (cat  && r.cat !== cat) return false;
     if (minS && (r.score||0) < minS) return false;
     if (addr === 'yes' && !r.prop_address) return false;
@@ -1231,6 +1250,8 @@ function updateAllKPIs() {
   document.getElementById('all-kpi-firetax').textContent = d.filter(r=>(r.sources||[]).includes('fire')&&(r.sources||[]).includes('tax')).length.toLocaleString();
   document.getElementById('all-kpi-hot').textContent     = d.filter(r=>(r.score||0)>=70).length.toLocaleString();
   document.getElementById('all-kpi-addr').textContent    = d.filter(r=>r.situs_address).length.toLocaleString();
+
+  document.getElementById('all-kpi-new').textContent = d.filter(r => {const _n=Date.now();const _7=7*24*60*60*1000;const chk=(s)=>{if(!s)return false;const dt=new Date(s);return !isNaN(dt)&&(_n-dt.getTime())<=_7;};return chk(r.filed) || chk(r.incident_date) || chk(r.data_date)}).length.toLocaleString();
 }
 
 function allApplyFilters() {
@@ -1238,7 +1259,9 @@ function allApplyFilters() {
   const src = document.getElementById('all-filter-source').value;
   const sc  = parseInt(document.getElementById('all-filter-score').value) || 0;
   const ad  = document.getElementById('all-filter-addr').value;
-  ALL_FILTERED = ALL_UNIFIED.filter(r => {
+  let _allBase = ALL_UNIFIED;
+  if (_allKpiFilterActive) _allBase = applyKpiFilter(_allBase, _allKpiFilterActive);
+  ALL_FILTERED = _allBase.filter(r => {
     if (sc && (r.score||0) < sc) return false;
     if (ad === 'yes' && !r.situs_address) return false;
     if (src === 'multi'  && (r.source_count||0) < 2) return false;
@@ -1499,6 +1522,8 @@ function updateTaxKPIs() {
   document.getElementById('tax-kpi-hot').textContent      = d.filter(r=>(r.score||0)>=75).length.toLocaleString();
   document.getElementById('tax-kpi-absent').textContent   = d.filter(r=>(r.flags||[]).includes('Absentee Owner')).length.toLocaleString();
   document.getElementById('tax-kpi-totalbal').textContent = '$'+Math.round(tot/1e6*10)/10+'M';
+
+  document.getElementById('tax-kpi-new').textContent = d.filter(r => {const _n=Date.now();const _7=7*24*60*60*1000;const chk=(s)=>{if(!s)return false;const dt=new Date(s);return !isNaN(dt)&&(_n-dt.getTime())<=_7;};return chk(r.data_date)}).length.toLocaleString();
 }
 
 function taxApplyFilters() {
@@ -1506,7 +1531,9 @@ function taxApplyFilters() {
   const sc = parseInt(document.getElementById('tax-filter-score').value)||0;
   const fl = document.getElementById('tax-filter-flag').value;
   const ad = document.getElementById('tax-filter-addr').value;
-  TAX_FILTERED = TAX_ALL.filter(r => {
+  let _taxBase = TAX_ALL;
+  if (_taxKpiFilterActive) _taxBase = applyKpiFilter(_taxBase, _taxKpiFilterActive);
+  TAX_FILTERED = _taxBase.filter(r => {
     if (sc && (r.score||0)<sc) return false;
     if (fl && !(r.flags||[]).includes(fl)) return false;
     if (ad==='yes' && !r.situs_address) return false;
@@ -1625,12 +1652,16 @@ function updateFireKPIs() {
   document.getElementById('fire-kpi-owner').textContent =d.filter(r=>r.owner_name).length;
   document.getElementById('fire-kpi-rnum').textContent  =d.filter(r=>r.r_number).length;
   document.getElementById('fire-kpi-hot').textContent   =d.filter(r=>(r.score||0)>=70).length;
+
+  document.getElementById('fire-kpi-new').textContent = d.filter(r => {const _n=Date.now();const _7=7*24*60*60*1000;const chk=(s)=>{if(!s)return false;const dt=new Date(s);return !isNaN(dt)&&(_n-dt.getTime())<=_7;};return chk(r.incident_date)}).length.toLocaleString();
 }
 function fireApplyFilters() {
   const q=document.getElementById('fire-search').value.trim().toLowerCase();
   const rs=document.getElementById('fire-filter-res').value;
   const sc=parseInt(document.getElementById('fire-filter-score').value)||0;
-  FIRE_FILTERED=FIRE_ALL.filter(r=>{
+  let _fireBase = FIRE_ALL;
+  if (_fireKpiFilterActive) _fireBase = applyKpiFilter(_fireBase, _fireKpiFilterActive);
+  FIRE_FILTERED=_fireBase.filter(r=>{
     if(rs==='1'&&!r.is_residential)return false;
     if(rs==='0'&&r.is_residential)return false;
     if(sc&&(r.score||0)<sc)return false;
@@ -1761,6 +1792,8 @@ function updateIncKPIs() {
   document.getElementById('inc-kpi-noowner').textContent = d.filter(r=>(r.missing_fields||[]).includes('owner_name')).length.toLocaleString();
   document.getElementById('inc-kpi-nomail').textContent  = d.filter(r=>(r.missing_fields||[]).includes('mail_address')).length.toLocaleString();
   document.getElementById('inc-kpi-hot').textContent     = d.filter(r=>(r.score||0)>=60).length.toLocaleString();
+
+  document.getElementById('inc-kpi-new').textContent = d.filter(r => {const _n=Date.now();const _7=7*24*60*60*1000;const chk=(s)=>{if(!s)return false;const dt=new Date(s);return !isNaN(dt)&&(_n-dt.getTime())<=_7;};return chk(r.filed) || chk(r.incident_date) || chk(r.data_date)}).length.toLocaleString();
 }
 
 function incApplyFilters() {
@@ -1768,7 +1801,9 @@ function incApplyFilters() {
   const mf  = document.getElementById('inc-filter-missing').value;
   const src = document.getElementById('inc-filter-source').value;
   const sc  = parseInt(document.getElementById('inc-filter-score').value)||0;
-  INC_FILTERED = INC_ALL.filter(r => {
+  let _incBase = INC_ALL;
+  if (_incKpiFilterActive) _incBase = applyKpiFilter(_incBase, _incKpiFilterActive);
+  INC_FILTERED = _incBase.filter(r => {
     if (mf  && !(r.missing_fields||[]).includes(mf)) return false;
     if (src && !(r.sources||[]).includes(src))        return false;
     if (sc  && (r.score||0) < sc)                     return false;
@@ -2115,6 +2150,145 @@ async function pushFileToGitHub(user, repo, pat, filePath, data) {
   if (!putRes.ok) {
     const err = await putRes.json().catch(() => ({}));
     throw new Error(err.message || `GitHub PUT failed: ${putRes.status}`);
+  }
+}
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// KPI CLICKABLE FILTERS
+// Each tab has an active KPI filter state. Clicking a KPI tile applies a
+// filter; clicking the same tile again clears it.
+// ══════════════════════════════════════════════════════════════════════════
+
+const _kpiFilters = {
+  all:        null,
+  clerk:      null,
+  tax:        null,
+  fire:       null,
+  incomplete: null,
+};
+
+function kpiToggle(tab, tileId, filterFn) {
+  const tile = document.getElementById(tileId);
+  if (!tile) return;
+  const isActive = _kpiFilters[tab] === tileId;
+  // Clear all tiles in this tab
+  document.querySelectorAll(`[id^="${tab.replace('incomplete','inc')}-kpi-"], [id^="kpi-"]`)
+    .forEach(el => el.closest('.kpi')?.classList.remove('kpi-active'));
+  if (isActive) {
+    // Toggle off — clear filter
+    _kpiFilters[tab] = null;
+    filterFn(null);
+  } else {
+    // Toggle on — apply filter
+    _kpiFilters[tab] = tileId;
+    tile.closest('.kpi')?.classList.add('kpi-active');
+    filterFn(tileId);
+  }
+}
+
+// ── ALL LEADS tab KPI filters ─────────────────────────────────────────────
+function allKpiFilter(tileId) {
+  // Reset any existing quick filter, then apply
+  if (!tileId) { _allKpiFilterActive = null; allApplyFilters(); return; }
+  _allKpiFilterActive = tileId;
+  allApplyFilters();
+}
+let _allKpiFilterActive = null;
+
+// ── CLERK tab KPI filters ─────────────────────────────────────────────────
+function clerkKpiFilter(tileId) {
+  if (!tileId) { _clerkKpiFilterActive = null; filterClerk(); return; }
+  _clerkKpiFilterActive = tileId;
+  filterClerk();
+}
+let _clerkKpiFilterActive = null;
+
+// ── TAX tab KPI filters ───────────────────────────────────────────────────
+function taxKpiFilter(tileId) {
+  if (!tileId) { _taxKpiFilterActive = null; taxApplyFilters(); return; }
+  _taxKpiFilterActive = tileId;
+  taxApplyFilters();
+}
+let _taxKpiFilterActive = null;
+
+// ── FIRE tab KPI filters ──────────────────────────────────────────────────
+function fireKpiFilter(tileId) {
+  if (!tileId) { _fireKpiFilterActive = null; fireApplyFilters(); return; }
+  _fireKpiFilterActive = tileId;
+  fireApplyFilters();
+}
+let _fireKpiFilterActive = null;
+
+// ── INCOMPLETE tab KPI filters ────────────────────────────────────────────
+function incKpiFilter(tileId) {
+  if (!tileId) { _incKpiFilterActive = null; incApplyFilters(); return; }
+  _incKpiFilterActive = tileId;
+  incApplyFilters();
+}
+let _incKpiFilterActive = null;
+
+// Helper: apply KPI filter to a dataset
+
+function clearKpiActive(tab) {
+  const prefix = tab === 'incomplete' ? 'inc' : tab === 'clerk' ? 'kpi' : tab;
+  document.querySelectorAll(`[id^="${prefix}-kpi-"], [id^="kpi-"]`)
+    .forEach(el => el.closest('.kpi')?.classList.remove('kpi-active'));
+  _kpiFilters[tab] = null;
+  if (tab==='all')        _allKpiFilterActive = null;
+  if (tab==='clerk')      _clerkKpiFilterActive = null;
+  if (tab==='tax')        _taxKpiFilterActive = null;
+  if (tab==='fire')       _fireKpiFilterActive = null;
+  if (tab==='incomplete') _incKpiFilterActive = null;
+}
+
+function applyKpiFilter(records, tileId) {
+  if (!tileId) return records;
+  // Helper: is a date string within the last 7 days?
+  const _now = Date.now();
+  const _7d  = 7 * 24 * 60 * 60 * 1000;
+  const _isNew = (dateStr) => {
+    if (!dateStr) return false;
+    const d = new Date(dateStr);
+    return !isNaN(d) && (_now - d.getTime()) <= _7d;
+  };
+  switch(tileId) {
+    // ALL LEADS
+    case 'all-kpi-triple':  return records.filter(r => (r.sources||[]).length >= 3);
+    case 'all-kpi-multi':   return records.filter(r => (r.sources||[]).length >= 2);
+    case 'all-kpi-firetax': return records.filter(r => (r.sources||[]).includes('fire') && (r.sources||[]).includes('tax'));
+    case 'all-kpi-hot':     return records.filter(r => (r.score||0) >= 70);
+    case 'all-kpi-addr':    return records.filter(r => r.situs_address);
+    // CLERK
+    case 'kpi-fc':    return records.filter(r => r.cat === 'foreclosure');
+    case 'kpi-jud':   return records.filter(r => r.cat === 'judgment');
+    case 'kpi-lien':  return records.filter(r => r.cat === 'lien');
+    case 'kpi-pro':   return records.filter(r => r.cat === 'probate');
+    case 'kpi-addr':  return records.filter(r => r.prop_address || r.situs_address);
+    case 'kpi-hot':   return records.filter(r => (r.score||0) >= 70);
+    // TAX
+    case 'tax-kpi-multiyear': return records.filter(r => (r.years_count||1) > 1);
+    case 'tax-kpi-highbal':   return records.filter(r => (r.balance_owed||0) >= 10000);
+    case 'tax-kpi-hot':       return records.filter(r => (r.score||0) >= 75);
+    case 'tax-kpi-absent':    return records.filter(r => (r.flags||[]).includes('Absentee Owner'));
+    // FIRE
+    case 'fire-kpi-res':    return records.filter(r => r.is_residential);
+    case 'fire-kpi-nonres': return records.filter(r => !r.is_residential);
+    case 'fire-kpi-owner':  return records.filter(r => r.owner_name);
+    case 'fire-kpi-rnum':   return records.filter(r => r.r_number);
+    case 'fire-kpi-hot':    return records.filter(r => (r.score||0) >= 70);
+    // INCOMPLETE
+    case 'inc-kpi-noaddr':  return records.filter(r => (r.missing_fields||[]).some(f => f.includes('situs')));
+    case 'inc-kpi-noowner': return records.filter(r => (r.missing_fields||[]).includes('owner_name'));
+    case 'inc-kpi-nomail':  return records.filter(r => (r.missing_fields||[]).some(f => f.includes('mail')));
+    case 'inc-kpi-hot':     return records.filter(r => (r.score||0) >= 70);
+    // NEW THIS WEEK — date-based, works across all tabs
+    case 'all-kpi-new':   return records.filter(r => _isNew(r.filed) || _isNew(r.incident_date) || _isNew(r.data_date));
+    case 'kpi-new':       return records.filter(r => _isNew(r.filed));
+    case 'tax-kpi-new':   return records.filter(r => _isNew(r.data_date));
+    case 'fire-kpi-new':  return records.filter(r => _isNew(r.incident_date));
+    case 'inc-kpi-new':   return records.filter(r => _isNew(r.filed) || _isNew(r.incident_date) || _isNew(r.data_date));
+    default: return records;
   }
 }
 
