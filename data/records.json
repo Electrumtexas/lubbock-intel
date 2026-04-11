@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-11T00:09:57.028178Z",
+  "fetched_at": "2026-04-11T00:26:51.686769Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-04",
     "end": "2026-04-11"
   },
   "total": 64,
-  "with_address": 38,
+  "with_address": 37,
   "records": [
     {
       "description": "ABSTRACT OF JUDGMENT",
@@ -776,33 +776,6 @@
       ]
     },
     {
-      "description": "POSTING",
-      "doc_num": "Recording Date04/07/2026 04:23:16 PM",
-      "filed": "2026-04-07",
-      "party_one": "Grantor: SIMS JOHN C TRUSTEE, C&S INVESTMENTS",
-      "party_two": "Grantee: JACKSON ANTHONY JUNE, PUBLIC",
-      "node": "DOC284S479",
-      "doc_type": "NOFC",
-      "cat": "foreclosure",
-      "cat_label": "Notice of Foreclosure",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S479",
-      "owner": "SIMS JOHN C TRUSTEE",
-      "grantee": "JACKSON ANTHONY JUNE",
-      "prop_address": "1205 BROADWAY",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79401",
-      "mail_address": "P O BOX 10236",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79408",
-      "score": 50,
-      "flags": [
-        "Pre-foreclosure",
-        "New this week"
-      ]
-    },
-    {
       "description": "MECHANICS LIEN",
       "doc_num": "Recording Date04/07/2026 04:31:02 PM",
       "filed": "2026-04-07",
@@ -1447,6 +1420,33 @@
       "score": 45,
       "flags": [
         "Tax lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "POSTING",
+      "doc_num": "Recording Date04/07/2026 04:23:16 PM",
+      "filed": "2026-04-07",
+      "party_one": "Grantor: SIMS JOHN C TRUSTEE, C&S INVESTMENTS",
+      "party_two": "Grantee: JACKSON ANTHONY JUNE, PUBLIC",
+      "node": "DOC284S479",
+      "doc_type": "NOFC",
+      "cat": "foreclosure",
+      "cat_label": "Notice of Foreclosure",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S479",
+      "owner": "SIMS JOHN C TRUSTEE",
+      "grantee": "JACKSON ANTHONY JUNE",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "score": 45,
+      "flags": [
+        "Pre-foreclosure",
         "New this week"
       ]
     },
