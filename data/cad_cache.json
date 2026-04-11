@@ -1153,5 +1153,150 @@
     "mail_state": "TX",
     "mail_zip": "79423"
   },
-  "ROYAL PACKAGE LIQUOR LLC": null
+  "ROYAL PACKAGE LIQUOR LLC": null,
+  "JACKSON ANTHONY JUNE": null,
+  "SIMS JOHN C TRUSTEE": {
+    "prop_address": "1205 BROADWAY",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "P O BOX 10236",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79408"
+  },
+  "MCKINNON KENNETH": null,
+  "WOLFFORTH CITY OF": {
+    "prop_address": "1ST ST",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "PO BOX 36",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382-0036"
+  },
+  "CORONADO EMMANUEL": {
+    "prop_address": "5018 70TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5018 70TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "ORTA CODY R": {
+    "prop_address": "7019 38TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "7019 38TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "ADKINS BONNIE LOU": {
+    "prop_address": "2419 N AVE N",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "2167 SHAW AVE",
+    "mail_city": "#STE 115",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "BROWN TYRONE": {
+    "prop_address": "5613 CR 6150",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "LETISHA HOLGUIN-BROWN",
+    "mail_city": "5613 COUNTY ROAD 6150",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "WEST DANIEL": {
+    "prop_address": "1713 76TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "PO BOX 3133",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79453"
+  },
+  "ROBERTSON KARAN P": {
+    "prop_address": "5733 106TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5733 106TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "SOLINO INVESTMENTS LLC": null,
+  "BRADYS AUTOMOTIVE LLC": {
+    "prop_address": "4413 34TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "Attn: BRADY DOWELL",
+    "mail_city": "4413 34TH ST",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "BADGER MICHELLE C": {
+    "prop_address": "10808 CR 1300",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "PO BOX 231",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382-0231"
+  },
+  "BADGER MICHELLE C DBA": {
+    "prop_address": "10808 CR 1300",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "PO BOX 231",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382-0231"
+  },
+  "RIBORDY JAYKIN DOUGLAS": {
+    "prop_address": "5532 PRINCETON ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5532 PRINCETON ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "LARA JOE": {
+    "prop_address": "4600 JARVIS ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "4600 JARVIS ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416-2415"
+  },
+  "SMITH RYDER FRAZE": {
+    "prop_address": "4901 GRINNELL ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "4901 GRINNELL ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "ELLIS CHARLOTTE": null,
+  "LUBBOCK HABITAT FOR HUMANITY INC": null
 }
