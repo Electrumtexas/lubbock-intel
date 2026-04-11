@@ -1052,7 +1052,7 @@ function renderTable() {
     return;
   }
 
-  body.innerHTML = FILTERED.map((r, i) => {
+  body.innerHTML = FILTERED.slice(0, PAGE_SIZE * _pages["clerk"]).map((r, i) => {
     const score  = r.score || 0;
     const sc     = score >= 70 ? 'score-hi' : score >= 45 ? 'score-med' : 'score-lo';
     const flags  = (r.flags || []).map(f => {
@@ -1084,6 +1084,8 @@ function renderTable() {
       <td onclick="event.stopPropagation()">${link}</td>
     </tr>`;
   }).join('');
+  const _sc=Math.min(PAGE_SIZE*_pages["clerk"],FILTERED.length);
+  if(_sc<FILTERED.length){body.innerHTML+=_makeShowMoreRow('clerk',_sc,FILTERED.length,7);}
 }
 
 function fmtAmt(n) {
@@ -1255,6 +1257,7 @@ function updateAllKPIs() {
 }
 
 function allApplyFilters() {
+  _resetPage("all");
   const q   = document.getElementById('all-search').value.trim().toLowerCase();
   const src = document.getElementById('all-filter-source').value;
   const sc  = parseInt(document.getElementById('all-filter-score').value) || 0;
@@ -1311,7 +1314,7 @@ function allRenderTable() {
     body.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="icon">🔍</div><p>No records match.</p></div></td></tr>`;
     return;
   }
-  body.innerHTML = ALL_FILTERED.map((r,i) => {
+  body.innerHTML = ALL_FILTERED.slice(0, PAGE_SIZE * _pages["all"]).map((r,i) => {
     const score = r.score||0;
     const sc    = score>=70 ? 'score-hi' : score>=45 ? 'score-med' : 'score-lo';
     // Source badges
@@ -1357,6 +1360,11 @@ function allRenderTable() {
       <td><div class="flags">${flags||'<span class="mono-sm">—</span>'}</div></td>
     </tr>`;
   }).join('');
+  // Show more row if there are more records
+  const _shown_all = Math.min(PAGE_SIZE * _pages["all"], ALL_FILTERED.length);
+  if (_shown_all < ALL_FILTERED.length) {
+    body.innerHTML += _makeShowMoreRow('all', _shown_all, ALL_FILTERED.length, 7);
+  }
 }
 
 function openUnifiedModal(idx) {
@@ -1527,6 +1535,7 @@ function updateTaxKPIs() {
 }
 
 function taxApplyFilters() {
+  _resetPage("tax");
   const q  = document.getElementById('tax-search').value.trim().toLowerCase();
   const sc = parseInt(document.getElementById('tax-filter-score').value)||0;
   const fl = document.getElementById('tax-filter-flag').value;
@@ -1562,7 +1571,7 @@ function taxRenderTable() {
   document.getElementById('tax-result-count').textContent = TAX_FILTERED.length.toLocaleString();
   const body = document.getElementById('tax-table-body');
   if (!TAX_FILTERED.length) { body.innerHTML=`<tr><td colspan="6"><div class="empty-state"><div class="icon">🔍</div><p>No records match.</p></div></td></tr>`; return; }
-  body.innerHTML = TAX_FILTERED.map((r,i) => {
+  body.innerHTML = TAX_FILTERED.slice(0, PAGE_SIZE * _pages["tax"]).map((r,i) => {
     const score=r.score||0, sc=score>=70?'score-hi':score>=45?'score-med':'score-lo';
     const bal=r.balance_owed||0, bc=bal>=10000?'bal-hi':bal>=3883?'bal-med':'bal-lo';
     const flags=(r.flags||[]).map(f=>`<span class="flag-pill${f==='High Balance'?' flag-lp':f==='Absentee Owner'?' flag-probate':''}">${esc(f)}</span>`).join('');
@@ -1582,6 +1591,11 @@ function taxRenderTable() {
       <td><div class="flags">${flags||'<span class="mono-sm">—</span>'}</div></td>
     </tr>`;
   }).join('');
+  // Show more row if there are more records
+  const _shown_tax = Math.min(PAGE_SIZE * _pages["tax"], TAX_FILTERED.length);
+  if (_shown_tax < TAX_FILTERED.length) {
+    body.innerHTML += _makeShowMoreRow('tax', _shown_tax, TAX_FILTERED.length, 7);
+  }
 }
 function openTaxModal(idx) {
   const r=TAX_FILTERED[idx]; if(!r) return;
@@ -1656,6 +1670,7 @@ function updateFireKPIs() {
   document.getElementById('fire-kpi-new').textContent = d.filter(r => {const _n=Date.now();const _7=7*24*60*60*1000;const chk=(s)=>{if(!s)return false;const dt=new Date(s);return !isNaN(dt)&&(_n-dt.getTime())<=_7;};return chk(r.incident_date)}).length.toLocaleString();
 }
 function fireApplyFilters() {
+  _resetPage("fire");
   const q=document.getElementById('fire-search').value.trim().toLowerCase();
   const rs=document.getElementById('fire-filter-res').value;
   const sc=parseInt(document.getElementById('fire-filter-score').value)||0;
@@ -1692,7 +1707,7 @@ function fireRenderTable() {
   document.getElementById('fire-result-count').textContent=FIRE_FILTERED.length.toLocaleString();
   const body=document.getElementById('fire-table-body');
   if(!FIRE_FILTERED.length){body.innerHTML=`<tr><td colspan="8"><div class="empty-state"><div class="icon">🔍</div><p>No records match.</p></div></td></tr>`;return;}
-  body.innerHTML=FIRE_FILTERED.map((r,i)=>{
+  body.innerHTML=FIRE_FILTERED.slice(0,PAGE_SIZE*_pages["fire"]).map((r,i)=>{
     const score=r.score||0,sc=score>=70?'score-hi':score>=45?'score-med':'score-lo';
     const resBadge=r.is_residential?'<span class="fire-badge fire-res">Residential</span>':'<span class="fire-badge fire-nonres">Non-Res</span>';
     const flags=(r.flags||[]).map(f=>`<span class="flag-pill${f==='Fire Damage'?' flag-lp':''}">${esc(f)}</span>`).join('');
@@ -1708,6 +1723,8 @@ function fireRenderTable() {
       <td><div class="flags">${flags||'<span class="mono-sm">—</span>'}</div></td>
     </tr>`;
   }).join('');
+  const _sf=Math.min(PAGE_SIZE*_pages["fire"],FIRE_FILTERED.length);
+  if(_sf<FIRE_FILTERED.length){body.innerHTML+=_makeShowMoreRow('fire',_sf,FIRE_FILTERED.length,7);}
 }
 function openFireModal(idx) {
   const r=FIRE_FILTERED[idx]; if(!r) return;
@@ -1797,6 +1814,7 @@ function updateIncKPIs() {
 }
 
 function incApplyFilters() {
+  _resetPage("incomplete");
   const q   = document.getElementById('inc-search').value.trim().toLowerCase();
   const mf  = document.getElementById('inc-filter-missing').value;
   const src = document.getElementById('inc-filter-source').value;
@@ -1855,7 +1873,7 @@ function incRenderTable() {
     mail_state:'Mail State', mail_zip:'Mail ZIP'
   };
 
-  body.innerHTML = INC_FILTERED.map((r,i) => {
+  body.innerHTML = INC_FILTERED.slice(0, PAGE_SIZE * _pages["incomplete"]).map((r,i) => {
     const score=r.score||0, sc=score>=70?'score-hi':score>=45?'score-med':'score-lo';
     const missing = (r.missing_fields||[]).map(f =>
       `<span class="flag-pill" style="background:rgba(237,137,54,.1);border-color:rgba(237,137,54,.3);color:#fbd38d">${FIELD_LABELS[f]||f}</span>`
@@ -1875,6 +1893,11 @@ function incRenderTable() {
       <td class="mono-sm" style="text-align:center">${r.source_count||1}</td>
     </tr>`;
   }).join('');
+  // Show more row if there are more records
+  const _shown_incomplete = Math.min(PAGE_SIZE * _pages["incomplete"], INC_FILTERED.length);
+  if (_shown_incomplete < INC_FILTERED.length) {
+    body.innerHTML += _makeShowMoreRow('incomplete', _shown_incomplete, INC_FILTERED.length, 7);
+  }
 }
 
 function openIncModal(idx) {
@@ -2168,22 +2191,59 @@ const _kpiFilters = {
   incomplete: null,
 };
 
+// ── PAGINATION ─────────────────────────────────────────────────────────────
+const PAGE_SIZE = 150;
+const _pages = { all: 1, clerk: 1, tax: 1, fire: 1, incomplete: 1 };
+
+function _resetPage(tab) { _pages[tab] = 1; }
+function _loadMore(tab) {
+  _pages[tab]++;
+  if (tab === 'all')        allRenderTable();
+  else if (tab === 'clerk') renderTable();
+  else if (tab === 'tax')   taxRenderTable();
+  else if (tab === 'fire')  fireRenderTable();
+  else if (tab === 'incomplete') incRenderTable();
+}
+
+function _makeShowMoreRow(tab, shown, total, colspan) {
+  const remaining = total - shown;
+  return `<tr><td colspan="${colspan}" style="text-align:center;padding:14px 0;border-top:1px solid var(--border)">
+    <button class="btn btn-muted" onclick="_loadMore('${tab}')" style="font-size:.85rem">
+      Show ${Math.min(PAGE_SIZE, remaining).toLocaleString()} more
+      <span style="color:var(--muted);margin-left:6px">(${remaining.toLocaleString()} remaining)</span>
+    </button>
+  </td></tr>`;
+}
+
+// Lookup: which tiles belong to each tab (for clearing active state)
+const _kpiTabTiles = {
+    'all': ['all-kpi-triple', 'all-kpi-multi', 'all-kpi-firetax', 'all-kpi-hot', 'all-kpi-addr', 'all-kpi-new', 'all-kpi-total'],
+    'clerk': ['kpi-fc', 'kpi-jud', 'kpi-lien', 'kpi-pro', 'kpi-addr', 'kpi-hot', 'kpi-new', 'kpi-total'],
+    'tax': ['tax-kpi-multiyear', 'tax-kpi-highbal', 'tax-kpi-hot', 'tax-kpi-absent', 'tax-kpi-new', 'tax-kpi-total', 'tax-kpi-totalbal'],
+    'fire': ['fire-kpi-res', 'fire-kpi-nonres', 'fire-kpi-owner', 'fire-kpi-rnum', 'fire-kpi-hot', 'fire-kpi-new', 'fire-kpi-total'],
+    'incomplete': ['inc-kpi-noaddr', 'inc-kpi-noowner', 'inc-kpi-nomail', 'inc-kpi-hot', 'inc-kpi-new', 'inc-kpi-total'],
+  };
+
 function kpiToggle(tab, tileId, filterFn) {
   const tile = document.getElementById(tileId);
   if (!tile) return;
   const isActive = _kpiFilters[tab] === tileId;
-  // Clear all tiles in this tab
-  document.querySelectorAll(`[id^="${tab.replace('incomplete','inc')}-kpi-"], [id^="kpi-"]`)
-    .forEach(el => el.closest('.kpi')?.classList.remove('kpi-active'));
+
+  // Clear active state on all tiles in this tab
+  (_kpiTabTiles[tab] || []).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.closest('.kpi')?.classList.remove('kpi-active');
+  });
+
+  _resetPage(tab);
+
   if (isActive) {
-    // Toggle off — clear filter
     _kpiFilters[tab] = null;
-    filterFn(null);
+    requestAnimationFrame(() => filterFn(null));
   } else {
-    // Toggle on — apply filter
     _kpiFilters[tab] = tileId;
     tile.closest('.kpi')?.classList.add('kpi-active');
-    filterFn(tileId);
+    requestAnimationFrame(() => filterFn(tileId));
   }
 }
 
