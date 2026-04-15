@@ -1493,5 +1493,71 @@
     "mail_zip": "79424-5702"
   },
   "HUBBARD ANGELA RENEA": null,
-  "GALINDO MARY YVONNE": null
+  "GALINDO MARY YVONNE": null,
+  "DEWBRE TANNER": {
+    "prop_address": "805 S 23RD ST",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "805 S 23RD ST",
+    "mail_city": "SLATON",
+    "mail_state": "TX",
+    "mail_zip": "79364"
+  },
+  "SCOTT KYLE BRADEN": null,
+  "AMERICAN HOLLY PROPERTIES LLC": {
+    "prop_address": "5618 E CR 6560",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "PO BOX 741209",
+    "mail_city": "HOUSTON",
+    "mail_state": "TX",
+    "mail_zip": "77274-1209"
+  },
+  "AGUILAR ARTHUR JR": {
+    "prop_address": "4517 79TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "4517 79TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "CRITES ED WILLIAM": {
+    "prop_address": "4508 79TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "4508 79TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "Grantee: 2-H CONSTRUCTION SERVICES LLC": null,
+  "JOHN COTTON FARMERS INSURANCE LLC": null,
+  "PERALEZ DAVID IV": null,
+  "DYAL DONALD HENRIQUES DEC'D ESTATE OF": null,
+  "DARRON DAVID DEAN II": {
+    "prop_address": "14506 PARIS AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "14506 PARIS AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "FLORES RAYMUNDO JR": {
+    "prop_address": "2301 103RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2301 103RD ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "Grantee:": null
 }
