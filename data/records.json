@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-16T19:26:16.231299Z",
+  "fetched_at": "2026-04-16T19:52:55.168868Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-09",
     "end": "2026-04-16"
   },
   "total": 74,
-  "with_address": 44,
+  "with_address": 43,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -1450,35 +1450,6 @@
       ]
     },
     {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date04/16/2026 12:49:15 PM",
-      "filed": "2026-04-16",
-      "party_one": "Grantor: FALLIN KELLY",
-      "party_two": "Grantee: GT CONSTRUCTION",
-      "node": "DOC285S1381",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1381",
-      "owner": "FALLIN KELLY",
-      "grantee": "GT CONSTRUCTION",
-      "prop_address": "505 COMANCHE DR",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79404",
-      "mail_address": "539 COMANCHE DR",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79404",
-      "owner_name": "GT CONSTRUCTION",
-      "lienholder": "FALLIN KELLY",
-      "score": 50,
-      "flags": [
-        "Mechanic lien",
-        "New this week"
-      ]
-    },
-    {
       "description": "ABSTRACT OF JUDGMENT",
       "doc_num": "Recording Date04/09/2026 08:04:07 AM",
       "filed": "2026-04-09",
@@ -2055,6 +2026,35 @@
       "score": 45,
       "flags": [
         "Probate / estate",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date04/16/2026 12:49:15 PM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: FALLIN KELLY",
+      "party_two": "Grantee: GT CONSTRUCTION",
+      "node": "DOC285S1381",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1381",
+      "owner": "FALLIN KELLY",
+      "grantee": "GT CONSTRUCTION",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "GT CONSTRUCTION",
+      "lienholder": "FALLIN KELLY",
+      "score": 45,
+      "flags": [
+        "Mechanic lien",
         "New this week"
       ]
     },
