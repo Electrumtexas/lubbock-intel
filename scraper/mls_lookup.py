@@ -161,7 +161,7 @@ class MLSClient:
                     if resp2.status_code == 200:
                         self._active_cred = cred
                         return resp2
-                log.warning(f"{cred['tier_label']} failed ({resp.status_code}) — trying next...")
+                log.warning(f"{cred['tier_label']} failed ({resp.status_code}): {resp.text[:400]} — trying next...")
             except Exception as e:
                 log.warning(f"Request error ({cred['tier_label']}): {e}")
 
@@ -232,19 +232,9 @@ class MLSClient:
                 data = resp.json() if resp and resp.status_code == 200 else None
             else:
                 params = {
-                    "$filter": (
-                        f"StandardStatus eq '{status}' and "
-                        f"City eq '{MLS_CITY}' and "
-                        f"StateOrProvince eq '{MLS_STATE}'"
-                    ),
+                    "$filter": f"StandardStatus eq '{status}' and City eq '{MLS_CITY}'",
                     "$top":    min(page_size, max_records - len(all_listings)),
                     "$skip":   skip,
-                    "$select": (
-                        "ListingKey,ListingId,StandardStatus,ListPrice,"
-                        "DaysOnMarket,BedsTotal,BathroomsTotalInteger,LivingArea,"
-                        "ListingContractDate,UnparsedAddress,StreetNumber,StreetName,"
-                        "City,StateOrProvince,PostalCode,PublicRemarks"
-                    ),
                 }
                 data = self._odata_get("Property", params)
 
