@@ -1559,5 +1559,63 @@
     "mail_state": "TX",
     "mail_zip": "79423"
   },
-  "Grantee:": null
+  "Grantee:": null,
+  "BARRERA ARACELI BRIANA": null,
+  "CITY BANK": {
+    "prop_address": "2903 94TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "5219 CITY BANK PARKWAY",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "S&T MATERIALS LLC": {
+    "prop_address": "E DUKE ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "401 N I-27 HWY",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "VILLALOBOS ASHLEY NICOLE": null,
+  "THORNBURY BARBARA ANN DEC'D ESTATE OF": null,
+  "MARTINEZ MATTHEW JARED": null,
+  "HERNANDEZ PATRICK": {
+    "prop_address": "1019 2ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "1019 2ND ST",
+    "mail_city": "2",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "HERNANDEZ ABLINO": null,
+  "RMFT HOLDINGS LLC": {
+    "prop_address": "4519 36TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "9606 UTICA DR",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "LUBBOCK GLASS AND MIRROR COMPANY": {
+    "prop_address": "6409 INDIANA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "PO BOX 93420",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79493"
+  },
+  "COWTOWN MATERIALS INC": null,
+  "FAITH FOAM AND CONSTRUCTION": null,
+  "DICKEY CECIL DEC'D ESTATE OF": null
 }
