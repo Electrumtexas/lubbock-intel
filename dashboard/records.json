@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-16T19:52:55.168868Z",
+  "fetched_at": "2026-04-16T21:48:52.546529Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-09",
     "end": "2026-04-16"
   },
-  "total": 74,
-  "with_address": 43,
+  "total": 79,
+  "with_address": 45,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -339,6 +339,36 @@
       ]
     },
     {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date04/16/2026 03:19:45 PM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: AMERICAN BUILDERS & CONTRACTORS SUPPLY COMPANY INC,",
+      "party_two": "Grantee: FLATLAND ROOFING & EXTERIORS LLC, RIVERA ALBERT",
+      "node": "DOC285S1418",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1418",
+      "owner": "AMERICAN BUILDERS & CONTRACTORS SUPPLY COMPANY INC",
+      "grantee": "FLATLAND ROOFING & EXTERIORS LLC",
+      "prop_address": "AVE D",
+      "prop_city": "LUBBOCK",
+      "prop_state": "TX",
+      "prop_zip": "79404",
+      "mail_address": "CONTRACTORS SUPPLY CO INC",
+      "mail_city": "ONE ABC PARKWAY",
+      "mail_state": "TX",
+      "mail_zip": "",
+      "owner_name": "FLATLAND ROOFING & EXTERIORS LLC",
+      "lienholder": "AMERICAN BUILDERS & CONTRACTORS SUPPLY COMPANY INC",
+      "score": 60,
+      "flags": [
+        "Judgment lien",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
       "description": "POSTING",
       "doc_num": "Recording Date04/10/2026 03:11:18 PM",
       "filed": "2026-04-10",
@@ -544,6 +574,36 @@
       "score": 55,
       "flags": [
         "Pre-foreclosure",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date04/16/2026 03:21:37 PM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: RAIDERLAND HOLDINGS LLC",
+      "party_two": "Grantee: ALLEN JOSHUA",
+      "node": "DOC284S1207",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S1207",
+      "owner": "RAIDERLAND HOLDINGS LLC",
+      "grantee": "ALLEN JOSHUA",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "ALLEN JOSHUA",
+      "lienholder": "RAIDERLAND HOLDINGS LLC",
+      "score": 55,
+      "flags": [
+        "Judgment lien",
         "LLC / corp owner",
         "New this week"
       ]
@@ -1450,6 +1510,35 @@
       ]
     },
     {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date04/16/2026 04:11:13 PM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: BALES KATELYN",
+      "party_two": "Grantee: BETENBOUGH HOMES LLC, WOLFFORTH CITY OF",
+      "node": "DOC285S1432",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1432",
+      "owner": "BALES KATELYN",
+      "grantee": "BETENBOUGH HOMES LLC",
+      "prop_address": "2018 ABBEVILLE AVE",
+      "prop_city": "WOLFFORTH",
+      "prop_state": "TX",
+      "prop_zip": "79382",
+      "mail_address": "6305 82ND ST",
+      "mail_city": "LUBBOCK",
+      "mail_state": "TX",
+      "mail_zip": "79424-3681",
+      "owner_name": "BETENBOUGH HOMES LLC",
+      "lienholder": "BALES KATELYN",
+      "score": 50,
+      "flags": [
+        "Mechanic lien",
+        "New this week"
+      ]
+    },
+    {
       "description": "ABSTRACT OF JUDGMENT",
       "doc_num": "Recording Date04/09/2026 08:04:07 AM",
       "filed": "2026-04-09",
@@ -2055,6 +2144,64 @@
       "score": 45,
       "flags": [
         "Mechanic lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date04/16/2026 03:21:37 PM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: CROW JEFFREY TAIT",
+      "party_two": "Grantee: ALLEN JOSHUA",
+      "node": "DOC284S1206",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S1206",
+      "owner": "CROW JEFFREY TAIT",
+      "grantee": "ALLEN JOSHUA",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "ALLEN JOSHUA",
+      "lienholder": "CROW JEFFREY TAIT",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "STATE ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date04/16/2026 03:44:19 PM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: TEXAS STATE OF",
+      "party_two": "Grantee: STANFORD JERRY WAYNE",
+      "node": "DOC285S1417",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1417",
+      "owner": "TEXAS STATE OF",
+      "grantee": "STANFORD JERRY WAYNE",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "STANFORD JERRY WAYNE",
+      "lienholder": "TEXAS STATE OF",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
         "New this week"
       ]
     },

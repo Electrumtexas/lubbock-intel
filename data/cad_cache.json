@@ -1659,5 +1659,19 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79404"
-  }
+  },
+  "FLATLAND ROOFING & EXTERIORS LLC": null,
+  "AMERICAN BUILDERS & CONTRACTORS SUPPLY COMPANY INC": {
+    "prop_address": "AVE D",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "CONTRACTORS SUPPLY CO INC",
+    "mail_city": "ONE ABC PARKWAY",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ALLEN JOSHUA": null,
+  "CROW JEFFREY TAIT": null,
+  "STANFORD JERRY WAYNE": null
 }
