@@ -1000,7 +1000,7 @@ function applyFilters() {
     if (addr === 'yes' && !r.prop_address) return false;
     if (addr === 'no'  && r.prop_address)  return false;
     if (q) {
-      const hay = [r.owner,r.grantee,r.prop_address,r.mail_address,r.doc_num,r.legal]
+      const hay = [r.owner_name,r.owner,r.lienholder,r.grantee,r.prop_address,r.mail_address,r.doc_num,r.legal]
         .join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
@@ -1065,9 +1065,9 @@ function renderTable() {
     const amt = r.amount ? fmtAmt(r.amount) : '<span class="mono-sm">—</span>';
     const amtCls = r.amount > 100000 ? 'amount-hi' : r.amount > 50000 ? 'amount-med' : '';
     const addrBlock = r.prop_address
-      ? `<div class="owner-name">${esc(r.owner||'Unknown')}</div>
+      ? `<div class="owner-name">${esc(r.owner_name||r.owner||'Unknown')}</div>
          <div class="addr-line">${esc(r.prop_address)}${r.prop_city ? ', '+esc(r.prop_city) : ''} ${esc(r.prop_zip||'')}</div>`
-      : `<div class="owner-name">${esc(r.owner||'Unknown')}</div>
+      : `<div class="owner-name">${esc(r.owner_name||r.owner||'Unknown')}</div>
          <div class="no-addr">no parcel match</div>`;
     const link = r.clerk_url
       ? `<a class="doc-link" href="${esc(r.clerk_url)}" target="_blank" rel="noopener">VIEW →</a>`
@@ -1111,7 +1111,7 @@ function openModal(idx) {
   const flags = (r.flags||[]).map(f => `<span class="flag-pill">${esc(f)}</span>`).join(' ');
 
   document.getElementById('modal-title').textContent =
-    (r.owner || 'Unknown Owner') + ' · ' + (r.cat_label || r.doc_type || '');
+    (r.owner_name || r.owner || 'Unknown Owner') + ' · ' + (r.cat_label || r.doc_type || '');
 
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-field">
@@ -1146,12 +1146,12 @@ function openModal(idx) {
     </div>
     <hr class="modal-hr">
     <div class="modal-field full">
-      <div class="mf-label">Owner / Grantor</div>
-      <div class="mf-val">${esc(r.owner||'—')}</div>
+      <div class="mf-label">Property Owner <span style="font-size:.7rem;color:var(--muted);font-weight:400">(skip trace this person)</span></div>
+      <div class="mf-val">${esc(r.owner_name||r.owner||'—')}</div>
     </div>
     <div class="modal-field full">
-      <div class="mf-label">Grantee</div>
-      <div class="mf-val">${esc(r.grantee||'—')}</div>
+      <div class="mf-label">Lienholder / Adverse Party <span style="font-size:.7rem;color:var(--muted);font-weight:400">(lender, creditor, or agency)</span></div>
+      <div class="mf-val">${esc(r.lienholder||r.grantee||'—')}</div>
     </div>
     <hr class="modal-hr">
     <div class="modal-field">
@@ -1192,12 +1192,13 @@ function exportCSV() {
   const cols = ['Owner Name','Property Address','Property City','Property State','Property ZIP',
     'Mailing Address','Mailing City','Mailing State','Mailing ZIP',
     'Score','Lead Type','Document Type','Date Filed','Document Number',
-    'Amount/Debt Owed','Flags','Source','Public Records URL'];
+    'Amount/Debt Owed','Flags','Lienholder / Adverse Party','Source','Public Records URL'];
   const rows = FILTERED.map(r => [
-    r.owner||'', r.prop_address||'', r.prop_city||'', r.prop_state||'TX', r.prop_zip||'',
+    r.owner_name||r.owner||'', r.prop_address||'', r.prop_city||'', r.prop_state||'TX', r.prop_zip||'',
     r.mail_address||'', r.mail_city||'', r.mail_state||'', r.mail_zip||'',
     r.score||0, r.cat_label||'', r.doc_type||'', r.filed||'', r.doc_num||'',
-    r.amount||'', (r.flags||[]).join(' | '), 'Lubbock County Clerk', r.clerk_url||''
+    r.amount||'', (r.flags||[]).join(' | '), r.lienholder||r.grantee||'',
+    'Lubbock County Clerk', r.clerk_url||''
   ].map(v => '"' + String(v??'').replace(/"/g,'""') + '"'));
   const csv = [cols.map(c => '"'+c+'"').join(','), ...rows.map(r=>r.join(','))].join('\n');
   const blob = new Blob([csv], {type:'text/csv'});

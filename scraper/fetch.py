@@ -99,6 +99,27 @@ LEAD_TYPES = {
     "DIV":     {"label": "Divorce / Family Order", "cat": "probate"},
 }
 
+# ---------------------------------------------------------------------------
+# For these doc types, the Grantor (Party One) is the lender/creditor/agency
+# that filed the document AGAINST the property owner.
+# The Grantee (Party Two) is the actual property owner to skip trace.
+# ---------------------------------------------------------------------------
+LIENHOLDER_AS_GRANTOR_TYPES = frozenset({
+    "LP",       # Lis Pendens — lender/plaintiff files against borrower
+    "NOFC",     # Notice of Foreclosure / Trustee Sale — lender/trustee files against borrower
+    "JUD",      # Abstract of Judgment — creditor files against debtor
+    "CCJ",      # Certified Judgment — creditor files against debtor
+    "DRJUD",    # Domestic Judgment — creditor files against debtor
+    "LNCORPTX", # Corp Tax Lien — IRS/state files against taxpayer
+    "LNIRS",    # IRS Lien — IRS files against taxpayer
+    "LNFED",    # Federal Lien — federal agency files against property owner
+    "LN",       # Generic Lien — lienholder files against property owner
+    "LNMECH",   # Mechanic Lien — contractor files against property owner
+    "LNHOA",    # HOA Lien — HOA files against homeowner
+    "MEDLN",    # Medicaid Lien — agency files against property owner
+    "TAXDEED",  # Tax Deed — taxing authority
+})
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("scraper")
 
@@ -553,11 +574,14 @@ def export_ghl_csv(records):
     cols = ["First Name","Last Name","Mailing Address","Mailing City","Mailing State","Mailing Zip",
             "Property Address","Property City","Property State","Property Zip",
             "Lead Type","Document Type","Date Filed","Document Number","Amount/Debt Owed",
-            "Seller Score","Motivated Seller Flags","Source","Public Records URL"]
+            "Seller Score","Motivated Seller Flags","Lienholder / Adverse Party",
+            "Source","Public Records URL"]
     w = csv.DictWriter(out, fieldnames=cols)
     w.writeheader()
     for r in records:
-        parts = (r.get("owner") or "").strip().split()
+        # Use owner_name (the actual property owner) for skip tracing, not the lienholder
+        skip_trace_name = (r.get("owner_name") or r.get("owner") or "").strip()
+        parts = skip_trace_name.split()
         w.writerow({
             "First Name": parts[0] if parts else "",
             "Last Name":  " ".join(parts[1:]) if len(parts) > 1 else "",
@@ -576,6 +600,7 @@ def export_ghl_csv(records):
             "Amount/Debt Owed": r.get("amount",""),
             "Seller Score":    r.get("score",0),
             "Motivated Seller Flags": " | ".join(r.get("flags",[])),
+            "Lienholder / Adverse Party": r.get("lienholder",""),
             "Source":          "Lubbock County Clerk",
             "Public Records URL": r.get("clerk_url",""),
         })
@@ -673,22 +698,47 @@ def main():
                 rec.setdefault(k, "")
             if not rec.get("owner"):   rec["owner"]   = rec.get("party_one","")
             if not rec.get("grantee"): rec["grantee"] = rec.get("party_two","")
+
+            # ── Separate the property owner from the adverse party ──────────
+            # For most distressed doc types, the Grantor is the lender/creditor
+            # who filed the document; the Grantee is the actual property owner.
+            # owner_name = person to skip trace
+            # lienholder = lender / judgment creditor / taxing entity
+            _dt      = rec.get("doc_type", "")
+            _grantor = rec.get("owner", "")
+            _grantee = rec.get("grantee", "")
+            _grantee_up = _grantee.upper().strip()
+            if _dt in LIENHOLDER_AS_GRANTOR_TYPES:
+                # Grantee = property owner, unless it's "PUBLIC" (trustee sale notice)
+                if _grantee_up and _grantee_up not in ("PUBLIC", "THE PUBLIC"):
+                    rec["owner_name"] = _grantee
+                else:
+                    rec["owner_name"] = ""  # unknown — LCAD enrichment will fill
+                rec["lienholder"] = _grantor
+            else:
+                # PRO (probate), DIV (divorce), NOC, RELLP — grantor is the owner
+                rec["owner_name"] = _grantor
+                rec["lienholder"] = _grantee
+
             # CAD address enrichment — check cache first, then live lookup
             # Skip known unmatchable entities
             SKIP_NAMES = {"U S OF AMERICA", "TEXAS STATE OF", "UNITED STATES",
-                          "IRS", "USA", "UNITED STATES OF AMERICA"}
+                          "IRS", "USA", "UNITED STATES OF AMERICA", "PUBLIC",
+                          "THE PUBLIC"}
 
             if not rec.get("prop_address"):
-                cad_name = rec.get("grantee") or rec.get("owner") or ""
+                # Search LCAD by the actual property owner name (not the lienholder)
+                cad_name = rec.get("owner_name") or rec.get("owner") or ""
                 cad = {}
 
-                # Build list of names to try
+                # Build list of names to try: owner first, lienholder as last resort
                 names_to_try = []
                 if cad_name and cad_name.upper() not in SKIP_NAMES:
                     names_to_try.append(cad_name)
-                owner = rec.get("owner","")
-                if owner and owner != cad_name and owner.upper() not in SKIP_NAMES:
-                    names_to_try.append(owner)
+                # Fallback: try the other party if owner_name was empty or skipped
+                other = rec.get("lienholder","") or rec.get("grantee","")
+                if other and other != cad_name and other.upper() not in SKIP_NAMES:
+                    names_to_try.append(other)
 
                 for try_name in names_to_try:
                     # Check cache first

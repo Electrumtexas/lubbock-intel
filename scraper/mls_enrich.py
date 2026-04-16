@@ -58,9 +58,11 @@ def enrich_leads_with_mls(leads: list[dict], client: MLSClient = None) -> list[d
         client = MLSClient()
 
     log.info(f"Fetching MLS area listings to build address index...")
-    # Fetch active + under-contract listings for maximum coverage
+    # Fetch active + pending listings
+    # Note: ActiveUnderContract was removed — it hit the 5,000 record cap and
+    # appeared to be returning historical data rather than current listings.
     listings = []
-    for status in ("Active", "ActiveUnderContract", "Pending"):
+    for status in ("Active", "Pending"):
         try:
             batch = client.fetch_area_listings(status=status, max_records=5000)
             listings.extend(batch)
