@@ -1,0 +1,21 @@
+# Credentials — NEVER commit these
+.env
+scraper/.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Data caches (can be regenerated)
+data/cad_cache.json
+data/mls_cache.json
+data/lcad_detail_cache.json
+
+# OS
+.DS_Store
+Thumbs.db

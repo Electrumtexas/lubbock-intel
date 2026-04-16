@@ -75,6 +75,23 @@ jobs:
         run: |
           python scraper/build_unified.py
 
+      # ── MLS ENRICHMENT (cross-reference leads with FlexMLS) ──────────
+      # Fetches active/pending listings from FlexMLS Spark API and flags
+      # which distressed properties are already on-market vs. off-market.
+      # Credentials stored as GitHub Secrets — BBO → VOW → IDX priority.
+      - name: Enrich leads with MLS data
+        env:
+          SPARK_BBO_API_FEED_ID:   ${{ secrets.SPARK_BBO_API_FEED_ID }}
+          SPARK_BBO_ACCESS_TOKEN:  ${{ secrets.SPARK_BBO_ACCESS_TOKEN }}
+          SPARK_VOW_API_FEED_ID:   ${{ secrets.SPARK_VOW_API_FEED_ID }}
+          SPARK_VOW_ACCESS_TOKEN:  ${{ secrets.SPARK_VOW_ACCESS_TOKEN }}
+          SPARK_IDX_API_FEED_ID:   ${{ secrets.SPARK_IDX_API_FEED_ID }}
+          SPARK_IDX_ACCESS_TOKEN:  ${{ secrets.SPARK_IDX_ACCESS_TOKEN }}
+          MLS_CITY:  Lubbock
+          MLS_STATE: TX
+        run: |
+          python scraper/mls_enrich.py
+
       # ── COMMIT ALL OUTPUTS ───────────────────────────────────────────
       - name: Commit updated data files
         run: |
@@ -85,6 +102,7 @@ jobs:
             dashboard/tax_delinquent.json \
             dashboard/fire_damage.json \
             dashboard/unified_leads.json \
+            dashboard/mls_enriched.json \
             data/lcad_detail_cache.json \
             data/ || true
           git diff --staged --quiet || git commit -m "Auto-update: $(date -u '+%Y-%m-%d %H:%M UTC')"
