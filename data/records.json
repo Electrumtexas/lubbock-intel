@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-16T18:48:08.547833Z",
+  "fetched_at": "2026-04-16T18:53:58.099925Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-09",
     "end": "2026-04-16"
   },
   "total": 74,
-  "with_address": 44,
+  "with_address": 43,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -261,34 +261,6 @@
       ]
     },
     {
-      "description": "POSTING",
-      "doc_num": "Recording Date04/16/2026 10:45:59 AM",
-      "filed": "2026-04-16",
-      "party_one": "Grantor: V I P MORTGAGE INC, BROWDER TERRY TRUSTEE",
-      "party_two": "Grantee: MOORE VICTORIA, PUBLIC",
-      "node": "DOC284S1158",
-      "doc_type": "NOFC",
-      "cat": "foreclosure",
-      "cat_label": "Notice of Foreclosure",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S1158",
-      "owner": "V I P MORTGAGE INC",
-      "grantee": "MOORE VICTORIA",
-      "prop_address": "2415 QUINTON AVE",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79410",
-      "mail_address": "PO BOX 147",
-      "mail_city": "WOLFFORTH",
-      "mail_state": "TX",
-      "mail_zip": "79382",
-      "score": 60,
-      "flags": [
-        "Pre-foreclosure",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
-    {
       "description": "MECHANICS LIEN",
       "doc_num": "Recording Date04/16/2026 11:22:34 AM",
       "filed": "2026-04-16",
@@ -480,6 +452,34 @@
       "score": 55,
       "flags": [
         "Judgment lien",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "POSTING",
+      "doc_num": "Recording Date04/16/2026 10:45:59 AM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: V I P MORTGAGE INC, BROWDER TERRY TRUSTEE",
+      "party_two": "Grantee: MOORE VICTORIA, PUBLIC",
+      "node": "DOC284S1158",
+      "doc_type": "NOFC",
+      "cat": "foreclosure",
+      "cat_label": "Notice of Foreclosure",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S1158",
+      "owner": "V I P MORTGAGE INC",
+      "grantee": "MOORE VICTORIA",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "score": 55,
+      "flags": [
+        "Pre-foreclosure",
         "LLC / corp owner",
         "New this week"
       ]
