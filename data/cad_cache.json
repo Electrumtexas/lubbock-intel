@@ -1617,5 +1617,36 @@
   },
   "COWTOWN MATERIALS INC": null,
   "FAITH FOAM AND CONSTRUCTION": null,
-  "DICKEY CECIL DEC'D ESTATE OF": null
+  "DICKEY CECIL DEC'D ESTATE OF": null,
+  "MOORE VICTORIA": null,
+  "V I P MORTGAGE INC": {
+    "prop_address": "2415 QUINTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "PO BOX 147",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "FUENTES DAVID": {
+    "prop_address": "",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "7404 IVORY AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79404"
+  },
+  "AVGAD REALTY LLC": {
+    "prop_address": "3802 41ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "500 S WATER ST",
+    "mail_city": "#UNIT 404",
+    "mail_state": "TX",
+    "mail_zip": ""
+  }
 }
