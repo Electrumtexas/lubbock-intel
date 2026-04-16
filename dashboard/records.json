@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-16T19:00:11.278964Z",
+  "fetched_at": "2026-04-16T19:26:16.231299Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
     "start": "2026-04-09",
     "end": "2026-04-16"
   },
   "total": 74,
-  "with_address": 43,
+  "with_address": 44,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -29,6 +29,8 @@
       "mail_city": "WOLFFORTH",
       "mail_state": "TX",
       "mail_zip": "79382-0036",
+      "owner_name": "WOLFFORTH CITY OF",
+      "lienholder": "HUB CITY CAPITAL LLC",
       "score": 60,
       "flags": [
         "Mechanic lien",
@@ -57,6 +59,8 @@
       "mail_city": "5613 COUNTY ROAD 6150",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "BROWN TYRONE",
+      "lienholder": "PLANET HOME LENDING LLC",
       "score": 60,
       "flags": [
         "Pre-foreclosure",
@@ -85,6 +89,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79416",
+      "owner_name": "RIBORDY JAYKIN DOUGLAS",
+      "lienholder": "LAKEVIEW LOAN SERVICING LLC",
       "score": 60,
       "flags": [
         "Pre-foreclosure",
@@ -113,6 +119,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79416-2415",
+      "owner_name": "LARA JOE",
+      "lienholder": "LAKEVIEW LOAN SERVICING LLC",
       "score": 60,
       "flags": [
         "Pre-foreclosure",
@@ -141,6 +149,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79414",
+      "owner_name": "PEREZ PABLO",
+      "lienholder": "PLANET HOME LENDING LLC",
       "score": 60,
       "flags": [
         "Pre-foreclosure",
@@ -169,6 +179,8 @@
       "mail_city": "SLATON",
       "mail_state": "TX",
       "mail_zip": "79364",
+      "owner_name": "DEWBRE TANNER",
+      "lienholder": "NEW AMERICAN FUNDING LLC",
       "score": 60,
       "flags": [
         "Pre-foreclosure",
@@ -197,6 +209,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424",
+      "owner_name": "AGUILAR ARTHUR JR",
+      "lienholder": "SIWELL INC DBA",
       "score": 60,
       "flags": [
         "Pre-foreclosure",
@@ -225,6 +239,8 @@
       "mail_city": "2",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "HERNANDEZ PATRICK",
+      "lienholder": "RMFT HOLDINGS LLC",
       "score": 60,
       "flags": [
         "Judgment lien",
@@ -253,6 +269,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79493",
+      "owner_name": "LUBBOCK GLASS AND MIRROR COMPANY",
+      "lienholder": "P&A CONSTRUCTION LLC",
       "score": 60,
       "flags": [
         "Mechanic lien",
@@ -281,6 +299,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424-3681",
+      "owner_name": "BETENBOUGH HOMES LLC",
+      "lienholder": "SKY LOCO INVESTMENTS LLC",
       "score": 60,
       "flags": [
         "Mechanic lien",
@@ -309,6 +329,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424-3681",
+      "owner_name": "BETENBOUGH HOMES LLC",
+      "lienholder": "SKY LOCO INVESTMENTS LLC",
       "score": 60,
       "flags": [
         "Mechanic lien",
@@ -337,6 +359,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "ELLIS CHARLOTTE",
+      "lienholder": "LUBBOCK HABITAT FOR HUMANITY INC",
       "score": 55,
       "flags": [
         "Pre-foreclosure",
@@ -365,6 +389,8 @@
       "mail_state": "",
       "mail_zip": "",
       "grantee": "Grantee: 1616 44TH STREET LUBBOCK TX LLC, PUBLIC",
+      "owner_name": "Grantee: 1616 44TH STREET LUBBOCK TX LLC, PUBLIC",
+      "lienholder": "MIDWEST PROPERTY INVESTMENTS LLC",
       "score": 55,
       "flags": [
         "Pre-foreclosure",
@@ -393,6 +419,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "MARTINEZ MARCELO",
+      "lienholder": "PENNYMAC LOAN SERVICES LLC",
       "score": 55,
       "flags": [
         "Pre-foreclosure",
@@ -421,6 +449,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "SCOTT KYLE BRADEN",
+      "lienholder": "AMERICAN HOLLY PROPERTIES LLC",
       "score": 55,
       "flags": [
         "Pre-foreclosure",
@@ -449,6 +479,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "HERNANDEZ ABLINO",
+      "lienholder": "RMFT HOLDINGS LLC",
       "score": 55,
       "flags": [
         "Judgment lien",
@@ -477,6 +509,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "MOORE VICTORIA",
+      "lienholder": "V I P MORTGAGE INC",
       "score": 55,
       "flags": [
         "Pre-foreclosure",
@@ -505,6 +539,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79404",
+      "owner_name": "FUENTES DAVID",
+      "lienholder": "CARRINGTON MORTGAGE SERVICES LLC",
       "score": 55,
       "flags": [
         "Pre-foreclosure",
@@ -533,6 +569,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424",
+      "owner_name": "CORONADO EMMANUEL",
+      "lienholder": "IDAHO HOUSING AND FINANCE ASSOCIATION",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -560,6 +598,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79407",
+      "owner_name": "ORTA CODY R",
+      "lienholder": "FREEDOM MORTGAGE CORPORATION",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -587,6 +627,8 @@
       "mail_city": "#STE 115",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "ADKINS BONNIE LOU",
+      "lienholder": "GREAT LAKE FUNDING I TRUST",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -614,6 +656,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79453",
+      "owner_name": "WEST DANIEL",
+      "lienholder": "M&T BANK",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -641,6 +685,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424",
+      "owner_name": "ROBERTSON KARAN P",
+      "lienholder": "RCF 2 ACQUISITION TRUST",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -668,6 +714,8 @@
       "mail_city": "4413 34TH ST",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "BRADYS AUTOMOTIVE LLC",
+      "lienholder": "SHAFER AIDEN",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -695,6 +743,8 @@
       "mail_city": "WOLFFORTH",
       "mail_state": "TX",
       "mail_zip": "79382-0231",
+      "owner_name": "BADGER MICHELLE C",
+      "lienholder": "UMB BANK",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -722,6 +772,8 @@
       "mail_city": "WOLFFORTH",
       "mail_state": "TX",
       "mail_zip": "79382-0231",
+      "owner_name": "BADGER MICHELLE C DBA",
+      "lienholder": "UMB BANK",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -749,6 +801,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79416",
+      "owner_name": "SMITH RYDER FRAZE",
+      "lienholder": "MARTINEZ BROOKLYN SCOTT",
       "score": 50,
       "flags": [
         "Mechanic lien",
@@ -776,6 +830,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424-3681",
+      "owner_name": "BETENBOUGH HOMES LLC",
+      "lienholder": "MCGAVERN MATTHEW DOUGLAS",
       "score": 50,
       "flags": [
         "Mechanic lien",
@@ -803,6 +859,8 @@
       "mail_city": "STE 600",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "EL MITOTE SPORTS LOUNGE",
+      "lienholder": "NAUTILUS INSURANCE COMPANY",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -830,6 +888,8 @@
       "mail_city": "#UNIT 3",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "OSTRANDER JOHN K",
+      "lienholder": "U S OF AMERICA",
       "score": 50,
       "flags": [
         "Tax lien",
@@ -857,6 +917,8 @@
       "mail_city": "#UNIT 3",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "OSTRANDER JOHN K",
+      "lienholder": "U S OF AMERICA",
       "score": 50,
       "flags": [
         "Tax lien",
@@ -884,6 +946,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "99999",
+      "owner_name": "HOWARD PAUL E",
+      "lienholder": "U S OF AMERICA",
       "score": 50,
       "flags": [
         "Tax lien",
@@ -911,6 +975,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424-3512",
+      "owner_name": "RIGGS CLIFTON",
+      "lienholder": "CAPITAL ONE",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -938,6 +1004,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79423",
+      "owner_name": "GARZA LARRY R AKA",
+      "lienholder": "AMERICAN EXPRESS NATIONAL BANK FKA",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -965,6 +1033,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79412",
+      "owner_name": "LOPEZ KRYSTAL N",
+      "lienholder": "CAPITAL ONE",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -992,6 +1062,8 @@
       "mail_city": "WOLFFORTH",
       "mail_state": "TX",
       "mail_zip": "79382",
+      "owner_name": "FORD ROBERT A",
+      "lienholder": "CAPITAL ONE",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -1019,6 +1091,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79414",
+      "owner_name": "GENTRY JOHN",
+      "lienholder": "AMERICAN EXPRESS NATIONAL BANK",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -1046,6 +1120,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424",
+      "owner_name": "REID JASON",
+      "lienholder": "CAPITAL ONE",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -1073,6 +1149,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79423",
+      "owner_name": "KUTSCHEROUSKY MATTHEW",
+      "lienholder": "CAPITAL ONE",
       "score": 50,
       "flags": [
         "Judgment lien",
@@ -1100,6 +1178,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79423",
+      "owner_name": "BEARDEN SHERI",
+      "lienholder": "FREEDOM MORTGAGE CORPORATION",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -1127,6 +1207,8 @@
       "mail_city": "LONGMEADOW",
       "mail_state": "MA",
       "mail_zip": "01106-2326",
+      "owner_name": "SLATER JOSHUA",
+      "lienholder": "CITIZENS BANK FKA",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -1154,6 +1236,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79423",
+      "owner_name": "SALAZAR JESSE JR",
+      "lienholder": "FREEDOM MORTGAGE CORPORATION",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -1182,6 +1266,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424-5702",
+      "owner_name": "POLK KENITH L DEC'D ESTATE OF",
+      "lienholder": "POLK KENITH L DEC'D ESTATE OF",
       "score": 50,
       "flags": [
         "Probate / estate",
@@ -1209,6 +1295,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424-3681",
+      "owner_name": "BETENBOUGH HOMES LLC",
+      "lienholder": "PASCHALL TRISTAN",
       "score": 50,
       "flags": [
         "Mechanic lien",
@@ -1236,6 +1324,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424-3681",
+      "owner_name": "BETENBOUGH HOMES LLC",
+      "lienholder": "BRICE M CLOUDT CONTINGENT TRUST",
       "score": 50,
       "flags": [
         "Mechanic lien",
@@ -1263,6 +1353,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79423",
+      "owner_name": "DARRON DAVID DEAN II",
+      "lienholder": "FORD STERLING",
       "score": 50,
       "flags": [
         "Mechanic lien",
@@ -1290,6 +1382,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79423",
+      "owner_name": "FLORES RAYMUNDO JR",
+      "lienholder": "FLORES LEIGH ANN",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
@@ -1318,6 +1412,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79403",
+      "owner_name": "S&T MATERIALS LLC",
+      "lienholder": "OWEV REVOCABLE TRUST",
       "score": 50,
       "flags": [
         "Mechanic lien",
@@ -1345,9 +1441,40 @@
       "mail_city": "#UNIT 404",
       "mail_state": "TX",
       "mail_zip": "",
+      "owner_name": "AVGAD REALTY LLC",
+      "lienholder": "RESIDENTIAL CREDIT OPPORTUNITIES TRUST X-A",
       "score": 50,
       "flags": [
         "Pre-foreclosure",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date04/16/2026 12:49:15 PM",
+      "filed": "2026-04-16",
+      "party_one": "Grantor: FALLIN KELLY",
+      "party_two": "Grantee: GT CONSTRUCTION",
+      "node": "DOC285S1381",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1381",
+      "owner": "FALLIN KELLY",
+      "grantee": "GT CONSTRUCTION",
+      "prop_address": "505 COMANCHE DR",
+      "prop_city": "LUBBOCK",
+      "prop_state": "TX",
+      "prop_zip": "79404",
+      "mail_address": "539 COMANCHE DR",
+      "mail_city": "LUBBOCK",
+      "mail_state": "TX",
+      "mail_zip": "79404",
+      "owner_name": "GT CONSTRUCTION",
+      "lienholder": "FALLIN KELLY",
+      "score": 50,
+      "flags": [
+        "Mechanic lien",
         "New this week"
       ]
     },
@@ -1372,6 +1499,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "MCKINNON KENNETH",
+      "lienholder": "PROSPERITY BANK",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1399,6 +1528,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "SOLINO INVESTMENTS LLC",
+      "lienholder": "GONZALES ASHLEY M",
       "score": 45,
       "flags": [
         "Mechanic lien",
@@ -1426,6 +1557,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "WHITE AMANDA G",
+      "lienholder": "CAPROCK SANTA FE CREDIT UNION",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1453,6 +1586,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "RAMIREZ BECKY ANN",
+      "lienholder": "CAPROCK SANTA FE CREDIT UNION",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1480,6 +1615,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "JOHNSON KIMBERLY MICHELLE",
+      "lienholder": "CAPROCK SANTA FE CREDIT UNION",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1507,6 +1644,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "UPLAND GARDEN OFFICE HOLDINGS",
+      "lienholder": "WEST TEXAS STATE BANK",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1534,6 +1673,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "AMMONS MILLWRIGHT",
+      "lienholder": "U S OF AMERICA",
       "score": 45,
       "flags": [
         "Tax lien",
@@ -1561,6 +1702,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "DELGADO JUSTIN THOMAS",
+      "lienholder": "VISTA BANK",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1588,6 +1731,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "DELGADO JESSICA ANN",
+      "lienholder": "VISTA BANK",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1615,6 +1760,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "BEAUREGARD MATTHEW AARON",
+      "lienholder": "BARELA ZAKARY",
       "score": 45,
       "flags": [
         "Mechanic lien",
@@ -1642,6 +1789,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "HUBBARD ANGELA RENEA",
+      "lienholder": "AMARILLO NATIONAL BANK",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1669,6 +1818,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "GALINDO MARY YVONNE",
+      "lienholder": "AMARILLO NATIONAL BANK",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1696,6 +1847,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "JOHN COTTON FARMERS INSURANCE LLC",
+      "lienholder": "U S OF AMERICA",
       "score": 45,
       "flags": [
         "Tax lien",
@@ -1723,6 +1876,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "PERALEZ DAVID IV",
+      "lienholder": "U S OF AMERICA",
       "score": 45,
       "flags": [
         "Tax lien",
@@ -1750,6 +1905,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "DYAL DONALD HENRIQUES DEC'D ESTATE OF",
+      "lienholder": "DYAL DONALD HENRIQUES DEC'D ESTATE OF",
       "score": 45,
       "flags": [
         "Probate / estate",
@@ -1777,6 +1934,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "BARRERA ARACELI BRIANA",
+      "lienholder": "CITY BANK",
       "score": 45,
       "flags": [
         "Judgment lien",
@@ -1804,6 +1963,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "THORNBURY BARBARA ANN DEC'D ESTATE OF",
+      "lienholder": "THORNBURY BARBARA ANN DEC'D ESTATE OF",
       "score": 45,
       "flags": [
         "Probate / estate",
@@ -1831,6 +1992,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "COWTOWN MATERIALS INC",
+      "lienholder": "FAITH FOAM AND CONSTRUCTION",
       "score": 45,
       "flags": [
         "Mechanic lien",
@@ -1858,6 +2021,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "COWTOWN MATERIALS INC",
+      "lienholder": "FAITH FOAM AND CONSTRUCTION",
       "score": 45,
       "flags": [
         "Mechanic lien",
@@ -1885,36 +2050,11 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "DICKEY CECIL DEC'D ESTATE OF",
+      "lienholder": "DICKEY CECIL DEC'D ESTATE OF",
       "score": 45,
       "flags": [
         "Probate / estate",
-        "New this week"
-      ]
-    },
-    {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date04/16/2026 12:49:15 PM",
-      "filed": "2026-04-16",
-      "party_one": "Grantor:",
-      "party_two": "Grantee:",
-      "node": "DOC285S1381",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1381",
-      "prop_address": "",
-      "prop_city": "",
-      "prop_state": "",
-      "prop_zip": "",
-      "mail_address": "",
-      "mail_city": "",
-      "mail_state": "",
-      "mail_zip": "",
-      "owner": "Grantor:",
-      "grantee": "Grantee:",
-      "score": 45,
-      "flags": [
-        "Mechanic lien",
         "New this week"
       ]
     },
@@ -1939,6 +2079,8 @@
       "mail_city": "LUBBOCK",
       "mail_state": "TX",
       "mail_zip": "79424",
+      "owner_name": "CRITES ED WILLIAM",
+      "lienholder": "TEXAS STATE OF",
       "score": 40,
       "flags": [
         "New this week"
@@ -1965,6 +2107,8 @@
       "mail_state": "",
       "mail_zip": "",
       "grantee": "Grantee: 2-H CONSTRUCTION SERVICES LLC",
+      "owner_name": "Grantee: 2-H CONSTRUCTION SERVICES LLC",
+      "lienholder": "TEXAS STATE OF",
       "score": 35,
       "flags": [
         "New this week"
@@ -1992,6 +2136,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "VILLALOBOS ASHLEY NICOLE",
+      "lienholder": "VILLALOBOS ASHLEY NICOLE",
       "score": 35,
       "flags": [
         "New this week"
@@ -2019,6 +2165,8 @@
       "mail_city": "",
       "mail_state": "",
       "mail_zip": "",
+      "owner_name": "MARTINEZ MATTHEW JARED",
+      "lienholder": "MARTINEZ MATTHEW JARED",
       "score": 35,
       "flags": [
         "New this week"

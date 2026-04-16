@@ -1648,5 +1648,16 @@
     "mail_city": "#UNIT 404",
     "mail_state": "TX",
     "mail_zip": ""
+  },
+  "GT CONSTRUCTION": null,
+  "FALLIN KELLY": {
+    "prop_address": "505 COMANCHE DR",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "539 COMANCHE DR",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79404"
   }
 }
