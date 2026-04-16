@@ -210,20 +210,62 @@ def parse_lcad_detail(html: str, r_number: str) -> dict:
 def _parse_addr_into(result: dict, raw: str, prefix: str):
     """
     Parse an address string into prefix_address, prefix_city, prefix_state, prefix_zip.
-    Handles: '1115 32ND ST, LUBBOCK, TX  79411'
-             '1115 32ND ST LUBBOCK TX 79411'
+    Handles:
+      '1115 32ND ST, LUBBOCK, TX  79411'   (comma-delimited)
+      '1115 32ND ST LUBBOCK TX 79411'       (space-delimited)
+      '1115 32ND ST\nLUBBOCK, TX 79413'    (newline-separated — LCAD mailing format)
+      '1115 32ND ST \nLUBBOCK, TX 79413-6102'  (newline + ZIP+4)
     """
     raw = raw.strip()
-    # Try comma-delimited first
+
+    # ── Newline-separated format (from LCAD mailing address) ─────────────
+    # 2-line: "3518 66TH DR\nLUBBOCK, TX 79413-6102"
+    # 3-line: "T N MARQUESS TRUSTEE\n41 W HIGHWAY 14 UNIT 2642\nSPEARFISH, SD 57783"
+    if '\n' in raw:
+        lines = [l.strip() for l in raw.split('\n') if l.strip()]
+        city_re = re.compile(r"^(.+?),?\s+([A-Z]{2})\s+(\d{5})(?:-\d{4})?$", re.I)
+        if len(lines) >= 3:
+            # 3-line: last line = city/state/zip, second-to-last = street,
+            # first line = care-of / trustee name (no leading digit)
+            m = city_re.match(lines[-1])
+            if m and not re.match(r'^\d', lines[0]):
+                result[f"{prefix}_address"] = lines[-2]   # actual street
+                result[f"{prefix}_city"]    = m.group(1).strip()
+                result[f"{prefix}_state"]   = m.group(2).upper()
+                result[f"{prefix}_zip"]     = m.group(3)
+                return
+        if len(lines) >= 2:
+            # 2-line: first = street, last = city/state/zip
+            m = city_re.match(lines[-1])
+            if m:
+                result[f"{prefix}_address"] = lines[0]
+                result[f"{prefix}_city"]    = m.group(1).strip()
+                result[f"{prefix}_state"]   = m.group(2).upper()
+                result[f"{prefix}_zip"]     = m.group(3)
+                return
+        # Couldn't parse cleanly — normalize newlines and fall through
+        raw = re.sub(r'\s*\n\s*', ', ', raw)
+
+    # ── Comma-delimited: "STREET, CITY, STATE ZIP" ────────────────────────
     parts = [p.strip() for p in raw.split(",")]
     if len(parts) >= 3:
         result[f"{prefix}_address"] = parts[0]
         result[f"{prefix}_city"]    = parts[1]
         sz = parts[2].split()
         result[f"{prefix}_state"]   = sz[0] if sz else "TX"
-        result[f"{prefix}_zip"]     = sz[1] if len(sz) > 1 else ""
+        result[f"{prefix}_zip"]     = sz[1].split('-')[0] if len(sz) > 1 else ""
         return
-    # Try regex: NUMBER STREET CITY ST ZIP
+    if len(parts) == 2:
+        # e.g. "3518 66TH DR, LUBBOCK TX 79413"
+        result[f"{prefix}_address"] = parts[0]
+        tail = parts[1].strip().split()
+        if len(tail) >= 3 and re.match(r'\d{5}', tail[-1].split('-')[0]):
+            result[f"{prefix}_zip"]   = tail[-1].split('-')[0]
+            result[f"{prefix}_state"] = tail[-2]
+            result[f"{prefix}_city"]  = ' '.join(tail[:-2])
+        return
+
+    # ── Regex: "NUMBER STREET CITY ST ZIP" all on one line ────────────────
     m = re.match(
         r"^(\d+\s+\S+(?:\s+\S+){0,5}?)\s+"
         r"([A-Z][A-Za-z\s]+?)\s+(TX|tx)\s+(\d{5})",
@@ -235,7 +277,8 @@ def _parse_addr_into(result: dict, raw: str, prefix: str):
         result[f"{prefix}_state"]   = "TX"
         result[f"{prefix}_zip"]     = m.group(4).strip()
         return
-    # Last resort — just store the whole thing as address
+
+    # ── Last resort ───────────────────────────────────────────────────────
     if raw and f"{prefix}_address" not in result:
         result[f"{prefix}_address"] = raw
 
@@ -248,27 +291,42 @@ def missing_fields(rec: dict) -> list:
 
 def _split_full_address(addr_str, prefix, result):
     """
-    If addr_str contains comma-separated city/state/zip, split it out.
-    Handles: "1115 32ND ST, LUBBOCK, TX  79411"
-             "9 TOMMY FISHER DR, UNIT #B, LUBBOCK, TX 79404"
+    If addr_str contains a full address with city/state/zip, split it out.
+    Handles:
+      "1115 32ND ST, LUBBOCK, TX  79411"
+      "9 TOMMY FISHER DR, UNIT #B, LUBBOCK, TX 79404"
+      "3518 66TH DR\nLUBBOCK, TX 79413-6102"   ← LCAD newline format
     """
-    if not addr_str or ',' not in addr_str:
+    if not addr_str:
         return
+    addr_str = str(addr_str).strip()
+
+    # Normalize newlines to ", " so comma-splitting works correctly
+    if '\n' in addr_str:
+        addr_str = re.sub(r'\s*\n\s*', ', ', addr_str)
+
+    if ',' not in addr_str:
+        return
+
     parts = [p.strip() for p in addr_str.split(',')]
     if len(parts) >= 3:
         result[f"{prefix}_address"] = parts[0]
         result[f"{prefix}_city"]    = parts[-2].strip()
         sz = parts[-1].strip().split()
         result[f"{prefix}_state"]   = sz[0] if sz else "TX"
-        result[f"{prefix}_zip"]     = sz[1] if len(sz) > 1 else ""
+        result[f"{prefix}_zip"]     = sz[1].split('-')[0] if len(sz) > 1 else ""
     elif len(parts) == 2:
-        # Could be "STREET, CITY TX ZIP"
+        # e.g. "STREET, CITY STATE ZIP"
         result[f"{prefix}_address"] = parts[0]
         tail = parts[1].strip().split()
-        if len(tail) >= 3:
+        if len(tail) >= 3 and re.match(r'\d{5}', tail[-1].split('-')[0]):
+            result[f"{prefix}_zip"]   = tail[-1].split('-')[0]
+            result[f"{prefix}_state"] = tail[-2]
+            result[f"{prefix}_city"]  = ' '.join(tail[:-2])
+        elif len(tail) >= 3:
             result[f"{prefix}_city"]  = tail[0]
             result[f"{prefix}_state"] = tail[1]
-            result[f"{prefix}_zip"]   = tail[2]
+            result[f"{prefix}_zip"]   = tail[2].split('-')[0]
 
 
 def apply_lcad_result(rec: dict, lcad: dict) -> int:
@@ -303,7 +361,12 @@ def apply_lcad_result(rec: dict, lcad: dict) -> int:
     }
     filled = 0
     for field, lcad_field in field_map.items():
-        if not str(rec.get(field, "") or "").strip():
+        current = str(rec.get(field, "") or "")
+        # Treat empty OR dirty (newline-contaminated from old broken parse) as missing
+        is_missing = not current.strip()
+        is_dirty   = '\n' in current or (current.strip() and field.endswith('_address')
+                     and '\n' in current)
+        if is_missing or is_dirty:
             val = str(lcad_expanded.get(lcad_field, "") or "").strip()
             if val:
                 rec[field] = val

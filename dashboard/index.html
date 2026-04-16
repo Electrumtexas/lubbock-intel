@@ -740,6 +740,7 @@
           <th onclick="sortTable('score')" id="th-score">Score</th>
           <th onclick="sortTable('cat_label')" id="th-cat">Type</th>
           <th onclick="sortTable('owner')" id="th-owner">Owner / Property</th>
+          <th onclick="sortTable('lienholder')" id="th-lienholder">Lienholder / Adverse Party</th>
           <th onclick="sortTable('filed')" id="th-filed">Filed</th>
           <th onclick="sortTable('amount')" id="th-amount">Amount</th>
           <th>Flags</th>
@@ -749,7 +750,7 @@
       </thead>
       <tbody id="table-body">
         <tr>
-          <td colspan="8">
+          <td colspan="9">
             <div class="empty-state">
               <div class="icon">⚙</div>
               <p>Loading records…</p>
@@ -1046,7 +1047,7 @@ function renderTable() {
   const body = document.getElementById('table-body');
 
   if (!FILTERED.length) {
-    body.innerHTML = `<tr><td colspan="8">
+    body.innerHTML = `<tr><td colspan="9">
       <div class="empty-state"><div class="icon">🔍</div>
       <p>No records match the current filters.</p></div></td></tr>`;
     return;
@@ -1073,10 +1074,12 @@ function renderTable() {
       ? `<a class="doc-link" href="${esc(r.clerk_url)}" target="_blank" rel="noopener">VIEW →</a>`
       : '<span class="mono-sm">—</span>';
 
+    const lienholder = r.lienholder || r.grantee || '';
     return `<tr onclick="openModal(${i})" style="cursor:pointer">
       <td><span class="score-chip ${sc}">${score}</span></td>
       <td><span class="type-badge cat-${r.cat||'other'}">${esc(r.cat_label||r.doc_type||'')}</span></td>
       <td>${addrBlock}</td>
+      <td class="mono-sm" style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(lienholder)}">${esc(lienholder||'—')}</td>
       <td class="mono-sm">${r.filed||'—'}</td>
       <td class="amount-cell ${amtCls}">${amt}</td>
       <td><div class="flags">${flags||'<span class="mono-sm">—</span>'}</div></td>
@@ -1085,7 +1088,7 @@ function renderTable() {
     </tr>`;
   }).join('');
   const _sc=Math.min(PAGE_SIZE*_pages["clerk"],FILTERED.length);
-  if(_sc<FILTERED.length){body.innerHTML+=_makeShowMoreRow('clerk',_sc,FILTERED.length,7);}
+  if(_sc<FILTERED.length){body.innerHTML+=_makeShowMoreRow('clerk',_sc,FILTERED.length,9);}
 }
 
 function fmtAmt(n) {
