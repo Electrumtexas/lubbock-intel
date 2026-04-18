@@ -1674,5 +1674,72 @@
   "ALLEN JOSHUA": null,
   "CROW JEFFREY TAIT": null,
   "STANFORD JERRY WAYNE": null,
-  "RIVERA ALBERT": null
+  "RIVERA ALBERT": null,
+  "REECE SUPPLY LLC DBA": null,
+  "MANDRY CONSTRUCTION": null,
+  "EMPTY CREEK INVESTMENTS LLC": {
+    "prop_address": "9305 URBANA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "9305 URBANA AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "SIDDIQUE MUHAMMAD SALEH": null,
+  "Grantee: D5 CLEANING SOLUTIONS LLC": null,
+  "WALKER HOLLI": {
+    "prop_address": "4409 50TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "4409 50TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79414"
+  },
+  "BCKK INVESTMENT GROUP INC": null,
+  "SANDERS TONYA RANAE": {
+    "prop_address": "10810 N FM 1264",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "% T & R CONSTRUCTION",
+    "mail_city": "PO BOX 64411",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "BOM BRAZIL LLC": null,
+  "HUNTS MANAGEMENT AND PROFESSIONAL SERVICES LLC": null,
+  "ROBERTS TRUCK CENTER OF TEXAS LLC": {
+    "prop_address": "301 45TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "% CHARLES KINMAN",
+    "mail_city": "1825 LAKEWAY DR  STE 700",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "STERLING JON N": {
+    "prop_address": "5725 108TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5725 108TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "SONNIER JASON": {
+    "prop_address": "3207 ABERDEEN AVE",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "3207 ABERDEEN AVE",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382-2926"
+  }
 }
