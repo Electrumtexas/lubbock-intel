@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-04-18T09:36:25.140861Z",
+  "fetched_at": "2026-04-19T09:35:37.867114Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-04-11",
-    "end": "2026-04-18"
+    "start": "2026-04-12",
+    "end": "2026-04-19"
   },
   "total": 76,
-  "with_address": 38,
+  "with_address": 37,
   "records": [
     {
       "description": "POSTING",
@@ -214,36 +214,6 @@
       "score": 60,
       "flags": [
         "Mechanic lien",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
-    {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date04/17/2026 12:28:15 PM",
-      "filed": "2026-04-17",
-      "party_one": "Grantor: ROBERTS TRUCK CENTER OF TEXAS LLC",
-      "party_two": "Grantee: HUNTS MANAGEMENT AND PROFESSIONAL SERVICES LLC",
-      "node": "DOC285S1512",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1512",
-      "owner": "ROBERTS TRUCK CENTER OF TEXAS LLC",
-      "grantee": "HUNTS MANAGEMENT AND PROFESSIONAL SERVICES LLC",
-      "prop_address": "301 45TH ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79404",
-      "mail_address": "% CHARLES KINMAN",
-      "mail_city": "1825 LAKEWAY DR  STE 700",
-      "mail_state": "TX",
-      "mail_zip": "",
-      "owner_name": "HUNTS MANAGEMENT AND PROFESSIONAL SERVICES LLC",
-      "lienholder": "ROBERTS TRUCK CENTER OF TEXAS LLC",
-      "score": 60,
-      "flags": [
-        "Judgment lien",
         "LLC / corp owner",
         "New this week"
       ]
@@ -481,6 +451,36 @@
       "mail_zip": "",
       "owner_name": "ALLEN JOSHUA",
       "lienholder": "RAIDERLAND HOLDINGS LLC",
+      "score": 55,
+      "flags": [
+        "Judgment lien",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date04/17/2026 12:28:15 PM",
+      "filed": "2026-04-17",
+      "party_one": "Grantor: ROBERTS TRUCK CENTER OF TEXAS LLC",
+      "party_two": "Grantee: HUNTS MANAGEMENT AND PROFESSIONAL SERVICES LLC",
+      "node": "DOC285S1512",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S1512",
+      "owner": "ROBERTS TRUCK CENTER OF TEXAS LLC",
+      "grantee": "HUNTS MANAGEMENT AND PROFESSIONAL SERVICES LLC",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "HUNTS MANAGEMENT AND PROFESSIONAL SERVICES LLC",
+      "lienholder": "ROBERTS TRUCK CENTER OF TEXAS LLC",
       "score": 55,
       "flags": [
         "Judgment lien",
