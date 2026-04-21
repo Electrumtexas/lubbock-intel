@@ -1741,5 +1741,76 @@
     "mail_city": "WOLFFORTH",
     "mail_state": "TX",
     "mail_zip": "79382-2926"
+  },
+  "LOPEZ CYNTHIA": {
+    "prop_address": "3611 35TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3611 35TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "HUFNAGLE BAILEY ELIZABETH": {
+    "prop_address": "7440 32ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "7440 32ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "CHACON DOMINGA": {
+    "prop_address": "404 TEAK AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "404 TEAK AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "Grantee: 180 VAPE LLC": null,
+  "FUNKY DOOR WINE BAR INC": {
+    "prop_address": "6801 MILWAUKEE AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6801 MILWAUKEE AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "SHIV & SUCHI LLC": {
+    "prop_address": "5706 I-27",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "5706 I-27",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79404"
+  },
+  "MARTINEZ OSCAR JR": {
+    "prop_address": "12108 SALISBURY BLVD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "12108 SALISBURY BLVD",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "ZERO": {
+    "prop_address": "9008 BARTON AVE",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "Attn: TWIN OAKS MANAGEMENT",
+    "mail_city": "5109 82ND ST",
+    "mail_state": "#STE",
+    "mail_zip": "7-335"
   }
 }
