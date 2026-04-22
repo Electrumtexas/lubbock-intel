@@ -1812,5 +1812,64 @@
     "mail_city": "5109 82ND ST",
     "mail_state": "#STE",
     "mail_zip": "7-335"
-  }
+  },
+  "Grantee: 806 SPRAY FOAM LLC": null,
+  "DISTRIBUTION INTERNATIONAL": null,
+  "SNELLING ROBERT W": {
+    "prop_address": "6820 84TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6820 84TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "LUBBOCK CITY OF": {
+    "prop_address": "2700 AMHERST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "PO BOX 2000",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79457-0001"
+  },
+  "BROWN MITCHELL A": null,
+  "DODEKA LLC": null,
+  "LINKS JOHN E": {
+    "prop_address": "501 6TH ST",
+    "prop_city": "SHALLOWATER",
+    "prop_state": "TX",
+    "prop_zip": "79363",
+    "mail_address": "PO BOX 434",
+    "mail_city": "SHALLOWATER",
+    "mail_state": "TX",
+    "mail_zip": "79363"
+  },
+  "RBSLLC LLC": {
+    "prop_address": "5004 FRANKFORD AVE",
+    "prop_city": "UNIT #900",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "PO BOX 53634",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79453"
+  },
+  "REDLINE HOT SHOT & TRANSPORTATION LLC": null,
+  "DELEON SOL": {
+    "prop_address": "2726 AUBURN ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "2726 AUBURN ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79415-2841"
+  },
+  "GARCIA THOMAS JOE": null,
+  "STILWELL BRYCE KENYON": null,
+  "METCALF ELIZABETH EVE": null,
+  "JOHNSON MADDOX ALEXANDER": null
 }
