@@ -1871,5 +1871,66 @@
   "GARCIA THOMAS JOE": null,
   "STILWELL BRYCE KENYON": null,
   "METCALF ELIZABETH EVE": null,
-  "JOHNSON MADDOX ALEXANDER": null
+  "JOHNSON MADDOX ALEXANDER": null,
+  "LUBBOCK CONCRETE COATING LLC": null,
+  "MISSION BROADCASTING INC": null,
+  "SCHULER CHARLES DONALD DEC'D ESTATE OF": null,
+  "ONE FOUR OPERATIONS LLC": null,
+  "MIGHTYWASH OPERATIONS L L C": {
+    "prop_address": "3011 50TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "6520 UNIVERSITY AVE",
+    "mail_city": "#SPC 3",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MELANCON TIMOTHY": null,
+  "MENDOZA MIGUEL E": {
+    "prop_address": "3311 E BAYLOR ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "3311 E BAYLOR ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "Grantee: 4641 MONTROSE HOUSTON LLC, BB MONTROSE LLC, WIC CHELSEA LLC, TROY CHELSEA LLC": null,
+  "BEST PLUMBING L L C": null,
+  "PRILUCIK REBECCA R": null,
+  "POWELL STEPHEN K": {
+    "prop_address": "5304 CR 7340",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5304 CR 7340",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "GONZALES REGINA P": null,
+  "TIJERINA LIZA RENEE": null,
+  "KNEBEL MARIA GUADALUPE": null,
+  "JJLLL INVESTMENTS LLC SERIES": {
+    "prop_address": "6819 5TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "DBA JJLLL INVTS LLC SERIES 6819 5TH STREET",
+    "mail_city": "5805 COUNTY ROAD 7700",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ATLAS HOMES": {
+    "prop_address": "3714 141ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "3 FOOTHILL DR",
+    "mail_city": "RANSOM CANYON",
+    "mail_state": "TX",
+    "mail_zip": "79366"
+  }
 }
