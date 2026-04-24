@@ -1932,5 +1932,89 @@
     "mail_city": "RANSOM CANYON",
     "mail_state": "TX",
     "mail_zip": "79366"
+  },
+  "LBK PLUMBING LLC": null,
+  "HAYWARD BARBARA K": null,
+  "PLANET HOME LENDING LLC": null,
+  "FLORES DAVID J": {
+    "prop_address": "1105 IOLA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "1105 IOLA AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "HOGUE LISA": {
+    "prop_address": "3507 SARATOGA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "3507 SARATOGA AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "FRANCIS BILL": {
+    "prop_address": "8901 CR 6100",
+    "prop_city": "SHALLOWATER",
+    "prop_state": "TX",
+    "prop_zip": "79363",
+    "mail_address": "8901 CR 6100",
+    "mail_city": "SHALLOWATER",
+    "mail_state": "TX",
+    "mail_zip": "79363"
+  },
+  "URQUIDI JORGE": {
+    "prop_address": "5538 KEMPER ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5538 KEMPER ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "NOLEN SUZANNE": {
+    "prop_address": "5906 102ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5906 102ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "GOMEZ MALORI KAYE": {
+    "prop_address": "4710 40TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "4710 40TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79414-3110"
+  },
+  "SANCHEZ JUDY TERECIA AKA": null,
+  "HASTINGS DAVID": {
+    "prop_address": "3510 SARATOGA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "3510 SARATOGA",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "GOMEZ JOE": {
+    "prop_address": "5507 10TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5507 10TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
   }
 }
