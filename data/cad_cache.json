@@ -2016,5 +2016,110 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79416"
+  },
+  "GONZALEZ VICTOR SR": null,
+  "BARELA MELISSA BARBEE": null,
+  "PAZ ASHLEY": null,
+  "TURNBOW BRAYDEN": {
+    "prop_address": "10403 FM 1585",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "10403 FM 1585",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "LUBBOCK SUNNY DEV LLC": {
+    "prop_address": "4801 S LOOP 289 AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "PO BOX 3007",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79452-3007"
+  },
+  "LUBBOCK SURYA DEV LLC": {
+    "prop_address": "6504 I-27",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79412",
+    "mail_address": "PO BOX 3007",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79452"
+  },
+  "LUXOTTICA OF AMERICA INC": {
+    "prop_address": "6002 SLIDE RD",
+    "prop_city": "STE #K-107",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "ATTN: PROPERTY TAX",
+    "mail_city": "PO BOX 331429",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "CSA MATERIALS INC": null,
+  "EWING IRRIGATION PRODUCTS INC": {
+    "prop_address": "5926 66TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "630 N CENTRAL EXPY",
+    "mail_city": "#STE A",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "CORNERSTONE FITNESS - TEXAS LLC": {
+    "prop_address": "5105 82ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "DBA TRU FIT ATHLETIC CLUBS",
+    "mail_city": "ACCOUNTS PAYABLE",
+    "mail_state": "PO",
+    "mail_zip": "3037"
+  },
+  "HARO-MARQUEZ BRENDA": null,
+  "STRIDE FITNESS SOLUTIONS LLC": {
+    "prop_address": "7702 FM 179",
+    "prop_city": "STE #17",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "1794 N WOODVIEW RD",
+    "mail_city": "NIXA",
+    "mail_state": "MO",
+    "mail_zip": "65714"
+  },
+  "JST CONCRETE LLC": {
+    "prop_address": "7510 E WOODROW RD",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "5109 82ND STREET",
+    "mail_city": "SUITE 7",
+    "mail_state": "BOX",
+    "mail_zip": "1202"
+  },
+  "SANDERS ROCTRUS D": {
+    "prop_address": "1905 OAK AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "1905 OAK AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "UNDERWOOD AUSTIN": {
+    "prop_address": "14115 AVE W",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1403 HARVEST RAIN ST",
+    "mail_city": "MIDLAND",
+    "mail_state": "TX",
+    "mail_zip": "79705"
   }
 }
