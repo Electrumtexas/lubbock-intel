@@ -2121,5 +2121,26 @@
     "mail_city": "MIDLAND",
     "mail_state": "TX",
     "mail_zip": "79705"
+  },
+  "PITBULL SHREDDING SOLUTIONS LLC": {
+    "prop_address": "1902 KEUKA ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "1902 KEUKA ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "NORMAN SPENCER LEE AKA": null,
+  "LUNA MELISSA": {
+    "prop_address": "9706 BELTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "LUBBOCK CLEANING SERVICES",
+    "mail_city": "9706 BELTON AVENUE",
+    "mail_state": "TX",
+    "mail_zip": ""
   }
 }
