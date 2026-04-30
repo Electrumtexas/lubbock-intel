@@ -2154,5 +2154,103 @@
   "DE LA GIRAUDIERE JACQUES": null,
   "GREER EDDIE DEC'D ESTATE OF": null,
   "PREMIERE OUTDOOR MOVIES OF TEXAS LLC": null,
-  "PHILLIPS TRACI CLARK": null
+  "PHILLIPS TRACI CLARK": null,
+  "BROWN CHAVELA": {
+    "prop_address": "1933 77TH PL",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1933 77TH PL",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "ESPEY CATHERINE": null,
+  "PRIETO ARMANDO CADENA": null,
+  "MONTOYA JULIAN DBA": null,
+  "AJIMO JACOB": {
+    "prop_address": "6715 85TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6715 85TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "PARSONS RONALD CHARLES DEC'D ESTATE OF": null,
+  "BTAC INC": null,
+  "JVW REALTY ENTERPRISES LLC": {
+    "prop_address": "2709 26TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "6502 SLIDE RD",
+    "mail_city": "#STE 200",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ESCARENO ALBERTO": {
+    "prop_address": "3301 98TH ST",
+    "prop_city": "STE #700",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "5205 AUBURN ST",
+    "mail_city": "632",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "WESTEX POOLS": null,
+  "WEDDIGE JOHN": {
+    "prop_address": "4609 16TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "4609 16TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "WESTECH PLUMBING": {
+    "prop_address": "8211 VALENCIA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "PO BOX 146",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "LONG STEPHEN HANSEN DBA": null,
+  "WHEELER LAURA JO DEC'D ESTATE OF": null,
+  "ANSELMI VIVIAN LOWE DEC'D ESTATE OF": {
+    "prop_address": "4904 97TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "4904 97TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "LONG BRANDON THOMAS": {
+    "prop_address": "13708 AVE T",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "13708 AVENUE T",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "SIGNATURE LLC": {
+    "prop_address": "4312 49TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "4312 49TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  }
 }
