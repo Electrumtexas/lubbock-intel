@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-05-02T10:12:54.264627Z",
+  "fetched_at": "2026-05-03T10:33:49.259306Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-04-25",
-    "end": "2026-05-02"
+    "start": "2026-04-26",
+    "end": "2026-05-03"
   },
   "total": 60,
-  "with_address": 27,
+  "with_address": 25,
   "records": [
     {
       "description": "ABSTRACT OF JUDGMENT",
@@ -738,64 +738,6 @@
       "score": 50,
       "flags": [
         "Probate / estate",
-        "New this week"
-      ]
-    },
-    {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date05/01/2026 08:04:09 AM",
-      "filed": "2026-05-01",
-      "party_one": "Grantor: CAPITAL ONE",
-      "party_two": "Grantee: MCKEE QUENTIN",
-      "node": "DOC285S2904",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S2904",
-      "owner": "CAPITAL ONE",
-      "grantee": "MCKEE QUENTIN",
-      "prop_address": "1510 E CORNELL ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79403",
-      "mail_address": "Attn: FORECLOSURE DEPT",
-      "mail_city": "201 E MCBEE AVE",
-      "mail_state": "#STE",
-      "mail_zip": "300",
-      "owner_name": "MCKEE QUENTIN",
-      "lienholder": "CAPITAL ONE",
-      "score": 50,
-      "flags": [
-        "Judgment lien",
-        "New this week"
-      ]
-    },
-    {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date05/01/2026 08:05:14 AM",
-      "filed": "2026-05-01",
-      "party_one": "Grantor: CAPITAL ONE",
-      "party_two": "Grantee: BRUNSON-DRAKE TRAYLEN",
-      "node": "DOC285S2905",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S2905",
-      "owner": "CAPITAL ONE",
-      "grantee": "BRUNSON-DRAKE TRAYLEN",
-      "prop_address": "1510 E CORNELL ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79403",
-      "mail_address": "Attn: FORECLOSURE DEPT",
-      "mail_city": "201 E MCBEE AVE",
-      "mail_state": "#STE",
-      "mail_zip": "300",
-      "owner_name": "BRUNSON-DRAKE TRAYLEN",
-      "lienholder": "CAPITAL ONE",
-      "score": 50,
-      "flags": [
-        "Judgment lien",
         "New this week"
       ]
     },
@@ -1579,6 +1521,64 @@
       "score": 45,
       "flags": [
         "Mechanic lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date05/01/2026 08:04:09 AM",
+      "filed": "2026-05-01",
+      "party_one": "Grantor: CAPITAL ONE",
+      "party_two": "Grantee: MCKEE QUENTIN",
+      "node": "DOC285S2904",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S2904",
+      "owner": "CAPITAL ONE",
+      "grantee": "MCKEE QUENTIN",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "MCKEE QUENTIN",
+      "lienholder": "CAPITAL ONE",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date05/01/2026 08:05:14 AM",
+      "filed": "2026-05-01",
+      "party_one": "Grantor: CAPITAL ONE",
+      "party_two": "Grantee: BRUNSON-DRAKE TRAYLEN",
+      "node": "DOC285S2905",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S2905",
+      "owner": "CAPITAL ONE",
+      "grantee": "BRUNSON-DRAKE TRAYLEN",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "BRUNSON-DRAKE TRAYLEN",
+      "lienholder": "CAPITAL ONE",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
         "New this week"
       ]
     },
