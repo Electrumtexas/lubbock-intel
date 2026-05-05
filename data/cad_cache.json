@@ -2410,5 +2410,51 @@
   "HALL TERYN DALEY": null,
   "GASKIN JARED": null,
   "JETER SHAYNE ALLAN": null,
-  "PANCHAMIA MARIA CARMEN": null
+  "PANCHAMIA MARIA CARMEN": null,
+  "LOW WILLIAM BERT DEC'D ESTATE OF": {
+    "prop_address": "",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "1718 CROWN CT",
+    "mail_city": "TEXAS CITY",
+    "mail_state": "TX",
+    "mail_zip": "77591-2217"
+  },
+  "PORTILLO JUVENCIO PETE": null,
+  "LAWRENCE CHRISTOPHER D": null,
+  "SIGNATURE LLC DBA": {
+    "prop_address": "4312 49TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "4312 49TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "SCHULTE JOSHUA A": null,
+  "PEREIRA PAULO": null,
+  "GALVAN CHRIS": {
+    "prop_address": "3412 CR 7610",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "3412 COUNTY ROAD 7610",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "TORRES JORGE RODRIGUEZ": null,
+  "FORTIN ANDRE FREDERICK": null,
+  "BETENBOUGH HOMES, LLC": {
+    "prop_address": "6517 82ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6305 82ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424-3681"
+  }
 }
