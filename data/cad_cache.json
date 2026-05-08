@@ -2503,5 +2503,29 @@
     "mail_state": "TX",
     "mail_zip": "79347"
   },
-  "PATTON TONYA LEA DEC'D ESTATE OF": null
+  "PATTON TONYA LEA DEC'D ESTATE OF": null,
+  "BANMAN PETER K.": null,
+  "NUTRIEN AG SOLUTIONS, INC.": {
+    "prop_address": "401 E 1ST ST",
+    "prop_city": "IDALOU",
+    "prop_state": "TX",
+    "prop_zip": "79329",
+    "mail_address": "3005 ROCKY MOUNTAIN AVE",
+    "mail_city": "LOVELAND",
+    "mail_state": "CO",
+    "mail_zip": "80538"
+  },
+  "BURNS MARIANNA": null,
+  "BEAUCHAMP RICHARD": {
+    "prop_address": "6708 72ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6708 72ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "Grantee: X": null,
+  "X": null
 }
