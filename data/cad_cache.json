@@ -2527,5 +2527,92 @@
     "mail_zip": "79424"
   },
   "Grantee: X": null,
-  "X": null
+  "X": null,
+  "SANFORD MELISSA TALBERT": null,
+  "HEXT PETE J": null,
+  "BANMAN PETER K DBA": null,
+  "NUTRIEN AG SOLUTIONS INC": {
+    "prop_address": "401 E 1ST ST",
+    "prop_city": "IDALOU",
+    "prop_state": "TX",
+    "prop_zip": "79329",
+    "mail_address": "3005 ROCKY MOUNTAIN AVE",
+    "mail_city": "LOVELAND",
+    "mail_state": "CO",
+    "mail_zip": "80538"
+  },
+  "GARRETT JOSHUA K": {
+    "prop_address": "7421 29TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "7421 29TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "SMITH LEWIS RAY": {
+    "prop_address": "1506 N CR 1340",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "1506 N COUNTY ROAD 1340",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "DRYLANDS HOMES LLC": {
+    "prop_address": "612 N 9TH ST",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "3917 114TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "KIMBLE MICHAEL JR": {
+    "prop_address": "6301 29TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "6301 29TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "ANTUNEZ BUDDY M": null,
+  "ZOLLER KENNETH LEE DEC'D ESTATE OF": null,
+  "FOLWELL CHASE": {
+    "prop_address": "1918 99TH PL",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1918 99TH PL",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "BLACKERBY DAVID WILLIAM": null,
+  "WHITENER KAREN": null,
+  "STINE FOOD SERVICE LLC": {
+    "prop_address": "5502 CR 6300",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5502 CR 6300",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "DEPOT LBK VENTURES LLC": {
+    "prop_address": "1926 BUDDY HOLLY AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "1928 BUDDY HOLLY",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79404"
+  }
 }
