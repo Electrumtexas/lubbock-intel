@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-05-09T08:29:31.405124Z",
+  "fetched_at": "2026-05-10T08:53:22.269054Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-05-02",
-    "end": "2026-05-09"
+    "start": "2026-05-03",
+    "end": "2026-05-10"
   },
   "total": 467,
-  "with_address": 450,
+  "with_address": 449,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -3939,36 +3939,6 @@
       ]
     },
     {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date05/07/2026 11:51:42 AM",
-      "filed": "2026-05-07",
-      "party_one": "Grantor: NUTRIEN AG SOLUTIONS INC",
-      "party_two": "Grantee: BANMAN PETER K DBA, P&T FARMS",
-      "node": "DOC285S3620",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S3620",
-      "owner": "NUTRIEN AG SOLUTIONS INC",
-      "grantee": "BANMAN PETER K DBA",
-      "prop_address": "401 E 1ST ST",
-      "prop_city": "IDALOU",
-      "prop_state": "TX",
-      "prop_zip": "79329",
-      "mail_address": "3005 ROCKY MOUNTAIN AVE",
-      "mail_city": "LOVELAND",
-      "mail_state": "CO",
-      "mail_zip": "80538",
-      "owner_name": "BANMAN PETER K DBA",
-      "lienholder": "NUTRIEN AG SOLUTIONS INC",
-      "score": 60,
-      "flags": [
-        "Judgment lien",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
-    {
       "description": "POSTING",
       "doc_num": "Recording Date05/07/2026 12:46:22 PM",
       "filed": "2026-05-07",
@@ -4084,6 +4054,36 @@
       "score": 55,
       "flags": [
         "Mechanic lien",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date05/07/2026 11:51:42 AM",
+      "filed": "2026-05-07",
+      "party_one": "Grantor: NUTRIEN AG SOLUTIONS INC",
+      "party_two": "Grantee: BANMAN PETER K DBA, P&T FARMS",
+      "node": "DOC285S3620",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S3620",
+      "owner": "NUTRIEN AG SOLUTIONS INC",
+      "grantee": "BANMAN PETER K DBA",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "BANMAN PETER K DBA",
+      "lienholder": "NUTRIEN AG SOLUTIONS INC",
+      "score": 55,
+      "flags": [
+        "Judgment lien",
         "LLC / corp owner",
         "New this week"
       ]
