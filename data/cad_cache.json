@@ -2796,5 +2796,48 @@
     "mail_city": "FORT WORTH",
     "mail_state": "TX",
     "mail_zip": "76116-8170"
+  },
+  "BARNHART CRANE AND RIGGING CO": null,
+  "PRAIRIE DOG EXPRESS INC": null,
+  "CASTILLEJA TONY II AKA": {
+    "prop_address": "4609 28TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "4609 28TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79410"
+  },
+  "ONYX LUBBOCK HOTEL LLC": {
+    "prop_address": "5614 ENGLEWOOD AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6420 CONGRESS AVE",
+    "mail_city": "#STE 1850",
+    "mail_state": "BOCA",
+    "mail_zip": "RATON"
+  },
+  "JIMENEZ ERICA": {
+    "prop_address": "915 TULANE ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "915 TULANE ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "Grantee: 21ST MORTGAGE CORPORATION": null,
+  "DOMINGUEZ GABINO JR. AKA": {
+    "prop_address": "113 W KRUM ST",
+    "prop_city": "SPC #27",
+    "prop_state": "TX",
+    "prop_zip": "79350",
+    "mail_address": "113 W KRUM ST",
+    "mail_city": "#SPC 27",
+    "mail_state": "NEW",
+    "mail_zip": "DEAL"
   }
 }
