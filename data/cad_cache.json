@@ -2839,5 +2839,40 @@
     "mail_city": "#SPC 27",
     "mail_state": "NEW",
     "mail_zip": "DEAL"
-  }
+  },
+  "DHYAN LLC": {
+    "prop_address": "9203 TRENTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "7420 MOSLEY ST",
+    "mail_city": "AMARILLO",
+    "mail_state": "TX",
+    "mail_zip": "79119-7026"
+  },
+  "DOMINGUEZ GABINO JR AKA": {
+    "prop_address": "113 W KRUM ST",
+    "prop_city": "SPC #27",
+    "prop_state": "TX",
+    "prop_zip": "79350",
+    "mail_address": "113 W KRUM ST",
+    "mail_city": "#SPC 27",
+    "mail_state": "NEW",
+    "mail_zip": "DEAL"
+  },
+  "GANA JUSTIN LEE": null,
+  "SIDOR MARY MARGARET DUGAN": null,
+  "PEREZ JOSEPH MICHAEL DEC'D ESTATE OF": null,
+  "FLORES RAYMUNDO": null,
+  "AMERICAN BANK OF COMMERCE": {
+    "prop_address": "4656 N LOOP 289",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "PO BOX 9",
+    "mail_city": "530 E HWY 62 82",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MCFERREN CLARENCE II": null
 }
