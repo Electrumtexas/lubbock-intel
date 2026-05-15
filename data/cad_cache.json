@@ -2874,5 +2874,35 @@
     "mail_state": "TX",
     "mail_zip": ""
   },
-  "MCFERREN CLARENCE II": null
+  "MCFERREN CLARENCE II": null,
+  "WADE BENJAMIN L": {
+    "prop_address": "3505 36TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3505 36TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "THOMPSON BRENDA K": {
+    "prop_address": "1913 134TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1913 134TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "MILLER KELSEY": {
+    "prop_address": "1202 N 14TH PL",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "1202 N 14TH PL",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  }
 }
