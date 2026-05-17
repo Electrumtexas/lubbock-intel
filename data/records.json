@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-05-16T08:46:44.650757Z",
+  "fetched_at": "2026-05-17T08:58:55.743348Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-05-09",
-    "end": "2026-05-16"
+    "start": "2026-05-10",
+    "end": "2026-05-17"
   },
   "total": 71,
-  "with_address": 45,
+  "with_address": 43,
   "records": [
     {
       "description": "POSTING",
@@ -219,66 +219,6 @@
       ]
     },
     {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date05/15/2026 04:16:43 PM",
-      "filed": "2026-05-15",
-      "party_one": "Grantor: BETENBOUGH HOMES, LLC",
-      "party_two": "Grantee: VASQUEZ MELENA L, VASQUEZ CELESTINO A",
-      "node": "DOC285S4574",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S4574",
-      "owner": "BETENBOUGH HOMES, LLC",
-      "grantee": "VASQUEZ MELENA L",
-      "prop_address": "6517 82ND ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79424",
-      "mail_address": "6305 82ND ST",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79424-3681",
-      "owner_name": "VASQUEZ MELENA L",
-      "lienholder": "BETENBOUGH HOMES, LLC",
-      "score": 60,
-      "flags": [
-        "Mechanic lien",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
-    {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date05/15/2026 04:31:22 PM",
-      "filed": "2026-05-15",
-      "party_one": "Grantor: BETENBOUGH HOMES, LLC",
-      "party_two": "Grantee: THORR EVE, THORR WILLIAM J, THORR HANNAH G",
-      "node": "DOC285S4571",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S4571",
-      "owner": "BETENBOUGH HOMES, LLC",
-      "grantee": "THORR EVE",
-      "prop_address": "6517 82ND ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79424",
-      "mail_address": "6305 82ND ST",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79424-3681",
-      "owner_name": "THORR EVE",
-      "lienholder": "BETENBOUGH HOMES, LLC",
-      "score": 60,
-      "flags": [
-        "Mechanic lien",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
-    {
       "description": "POSTING",
       "doc_num": "Recording Date05/11/2026 10:09:19 AM",
       "filed": "2026-05-11",
@@ -304,6 +244,66 @@
       "score": 55,
       "flags": [
         "Pre-foreclosure",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date05/15/2026 04:16:43 PM",
+      "filed": "2026-05-15",
+      "party_one": "Grantor: BETENBOUGH HOMES, LLC",
+      "party_two": "Grantee: VASQUEZ MELENA L, VASQUEZ CELESTINO A",
+      "node": "DOC285S4574",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S4574",
+      "owner": "BETENBOUGH HOMES, LLC",
+      "grantee": "VASQUEZ MELENA L",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "VASQUEZ MELENA L",
+      "lienholder": "BETENBOUGH HOMES, LLC",
+      "score": 55,
+      "flags": [
+        "Mechanic lien",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date05/15/2026 04:31:22 PM",
+      "filed": "2026-05-15",
+      "party_one": "Grantor: BETENBOUGH HOMES, LLC",
+      "party_two": "Grantee: THORR EVE, THORR WILLIAM J, THORR HANNAH G",
+      "node": "DOC285S4571",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S4571",
+      "owner": "BETENBOUGH HOMES, LLC",
+      "grantee": "THORR EVE",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "THORR EVE",
+      "lienholder": "BETENBOUGH HOMES, LLC",
+      "score": 55,
+      "flags": [
+        "Mechanic lien",
         "LLC / corp owner",
         "New this week"
       ]
