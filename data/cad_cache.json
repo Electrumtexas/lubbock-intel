@@ -3023,5 +3023,123 @@
   "BRIAN TOM": null,
   "PROSPERITY BANK FKA": null,
   "VASQUEZ MELENA L": null,
-  "THORR EVE": null
+  "THORR EVE": null,
+  "YBARRA MARY LOU": {
+    "prop_address": "5202 CR 1300",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "5202 COUNTY ROAD 1300",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "VILLARREAL MARIA": {
+    "prop_address": "614 N INDIANA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "614 N INDIANA AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79415"
+  },
+  "SANCHEZ KENNITH J": null,
+  "SANCHEZ GABRIELA M": {
+    "prop_address": "6021 77TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6021 77TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "ROBINSON ELDON S": null,
+  "LOKEY KEVIN": {
+    "prop_address": "79364",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "3911 76TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423-1118"
+  },
+  "BAIZA DONOVAN": null,
+  "MOORE RODNEY": {
+    "prop_address": "2414 DATE AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "2414 DATE AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79404"
+  },
+  "SMITH JODI": null,
+  "TORRES GABRIEL O": null,
+  "RODRIGUEZ RAUL JR": {
+    "prop_address": "13602 AVE V",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "13602 AVENUE V",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "GUARDIOLA THOMAS": null,
+  "MCMAHAN H V": {
+    "prop_address": "10107 DOVER AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "PO BOX 64715",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79464-4715"
+  },
+  "GREG ZIELINSKI INC": {
+    "prop_address": "12201 NORFOLK AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "12201 NORFOLK AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "TEXAS LOCK LLC": {
+    "prop_address": "1920 75TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1920 75TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "AF NEWCO I LLC": {
+    "prop_address": "4426 34TH ST",
+    "prop_city": "STE #B",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "5165 EMERALD PKWY",
+    "mail_city": "#STE 210",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "SPIEGELBERG ENTERPRISES LTD": null,
+  "DAIMLER TRUCK FINANCIAL SERVICES USA LLC": {
+    "prop_address": "VARIOUS LOCATIONS",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "PO BOX 24374",
+    "mail_city": "NASHVILLE",
+    "mail_state": "TX",
+    "mail_zip": "37202"
+  },
+  "HEUVEL MITCHELL": null
 }
