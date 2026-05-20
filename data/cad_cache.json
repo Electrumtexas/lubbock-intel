@@ -3141,5 +3141,68 @@
     "mail_state": "TX",
     "mail_zip": "37202"
   },
-  "HEUVEL MITCHELL": null
+  "HEUVEL MITCHELL": null,
+  "SANTOS REINA AKA": {
+    "prop_address": "222 CHERRY AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "222 CHERRY AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "TROUT KATHY A": null,
+  "SUBLIME CONSTRUCTION SERVICES LLC": null,
+  "TEINERT METALS INC": {
+    "prop_address": "5221 MLK BLVD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "PO BOX 3217",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79452"
+  },
+  "SPECS REFRIGERATION INC": {
+    "prop_address": "3826 IDALOU RD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "PO BOX 53193",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79453-3193"
+  },
+  "JOHNSON BRADEN N": {
+    "prop_address": "2915 TRACTOR AVE",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "2915 TRACTOR AVE",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "TREY STRONG CUSTOM HOMES LLC": {
+    "prop_address": "5313 CR 7670",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "8213 ALCOVE AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "LOS ROJITOS LLC": {
+    "prop_address": "2118 9TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "545 E REDD RD",
+    "mail_city": "#STE C-2",
+    "mail_state": "EL",
+    "mail_zip": "PASO"
+  },
+  "LEJA CAROLYN ANNE DEC'D ESTATE OF": null
 }
