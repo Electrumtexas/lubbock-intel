@@ -3206,5 +3206,138 @@
   },
   "LEJA CAROLYN ANNE DEC'D ESTATE OF": null,
   "SHADOWSTAR MIKKO": null,
-  "RICKER JUDITH A DEC'D ESTATE OF": null
+  "RICKER JUDITH A DEC'D ESTATE OF": null,
+  "JOHNS DAVID SHANE": {
+    "prop_address": "9618 COLTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "9618 COLTON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "REEVES JOEL": {
+    "prop_address": "2019 53RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79412",
+    "mail_address": "2019 53RD ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79412"
+  },
+  "REYNA ELOY LEE III": {
+    "prop_address": "2825 BATES ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "2825 BATES ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79415"
+  },
+  "DOMETRIUS ASHLEY D": {
+    "prop_address": "4003 101ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "4003 101ST ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "REED ED JR": {
+    "prop_address": "8207 GENEVA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "8207 GENEVA AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423-2823"
+  },
+  "VANDERGRIFF LAURA R": {
+    "prop_address": "3110 48TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3110 48TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413-4123"
+  },
+  "FOIL FLORINA NICOLE": null,
+  "FLAT BRANCH MORTGAGE INC": null,
+  "JOHNSON STACI R": {
+    "prop_address": "7003 WINSTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "7003 WINSTON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "MCAFEE EDGAR OLIVER": {
+    "prop_address": "8414 HARTFORD DR",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "8414 HARTFORD DR",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "JONES SHAWN": {
+    "prop_address": "3712 43RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "12961 COFFEE TREE ST",
+    "mail_city": "PARKER",
+    "mail_state": "CO",
+    "mail_zip": "80134"
+  },
+  "SAUCEDO DOMINGO JR": null,
+  "LUBBOCK COUNTY HOSPITAL DISTRICT DBA": {
+    "prop_address": "406 MLK BLVD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "PO BOX 5980",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79408-5980"
+  },
+  "WALDROP TERRI": {
+    "prop_address": "11405 VICKSBURG AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "11405 VICKSBURG AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "E & P DELIVERY INC": {
+    "prop_address": "9304 ELGIN AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "9304 ELGIN AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "XUE XIAODONG": {
+    "prop_address": "5217 MARSHALL ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "107 CAMINO REAL E",
+    "mail_city": "WYLIE",
+    "mail_state": "TX",
+    "mail_zip": "75098-8281"
+  }
 }
