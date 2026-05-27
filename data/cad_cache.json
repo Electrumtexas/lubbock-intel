@@ -3468,5 +3468,87 @@
     "mail_zip": "79407"
   },
   "AGUIRRE BELINDA": null,
-  "ZARATE EDWARD JR": null
+  "ZARATE EDWARD JR": null,
+  "JESTER JEANNE EFREDA": {
+    "prop_address": "13816 RED SPRINGS AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "13816 RED SPRINGS AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "HEXT PETE": {
+    "prop_address": "11408 TRAFALGAR AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "11408 TRAFALGAR AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "MUSIL JOSEPH WILLIAM DEC'D ESTATE OF": null,
+  "HARRIS WALKER JAY": null,
+  "DE-AX TRAILER SALES LLC": {
+    "prop_address": "10224 FM 1585",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "PO BOX 332",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "MCMAHAN H VIRGINIA": {
+    "prop_address": "10107 DOVER AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "PO BOX 64715",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79464-4715"
+  },
+  "GOMEZ VICTOR": {
+    "prop_address": "1611 N AKRON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "605 N WINSTON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "RODRIGUEZ GENARO": {
+    "prop_address": "1914 AVE M",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79411",
+    "mail_address": "1914 AVENUE M",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79411"
+  },
+  "DOUBLE T CABLE SERVICES INC": {
+    "prop_address": "5914 CR 6300",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416-2022",
+    "mail_address": "2714 N COUNTY ROAD 1640",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416-9681"
+  },
+  "HAMBRIGHT ANDREA E": {
+    "prop_address": "10402 HURON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "10402 HURON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  }
 }
