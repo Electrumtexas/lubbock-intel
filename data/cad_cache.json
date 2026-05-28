@@ -3550,5 +3550,17 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79424"
-  }
+  },
+  "BARAJAS AZALIA": {
+    "prop_address": "2220 48TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79412",
+    "mail_address": "2220 48TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79412"
+  },
+  "BUCKAREFF REUBEN": null,
+  "BIVENS ELMONETTE": null
 }
