@@ -3620,5 +3620,65 @@
   "GAINES JAMES LYNN DEC'D ESTATE OF": null,
   "GALLEGOS LUIS ALBERTO JR.": null,
   "A": null,
-  "HUEY CHRISTIAN": null
+  "HUEY CHRISTIAN": null,
+  "RICHARDSON ELAINE": null,
+  "RICHARDSON ELAINE AKA": null,
+  "SANDERS COOPER": null,
+  "CANTEX ROOFING AND CONSTRUCTION LLC": null,
+  "CAUSER VIRGINIA A": {
+    "prop_address": "5211 87TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5211 87TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "SMITH KRISTEN": {
+    "prop_address": "5911 72ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "WENDY SMITH",
+    "mail_city": "5911 72ND ST",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ALBAHAT ABIGAIL": {
+    "prop_address": "1008 N FULTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "1008 N FULTON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "TRACK LINE RAIL LLC": null,
+  "ASSOCIATED SUPPLY COMPANY INC": null,
+  "WARNICK ELDRIDGE ESTON DEC'D ESTATE OF": null,
+  "WARNICK FRANCES VIOLET DEC'D ESTATE OF": null,
+  "GONZALES ORAMAY F": null,
+  "DIAMOND TOUCH INC": null,
+  "CUEVAS MARY": {
+    "prop_address": "6005 139TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6005 139TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "KNIGHTON MICHAEL": {
+    "prop_address": "7101 94TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "7101 94TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  }
 }
