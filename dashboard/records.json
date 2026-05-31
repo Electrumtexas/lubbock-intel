@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-05-30T09:10:35.258999Z",
+  "fetched_at": "2026-05-31T09:43:35.394994Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-05-23",
-    "end": "2026-05-30"
+    "start": "2026-05-24",
+    "end": "2026-05-31"
   },
   "total": 42,
-  "with_address": 28,
+  "with_address": 26,
   "records": [
     {
       "description": "ABSTRACT OF JUDGMENT",
@@ -656,35 +656,6 @@
     },
     {
       "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date05/28/2026 04:17:29 PM",
-      "filed": "2026-05-28",
-      "party_one": "Grantor: CAUSER VIRGINIA A, CAUSER ROBERT REX JR AKA",
-      "party_two": "Grantee: CANTEX ROOFING AND CONSTRUCTION LLC",
-      "node": "DOC285S5856",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S5856",
-      "owner": "CAUSER VIRGINIA A",
-      "grantee": "CANTEX ROOFING AND CONSTRUCTION LLC",
-      "prop_address": "5211 87TH ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79424",
-      "mail_address": "5211 87TH ST",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79424",
-      "owner_name": "CANTEX ROOFING AND CONSTRUCTION LLC",
-      "lienholder": "CAUSER VIRGINIA A",
-      "score": 50,
-      "flags": [
-        "Mechanic lien",
-        "New this week"
-      ]
-    },
-    {
-      "description": "MECHANICS LIEN",
       "doc_num": "Recording Date05/28/2026 04:18:58 PM",
       "filed": "2026-05-28",
       "party_one": "Grantor: VIGIL ALEXI, HUEY CHRISTIAN",
@@ -738,35 +709,6 @@
       "score": 50,
       "flags": [
         "Mechanic lien",
-        "New this week"
-      ]
-    },
-    {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date05/29/2026 12:20:16 PM",
-      "filed": "2026-05-29",
-      "party_one": "Grantor: CAPITAL ONE",
-      "party_two": "Grantee: GONZALES ORAMAY F",
-      "node": "DOC284S5246",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S5246",
-      "owner": "CAPITAL ONE",
-      "grantee": "GONZALES ORAMAY F",
-      "prop_address": "1510 E CORNELL ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79403",
-      "mail_address": "Attn: FORECLOSURE DEPT",
-      "mail_city": "201 E MCBEE AVE",
-      "mail_state": "#STE",
-      "mail_zip": "300",
-      "owner_name": "GONZALES ORAMAY F",
-      "lienholder": "CAPITAL ONE",
-      "score": 50,
-      "flags": [
-        "Judgment lien",
         "New this week"
       ]
     },
@@ -974,6 +916,35 @@
       ]
     },
     {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date05/28/2026 04:17:29 PM",
+      "filed": "2026-05-28",
+      "party_one": "Grantor: CAUSER VIRGINIA A, CAUSER ROBERT REX JR AKA",
+      "party_two": "Grantee: CANTEX ROOFING AND CONSTRUCTION LLC",
+      "node": "DOC285S5856",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC285S5856",
+      "owner": "CAUSER VIRGINIA A",
+      "grantee": "CANTEX ROOFING AND CONSTRUCTION LLC",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "CANTEX ROOFING AND CONSTRUCTION LLC",
+      "lienholder": "CAUSER VIRGINIA A",
+      "score": 45,
+      "flags": [
+        "Mechanic lien",
+        "New this week"
+      ]
+    },
+    {
       "description": "PROBATE",
       "doc_num": "Recording Date05/29/2026 12:08:51 PM",
       "filed": "2026-05-29",
@@ -1030,6 +1001,35 @@
       "score": 45,
       "flags": [
         "Probate / estate",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date05/29/2026 12:20:16 PM",
+      "filed": "2026-05-29",
+      "party_one": "Grantor: CAPITAL ONE",
+      "party_two": "Grantee: GONZALES ORAMAY F",
+      "node": "DOC284S5246",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S5246",
+      "owner": "CAPITAL ONE",
+      "grantee": "GONZALES ORAMAY F",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "GONZALES ORAMAY F",
+      "lienholder": "CAPITAL ONE",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
         "New this week"
       ]
     },
