@@ -3680,5 +3680,75 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79424"
+  },
+  "CASTILLOW TRACY D": null,
+  "MIDFIRST BANK": null,
+  "JOHNSON SUMMER": {
+    "prop_address": "2711 64TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "2711 64TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "STOUNE CHARLES DAVID DEC'D ESTATE OF": null,
+  "PENDLETON SHAWNA M": null,
+  "FECHT JOSHUA TODD": null,
+  "JOHN DEERE CONSTUCTION & FORESTRY COMPANY": null,
+  "BROWN BEVERLY DENISE": null,
+  "GONZALES OSCAR": {
+    "prop_address": "3012 SHALLOWATER DR",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "3012 SHALLOWATER DR",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79415-1656"
+  },
+  "RUBALCAVA NORMA": null,
+  "GULICK ERIKA": null,
+  "RAMOS STELLA": {
+    "prop_address": "2717 79TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2717 79TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423-2209"
+  },
+  "GRISBY GRACIE ANN": {
+    "prop_address": "5507 FORDHAM ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5507 FORDHAM ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416-1113"
+  },
+  "GERBER EILEEN": null,
+  "HART JORDAN": {
+    "prop_address": "1014 FRONTAGE RD",
+    "prop_city": "IDALOU",
+    "prop_state": "TX",
+    "prop_zip": "79329",
+    "mail_address": "1014 FRONTAGE RD",
+    "mail_city": "IDALOU",
+    "mail_state": "TX",
+    "mail_zip": "79329"
+  },
+  "ROCK SOLID XCAVATING LLC": {
+    "prop_address": "9002 FM 1585",
+    "prop_city": "UNIT #C",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "9002 FM 1585",
+    "mail_city": "#UNIT C",
+    "mail_state": "TX",
+    "mail_zip": ""
   }
 }
