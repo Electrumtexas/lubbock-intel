@@ -3770,5 +3770,40 @@
   "PATTERSON MATT": null,
   "STANDARD E&S LLC DBA": null,
   "RANGEL BRANDON": null,
-  "STEWART M ANDREW TRUSTEE": null
+  "STEWART M ANDREW TRUSTEE": null,
+  "WING SHACK TEXAS LLC": {
+    "prop_address": "5412 SLIDE RD",
+    "prop_city": "STE #100",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "5412 SLIDE RD",
+    "mail_city": "#STE 100",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MORTON JOHNNA": null,
+  "VASQUEZ EULOGIO GOMEZ": null,
+  "QUIEN SABE OPERATING LLC": null,
+  "BROWN STEVE R": {
+    "prop_address": "6512 86TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6512 86TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "NORTON KYLE A": {
+    "prop_address": "629 N 9TH ST",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "629 N 9TH ST",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "JIMENEZ DIONICIA BERLANGA": null,
+  "COFFEY RICHARD HEDRICK SR DEC'D ESTATE OF": null
 }
