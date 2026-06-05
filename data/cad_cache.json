@@ -3805,5 +3805,89 @@
     "mail_zip": "79382"
   },
   "JIMENEZ DIONICIA BERLANGA": null,
-  "COFFEY RICHARD HEDRICK SR DEC'D ESTATE OF": null
+  "COFFEY RICHARD HEDRICK SR DEC'D ESTATE OF": null,
+  "RODRIGUEZ ALEXISS BROOKE": null,
+  "BRADLEY GENE": null,
+  "U S BANK DBA": {
+    "prop_address": "8337 UPLAND AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "PO BOX 1396",
+    "mail_city": "SNYDER",
+    "mail_state": "TX",
+    "mail_zip": "79550"
+  },
+  "GARCIA RENE": {
+    "prop_address": "4411 43RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "4422 32ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79410"
+  },
+  "BARRERA CALVIN VIC": null,
+  "DELEON ALEXANDER": {
+    "prop_address": "6316 14TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "6316 14TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "REYES ANDREW": {
+    "prop_address": "823 13TH ST",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "823 13TH ST",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "GARCIA JUAN LUIS": null,
+  "KINNEY VERNESSA": {
+    "prop_address": "1601 39TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79412",
+    "mail_address": "RAYMOND JEFFERSON",
+    "mail_city": "1601 39TH ST",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MUELLER COLLIN ROBERT": {
+    "prop_address": "406 N ZENITH AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "406 N ZENITH AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "LUNA ANTONIO JR": {
+    "prop_address": "5107 75TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5107 75TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424-2141"
+  },
+  "MULLINS CAITLYN": {
+    "prop_address": "2215 36TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79412",
+    "mail_address": "891 CAVITT CT",
+    "mail_city": "PROSPER",
+    "mail_state": "TX",
+    "mail_zip": "75078-2296"
+  }
 }
