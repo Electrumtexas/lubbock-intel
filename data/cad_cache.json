@@ -3889,5 +3889,46 @@
     "mail_city": "PROSPER",
     "mail_state": "TX",
     "mail_zip": "75078-2296"
+  },
+  "BECKER CHARLI RENEE": null,
+  "CANTU ANTHONY": null,
+  "MINNIX PROPERTY MANAGEMENT INC": null,
+  "ROGERS DANIEL L": null,
+  "TARAVELLA JOYCE D": null,
+  "CEDAR ONE PROPERTY MANAGEMENT LTD": null,
+  "M & T FAMILY RESTARAUNT L L C": null,
+  "LA PALAPA MEXICAN RESTAURANT LLC": null,
+  "HILLIS JESSE HAYDEN": null,
+  "Grantee: 806 LAND DEVELOPMENT GROUP LLC, LUBBOCK CITY OF": null,
+  "LENNAR HOMES OF TEXAS LAND AND CONSTRUCTION LTD": {
+    "prop_address": "1517 GOOD PRAIRIE AVE",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "100 NE LOOP 410",
+    "mail_city": "#STE 115",
+    "mail_state": "SAN",
+    "mail_zip": "ANTONIO"
+  },
+  "LUBBOCK COUNTY OF": {
+    "prop_address": "1006 BUDDY HOLLY AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "PO BOX 10536",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79408"
+  },
+  "ROCHE NEWTON & COMPANY": null,
+  "QUICK FOAM INSULATION, LLC": {
+    "prop_address": "11002 HIGHWAY 87",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "11002 HIGHWAY 87",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
   }
 }
