@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-06-06T09:23:03.096134Z",
+  "fetched_at": "2026-06-07T09:56:28.856773Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-05-30",
-    "end": "2026-06-06"
+    "start": "2026-05-31",
+    "end": "2026-06-07"
   },
   "total": 60,
-  "with_address": 25,
+  "with_address": 24,
   "records": [
     {
       "description": "ABSTRACT OF JUDGMENT",
@@ -159,36 +159,6 @@
       ]
     },
     {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date06/05/2026 02:45:18 PM",
-      "filed": "2026-06-05",
-      "party_one": "Grantor: LENNAR HOMES OF TEXAS LAND AND CONSTRUCTION LTD",
-      "party_two": "Grantee: 806 LAND DEVELOPMENT GROUP LLC, LUBBOCK CITY OF",
-      "node": "DOC284S5866",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S5866",
-      "owner": "LENNAR HOMES OF TEXAS LAND AND CONSTRUCTION LTD",
-      "prop_address": "1517 GOOD PRAIRIE AVE",
-      "prop_city": "WOLFFORTH",
-      "prop_state": "TX",
-      "prop_zip": "79382",
-      "mail_address": "100 NE LOOP 410",
-      "mail_city": "#STE 115",
-      "mail_state": "SAN",
-      "mail_zip": "ANTONIO",
-      "grantee": "Grantee: 806 LAND DEVELOPMENT GROUP LLC, LUBBOCK CITY OF",
-      "owner_name": "Grantee: 806 LAND DEVELOPMENT GROUP LLC, LUBBOCK CITY OF",
-      "lienholder": "LENNAR HOMES OF TEXAS LAND AND CONSTRUCTION LTD",
-      "score": 60,
-      "flags": [
-        "Mechanic lien",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
-    {
       "description": "ABSTRACT OF JUDGMENT",
       "doc_num": "Recording Date06/05/2026 04:29:00 PM",
       "filed": "2026-06-05",
@@ -334,6 +304,36 @@
       "score": 55,
       "flags": [
         "Judgment lien",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date06/05/2026 02:45:18 PM",
+      "filed": "2026-06-05",
+      "party_one": "Grantor: LENNAR HOMES OF TEXAS LAND AND CONSTRUCTION LTD",
+      "party_two": "Grantee: 806 LAND DEVELOPMENT GROUP LLC, LUBBOCK CITY OF",
+      "node": "DOC284S5866",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC284S5866",
+      "owner": "LENNAR HOMES OF TEXAS LAND AND CONSTRUCTION LTD",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "grantee": "Grantee: 806 LAND DEVELOPMENT GROUP LLC, LUBBOCK CITY OF",
+      "owner_name": "Grantee: 806 LAND DEVELOPMENT GROUP LLC, LUBBOCK CITY OF",
+      "lienholder": "LENNAR HOMES OF TEXAS LAND AND CONSTRUCTION LTD",
+      "score": 55,
+      "flags": [
+        "Mechanic lien",
         "LLC / corp owner",
         "New this week"
       ]
