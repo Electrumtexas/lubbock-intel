@@ -4035,5 +4035,37 @@
     "mail_city": "SHALLOWATER",
     "mail_state": "TX",
     "mail_zip": "79363"
+  },
+  "K W MAHON INC": {
+    "prop_address": "3205 31ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "3205 31ST ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79410-3113"
+  },
+  "MCDANIEL JOSHUA R": null,
+  "MOORE MICHAEL": {
+    "prop_address": "3810 47TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "8581 SANTA MONICA BLVD",
+    "mail_city": "1",
+    "mail_state": "WEST",
+    "mail_zip": "HOLLYWOOD"
+  },
+  "BASS MARGARITA IGOREVNA": null,
+  "CUNNINGHAM JONATHAN": {
+    "prop_address": "5106 78TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5106 78TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
   }
 }
