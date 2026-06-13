@@ -4172,5 +4172,48 @@
   },
   "CFLI BAKERY LLC DBA": null,
   "CHISHOLM FAMILY LEGACY INVESTMENTS LIMITED LIABILITY COMPANY": null,
-  "Grantee: 4637 50TH ST LLC DBA, CO-OP PUBLIC HOUSE": null
+  "Grantee: 4637 50TH ST LLC DBA, CO-OP PUBLIC HOUSE": null,
+  "SUNDOWN TIRE & LUBE LLC": {
+    "prop_address": "US HWY 82",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "PO BOX 1076",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "EASY GOING VENTURES INC": {
+    "prop_address": "3712 SLIDE RD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "HEAD HUNTERS SMOKE SHOP",
+    "mail_city": "PO BOX 64791",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MINISO WINKY STORE HOLDINGS LLC": {
+    "prop_address": "6002 SLIDE RD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "1050 LAKES DR",
+    "mail_city": "#STE 260",
+    "mail_state": "WEST",
+    "mail_zip": "COVINA"
+  },
+  "ON-SITE PATROL SERVICES L L C": {
+    "prop_address": "332 E 40TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "PO BOX 8758",
+    "mail_city": "AMARILLO",
+    "mail_state": "TX",
+    "mail_zip": "79114"
+  },
+  "ZAVALA RUTH H DBA": null,
+  "BLUETEAM ROOFING LLC": null,
+  "THE HUB TEXAS, LLC": null
 }
