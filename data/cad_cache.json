@@ -4215,5 +4215,100 @@
   },
   "ZAVALA RUTH H DBA": null,
   "BLUETEAM ROOFING LLC": null,
-  "THE HUB TEXAS, LLC": null
+  "THE HUB TEXAS, LLC": null,
+  "ZAVALA MARIO": {
+    "prop_address": "1522 27TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79411",
+    "mail_address": "1522 27TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79411"
+  },
+  "ZAVALA RUTH H": null,
+  "MELUGIN NATHAN": {
+    "prop_address": "14105 AVE S",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "14105 AVENUE S",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "RIGHT FOOT PROPERTIES LLC": {
+    "prop_address": "12702 CR 2500",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "1195 BROADVIEW AVE",
+    "mail_city": "WILSON",
+    "mail_state": "TX",
+    "mail_zip": "79381"
+  },
+  "LEOCHNER JASON F": null,
+  "BORDER GINA": null,
+  "TEINERT CONSTRUCTION": {
+    "prop_address": "1402 CRICKETS AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "PO BOX 5327",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79408-5327"
+  },
+  "SANTOS FRANK JR": null,
+  "VILLEGAS EMILIA": {
+    "prop_address": "115 VERNON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "BARRANTES ISRAEL B",
+    "mail_city": "115 VERNON AVE",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "CANALES SANTOS": {
+    "prop_address": "1721 E 19TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "1721 E 19TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "CISNEROS CRYSTAL L": {
+    "prop_address": "3806 50TH ST #200",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "2007 133RD ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "CERNA RAMON JR": {
+    "prop_address": "1614 70TH PL",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79412",
+    "mail_address": "1614 70TH PL",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79412-4036"
+  },
+  "RAMBO JAMES D": {
+    "prop_address": "7002 10TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "7002 10TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "GAINER ALLIE": null
 }
