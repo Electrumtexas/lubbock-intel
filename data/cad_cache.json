@@ -4412,5 +4412,112 @@
   },
   "TRIFECTA BUILDERS LLC": null,
   "LVR COMMERCIAL FLOORING INC": null,
-  "DRAKE SHERRY TAYLOR": null
+  "DRAKE SHERRY TAYLOR": null,
+  "RJF CONSTRUCTION LLC": null,
+  "FARQUHAR RYAN JAMES": {
+    "prop_address": "7024 E FM 1294",
+    "prop_city": "IDALOU",
+    "prop_state": "TX",
+    "prop_zip": "79329",
+    "mail_address": "6312 73RD ST",
+    "mail_city": "#APT 321",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "RANGEL RAFAEL JR": null,
+  "SERVBANK": null,
+  "FLORES GABRIEL CEDILLO": {
+    "prop_address": "501 N KLINE AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "501 N KLINE AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "MORRIS JASON": {
+    "prop_address": "2006 JASON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "8616 COUNTY ROAD 6440",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "VILLALON ELIAS JAY III": {
+    "prop_address": "5702 15TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5702 15TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "BROWN CODY": {
+    "prop_address": "4020 21ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "PO  BOX 1737",
+    "mail_city": "VERNON",
+    "mail_state": "TX",
+    "mail_zip": "76385"
+  },
+  "GABA JAMES MICHAEL": {
+    "prop_address": "7107 23RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "7107 23RD ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "NGUYEN HOUSTON": {
+    "prop_address": "5501 83RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5501 83RD ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424-4615"
+  },
+  "MEDRANO DAVID": {
+    "prop_address": "1317 59TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79412",
+    "mail_address": "1317 59TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79412"
+  },
+  "NATIVE SPIRIT LLC": null,
+  "GRANADO THOMAS B AKA": null,
+  "AXCENTURE CONSTRUCTION LLC": null,
+  "COOK STEPHEN": {
+    "prop_address": "3608 105TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "3608 105TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423-5100"
+  },
+  "KOEHLER RICK": null,
+  "JIMORG LLC DBA": {
+    "prop_address": "5104 CR 7910",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5006 COUNTY ROAD 7910",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424-6078"
+  }
 }
