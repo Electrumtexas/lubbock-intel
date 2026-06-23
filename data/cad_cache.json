@@ -4519,5 +4519,49 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79424-6078"
-  }
+  },
+  "FREEDOM FOREVER TEXAS LLC": {
+    "prop_address": "9007 CR 6820",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "43445 BUSINESS PARK DR",
+    "mail_city": "TEMECULA",
+    "mail_state": "CA",
+    "mail_zip": "92590"
+  },
+  "EPPLER ART LLC": {
+    "prop_address": "3506 41ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "PO BOX 93602",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79493"
+  },
+  "CERDA JOSE LUIS": {
+    "prop_address": "2902 2ND PL",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "2902 2ND PL",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79415-3214"
+  },
+  "CAMERON PAUL E JR DEC'D ESTATE OF": null,
+  "LIM CARYL K": null,
+  "MARMOLEJO ALAZAYE KANE": null,
+  "CARDINAL JOHN": {
+    "prop_address": "5012 117TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5012 117T ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "HODGES BRYAN LEE": null
 }
