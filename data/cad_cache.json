@@ -4749,5 +4749,38 @@
     "mail_city": "AMARILLO",
     "mail_state": "TX",
     "mail_zip": "79108"
+  },
+  "HERNANDEZ BRIANNA": {
+    "prop_address": "2916 136TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2916 136TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "BUNCE JUSTIN D": null,
+  "SABLE HOMES INC": {
+    "prop_address": "4234 ZADAR AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "PO BOX 825",
+    "mail_city": "SHALLOWATER",
+    "mail_state": "TX",
+    "mail_zip": "79363"
+  },
+  "DELEON CHELSEA DENAE": null,
+  "GREGORICH ANDREW III": null,
+  "PRUDENTIAL ENTERPRISES LLC": {
+    "prop_address": "1519 E 5TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "5121 69TH ST",
+    "mail_city": "#STE 112",
+    "mail_state": "TX",
+    "mail_zip": ""
   }
 }
