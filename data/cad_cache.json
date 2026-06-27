@@ -4955,5 +4955,131 @@
   "JOHNSON DOYLE FINUS AKA": null,
   "ROSS TUCKER JACK": null,
   "EDWARDS ROCHELLE": null,
-  "BATEMAN CORBIN": null
+  "BATEMAN CORBIN": null,
+  "EBELING STANLEY J DEC'D ESTATE OF": null,
+  "KIRBY MASON": {
+    "prop_address": "12006 UTICA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "12006 UTICA AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "WETTER JAMES": {
+    "prop_address": "3202 56TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3202 56TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "GARCIA JORGE E": {
+    "prop_address": "907 E STANFORD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "921 E PERDUE ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "SANCHEZ ROBERT": {
+    "prop_address": "508 E 79TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "CAROL",
+    "mail_city": "508 E 79TH ST",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "WOOD WESLEY L": {
+    "prop_address": "5819 WOODROW RD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5819 WOODROW RD",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "BOYCE JANICE BETH DEC'D ESTATE OF": null,
+  "HAYES CAYDEN": {
+    "prop_address": "2817 92ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2817 92ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "ELIORA BEAUTY LOUNGE LLC": null,
+  "DAVIS JULIE": {
+    "prop_address": "1616 128TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1616 128TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "LOZANO RAMON FRAUSTO": null,
+  "DELEON BRIAN ARTHUR": null,
+  "CARROLL DESIREE K": {
+    "prop_address": "3111 TEAK AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "1313 49TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79412-2331"
+  },
+  "ALVARADO AGUSTIN O DEC'D ESTATE OF": {
+    "prop_address": "4117 31ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "4117 31ST ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79410-2532"
+  },
+  "DELEON JOHN D": {
+    "prop_address": "2517 42ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "2517 42ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "WELLS FARGO BANK": {
+    "prop_address": "4320 HURON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "200 LOMAS BLVD NW FL 11",
+    "mail_city": "ALBUQUERQUE",
+    "mail_state": "NM",
+    "mail_zip": "87102-2258"
+  },
+  "HERRERA KATALINA RENNA": null,
+  "OLIVE RUTH OLIVER DECEASED": {
+    "prop_address": "5501 FORDHAM ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "2605 N COUNTY ROAD 1700",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  }
 }
