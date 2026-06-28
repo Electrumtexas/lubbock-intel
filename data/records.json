@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-06-27T09:29:50.141370Z",
+  "fetched_at": "2026-06-28T09:58:35.638558Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-06-20",
-    "end": "2026-06-27"
+    "start": "2026-06-21",
+    "end": "2026-06-28"
   },
   "total": 465,
-  "with_address": 415,
+  "with_address": 414,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -3669,36 +3669,6 @@
       ]
     },
     {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date06/26/2026 03:10:52 PM",
-      "filed": "2026-06-26",
-      "party_one": "Grantor: BETENBOUGH HOMES, LLC",
-      "party_two": "Grantee: HERRERA KATALINA RENNA, CARPENTER PATON JAMES",
-      "node": "DOC290S884",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC290S884",
-      "owner": "BETENBOUGH HOMES, LLC",
-      "grantee": "HERRERA KATALINA RENNA",
-      "prop_address": "6517 82ND ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79424",
-      "mail_address": "6305 82ND ST",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79424-3681",
-      "owner_name": "HERRERA KATALINA RENNA",
-      "lienholder": "BETENBOUGH HOMES, LLC",
-      "score": 60,
-      "flags": [
-        "Mechanic lien",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
-    {
       "description": "POSTING",
       "doc_num": "Recording Date06/25/2026 10:51:57 AM",
       "filed": "2026-06-25",
@@ -3784,6 +3754,36 @@
       "score": 55,
       "flags": [
         "Pre-foreclosure",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date06/26/2026 03:10:52 PM",
+      "filed": "2026-06-26",
+      "party_one": "Grantor: BETENBOUGH HOMES, LLC",
+      "party_two": "Grantee: HERRERA KATALINA RENNA, CARPENTER PATON JAMES",
+      "node": "DOC290S884",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC290S884",
+      "owner": "BETENBOUGH HOMES, LLC",
+      "grantee": "HERRERA KATALINA RENNA",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "HERRERA KATALINA RENNA",
+      "lienholder": "BETENBOUGH HOMES, LLC",
+      "score": 55,
+      "flags": [
+        "Mechanic lien",
         "LLC / corp owner",
         "New this week"
       ]
