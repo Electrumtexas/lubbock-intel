@@ -5309,5 +5309,51 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79453-3780"
+  },
+  "TAYLOR FRANCIS DEC'D ESTATE OF": {
+    "prop_address": "835 S 17TH ST",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "835 S 17TH ST",
+    "mail_city": "SLATON",
+    "mail_state": "TX",
+    "mail_zip": "79364-4706"
+  },
+  "CALDERON MARYELLEN": null,
+  "DEGRACIA EDGAR E JR": null,
+  "CUMMINGS MARQUIS": null,
+  "INTEGRAS CAPITAL RECOVERY LLC": null,
+  "SCHLIPH JOHN SCOTT": null,
+  "CAMERON JULIA ANN DEC'D ESTATE OF": null,
+  "RANSOM CANYON TOWN OF": {
+    "prop_address": "RANSOM CANYON 79366",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "24 LEE KITCHENS DR",
+    "mail_city": "RANSOM CANYON",
+    "mail_state": "TX",
+    "mail_zip": "79366"
+  },
+  "MICHEL JACK DUFF": {
+    "prop_address": "5841 VIRGINIA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "PO BOX 924",
+    "mail_city": "KERMIT",
+    "mail_state": "TX",
+    "mail_zip": "79745"
+  },
+  "NWP EB-": {
+    "prop_address": "QUEENS ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "1500 BROADWAY ST",
+    "mail_city": "#STE 1500",
+    "mail_state": "TX",
+    "mail_zip": ""
   }
 }
