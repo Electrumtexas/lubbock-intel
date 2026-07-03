@@ -5355,5 +5355,86 @@
     "mail_city": "#STE 1500",
     "mail_state": "TX",
     "mail_zip": ""
+  },
+  "EHOUNOUD MESSOU L": null,
+  "LUCIO JEREMY": {
+    "prop_address": "806 N 3RD ST",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "806 N 3RD ST",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  },
+  "KANE TYLER": {
+    "prop_address": "1605 135TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "108 INDIAN CT",
+    "mail_city": "WAXAHACHIE",
+    "mail_state": "TX",
+    "mail_zip": "75165"
+  },
+  "JASON & STEPHANIE MANSELL TRUST": {
+    "prop_address": "6522 85TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "JASON & STEPHANIE P MANSELL CO TRUSTEE",
+    "mail_city": "16607 COUNTY ROAD 1950",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "TREVINO BENJAMIN C": {
+    "prop_address": "3301 DUKE ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79415",
+    "mail_address": "3301 DUKE ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79415-2129"
+  },
+  "PALOMO JUAN": {
+    "prop_address": "4643 GRINNELL ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "4643 GRINNELL",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "SIMONS DAKOTA": {
+    "prop_address": "5605 15TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5605 15TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "MILLS JANEL": {
+    "prop_address": "505 OWEN ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "505 OWEN ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  },
+  "PEASLEE LUANNE": {
+    "prop_address": "3806 53RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3806 53RD ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
   }
 }
