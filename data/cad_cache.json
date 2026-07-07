@@ -5436,5 +5436,82 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79413"
-  }
+  },
+  "FREEDOM MORTGAGE CORPORATION": {
+    "prop_address": "5538 KEMPER ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "C/O FREEDOM MORTGAGE CORP",
+    "mail_city": "951 YAMATO ROAD SUITE 75",
+    "mail_state": "BOCA",
+    "mail_zip": "RATON"
+  },
+  "JOEY YATES CONSTRUCTION LLC": {
+    "prop_address": "302 N 11TH ST",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "5278 34TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407-1109"
+  },
+  "YBARRA STEVEN MARK": null,
+  "SMART CHARLES KENNON": null,
+  "FITTS DOUGLAS RICHARD": null,
+  "CENTENNIAL BANK DBA": {
+    "prop_address": "GARZA ST",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "ATT:  ACCOUNTING DEPARTMENT",
+    "mail_city": "701 S TAYLOR ST STE 100",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ARNOLD KAREN": {
+    "prop_address": "3706 43RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3706 43RD ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "CAPITAL ONE, NA., SUCCESSOR BY MERGER TO DISCOVER BANK": null,
+  "RODRIGUEZ AMY": {
+    "prop_address": "701 81ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "701 81ST ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79404"
+  },
+  "U.S. BANK NATIONAL ASSOCIATION DBS ELAN FINANCIAL SERVICES": {
+    "prop_address": "8337 UPLAND AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "PO BOX 1396",
+    "mail_city": "SNYDER",
+    "mail_state": "TX",
+    "mail_zip": "79550"
+  },
+  "HERNANDEZ JAIME": {
+    "prop_address": "",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "6801 19TH ST LOT 146",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407-1235"
+  },
+  "MORGAN PASTY RUTH": null,
+  "MORGAN CHRISTOPHER MICHAEL": null,
+  "STARKEY MICHAEL JAMES": null
 }
