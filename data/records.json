@@ -1,42 +1,13 @@
 {
-  "fetched_at": "2026-07-10T10:14:42.733345Z",
+  "fetched_at": "2026-07-11T08:42:11.150132Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-07-03",
-    "end": "2026-07-10"
+    "start": "2026-07-04",
+    "end": "2026-07-11"
   },
-  "total": 2,
-  "with_address": 1,
+  "total": 1,
+  "with_address": 0,
   "records": [
-    {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date07/06/2026 10:52:21 AM",
-      "filed": "2026-07-06",
-      "party_one": "Grantor: WAGNER CHRISTOPHER ANDREW",
-      "party_two": "Grantee: LUBBOCK CITY OF, BETENBOUGH HOMES LLC",
-      "node": "DOC290S1636",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC290S1636",
-      "owner": "WAGNER CHRISTOPHER ANDREW",
-      "grantee": "LUBBOCK CITY OF",
-      "prop_address": "2700 AMHERST ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79415",
-      "mail_address": "PO BOX 2000",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79457-0001",
-      "owner_name": "LUBBOCK CITY OF",
-      "lienholder": "WAGNER CHRISTOPHER ANDREW",
-      "score": 50,
-      "flags": [
-        "Mechanic lien",
-        "New this week"
-      ]
-    },
     {
       "description": "ABSTRACT OF JUDGMENT",
       "doc_num": "Recording Date07/06/2026 10:39:15 AM",
