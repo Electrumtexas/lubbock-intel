@@ -5513,5 +5513,15 @@
   },
   "MORGAN PASTY RUTH": null,
   "MORGAN CHRISTOPHER MICHAEL": null,
-  "STARKEY MICHAEL JAMES": null
+  "STARKEY MICHAEL JAMES": null,
+  "T O F S LLC": {
+    "prop_address": "307 OAKRIDGE AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "307 OAKRIDGE AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  }
 }
