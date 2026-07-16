@@ -1,41 +1,11 @@
 {
-  "fetched_at": "2026-07-15T09:04:37.608109Z",
+  "fetched_at": "2026-07-16T09:08:07.440602Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-07-08",
-    "end": "2026-07-15"
+    "start": "2026-07-09",
+    "end": "2026-07-16"
   },
-  "total": 1,
-  "with_address": 1,
-  "records": [
-    {
-      "description": "POSTING",
-      "doc_num": "Recording Date07/08/2026 10:04:09 AM",
-      "filed": "2026-07-08",
-      "party_one": "Grantor: LUBBOCK NATIONAL BANK, LATHAM CLINT R TRUSTEE",
-      "party_two": "Grantee: T O F S LLC, PUBLIC",
-      "node": "DOC299S30",
-      "doc_type": "NOFC",
-      "cat": "foreclosure",
-      "cat_label": "Notice of Foreclosure",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC299S30",
-      "owner": "LUBBOCK NATIONAL BANK",
-      "grantee": "T O F S LLC",
-      "prop_address": "307 OAKRIDGE AVE",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79416",
-      "mail_address": "307 OAKRIDGE AVE",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79416",
-      "owner_name": "T O F S LLC",
-      "lienholder": "LUBBOCK NATIONAL BANK",
-      "score": 50,
-      "flags": [
-        "Pre-foreclosure",
-        "New this week"
-      ]
-    }
-  ]
+  "total": 0,
+  "with_address": 0,
+  "records": []
 }
