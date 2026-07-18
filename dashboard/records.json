@@ -1,41 +1,11 @@
 {
-  "fetched_at": "2026-07-17T09:03:13.261967Z",
+  "fetched_at": "2026-07-18T08:42:43.418953Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-07-10",
-    "end": "2026-07-17"
+    "start": "2026-07-11",
+    "end": "2026-07-18"
   },
-  "total": 1,
-  "with_address": 1,
-  "records": [
-    {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date07/10/2026 08:46:19 AM",
-      "filed": "2026-07-10",
-      "party_one": "Grantor: MURPHY LUCAS, WATTS PEIGHTON",
-      "party_two": "Grantee: WOLFFORTH CITY OF, BETENBOUGH HOMES LLC",
-      "node": "DOC298S226",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC298S226",
-      "owner": "MURPHY LUCAS",
-      "grantee": "WOLFFORTH CITY OF",
-      "prop_address": "1ST ST",
-      "prop_city": "WOLFFORTH",
-      "prop_state": "TX",
-      "prop_zip": "79382",
-      "mail_address": "PO BOX 36",
-      "mail_city": "WOLFFORTH",
-      "mail_state": "TX",
-      "mail_zip": "79382-0036",
-      "owner_name": "WOLFFORTH CITY OF",
-      "lienholder": "MURPHY LUCAS",
-      "score": 50,
-      "flags": [
-        "Mechanic lien",
-        "New this week"
-      ]
-    }
-  ]
+  "total": 0,
+  "with_address": 0,
+  "records": []
 }
