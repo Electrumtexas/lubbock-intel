@@ -5523,5 +5523,27 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79416"
+  },
+  "LOSOYA MARTIN L": null,
+  "SPECTRA HOLDINGS INC DBA": null,
+  "COVENANT HEALTH SYSTEM DBA": {
+    "prop_address": "3701 21ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "3615 19TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79410-1209"
+  },
+  "ARMENDARIZ LAYVEN": {
+    "prop_address": "6801 W 19TH ST",
+    "prop_city": "SPC #136",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "6801 W 19TH ST",
+    "mail_city": "#SPC 136",
+    "mail_state": "TX",
+    "mail_zip": ""
   }
 }
