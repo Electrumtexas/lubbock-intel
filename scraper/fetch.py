@@ -199,15 +199,22 @@ def post_search(session, start, end):
             r = session.post(search_post_url, data=payload, timeout=30, allow_redirects=True)
             log.info(f"Response: {r.status_code} — {r.url}")
             if "docSearchResults" in r.url or "items found" in r.text.lower() or "Party One" in r.text:
-                log.info("Search results reached")
-                return True
+                # EagleWeb assigns an INCREMENTING searchId per search within a
+                # session (chunk 1 -> searchId=0, chunk 2 -> searchId=1, ...).
+                # Pagination must use the id for THIS search; hardcoding 0 made
+                # every chunk after the first re-read chunk 1's results, so a
+                # multi-chunk (e.g. 90-day) run only ever returned chunk 1.
+                m = re.search(r"searchId=(\d+)", r.url)
+                search_id = m.group(1) if m else "0"
+                log.info(f"Search results reached (searchId={search_id})")
+                return search_id
         except Exception as e:
             log.warning(f"Search attempt {attempt+1} failed: {e}")
             time.sleep(2 ** attempt)
-    return False
+    return None
 
-def fetch_results_page(session, page):
-    url = f"{RESULTS_URL}?searchId=0&page={page}"
+def fetch_results_page(session, page, search_id="0"):
+    url = f"{RESULTS_URL}?searchId={search_id}&page={page}"
     for attempt in range(3):
         try:
             r = session.get(url, timeout=30)
@@ -620,8 +627,8 @@ def main():
         ce = chunk_end.strftime("%m/%d/%Y")
         log.info(f"Searching chunk: {cs} → {ce}")
 
-        ok = post_search(session, cs, ce)
-        if not ok:
+        search_id = post_search(session, cs, ce)
+        if not search_id:
             log.warning(f"Chunk {cs}-{ce} failed — skipping")
             chunk_start = chunk_end
             continue
@@ -629,7 +636,7 @@ def main():
         page = 1
         while True:
             log.info(f"  Fetching page {page}...")
-            html = fetch_results_page(session, page)
+            html = fetch_results_page(session, page, search_id)
             if not html:
                 break
 
