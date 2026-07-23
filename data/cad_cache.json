@@ -5545,5 +5545,26 @@
     "mail_city": "#SPC 136",
     "mail_state": "TX",
     "mail_zip": ""
+  },
+  "DAYTON DEBORAH ANN WATSON DEC'D ESTATE OF": null,
+  "MAYO CRAWFORD": {
+    "prop_address": "6007 OXFORD AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "6007 OXFORD AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "ISHAM CYNTHIA GAYLE AKA": {
+    "prop_address": "810 S 12TH ST",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "810 S 12TH ST",
+    "mail_city": "SLATON",
+    "mail_state": "TX",
+    "mail_zip": "79364"
   }
 }
