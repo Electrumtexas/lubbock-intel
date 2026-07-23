@@ -221,6 +221,7 @@ def fetch_results_page(session, page):
 def parse_results_page(html):
     soup = BeautifulSoup(html, "lxml")
     rows = []
+    seen = set()
 
     # Find total count line — "1,255 items found"
     count_text = soup.get_text()
@@ -228,68 +229,54 @@ def parse_results_page(html):
     if total_match:
         log.info(f"  Total in system: {total_match.group(1)} items")
 
-    # Find the results table
-    table = None
-    for t in soup.find_all("table"):
-        txt = t.get_text()
-        if "Party One" in txt or "Filing Date" in txt or "Recording Date" in txt:
-            table = t
-            break
+    # Node-anchored parsing. The Lubbock EagleWeb portal redesigned its results
+    # table in mid-2026: rows are no longer a simple description|date|parties
+    # grid (the old positional parser began extracting the label "Party One:" as
+    # the description and no dates, so nothing matched). Each record is now
+    # anchored by an <a href="...node=DOCxxx"> link. The document description +
+    # number live in the row's first cell; filing date and parties appear inline
+    # in some rows (marriage, etc.) but distress docs carry only desc + node here
+    # — their date/parties/addresses come from the per-node detail fetch.
+    for a in soup.find_all("a", href=re.compile(r"node=")):
+        m = re.search(r"node=([A-Z0-9]+)", a["href"])
+        if not m:
+            continue
+        node = m.group(1)
+        if node in seen:
+            continue
+        tr = a.find_parent("tr")
+        if not tr:
+            continue
+        tds = tr.find_all("td")
+        if not tds:
+            continue
 
-    if table:
-        trs = table.find_all("tr")
-        for tr in trs:
-            tds = tr.find_all("td")
-            if len(tds) < 2:
-                continue
+        # Document description + number from the first cell
+        first_lines = [l.strip() for l in tds[0].get_text("\n", strip=True).split("\n") if l.strip()]
+        desc    = first_lines[0] if first_lines else ""
+        doc_num = first_lines[-1] if len(first_lines) > 1 else ""
 
-            # Extract node link
-            node = ""
-            for a in tr.find_all("a", href=True):
-                m = re.search(r"node=([A-Z0-9]+)", a["href"])
-                if m:
-                    node = m.group(1)
-                    break
+        # Guard against label-only sub-rows ("Party One: NAME")
+        if not desc or desc.lower().startswith("party "):
+            continue
 
-            cell_texts = [td.get_text(" ", strip=True) for td in tds]
-            full = " ".join(cell_texts).upper()
+        # Filing/recording date + parties when present inline in the row
+        row_text = tr.get_text(" ", strip=True)
+        dm = re.search(r"(?:Filing|Recording) Date:\s*(\d{2}/\d{2}/\d{4})", row_text)
+        p1 = re.search(r"Party One:\s*(.+?)\s*(?:Party Two:|(?:Filing|Recording) Date:|Marriage|Legal|$)", row_text)
+        p2 = re.search(r"Party Two:\s*(.+?)\s*(?:Party One:|(?:Filing|Recording) Date:|Marriage|Legal|$)", row_text)
 
-            # Skip header rows
-            if "PARTY ONE" in full and "FILING DATE" in full:
-                continue
-            if "DESCRIPTION" in full and "SUMMARY" in full:
-                continue
+        seen.add(node)
+        rows.append({
+            "description": desc.strip(),
+            "doc_num":     doc_num.strip(),
+            "filed":       dm.group(1) if dm else "",
+            "party_one":   p1.group(1).strip() if p1 else "",
+            "party_two":   p2.group(1).strip() if p2 else "",
+            "node":        node,
+        })
 
-            # First cell has doc type + doc number
-            first_lines = [l.strip() for l in tds[0].get_text("\n", strip=True).split("\n") if l.strip()]
-            desc    = first_lines[0] if first_lines else cell_texts[0]
-            doc_num = first_lines[-1] if len(first_lines) > 1 else ""
-
-            # Pull date and parties from remaining cells
-            filed, party1, party2 = "", "", ""
-            for ct in cell_texts[1:]:
-                dm = re.search(r"(\d{2}/\d{2}/\d{4})", ct)
-                if dm and not filed:
-                    filed = dm.group(1)
-                    continue
-                # Party names — filter out label words
-                clean = re.sub(r"(Party One|Party Two|Filing Date|Recording Date)", "", ct, flags=re.I).strip()
-                if clean and not party1:
-                    party1 = clean
-                elif clean and not party2:
-                    party2 = clean
-
-            if desc or node:
-                rows.append({
-                    "description": desc.strip(),
-                    "doc_num":     doc_num.strip(),
-                    "filed":       filed.strip(),
-                    "party_one":   party1.strip(),
-                    "party_two":   party2.strip(),
-                    "node":        node,
-                })
-
-    # Check for more pages
+    # More pages? EagleWeb paginates via ?page=N links / a Next control.
     has_more = bool(
         soup.find("a", string=re.compile(r"^next$|^>$", re.I)) or
         soup.find("a", href=re.compile(r"page=\d+"))
