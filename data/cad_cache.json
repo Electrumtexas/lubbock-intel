@@ -6227,5 +6227,63 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79413"
-  }
+  },
+  "EXOTIC WIRELESS GROUP LLC": {
+    "prop_address": "1209 UNIVERSITY AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "3911 126th ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "GREENE JERRY WAYNE": null,
+  "ROBBINS NEST LBK LLC": {
+    "prop_address": "5202 MARSHA SHARP FWY",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "5719 89TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "REPUBLIC WASTE SERVICES OF TEXAS LTD": null,
+  "GONZALEZ LUZ NAYELI CASTRO": {
+    "prop_address": "2901 SLIDE RD",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "2901 SLIDE RD",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79407"
+  },
+  "KSR": {
+    "prop_address": "1755 S 9TH ST",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "1101 E BROADWAY ST",
+    "mail_city": "SWEETWATER",
+    "mail_state": "TX",
+    "mail_zip": "79556"
+  },
+  "JVT FREIGHT CARRIERS INC": null,
+  "DIVERSITAS HOLDINGS LLC": null,
+  "DEVROE DENISE PEREZ": null,
+  "CAIN RONALD JAMES": {
+    "prop_address": "1610 CR 7245",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1610 COUNTY ROAD 7245",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "TARANGO JAVIER": null,
+  "HICKS MITCHELL": null,
+  "GUTIERREZ MICHAEL": null
 }
