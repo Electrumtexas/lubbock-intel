@@ -6387,5 +6387,37 @@
   "CHELIKANI VIJAY": null,
   "JOHNSON THURMAN": null,
   "CHADWICK BRONSON KYLE": null,
-  "HARDESTY SHARLA ANN DEC'D ESTATE OF": null
+  "HARDESTY SHARLA ANN DEC'D ESTATE OF": null,
+  "ROOTS OIL COMPANY LLC": null,
+  "BOLTON OIL COMPANY LTD": {
+    "prop_address": "7406 19TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "8509 VENITA AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "HALL DEBBIE": {
+    "prop_address": "5409 74TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5004 59TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79414"
+  },
+  "OWENS STEVE": {
+    "prop_address": "9605 TOPEKA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "CHERYL ANN",
+    "mail_city": "9605 TOPEKA AVE",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "SALDONA MITCH R": null
 }
