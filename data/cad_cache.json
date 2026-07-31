@@ -6419,5 +6419,50 @@
     "mail_state": "TX",
     "mail_zip": ""
   },
-  "SALDONA MITCH R": null
+  "SALDONA MITCH R": null,
+  "MARKET HALL CONDOMINIUM ASSOCIATION INC": null,
+  "TAILORED AT HOMES LLC": {
+    "prop_address": "12002 TRAFALGAR AVE",
+    "prop_city": "UNIT #201",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "4017 138TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "DROUGHT LAURIE": {
+    "prop_address": "11207 COLTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "11207 COLTON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "POLITTE CATHERINE S": {
+    "prop_address": "3115 113TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423-1996",
+    "mail_address": "3115 113TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423-1996"
+  },
+  "WAMPLER KRISTINE A": null,
+  "MALDONADO WHITNEY": null,
+  "HENSON GEORGE B": {
+    "prop_address": "7908 AVE K",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "7908 AVENUE K",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "JIMENEZ PEDRO": null,
+  "WELLS PAIGE": null
 }
