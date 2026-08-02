@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-08-01T09:01:50.600994Z",
+  "fetched_at": "2026-08-02T09:05:13.807715Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-07-25",
-    "end": "2026-08-01"
+    "start": "2026-07-26",
+    "end": "2026-08-02"
   },
   "total": 69,
-  "with_address": 36,
+  "with_address": 35,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -624,35 +624,6 @@
       ]
     },
     {
-      "description": "MECHANICS LIEN",
-      "doc_num": "Recording Date07/31/2026 09:07:09 AM",
-      "filed": "2026-07-31",
-      "party_one": "",
-      "party_two": "",
-      "node": "DOC298S2551",
-      "doc_type": "LNMECH",
-      "cat": "lien",
-      "cat_label": "Mechanic Lien",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC298S2551",
-      "owner": "POSTAR REBECCA",
-      "grantee": "BRANDIGER JASON MATTHEW",
-      "prop_address": "11204 GARDNER AVE",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79424",
-      "mail_address": "11204 GARDNER AVE",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79424",
-      "owner_name": "BRANDIGER JASON MATTHEW",
-      "lienholder": "POSTAR REBECCA",
-      "score": 50,
-      "flags": [
-        "Mechanic lien",
-        "New this week"
-      ]
-    },
-    {
       "description": "ABSTRACT OF JUDGMENT",
       "doc_num": "Recording Date07/27/2026 08:18:28 AM",
       "filed": "2026-07-27",
@@ -1085,6 +1056,35 @@
       "score": 45,
       "flags": [
         "Judgment lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date07/31/2026 09:07:09 AM",
+      "filed": "2026-07-31",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC298S2551",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC298S2551",
+      "owner": "POSTAR REBECCA",
+      "grantee": "BRANDIGER JASON MATTHEW",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "BRANDIGER JASON MATTHEW",
+      "lienholder": "POSTAR REBECCA",
+      "score": 45,
+      "flags": [
+        "Mechanic lien",
         "New this week"
       ]
     },
