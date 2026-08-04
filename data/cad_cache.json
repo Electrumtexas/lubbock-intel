@@ -6588,5 +6588,60 @@
     "mail_city": "#STE 100",
     "mail_state": "TX",
     "mail_zip": ""
+  },
+  "MARITT VERA FAYNE DEC'D ESTATE OF": null,
+  "GUTIERREZ CDS-CONSTRUCTION DESIGN SERVICES LLC": null,
+  "STEPHENS FORREST BRANUM": {
+    "prop_address": "2724 81ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2724 81ST ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "MADDEN RODNEY DALE": {
+    "prop_address": "4908 9TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "4908 9TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "SALINAS ERNESTINA J": {
+    "prop_address": "6206 102ND ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6206 102ND ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "CLAY ANGELA A": null,
+  "BOWNDS RANDY LOYD": null,
+  "HE RUI": {
+    "prop_address": "2121 101ST ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2121 101ST ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "ZAMORA COREY M": null,
+  "MILLER BARRY B": {
+    "prop_address": "2316 93RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "LOWE KRISTI GAIL TRUSTEE",
+    "mail_city": "5102 95TH ST",
+    "mail_state": "TX",
+    "mail_zip": ""
   }
 }
