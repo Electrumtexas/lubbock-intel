@@ -6683,5 +6683,51 @@
   "LEEPER JOSHUA": null,
   "CHANNAMMAGARI RAVI CHANDRA": null,
   "STIMPSON GRACE-ANNE": null,
-  "ESTRADA JORDAN": null
+  "ESTRADA JORDAN": null,
+  "FRANCO CORBIN ROBERT AKA": null,
+  "HICKS CECYLEE": null,
+  "WOOD LARA": {
+    "prop_address": "13717 AVE S",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "13717 AVENUE S",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "DAMRON AUSTIN DAVID": null,
+  "GIBSON KENDRA": null,
+  "ERVIEN STACY": {
+    "prop_address": "2117 139TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2117 139TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "BROWN SAMMY": null,
+  "AMBIT SPRAY FOAM LLC DBA": null,
+  "INNOVATIVE FIRE SYSTEMS LLC": {
+    "prop_address": "13209 FRANKFORD AVE",
+    "prop_city": "STE #1",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "13209 FRANKFORD AVE",
+    "mail_city": "STE 1",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "HARDKNOCKS TRUCKING LLC": {
+    "prop_address": "5209 E FM 2641",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "5209 E 2641",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79403"
+  }
 }
