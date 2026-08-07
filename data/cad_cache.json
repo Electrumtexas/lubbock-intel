@@ -6729,5 +6729,50 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79403"
+  },
+  "LUCERO GILBERT": null,
+  "HIERS DANIEL G": null,
+  "HIERS DANIEL": null,
+  "CASTANEDA OSCAR": {
+    "prop_address": "7540 104TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "7540 104TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "CASTANEDA ESTHER": null,
+  "WAR TRANSPORTATION LLC": {
+    "prop_address": "1205 BROADWAY",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "PO BOX 1961",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79408"
+  },
+  "WILSON WESLEY J": {
+    "prop_address": "5707 107TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "5707 107TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "WILSON LESLIE D": null,
+  "CLINE JACOB": {
+    "prop_address": "4717 27TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "4704 28TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79410-2326"
   }
 }
