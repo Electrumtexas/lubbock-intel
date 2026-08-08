@@ -6774,5 +6774,47 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79410-2326"
-  }
+  },
+  "MARTINEZ ALICIA LANI": null,
+  "THOMPSON CRYSTAL JEAN": {
+    "prop_address": "3300 82ND ST",
+    "prop_city": "STE #C",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "2311 81ST ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "PARTAIN CHIROPRACTIC WELLNESS CENTER": {
+    "prop_address": "4019 112TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "4019 112TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "HIGH PLAINS GRAND PRIX LLC": {
+    "prop_address": "10602 YORK AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "10602 YORK AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "BDP ESCAPE LLC": {
+    "prop_address": "3519 50TH ST",
+    "prop_city": "STE #B",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3519 50TH ST",
+    "mail_city": "#STE B",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "TIMOK DAVID RAY DEC'D ESTATE OF": null
 }
