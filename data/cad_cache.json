@@ -6856,5 +6856,38 @@
   "BLEEKER DEBRA": null,
   "TOWNSEND TROY WAYNE DEC'D ESTATE OF": null,
   "ADAMS TIMOTHY": null,
-  "PRICE RONALD D": null
+  "PRICE RONALD D": null,
+  "JACSON ENDEAVORS INC": null,
+  "BEN EDWARDS PA": {
+    "prop_address": "1413 TEXAS AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "4501 N COUNTY ROAD 3300",
+    "mail_city": "IDALOU",
+    "mail_state": "TX",
+    "mail_zip": "79329-5101"
+  },
+  "BECKNAL BUILDING GROUP LLC": null,
+  "HOUSEHOLDER RUSSELL": {
+    "prop_address": "6018 85TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6018 85TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "PLUNKETT DEREK": {
+    "prop_address": "7029 96TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "7029 96TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "GUTIERREZ BENJAMIN I": null
 }
