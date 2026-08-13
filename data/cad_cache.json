@@ -6889,5 +6889,16 @@
     "mail_state": "TX",
     "mail_zip": "79424"
   },
-  "GUTIERREZ BENJAMIN I": null
+  "GUTIERREZ BENJAMIN I": null,
+  "HASANAJ ARBEN": null,
+  "MORA APRIL": {
+    "prop_address": "613 CAMBRIDGE AVE",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "613 CAMBRIDGE AVE",
+    "mail_city": "WOLFFORTH",
+    "mail_state": "TX",
+    "mail_zip": "79382"
+  }
 }
