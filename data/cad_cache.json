@@ -6900,5 +6900,101 @@
     "mail_city": "WOLFFORTH",
     "mail_state": "TX",
     "mail_zip": "79382"
+  },
+  "SALYER HOMES LLC": {
+    "prop_address": "3009 19TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79410",
+    "mail_address": "5815 82ND ST #145",
+    "mail_city": "PMB 112",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MIKESKA MADE LLC": {
+    "prop_address": "5604 VOLNEY AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "13803 QUINTON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424-4670"
+  },
+  "FRANKLIN WAYNE": {
+    "prop_address": "307 WAYNE AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "5224 75TH ST",
+    "mail_city": "#STE D",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "PUCKETT JOSHUA R": {
+    "prop_address": "15908 CR 2160",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "15908 COUNTY ROAD 2160",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "RODRIGUEZ RAFAEL JR": {
+    "prop_address": "6419 95TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "6419 95TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "RUGGLES BOBBY G": null,
+  "HOLLAND GARDENS INC": {
+    "prop_address": "3739 50TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "3739 50TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79413"
+  },
+  "SEIFERT AMANDA": null,
+  "CRUMP JOSEPH MICHAEL": null,
+  "ENRIQUEZ DELFINO INFANTE AKA": null,
+  "THREE T RENTALS": null,
+  "CHRESTMAN MACLAIN": {
+    "prop_address": "1610 135TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "1610 135TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "SMITH RITA": {
+    "prop_address": "4907 117TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "4907 117TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79424"
+  },
+  "FINANCIALS FT": null,
+  "MARTINEZ JOHNNY MARTINEZ A": {
+    "prop_address": "9201 CANTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "9201 CANTON AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
   }
 }
