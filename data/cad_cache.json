@@ -6996,5 +6996,58 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": "79423"
+  },
+  "DECKER JANSEN RUSSELL": {
+    "prop_address": "3213 WAVERLY AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "5002 BASSWOOD CT",
+    "mail_city": "FORT WORTH",
+    "mail_state": "TX",
+    "mail_zip": "76135-1701"
+  },
+  "MARTINEZ-LOPEZ JOSE MANUEL": {
+    "prop_address": "13207 ULRICH AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "13207 ULRICH AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79423"
+  },
+  "MARTINEZ JOHNNY RODRIGUEZ AKA": null,
+  "FT FINANCIALS": null,
+  "BUCKMAN RYAN COLE": null,
+  "SAKURA LAN LLC": {
+    "prop_address": "6002 SLIDE RD",
+    "prop_city": "STE #H01",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "6100 CORPORATE DR",
+    "mail_city": "#STE 588",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "LAN CHINA WOK LLC": {
+    "prop_address": "6002 SLIDE",
+    "prop_city": "STE #H1",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "6002 SLIDE RD",
+    "mail_city": "#STE H1",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "LBKTIKI LLC": {
+    "prop_address": "1625 UNIVERSITY AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79401",
+    "mail_address": "1625 UNIVERSITY AVE",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79401"
   }
 }
