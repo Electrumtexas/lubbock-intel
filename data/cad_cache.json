@@ -7141,5 +7141,38 @@
   "PRINDLE PATRICIA GALE DEC'D ESTATE OF": null,
   "MATTHEWS JUSTINE V": null,
   "COPELAND JIM DARREL": null,
-  "QUILLIN WILDA IRENE DEC'D ESTATE OF": null
+  "QUILLIN WILDA IRENE DEC'D ESTATE OF": null,
+  "RAMON BENJAMIN": null,
+  "GARCIA ANDRES": {
+    "prop_address": "5022 39TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "5022 39TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79414"
+  },
+  "CLINE JACOB DAN": null,
+  "FIRST UNITED BANK": {
+    "prop_address": "930 FRONTAGE RD",
+    "prop_city": "IDALOU",
+    "prop_state": "TX",
+    "prop_zip": "79329",
+    "mail_address": "201 N BROADWAY",
+    "mail_city": "DIMMITT",
+    "mail_state": "TX",
+    "mail_zip": "79027"
+  },
+  "MENDEZ GENERAL CONTRACTORS LLC": {
+    "prop_address": "8625 10TH PL",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "8614 10TH ST",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": "79416"
+  },
+  "HADDEN RANDALL T": null
 }
