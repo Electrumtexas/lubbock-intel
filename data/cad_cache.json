@@ -7174,5 +7174,57 @@
     "mail_state": "TX",
     "mail_zip": "79416"
   },
-  "HADDEN RANDALL T": null
+  "HADDEN RANDALL T": null,
+  "RODRIGUEZ JENOVEVA": null,
+  "TWIN CITY LLC": null,
+  "HARD AS A ROCK CONCRETE LLC": {
+    "prop_address": "1006 DATE AVE",
+    "prop_city": "IDALOU",
+    "prop_state": "TX",
+    "prop_zip": "79329",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MORALES CHRISTIAN": {
+    "prop_address": "3203 JASON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ROBINSON RICHARD": {
+    "prop_address": "2505 57TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "RAIDER REAL ESTATE MANAGEMENT LLC": {
+    "prop_address": "3804 43RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79413",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "TRAMMEL H C JR DEC'D ESTATE OF": {
+    "prop_address": "1603 96TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  }
 }
