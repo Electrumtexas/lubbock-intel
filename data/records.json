@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-08-22T07:24:32.868210Z",
+  "fetched_at": "2026-08-23T07:26:08.137497Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-08-15",
-    "end": "2026-08-22"
+    "start": "2026-08-16",
+    "end": "2026-08-23"
   },
   "total": 72,
-  "with_address": 38,
+  "with_address": 37,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -853,35 +853,6 @@
       ]
     },
     {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date08/21/2026 11:00:43 AM",
-      "filed": "2026-08-21",
-      "party_one": "",
-      "party_two": "",
-      "node": "DOC301S252",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC301S252",
-      "owner": "TEXAS TECH CREDIT UNION",
-      "grantee": "PEREZ ELIDA CASTRO",
-      "prop_address": "1802 TEXAS TECH PARKWAY",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79416",
-      "mail_address": "Attn: UNITED PARAMOUNT TAX GROUP",
-      "mail_city": "4025 WOODLAND PARK BLVD",
-      "mail_state": "#STE",
-      "mail_zip": "180",
-      "owner_name": "PEREZ ELIDA CASTRO",
-      "lienholder": "TEXAS TECH CREDIT UNION",
-      "score": 50,
-      "flags": [
-        "Judgment lien",
-        "New this week"
-      ]
-    },
-    {
       "description": "MECHANICS LIEN",
       "doc_num": "Recording Date08/21/2026 01:54:20 PM",
       "filed": "2026-08-21",
@@ -1572,6 +1543,35 @@
       "mail_zip": "",
       "owner_name": "PARSLEY JAYME M",
       "lienholder": "DAMRON MICHEAL",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date08/21/2026 11:00:43 AM",
+      "filed": "2026-08-21",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC301S252",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC301S252",
+      "owner": "TEXAS TECH CREDIT UNION",
+      "grantee": "PEREZ ELIDA CASTRO",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "PEREZ ELIDA CASTRO",
+      "lienholder": "TEXAS TECH CREDIT UNION",
       "score": 45,
       "flags": [
         "Judgment lien",
