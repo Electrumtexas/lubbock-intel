@@ -7470,5 +7470,28 @@
     "mail_state": "TX",
     "mail_zip": ""
   },
-  "WANTADS": null
+  "WANTADS": null,
+  "OLGUIN DOMINGO JR": null,
+  "ALSUP MICHAEL PAUL": null,
+  "RENTAL ACCESS LLC": {
+    "prop_address": "835 HWY 62",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "FOX BRIAN L": {
+    "prop_address": "5233 MARSHALL ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "TOE SEYDOU": null
 }
