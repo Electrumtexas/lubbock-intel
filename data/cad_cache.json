@@ -7493,5 +7493,15 @@
     "mail_state": "TX",
     "mail_zip": ""
   },
-  "TOE SEYDOU": null
+  "TOE SEYDOU": null,
+  "MOSAKO SHANNON C": {
+    "prop_address": "2803 CR 7570",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  }
 }
