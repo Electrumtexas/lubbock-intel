@@ -7503,5 +7503,37 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": ""
-  }
+  },
+  "HOLLY HOP ICE CREAM SHOPPE LLC": null,
+  "VECTOR CHOICE TECHNOLOGIES LLC": {
+    "prop_address": "5280 34TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "REGLAZING COMPANY INC": {
+    "prop_address": "7616 E CR 7500",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "PARSONS DAVID SCOTT": {
+    "prop_address": "4808 115TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "STONE STUDIO LLC": null
 }
