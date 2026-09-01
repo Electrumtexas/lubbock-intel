@@ -7535,5 +7535,39 @@
     "mail_state": "TX",
     "mail_zip": ""
   },
-  "STONE STUDIO LLC": null
+  "STONE STUDIO LLC": null,
+  "CASTILLO GEORGE": {
+    "prop_address": "10620 SALEM AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "RAIDER FENCE LLC": {
+    "prop_address": "4321 WOODROW RD #27",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ROGERS KOLBY T": null,
+  "RECTOR BENJAMIN T": null,
+  "DECKER MITCHELL": null,
+  "WHITE BRAD": {
+    "prop_address": "1204 HYDEN AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "GIBSON ROY DALE DEC'D ESTATE OF": null
 }
