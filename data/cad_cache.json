@@ -7569,5 +7569,49 @@
     "mail_state": "TX",
     "mail_zip": ""
   },
-  "GIBSON ROY DALE DEC'D ESTATE OF": null
+  "GIBSON ROY DALE DEC'D ESTATE OF": null,
+  "GARZA BLANCO SANTOS DEC'D ESTATE OF": null,
+  "FLORES JORGE ABRAHAM AKA": {
+    "prop_address": "1015 N GENOA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79416",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MADDEN CATHY J": null,
+  "PERMIAN LAND MANAGEMENT LLC": null,
+  "BAXTER TRUSTS": {
+    "prop_address": "INDIANA AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "DILLER MINDY K": {
+    "prop_address": "3611 105TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "WATLEY WASHINGTON SR DEC'D ESTATE OF": null,
+  "SANDERS BUILDRITE CONSTRUCTION": {
+    "prop_address": "",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  }
 }
