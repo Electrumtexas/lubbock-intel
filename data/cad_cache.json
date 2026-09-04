@@ -7658,5 +7658,36 @@
     "mail_zip": ""
   },
   "LYNCH SHAUN": null,
-  "MOJICA TERESITA": null
+  "MOJICA TERESITA": null,
+  "BEAN PAUL WALTER JR DEC'D ESTATE OF": null,
+  "CORTEZ HENRY": {
+    "prop_address": "510 43RD ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "TELLO SARA VIVIAN": {
+    "prop_address": "4512 93RD DR",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MKS CONSTRUCTION LLC": {
+    "prop_address": "5939 E HWY 62-82",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79403",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  }
 }
