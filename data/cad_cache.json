@@ -7843,5 +7843,38 @@
   },
   "RAMIREZ CRYSTAL ROSE": null,
   "TEXAS FIRST CAPITAL FUND B INC": null,
-  "BUSSANMAS ARTHUR HERMAN DEC'D ESTATE OF": null
+  "BUSSANMAS ARTHUR HERMAN DEC'D ESTATE OF": null,
+  "QUICK DRAUGHT INC": null,
+  "WILSON MARK": {
+    "prop_address": "3430 96TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "WOHNHAS CAROL J": null,
+  "LONG BRADLEY JAMES": {
+    "prop_address": "7802 ZOAR AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "ADKINS ALEXANDER PAUL": null,
+  "ARNOLD TAYLOR": {
+    "prop_address": "3402 EVANSTON AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79407",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  }
 }
