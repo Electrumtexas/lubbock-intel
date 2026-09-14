@@ -1,9 +1,9 @@
 {
-  "fetched_at": "2026-09-13T12:27:20.300825Z",
+  "fetched_at": "2026-09-14T13:30:20.296880Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-09-06",
-    "end": "2026-09-13"
+    "start": "2026-09-07",
+    "end": "2026-09-14"
   },
   "total": 59,
   "with_address": 38,
