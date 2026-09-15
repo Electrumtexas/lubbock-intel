@@ -8026,5 +8026,37 @@
     "mail_city": "LUBBOCK",
     "mail_state": "TX",
     "mail_zip": ""
+  },
+  "CREDIT WHOLESALE COMPANY INC": {
+    "prop_address": "AIRPORT DISTRICT",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "LUKE W JORDAN P C": {
+    "prop_address": "4426 87TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "MESA TROY ANTHONY": null,
+  "TRUIST BANK": null,
+  "TUTOR KENT R": {
+    "prop_address": "17003 CR 2070",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
   }
 }
