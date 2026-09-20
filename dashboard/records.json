@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-09-19T11:44:17.178911Z",
+  "fetched_at": "2026-09-20T11:55:51.661871Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-09-12",
-    "end": "2026-09-19"
+    "start": "2026-09-13",
+    "end": "2026-09-20"
   },
   "total": 67,
-  "with_address": 38,
+  "with_address": 37,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -865,35 +865,6 @@
       ]
     },
     {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date09/18/2026 10:43:37 AM",
-      "filed": "2026-09-18",
-      "party_one": "",
-      "party_two": "",
-      "node": "DOC301S3070",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC301S3070",
-      "owner": "LUBBOCK COUNTY HOSPITAL DISTRICT DBA",
-      "grantee": "EDMONSON BOBBY",
-      "prop_address": "406 MLK BLVD",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79403",
-      "mail_address": "PO BOX 5980",
-      "mail_city": "LUBBOCK",
-      "mail_state": "TX",
-      "mail_zip": "79408-5980",
-      "owner_name": "EDMONSON BOBBY",
-      "lienholder": "LUBBOCK COUNTY HOSPITAL DISTRICT DBA",
-      "score": 50,
-      "flags": [
-        "Judgment lien",
-        "New this week"
-      ]
-    },
-    {
       "description": "MECHANICS LIEN",
       "doc_num": "Recording Date09/18/2026 03:51:44 PM",
       "filed": "2026-09-18",
@@ -1267,6 +1238,35 @@
       "score": 45,
       "flags": [
         "Probate / estate",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date09/18/2026 10:43:37 AM",
+      "filed": "2026-09-18",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC301S3070",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC301S3070",
+      "owner": "LUBBOCK COUNTY HOSPITAL DISTRICT DBA",
+      "grantee": "EDMONSON BOBBY",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "EDMONSON BOBBY",
+      "lienholder": "LUBBOCK COUNTY HOSPITAL DISTRICT DBA",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
         "New this week"
       ]
     },
