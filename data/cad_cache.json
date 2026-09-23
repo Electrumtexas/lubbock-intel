@@ -8370,5 +8370,88 @@
   "SANCHEZ JACOB XAVIER": null,
   "SANCHEZ LOPEZ CRUZ": null,
   "BAKER ERRICK": null,
-  "RODRIGUEZ MARGARITA CORTEZ": null
+  "RODRIGUEZ MARGARITA CORTEZ": null,
+  "THETFORD JAN": {
+    "prop_address": "1500 W LYNN ST",
+    "prop_city": "SLATON",
+    "prop_state": "TX",
+    "prop_zip": "79364",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "AVITIA RODRIGO": {
+    "prop_address": "4208 CHICAGO AVE",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79414",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "RIOJAS SIRENITY JA": null,
+  "CUTRELL PORTER": {
+    "prop_address": "1616 137TH ST",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79423",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "BIRRELL GREGORY H": {
+    "prop_address": "1509 CHURCHILL AVE",
+    "prop_city": "WOLFFORTH",
+    "prop_state": "TX",
+    "prop_zip": "79382",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "HAMILTON GRAYLON T": {
+    "prop_address": "5506 101ST PL",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "Z MAN CARPORTS LLC": null,
+  "HEADLEY JORDAN": {
+    "prop_address": "6308 CR 7405",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79424",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "HILL CHRISTOPHER W": {
+    "prop_address": "2401 E CR 7130",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "79404",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  },
+  "TREVINO PDERO AKA": null,
+  "CONN CLINT DBA": {
+    "prop_address": "S CR 1330",
+    "prop_city": "LUBBOCK",
+    "prop_state": "TX",
+    "prop_zip": "",
+    "mail_address": "",
+    "mail_city": "LUBBOCK",
+    "mail_state": "TX",
+    "mail_zip": ""
+  }
 }
