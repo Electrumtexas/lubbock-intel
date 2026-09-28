@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-09-27T12:40:52.729987Z",
+  "fetched_at": "2026-09-28T14:48:15.349433Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-09-20",
-    "end": "2026-09-27"
+    "start": "2026-09-21",
+    "end": "2026-09-28"
   },
-  "total": 534,
-  "with_address": 490,
+  "total": 536,
+  "with_address": 492,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -14235,6 +14235,64 @@
       "mail_zip": "79457-0001",
       "owner_name": "LUBBOCK CITY OF",
       "lienholder": "PEREZ DAVID ERIC",
+      "score": 50,
+      "flags": [
+        "Mechanic lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date09/28/2026 08:21:21 AM",
+      "filed": "2026-09-28",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC302S3679",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S3679",
+      "owner": "SILVAS EVELYN",
+      "grantee": "WOLFFORTH CITY OF",
+      "prop_address": "1ST ST",
+      "prop_city": "WOLFFORTH",
+      "prop_state": "TX",
+      "prop_zip": "79382",
+      "mail_address": "PO BOX 36",
+      "mail_city": "WOLFFORTH",
+      "mail_state": "TX",
+      "mail_zip": "79382-0036",
+      "owner_name": "WOLFFORTH CITY OF",
+      "lienholder": "SILVAS EVELYN",
+      "score": 50,
+      "flags": [
+        "Mechanic lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date09/28/2026 08:31:18 AM",
+      "filed": "2026-09-28",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC302S3682",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S3682",
+      "owner": "JOHNSON ELISE",
+      "grantee": "LUBBOCK CITY OF",
+      "prop_address": "2700 AMHERST ST",
+      "prop_city": "LUBBOCK",
+      "prop_state": "TX",
+      "prop_zip": "79415",
+      "mail_address": "PO BOX 2000",
+      "mail_city": "LUBBOCK",
+      "mail_state": "TX",
+      "mail_zip": "79457-0001",
+      "owner_name": "LUBBOCK CITY OF",
+      "lienholder": "JOHNSON ELISE",
       "score": 50,
       "flags": [
         "Mechanic lien",
