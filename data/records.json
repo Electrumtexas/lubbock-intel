@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-10-04T12:58:10.086287Z",
+  "fetched_at": "2026-10-05T15:25:40.410304Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-09-27",
-    "end": "2026-10-04"
+    "start": "2026-09-28",
+    "end": "2026-10-05"
   },
-  "total": 112,
+  "total": 113,
   "with_address": 61,
   "records": [
     {
@@ -2738,6 +2738,36 @@
       "score": 45,
       "flags": [
         "Judgment lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "PROBATE",
+      "doc_num": "Recording Date10/05/2026 09:10:21 AM",
+      "filed": "2026-10-05",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC302S4548",
+      "doc_type": "PRO",
+      "cat": "probate",
+      "cat_label": "Probate",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S4548",
+      "amount": 161.0,
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner": "",
+      "grantee": "",
+      "owner_name": "",
+      "lienholder": "",
+      "score": 45,
+      "flags": [
+        "Probate / estate",
         "New this week"
       ]
     },
