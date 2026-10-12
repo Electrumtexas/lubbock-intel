@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-10-11T13:42:26.830620Z",
+  "fetched_at": "2026-10-12T16:23:58.069455Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-10-04",
-    "end": "2026-10-11"
+    "start": "2026-10-05",
+    "end": "2026-10-12"
   },
-  "total": 361,
+  "total": 362,
   "with_address": 328,
   "records": [
     {
@@ -10430,6 +10430,35 @@
       "score": 45,
       "flags": [
         "Probate / estate",
+        "New this week"
+      ]
+    },
+    {
+      "description": "MECHANICS LIEN",
+      "doc_num": "Recording Date10/12/2026 08:23:14 AM",
+      "filed": "2026-10-12",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC302S5167",
+      "doc_type": "LNMECH",
+      "cat": "lien",
+      "cat_label": "Mechanic Lien",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S5167",
+      "owner": "YORK JOHN W AKA",
+      "grantee": "JUNIOR STEPHENS CONSTRUCTION LLC",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "JUNIOR STEPHENS CONSTRUCTION LLC",
+      "lienholder": "YORK JOHN W AKA",
+      "score": 45,
+      "flags": [
+        "Mechanic lien",
         "New this week"
       ]
     },
