@@ -1,43 +1,13 @@
 {
-  "fetched_at": "2026-10-17T11:17:37.788760Z",
+  "fetched_at": "2026-10-18T11:53:05.545011Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-10-10",
-    "end": "2026-10-17"
+    "start": "2026-10-11",
+    "end": "2026-10-18"
   },
   "total": 43,
-  "with_address": 20,
+  "with_address": 19,
   "records": [
-    {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date10/16/2026 10:10:26 AM",
-      "filed": "2026-10-16",
-      "party_one": "",
-      "party_two": "",
-      "node": "DOC302S5659",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S5659",
-      "owner": "DAIMLER TRUCK FINANCIAL SERVICES USA LLC",
-      "grantee": "DEVROE GERALD WAYNE",
-      "prop_address": "VARIOUS LOCATIONS",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "",
-      "mail_address": "PO BOX 24374",
-      "mail_city": "NASHVILLE",
-      "mail_state": "TX",
-      "mail_zip": "37202",
-      "owner_name": "DEVROE GERALD WAYNE",
-      "lienholder": "DAIMLER TRUCK FINANCIAL SERVICES USA LLC",
-      "score": 60,
-      "flags": [
-        "Judgment lien",
-        "LLC / corp owner",
-        "New this week"
-      ]
-    },
     {
       "description": "MECHANICS LIEN",
       "doc_num": "Recording Date10/16/2026 11:30:41 AM",
@@ -274,6 +244,36 @@
       "score": 55,
       "flags": [
         "Mechanic lien",
+        "LLC / corp owner",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date10/16/2026 10:10:26 AM",
+      "filed": "2026-10-16",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC302S5659",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S5659",
+      "owner": "DAIMLER TRUCK FINANCIAL SERVICES USA LLC",
+      "grantee": "DEVROE GERALD WAYNE",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "DEVROE GERALD WAYNE",
+      "lienholder": "DAIMLER TRUCK FINANCIAL SERVICES USA LLC",
+      "score": 55,
+      "flags": [
+        "Judgment lien",
         "LLC / corp owner",
         "New this week"
       ]
