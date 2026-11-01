@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-10-31T13:16:53.563283Z",
+  "fetched_at": "2026-11-01T13:56:00.838787Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-10-24",
-    "end": "2026-10-31"
+    "start": "2026-10-25",
+    "end": "2026-11-01"
   },
   "total": 63,
-  "with_address": 11,
+  "with_address": 10,
   "records": [
     {
       "description": "ABSTRACT OF JUDGMENT",
@@ -359,35 +359,6 @@
       "score": 50,
       "flags": [
         "Mechanic lien",
-        "New this week"
-      ]
-    },
-    {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date10/30/2026 08:25:59 AM",
-      "filed": "2026-10-30",
-      "party_one": "",
-      "party_two": "",
-      "node": "DOC302S6960",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S6960",
-      "owner": "CAPITAL ONE",
-      "grantee": "DELVAL DIANA",
-      "prop_address": "1510 E CORNELL ST",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79403",
-      "mail_address": "Attn: FORECLOSURE DEPT",
-      "mail_city": "201 E MCBEE AVE",
-      "mail_state": "#STE",
-      "mail_zip": "300",
-      "owner_name": "DELVAL DIANA",
-      "lienholder": "CAPITAL ONE",
-      "score": 50,
-      "flags": [
-        "Judgment lien",
         "New this week"
       ]
     },
@@ -1257,6 +1228,35 @@
       "mail_zip": "",
       "owner_name": "BRYANT GLEN K",
       "lienholder": "SYNCHRONY BANK",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date10/30/2026 08:25:59 AM",
+      "filed": "2026-10-30",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC302S6960",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC302S6960",
+      "owner": "CAPITAL ONE",
+      "grantee": "DELVAL DIANA",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "DELVAL DIANA",
+      "lienholder": "CAPITAL ONE",
       "score": 45,
       "flags": [
         "Judgment lien",
