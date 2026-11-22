@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-11-21T15:07:15.776043Z",
+  "fetched_at": "2026-11-22T14:59:03.666102Z",
   "source": "Lubbock County Clerk (Tyler Technologies EagleWeb)",
   "date_range": {
-    "start": "2026-11-14",
-    "end": "2026-11-21"
+    "start": "2026-11-15",
+    "end": "2026-11-22"
   },
   "total": 70,
-  "with_address": 17,
+  "with_address": 16,
   "records": [
     {
       "description": "MECHANICS LIEN",
@@ -681,35 +681,6 @@
       "score": 50,
       "flags": [
         "Mechanic lien",
-        "New this week"
-      ]
-    },
-    {
-      "description": "ABSTRACT OF JUDGMENT",
-      "doc_num": "Recording Date11/20/2026 02:08:59 PM",
-      "filed": "2026-11-20",
-      "party_one": "",
-      "party_two": "",
-      "node": "DOC304S919",
-      "doc_type": "JUD",
-      "cat": "judgment",
-      "cat_label": "Judgment",
-      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC304S919",
-      "owner": "AMARILLO NATIONAL BANK",
-      "grantee": "VARGAS CHRISTOPHER MARTIN JR",
-      "prop_address": "1932 TEXAS AVE",
-      "prop_city": "LUBBOCK",
-      "prop_state": "TX",
-      "prop_zip": "79405",
-      "mail_address": "% AMERICAN NATIONAL BANK",
-      "mail_city": "PO BOX 1",
-      "mail_state": "TX",
-      "mail_zip": "",
-      "owner_name": "VARGAS CHRISTOPHER MARTIN JR",
-      "lienholder": "AMARILLO NATIONAL BANK",
-      "score": 50,
-      "flags": [
-        "Judgment lien",
         "New this week"
       ]
     },
@@ -1552,6 +1523,35 @@
       "score": 45,
       "flags": [
         "Probate / estate",
+        "New this week"
+      ]
+    },
+    {
+      "description": "ABSTRACT OF JUDGMENT",
+      "doc_num": "Recording Date11/20/2026 02:08:59 PM",
+      "filed": "2026-11-20",
+      "party_one": "",
+      "party_two": "",
+      "node": "DOC304S919",
+      "doc_type": "JUD",
+      "cat": "judgment",
+      "cat_label": "Judgment",
+      "clerk_url": "https://erecord.lubbockcounty.gov/recorder/eagleweb/viewDoc.jsp?node=DOC304S919",
+      "owner": "AMARILLO NATIONAL BANK",
+      "grantee": "VARGAS CHRISTOPHER MARTIN JR",
+      "prop_address": "",
+      "prop_city": "",
+      "prop_state": "",
+      "prop_zip": "",
+      "mail_address": "",
+      "mail_city": "",
+      "mail_state": "",
+      "mail_zip": "",
+      "owner_name": "VARGAS CHRISTOPHER MARTIN JR",
+      "lienholder": "AMARILLO NATIONAL BANK",
+      "score": 45,
+      "flags": [
+        "Judgment lien",
         "New this week"
       ]
     },
